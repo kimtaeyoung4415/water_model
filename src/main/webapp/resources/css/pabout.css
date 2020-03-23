@@ -1,0 +1,50 @@
+	section{
+		position : relative;
+		height : 400px;
+	}
+	div{
+		display : block;
+	}
+	#about_company{
+		    background: #303030
+	}
+	#about_map{
+		background: #ededed;
+	}
+	#about_ceo > div, #about_ceo > div > div, #about_ceo > div >div > div {
+		height:100%;
+	}
+	.img-side{
+		position : absolute;
+		height : 100%;
+		overflow : hidden;
+		width: 25%;
+	}
+	#text-box{
+		width: 75%;
+    	position: absolute;
+    	left: 24.5%;
+    	height: 50%;
+    	text-align: center;
+    	top: 20%;
+    	color: white;
+	}
+	#photo{
+		padding-right: 20px;
+   		float: left;
+    	width: 25%;
+    	margin-top: 0;
+    	height:100%
+	}
+	#content{
+		height:100%;
+		float: left;
+   		width: 74%;
+	}
+	#map-content{
+		position: relative;
+		width:600px;
+		height:72%;
+		top: 160px;
+		float:left
+	}
