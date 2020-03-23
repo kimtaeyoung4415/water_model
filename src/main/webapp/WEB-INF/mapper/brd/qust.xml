@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="model.brd.qust">
+
+	<!-- 전체 카운트 조회 -->
+	<select id="selectQustListCnt" parameterType="Map" resultType="int">
+		SELECT 
+			COUNT(*)
+		FROM
+			WM_BRD_QUST
+	</select>
+	
+	<!-- 전체 조회 -->
+	<select id="selectQustList" parameterType="Map" resultType="Map">
+		SELECT 
+			*
+		FROM
+			WM_BRD_QUST
+	</select>
+	
+	<!-- 상세 조회 -->
+	<select id="selectQustDtl" parameterType="Map" resultType="Map">
+		SELECT 
+			*
+		FROM
+			WM_BRD_QUST
+		WHERE
+			NO = #{NO}	
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="updateQustViewCnt" parameterType="Map">
+		UPDATE
+		    WM_BRD_QUST  	/* 질문게시판 */
+		SET
+		    VIEW_CNT = /* ++ */
+		WHERE
+		    NO = #{NO}
+	</update>
+	
+	<!-- 등록 -->
+	<insert id="insertQust" parameterType="Map">		
+		INSERT INTO WM_BRD_QUST  /* 질문게시판 */
+		(
+		     NO,        	/* 번호 */
+		     Q_USERID,      /* 질문자 아이디 */
+		     Q_USERNAME,    /* 질문자 이름 */
+		     Q_TITLE,       /* 질문 제목 */
+		     Q_CONT,        /* 질문 내용 */
+		     Q_REGDATE,     /* 질문 등록일자 */
+		     Q_PWD     		/* 비밀번호 */
+		)
+		VALUES
+		(
+		     #{NO},      	/* 번호 */
+		     #{Q_USERID},   /* 질문자 아이디 */
+		     #{Q_USERNAME}, /* 질문자 이름 */
+		     #{Q_TITLE},    /* 질문 제목 */
+		     #{Q_CONT},     /* 질문 내용 */
+		     SYSDATE,      	/* 질문 등록일자 */
+		     #{Q_PWD}     	/* 비밀번호 */
+		)
+	</insert>
+	
+	<!-- 수정 -->
+	<update id="updateQust" parameterType="Map">
+		UPDATE
+		    WM_BRD_QUST  			 /* 질문게시판 */
+		SET
+		    Q_TITLE = #{Q_TITLE},    /* 질문 제목 */
+		    Q_CONT = #{Q_CONT},      /* 질문 내용 */
+		    Q_UPDTDATE = SYSDATE     /* 질문 수정일자 */
+		WHERE
+		    NO = #{NO}
+		AND
+			Q_PWD = #{Q_PWD} 
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="deleteQust" parameterType="Map">
+		DELETE
+		FROM
+			WM_BRD_QUST
+		WHERE
+			NO = #{NO}
+		AND
+			Q_PWD = #{Q_PWD}
+	</delete>
+	
+</mapper>

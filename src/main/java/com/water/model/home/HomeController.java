@@ -1,4 +1,4 @@
-package com.water.model;
+package com.water.model.home;
 
 import java.text.DateFormat;
 import java.util.Date;

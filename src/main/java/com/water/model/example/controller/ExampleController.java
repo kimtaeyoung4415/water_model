@@ -31,13 +31,6 @@ public class ExampleController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "/aboutcompany.do", method = { RequestMethod.GET })
-	public ModelAndView about(ModelAndView mv) {
-
-		mv.setViewName("about/aboutcompany");
-		return mv;
-	}
-	
 	@RequestMapping(value = "/getUserInfo.do", method = { RequestMethod.GET }, produces = "application/json; charset=UTF-8")
 	@ResponseBody
 	public ModelAndView getUserInfo(ModelAndView mv, @RequestParam Map<String, Object> param) {
