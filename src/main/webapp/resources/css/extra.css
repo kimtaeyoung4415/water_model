@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.container { width:100%; }
+.qna-container { width:1000px; }
+.sub-container { width:695px; }
+.mouseOutOverEvent { background:whitesmoke; cursor: pointer; }
+
+table { border-spacing: 0; border-collapse: collapse; }
+
+/* qna 제목 */
+.qna-title span { font-weight: bold; font-size: 30px; }
+.qna-title hr { width: 45px; border-bottom: 1px black solid; margin-bottom: 50px; }
+
+/* qna 리스트 */
+.qna-table { text-align: center; border-top: 3px solid black; border-bottom: 2px solid black; margin-bottom: 15px;     width: -webkit-fill-available; }
+.qna-table thead { border-bottom: 1px solid black; }
+.qna-table tbody td { border-bottom: 1px solid #a1a1a1; }
+
+/* util 성 */
+.btn { cursor:pointer; background-color: black; width: 100px; color: white; border: none; height: 35px; }
+.hide { display: none; }
+a { text-decoration: none; }
+
+/* ins 화면 */
+.application_modal { max-width: 100%; background: #fff; margin: 0 auto; padding: 40px 25px 25px; border-top: 3px solid #58585a; margin-bottom: 28px; box-shadow: 0 0 20px 5px rgba(0,0,0,0.1); }
+.input_wrapper { margin-bottom: 18px; overflow: hidden; }
+.input_wrapper label{ text-align: left; display: block; padding: 18px 13px; font-weight: 600; font-size: 17px; }
+.input_wrapper input[type="text"], .input_wrapper textarea, .input_wrapper input[type="password"] { padding: 15px 20px; border-radius: 1px; border: 1px solid #cbcbcb; width: 90%; font-family: 'Klavika B', 'RixGo EB'; resize: none;}
+.btn_form { max-width: 695px; margin: 0 auto; overflow: hidden; }
+.btn_form input[type="button"] { width: 100%; height: 74px; background: #000; border: none; color: #fff; font-weight: 500; font-size: 18px; }
+.btn_form_half input[type="button"] { width:345px; height: 74px; background: #000; border: none; color: #fff; font-weight: 500; font-size: 18px; }
+
+
+/* dtl 화면 */
+.span_wrapper { text-align: left; display: block; padding: 15px 13px; font-weight: 600; font-size: 17px; }
+.span_wrapper label { display: inline-block; width:80px; }
+.span_wrapper textarea { width:97%; resize:none; border:1px black solid; padding:10px;}
