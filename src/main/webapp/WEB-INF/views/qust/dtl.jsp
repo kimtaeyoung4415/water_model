@@ -53,6 +53,7 @@
 				</div>
 							
 			</div>
+			
 			<c:if test="${dtl.a_cont == null}">
 				<div class="btn_form_half">
 					<input type="button" id="btn_qust_delete" class="btn pwd_check" value="삭제"/>
