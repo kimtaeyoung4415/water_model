@@ -1,4 +1,5 @@
-github url : https://github.com/kimtaeyoung4415/water_model
+github url : 
+https://github.com/kimtaeyoung4415/water_model
 
 github admin id   : sqwe4415@naver.com
 github admin name : kimtaeyoung4415
@@ -7,22 +8,22 @@ github admin pwd  : kty66151!@#
 
 ======================================================================
 
-1. github repository에서 project 받은후 pull 대신 
-import > git > Projects from Git > Existing local repository 에서 project를 받는다. 
 
-2. project 우클릭 > Maven > Update Project... 클릭 후 update
-
-3. project를 받은 후 (apache v8.5)를 이용하여 was생성
-
-4. JRE System Library > Edit > Alternamte JRE : jdk 1.8 버전으로 변경
-   (jdk 1.8이 없는경우 Installed JREs... 선택후 Add > Standard VM > JRE home Directory 로 jdk path 잡아준후 사용)
-    
-5. project > build path > Configure Build Path... > 상단 Libraries > Add Library... 
-   > Server Runtime > Apache Tomcat v8.5 선택 후 Apply
+1. github repository 에서 project 받은후 import 
+   import > git > projects from git > existing local repository 에서 project를 바는다.
    
-6. 왼쪽 > Project Facets > Dynamic Web Module 3.1 > Java 1.8 > JavaScript 1.0 체크되어있고 버전 맞는지 확인
+2. project 우클릭 > Maven > Update Project... > update
+   
+3. project 받은 후 apache v8.5 를 이용하여 was 생성
 
-7. Project 우클릭 > Run As > Maven Install
+4. project > build path > Configure Build Path... > Libraries 탭
+   > 1) Add Library > Server Runtime > Tomcal 8.0 or newer
+   > 2) JRE System Library > Edit > jdk 1.8.0... 
+
+5. 왼쪽 탭 > Project Facets > Dynamic Web Module 3.1 > Java 1.8 > JavaScript 1.0 체크되어있고 버전 맞는지 확인
+
+6. Project 우클릭 > Run As > Maven Install
    (실패시 1번부터 다시시작)   
+   
+7. 서버 생성후 localhost:PORT/model/ 실행
 
-   8. 서버 생성후 localhost:8080/model/home.do 실행

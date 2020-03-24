@@ -28,7 +28,7 @@ public class QustController {
 	@Autowired
 	private InterQustService qustService;
 	
-	// Qust ¸ñ·Ï È­¸é
+	// ëª©ë¡ í™”ë©´
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
 	@ResponseBody
 	public ModelAndView list(ModelAndView mv, @RequestParam Map<String, Object> param) {
@@ -56,10 +56,10 @@ public class QustController {
 		return mv;
 	}
 
-	// Qust »ó¼¼ È­¸é	
+	// ìƒì„¸ í™”ë©´
 	@RequestMapping(value = "/dtl.do", method = RequestMethod.GET)
 	@ResponseBody
-	public ModelAndView dtl(ModelAndView mv, @RequestParam int no) {
+	public ModelAndView dtl(ModelAndView mv, HttpServletRequest request, @RequestParam int no) {
 		
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		Map<String, Object> dtl = new HashMap<String, Object>();	
@@ -71,47 +71,51 @@ public class QustController {
 			// ** dummy data =====================================================				
 			list = this.dummyData();		
 			
-			dtl = list.get(no);
+			dtl = list.get(no);			
 			// ** dummy data //// ================================================
+			
+			Object a = (int) no;
 									
 			mv.addObject("dtl",dtl);		
 			mv.setViewName("qust/dtl");			
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
-		}
-		
+		}		
 		return mv;
 	}
 	
-	// Qust µî·Ï È­¸é	
+	// ë“±ë¡ í™”ë©´	
 	@RequestMapping(value = "/ins.do", method = RequestMethod.GET)
-	public String ins() {
+	public String ins(HttpServletRequest request) {		
 		return "qust/ins";
 	}		
 	
-	// Qust ¼öÁ¤, »èÁ¦ ºñ¹Ğ¹øÈ£ Ã¼Å© È­¸é
+	// ë¹„ë°€ë²ˆí˜¸ ê²€ì‚¬ í™”ë©´
 	@RequestMapping(value = "/pwdCheck.do", method = RequestMethod.GET)
-	public String pwdCheck() {
-		return "qust/pwdCheck";
+	@ResponseBody
+	public ModelAndView pwdCheck(ModelAndView mv, @RequestParam int no) {				
+		mv.addObject("no", no);
+		mv.setViewName("qust/pwdCheck");
+		return mv;
 	}		
 	
-	// Qust ºñ¹Ğ¹øÈ£ Ã¼Å© ¾×¼Ç
+	// ë¹„ë°€ë²ˆí˜¸ ê²€ì‚¬ ì´ë²¤íŠ¸
 	@RequestMapping(value = "/getQustPwdCheck.do", method = RequestMethod.POST)
 	@ResponseBody
-	public ModelAndView getQustPwdCheck(ModelAndView mv, @RequestParam Map<String, Object> param, HttpServletRequest request) {
+	public ModelAndView getQustPwdCheck(ModelAndView mv, HttpServletRequest request, @RequestParam Map<String, Object> param) {
 						
-		Map<String, Object> result = new HashMap<String, Object>();	
+		Map<String, Object> result = new HashMap<String, Object>();			
 		
 		try {
-			String fk_seq = request.getParameter("no");
-			// ÇØ´ç ±Û ¹øÈ£¿Í ºñ¹Ğ¹øÈ£ °¡Á®¿À±â (param)
+			
+			// ï¿½Ø´ï¿½ ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½Ğ¹ï¿½È£ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (param)
 			// result = qustService.getPwdCheck(param);						
 			if (!result.isEmpty()) {
-				mv.addObject("result",result);		
+				mv.addObject("result",result);
 				mv.setViewName("Qust/dtl");	
 			} else {
-				String msg = "ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.";
+				String msg = "ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.";
 				String loc = "/brd/Qust/pwdCheck.do";
 				
 				mv.addObject("msg", msg);
@@ -126,7 +130,7 @@ public class QustController {
 		return mv;
 	}
 	
-	// Áú¹® µî·Ï ¾×¼Ç	
+	// ë“±ë¡ ì´ë²¤íŠ¸
 	@RequestMapping(value = "/postQustIns.do", method={RequestMethod.POST},produces="text/plain;charset=UTF-8")
 	@ResponseBody
 	public String postQustIns(HttpServletRequest request, @RequestParam Map<String, Object> param) {
@@ -148,7 +152,7 @@ public class QustController {
 		return result.toString();
 	}
 	
-	// Áú¹® ¼öÁ¤ ÀÌº¥Æ®
+	// ìˆ˜ì • ì´ë²¤íŠ¸
 	@RequestMapping(value = "/putQustUpdt.do", method={RequestMethod.POST},produces="text/plain;charset=UTF-8")
 	@ResponseBody
 	public Map<String, Object> putQustUpdt(HttpServletRequest request, @RequestParam Map<String, Object> param) {
@@ -169,7 +173,7 @@ public class QustController {
 		return result;
 	}
 		
-	// Áú¹® »èÁ¦ ÀÌº¥Æ®
+	// ì‚­ì œ ì´ë²¤íŠ¸
 	@RequestMapping(value = "/deleteQust.do", method={RequestMethod.POST},produces="text/plain;charset=UTF-8")
 	@ResponseBody
 	public Map<String, Object> deleteQust(HttpServletRequest request, @RequestParam Map<String, Object> param) {
@@ -190,7 +194,7 @@ public class QustController {
 		return result;
 	}
 	
-	// ÀÓÀÇ µ¥ÀÌÅÍ
+	// ì„ì˜ ë°ì´í„°
 	public List<Map<String, Object>> dummyData(){
 		
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
@@ -200,33 +204,33 @@ public class QustController {
 			result = new HashMap<String, Object>();
 			
 			result.put("no", i);
-			result.put("q_username", "È«±æµ¿");			
+			result.put("q_username", "í™ê¸¸ë™");			
 			result.put("q_mobile", "010-3"+i+"98-7"+i+"5"+i+"");
 			result.put("q_email", "example"+i+"@water.info");
-			result.put("q_title", i+"¹øÂ° Å×½ºÆ® ÀÔ´Ï´Ù.");
-			result.put("q_cont", i+"¹øÂ° Å×½ºÆ® ÀÔ´Ï´Ù. ABCDEFGHIJKLMNOPQRSTUVWXYZ°¡³ª´Ù¶ó¸¶¹Ù»ç¾ÆÀÚÂ÷Å¸ÆÄÇÏ");
+			result.put("q_title", i+"ë²ˆì§¸ í…ŒìŠ¤íŠ¸ ì…ë‹ˆë‹¤.");
+			result.put("q_cont", i+"ë²ˆì§¸ í…ŒìŠ¤íŠ¸ ì…ë‹ˆë‹¤. ABCDEFGHIJKLMNOPQRSTUVWXYZ ê°€ë‚˜ë‹¤ë¼ë§ˆë°”ì‚¬ì•„ìì°¨ì¹´íƒ€íŒŒí•˜.");
 			result.put("q_regdate", "2020-03-0"+(i+1));
 			result.put("view_cnt", 45+i);
 			result.put("q_pwd", "1231");
 			
 			if (i == 4) {
 				result.put("q_updtdate", "2020-04-0"+(i+1));
-				result.put("a_username", "°ü¸®ÀÚ");
-				result.put("a_cont", "Ã¹¹øÂ° ´äº¯¿Ï·á");
+				result.put("a_username", "ê´€ë¦¬ì");
+				result.put("a_cont", i+"ë²ˆì§¸ ë‹µë³€ í…ŒìŠ¤íŠ¸ ì…ë‹ˆë‹¤.");
 				result.put("a_updtdate", "2020-04-0"+(i+1));
 			}
 			
 			if (i == 7) {
 				result.put("q_updtdate", "2020-05-0"+(i+1));
-				result.put("a_username", "°ü¸®ÀÚ");
-				result.put("a_cont", "µÎ¹øÂ° ´äº¯¿Ï·á");
+				result.put("a_username", "ê´€ë¦¬ì");
+				result.put("a_cont", i+"ë²ˆì§¸ ë‹µë³€ í…ŒìŠ¤íŠ¸ ì…ë‹ˆë‹¤.");
 				result.put("a_updtdate", "2020-04-0"+(i+1));
 			}
 			
 			if (i == 8) {
 				result.put("q_updtdate", "2020-06-0"+(i+1));
-				result.put("a_username", "°ü¸®ÀÚ");
-				result.put("a_cont", "¼¼¹øÂ° ´äº¯¿Ï·á");
+				result.put("a_username", "ê´€ë¦¬ì");
+				result.put("a_cont", i+"ë²ˆì§¸ ë‹µë³€ í…ŒìŠ¤íŠ¸ ì…ë‹ˆë‹¤.");
 				result.put("a_updtdate", "2020-04-0"+(i+1));
 			}
 			

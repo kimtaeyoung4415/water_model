@@ -24,6 +24,9 @@
 			</div>
 			
 			<div class="application_modal">
+			
+				<input type="hidden" id="no" name="no" value="${dtl.no}"/>	
+			
 				<div>
 					<div class="span_wrapper">
 						<label for="Q_USERNAME">이름</label>

@@ -1,20 +1,20 @@
 @charset "UTF-8";
 
 .container { width:100%; }
-.qna-container { width:1000px; }
+.qust-container { width:1000px; }
 .sub-container { width:695px; }
 .mouseOutOverEvent { background:whitesmoke; cursor: pointer; }
 
 table { border-spacing: 0; border-collapse: collapse; }
 
-/* qna 제목 */
-.qna-title span { font-weight: bold; font-size: 30px; }
-.qna-title hr { width: 45px; border-bottom: 1px black solid; margin-bottom: 50px; }
+/* qust 제목 */
+.qust-title span { font-weight: bold; font-size: 30px; }
+.qust-title hr { width: 45px; border-bottom: 1px black solid; margin-bottom: 50px; }
 
-/* qna 리스트 */
-.qna-table { text-align: center; border-top: 3px solid black; border-bottom: 2px solid black; margin-bottom: 15px;     width: -webkit-fill-available; }
-.qna-table thead { border-bottom: 1px solid black; }
-.qna-table tbody td { border-bottom: 1px solid #a1a1a1; }
+/* qust 리스트 */
+.qust-table { text-align: center; border-top: 3px solid black; border-bottom: 2px solid black; margin-bottom: 15px;     width: -webkit-fill-available; }
+.qust-table thead { border-bottom: 1px solid black; }
+.qust-table tbody td { border-bottom: 1px solid #a1a1a1; }
 
 /* util 성 */
 .btn { cursor:pointer; background-color: black; width: 100px; color: white; border: none; height: 35px; }

@@ -19,11 +19,12 @@
 <body>
 	<div class="container" align="center">
 		<div class="sub-container">
-			<div>
-				
-			</div>
 			
-			<div class="application_modal">
+			<div class="application_modal">				
+				<form name="hiddenForm">
+					<input type="hidden" id="no" name="no" value="${no}"/>	
+				</form>
+				
 				<div class="input_wrapper">
 					<label for="Q_TITLE">패스워드</label>
 					<input type="password" id="pwd_check"/>
