@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<!-- tiles layout 설정 -->
+
+<tiles-definitions>
+    
+	<!-- tiles form 1 -->
+	<definition name="layout-tiles" template="/WEB-INF/tiles/layout/layout-tiles.jsp"> 
+		<put-attribute name="header" value="/WEB-INF/tiles/tile/header.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/tile/footer.jsp" />
+	</definition>
+	
+	<!-- 
+		jsp 경로는 /WEB-INF/views 에 그냥 생성하면 됨
+		파일 depth는 최대  /WEB-INF/views/jsp/{1}/{2} 까지만 하는것을 추천함
+	-->
+	<definition name="*.tiles" extends="layout-tiles">
+		<put-attribute name="content" value="/WEB-INF/views/jsp/{1}.jsp"/>
+	</definition>
+	<definition name="*/*.tiles" extends="layout-tiles">
+		<put-attribute name="content" value="/WEB-INF/views/jsp/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="*/*/*.tiles" extends="layout-tiles">
+		<put-attribute name="content" value="/WEB-INF/views/jsp/{1}/{2}/{3}.jsp"/>
+	</definition>
+	<!-- tiles form 1 --> 
+    
+	
+	
+	<!-- non tiles form -->
+	<definition name="layout-notiles" template="/WEB-INF/tiles/layout/layout-notiles.jsp"> 
+		<put-attribute name="content" value="" />
+	</definition>
+	
+	<definition name="*.notiles" extends="layout-notiles">
+		<put-attribute name="content" value="/WEB-INF/views/notiles/{1}.jsp"/>
+	</definition>
+	<!-- non tiles form -->
+	
+</tiles-definitions>       

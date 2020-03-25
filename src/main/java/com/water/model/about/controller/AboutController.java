@@ -13,7 +13,7 @@ public class AboutController {
 	@RequestMapping(value = "/company.do", method = { RequestMethod.GET })
 	public ModelAndView about(ModelAndView mv) {
 
-		mv.setViewName("about/company");
+		mv.setViewName("about/company.tiles");
 		return mv;
 	}
 }

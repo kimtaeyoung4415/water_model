@@ -12,10 +12,10 @@ public class ManageDevelController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ManageDevelController.class);
 
-	// ¸ñ·Ï
+	// ï¿½ï¿½ï¿½
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
 	public String actors() {				
-		return "mng/development";
+		return "mng/development.tiles";
 	}
 	
 	

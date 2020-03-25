@@ -27,7 +27,7 @@ public class ExampleController {
 	@RequestMapping(value = "/example.do", method = { RequestMethod.GET })
 	public ModelAndView example(ModelAndView mv) {
 
-		mv.setViewName("example/example");
+		mv.setViewName("example/example.tiles");
 		return mv;
 	}
 	
@@ -38,7 +38,7 @@ public class ExampleController {
 		Map<String, Object> info = exampleService.getUserInfo(param);
 		
 		mv.addObject("info",info);
-		mv.setViewName("example/example");
+		mv.setViewName("example/example.tiles");
 		
 		return mv;
 	}

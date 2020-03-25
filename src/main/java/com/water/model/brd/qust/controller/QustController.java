@@ -48,7 +48,7 @@ public class QustController {
 						
 			mv.addObject("list",list);
 			mv.addObject("list_count",count);
-			mv.setViewName("qust/list");
+			mv.setViewName("qust/list.tiles");
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
@@ -77,7 +77,7 @@ public class QustController {
 			Object a = (int) no;
 									
 			mv.addObject("dtl",dtl);		
-			mv.setViewName("qust/dtl");			
+			mv.setViewName("qust/dtl.tiles");			
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
@@ -88,7 +88,7 @@ public class QustController {
 	// 등록 화면	
 	@RequestMapping(value = "/ins.do", method = RequestMethod.GET)
 	public String ins(HttpServletRequest request) {		
-		return "qust/ins";
+		return "qust/ins.tiles";
 	}		
 	
 	// 비밀번호 검사 화면
@@ -96,7 +96,7 @@ public class QustController {
 	@ResponseBody
 	public ModelAndView pwdCheck(ModelAndView mv, @RequestParam int no) {				
 		mv.addObject("no", no);
-		mv.setViewName("qust/pwdCheck");
+		mv.setViewName("qust/pwdCheck.tiles");
 		return mv;
 	}		
 	

@@ -17,7 +17,7 @@ public class ManageMenController {
 
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
 	public String actors() {
-		return "mng/men";
+		return "mng/men.tiles";
 	}
 	
 	
