@@ -3,36 +3,57 @@
 
 <mapper namespace="model.brd.qust">
 
+	<!-- 전체 조회 -->
+	<select id="selectQustList" parameterType="Map" resultType="Map">
+		SELECT 
+			 Q_NUM,    		/* 번호 */
+		     Q_NAME,        /* 질문자 이름 */
+		     Q_TITLE,       /* 질문 제목 */
+		     Q_CONT,        /* 질문 내용 */
+		     DATE_FORMAT(Q_REG_DATE,  '%Y-%m-%d') AS Q_REG_DATE,	/* 질문 등록일자 */
+		     DATE_FORMAT(Q_UPDT_DATE, '%Y-%m-%d') AS Q_UPDT_DATE,	/* 질문 수정일자 */
+		     A_CONT,		/* 답변 */
+		     VIEW_CNT	    /* 조회수 */
+		FROM
+			WE_BRD_QNA
+		ORDER BY 
+			Q_NUM DESC
+	</select>
+	
 	<!-- 전체 카운트 조회 -->
 	<select id="selectQustListCnt" parameterType="Map" resultType="int">
 		SELECT 
 			COUNT(*)
 		FROM
-			WM_BRD_QUST
-	</select>
-	
-	<!-- 전체 조회 -->
-	<select id="selectQustList" parameterType="Map" resultType="Map">
-		SELECT 
-			*
-		FROM
-			WM_BRD_QUST
-	</select>
+			WE_BRD_QNA
+	</select>	
 	
 	<!-- 상세 조회 -->
 	<select id="selectQustDtl" parameterType="Map" resultType="Map">
-		SELECT 
-			*
+		SELECT
+		    Q_NUM,     	 		/* 번호 */
+		    Q_NAME,     		/* 질문자 이름 */
+		    Q_MOBILE,       	/* 연락처 */
+		    Q_EMAIL,        	/* 이메일 */
+		    Q_TITLE,        	/* 질문 제목 */
+		    Q_CONT,     		/* 질문 내용 */
+		     DATE_FORMAT(Q_REG_DATE,  '%Y-%m-%d') AS Q_REG_DATE,	/* 질문 등록일자 */
+		     DATE_FORMAT(Q_UPDT_DATE, '%Y-%m-%d') AS Q_UPDT_DATE,	/* 질문 수정일자 */
+		    A_NAME,     		/* 답변자 */
+		    A_CONT,     		/* 답변 내용 */
+		    DATE_FORMAT(A_REG_DATE, '%Y-%m-%d') AS A_REG_DATE,		/* 답변 등록일자 */
+		    VIEW_CNT,       	/* 조회수 */
+		    Q_PWD       		/* 비밀번호 */
 		FROM
-			WM_BRD_QUST
+		    WM_BRD_QNA       	/* QNA 게시판 */
 		WHERE
-			NO = #{NO}	
+			NO = #{NO}
 	</select>
 	
 	<!-- 조회수 증가 -->
 	<update id="updateQustViewCnt" parameterType="Map">
 		UPDATE
-		    WM_BRD_QUST  	/* 질문게시판 */
+		    WE_BRD_QNA  	/* 질문게시판 */
 		SET
 		    VIEW_CNT = /* ++ */
 		WHERE
@@ -40,33 +61,38 @@
 	</update>
 	
 	<!-- 등록 -->
-	<insert id="insertQust" parameterType="Map">		
-		INSERT INTO WM_BRD_QUST  /* 질문게시판 */
-		(
-		     NO,        	/* 번호 */
-		     Q_USERID,      /* 질문자 아이디 */
-		     Q_USERNAME,    /* 질문자 이름 */
-		     Q_TITLE,       /* 질문 제목 */
-		     Q_CONT,        /* 질문 내용 */
-		     Q_REGDATE,     /* 질문 등록일자 */
-		     Q_PWD     		/* 비밀번호 */
-		)
-		VALUES
-		(
-		     #{NO},      	/* 번호 */
-		     #{Q_USERID},   /* 질문자 아이디 */
-		     #{Q_USERNAME}, /* 질문자 이름 */
-		     #{Q_TITLE},    /* 질문 제목 */
-		     #{Q_CONT},     /* 질문 내용 */
-		     SYSDATE,      	/* 질문 등록일자 */
-		     #{Q_PWD}     	/* 비밀번호 */
-		)
+	<insert id="insertQust" parameterType="Map">
+		<selectKey resultType="int" keyProperty="MAXNUM" order="BEFORE">
+			SELECT IFNULL(MAX(Q_NUM),0)+1 FROM WE_BRD_QNA
+		</selectKey>
+		INSERT INTO WE_BRD_QNA  /* QnA 게시판 */
+			(
+			     Q_NUM,    		/* 번호 */
+			     Q_NAME,        /* 질문자 이름 */
+			     Q_MOBILE,      /* 연락처 */
+			     Q_EMAIL,       /* 이메일 */
+			     Q_TITLE,       /* 질문 제목 */
+			     Q_CONT,        /* 질문 내용 */
+			     Q_REG_DATE,    /* 질문 등록일자 */
+			     Q_PWD      	/* 비밀번호 */
+			)
+			VALUES
+			(
+			     #{MAXNUM},	    /* 번호 */
+			     #{Q_NAME},     /* 질문자 이름 */
+			     #{Q_MOBILE},   /* 연락처 */
+			     #{Q_EMAIL},    /* 이메일 */
+			     #{Q_TITLE},    /* 질문 제목 */
+			     #{Q_CONT},     /* 질문 내용 */
+			     NOW(), 		/* 질문 등록일자 */
+			     #{Q_PWD}       /* 비밀번호 */
+			)
 	</insert>
 	
 	<!-- 수정 -->
 	<update id="updateQust" parameterType="Map">
 		UPDATE
-		    WM_BRD_QUST  			 /* 질문게시판 */
+		    WE_BRD_QNA  			 /* 질문게시판 */
 		SET
 		    Q_TITLE = #{Q_TITLE},    /* 질문 제목 */
 		    Q_CONT = #{Q_CONT},      /* 질문 내용 */
@@ -81,7 +107,7 @@
 	<delete id="deleteQust" parameterType="Map">
 		DELETE
 		FROM
-			WM_BRD_QUST
+			WE_BRD_QNA
 		WHERE
 			NO = #{NO}
 		AND

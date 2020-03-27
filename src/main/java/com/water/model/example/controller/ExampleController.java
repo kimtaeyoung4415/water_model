@@ -1,8 +1,7 @@
 package com.water.model.example.controller;
 
+import java.util.List;
 import java.util.Map;
-
-import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,17 +30,16 @@ public class ExampleController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "/getUserInfo.do", method = { RequestMethod.GET }, produces = "application/json; charset=UTF-8")
+	@RequestMapping(value = "/getUserList.do", method = { RequestMethod.GET }, produces = "application/json; charset=UTF-8")
 	@ResponseBody
-	public ModelAndView getUserInfo(ModelAndView mv, @RequestParam Map<String, Object> param) {
+	public ModelAndView getUserList(ModelAndView mv, @RequestParam Map<String, Object> param) {
 
-		Map<String, Object> info = exampleService.getUserInfo(param);
+		List<Map<String, Object>> list = exampleService.getUserList();
 		
-		mv.addObject("info",info);
+		mv.addObject("list",list);
 		mv.setViewName("example/example.tiles");
 		
 		return mv;
 	}
-	
 	
 }

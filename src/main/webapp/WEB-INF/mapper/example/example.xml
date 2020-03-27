@@ -3,11 +3,4 @@
 
 <mapper namespace="water.model.example">
 
-	<select id="getUserInfo" parameterType="Map" resultType="Map">
-		SELECT
-			*
-		FROM
-			WM_EXAMPLE
-	</select>
-	
 </mapper>

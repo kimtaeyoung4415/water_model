@@ -49,7 +49,7 @@
 		});
 		
 		// 문의 등록 (클릭)
-		$("#btn_qust_question").click(function(){		
+		$("#btn_qust").click(function(){		
 			initInsEvent();
 		});
 	
@@ -60,7 +60,7 @@
 
 		var frm = document.qust_ins_form;
 		
-		if (frm.Q_USERNAME.value.trim() == '') {
+		if (frm.Q_NAME.value.trim() == '') {
 			alert("이름을 입력해주세요.");
 			return;
 		}
@@ -93,14 +93,13 @@
 		var form_data = $("form[name=qust_ins_form]").serialize();
 		
 		insertqust(form_data);
-		
 	};
 	
 	// 질문등록 이벤트
 	function insertqust(form_data){
 		
 		$.ajax({
-			url:"/brd/qust/insqust.do",
+			url:"/brd/qust/postQustIns.do",
 			data:form_data,
 			type:'POST',
 			success:function(result){

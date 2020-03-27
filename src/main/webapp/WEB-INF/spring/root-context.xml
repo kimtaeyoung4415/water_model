@@ -6,20 +6,19 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
-		
-	<!-- mysql 
+				
+	<!-- mysql -->
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
-		<property name="driverClassName" value="com.mysql.jdbc.Driver"/> 
-		<property name="url" value="jdbc:mysql://주소/스키마"/> 
-		<property name="username" value="아이디"/> 
-		<property name="password" value="비밀번호"/> 
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/> 
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/we_test?serverTimezone=UTC&amp;useSSL=false"/> 
+		<property name="username" value="we_test"/> 
+		<property name="password" value="we202003"/> 
 	</bean>
  	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="mapperLocations" value="/WEB-INF/mapper/*.xml"/>
+		<property name="mapperLocations" value="/WEB-INF/mapper/*/*.xml"/>
 	</bean>
 	
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"> 
@@ -27,6 +26,5 @@
 	</bean>
 		
 	<bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
-	
-	-->
+		
 </beans>

@@ -31,21 +31,15 @@ public class QustController {
 	// 목록 화면
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
 	@ResponseBody
-	public ModelAndView list(ModelAndView mv, @RequestParam Map<String, Object> param) {
-				
-		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+	public ModelAndView list(ModelAndView mv) throws Exception {				
 		
 		try {
-						
-			//List<Map<String, Object>> list = qustService.getQustList(param);						
-			//int count = qustService.getQustListCnt(param);
-					
-			// ** dummy data =====================================================				
-			list = this.dummyData();
+			// 목록
+			List<Map<String, Object>> list = qustService.selectQustList();		
 			
-			int count = list.size();			
-			// ** dummy data //// ================================================
-						
+			// 목록 카운트
+			int count = qustService.selectQustListCnt();
+			
 			mv.addObject("list",list);
 			mv.addObject("list_count",count);
 			mv.setViewName("qust/list.tiles");
@@ -59,22 +53,11 @@ public class QustController {
 	// 상세 화면
 	@RequestMapping(value = "/dtl.do", method = RequestMethod.GET)
 	@ResponseBody
-	public ModelAndView dtl(ModelAndView mv, HttpServletRequest request, @RequestParam int no) {
-		
-		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-		Map<String, Object> dtl = new HashMap<String, Object>();	
+	public ModelAndView dtl(ModelAndView mv, HttpServletRequest request, @RequestParam int no) {		
 		
 		try {
 			
-			// Map<String, Object> dtl = qustService.getQustDtl(param);	
-			
-			// ** dummy data =====================================================				
-			list = this.dummyData();		
-			
-			dtl = list.get(no);			
-			// ** dummy data //// ================================================
-			
-			Object a = (int) no;
+			Map<String, Object> dtl = qustService.selectQustDtl(no);	
 									
 			mv.addObject("dtl",dtl);		
 			mv.setViewName("qust/dtl.tiles");			
@@ -130,7 +113,7 @@ public class QustController {
 		return mv;
 	}
 	
-	// 등록 이벤트
+	// 등록 액션
 	@RequestMapping(value = "/postQustIns.do", method={RequestMethod.POST},produces="text/plain;charset=UTF-8")
 	@ResponseBody
 	public String postQustIns(HttpServletRequest request, @RequestParam Map<String, Object> param) {
@@ -138,8 +121,7 @@ public class QustController {
 		Map<String, Object> result = new HashMap<String, Object>();
 		
 		try {
-			//int cnt = qustService.insertQust(param);
-			int cnt = 1;
+			int cnt = qustService.insertQust(param);
 			
 			if (cnt == 1) {
 				result.put("RESULT", true);

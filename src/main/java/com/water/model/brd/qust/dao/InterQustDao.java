@@ -1,40 +1,31 @@
 package com.water.model.brd.qust.dao;
 
+import java.util.List;
 import java.util.Map;
 
 public interface InterQustDao {
 
-	/** <pre>
-	 * 1. 개요         : 질문 수정 액션
-	 * </pre>
-	 * @Method    : updtQust
-	 * @date      : 2020. 03. 23. 17:15
-	 * @author    : 김선규
-	 * @history -------------------------------------------
-	 *          ----변경일---------작성자--------------변경내용 
-	 *          2020. 02. 23         김선규                         최초 작성
-	 *          -------------------------------------------
-	 * </pre>
-	 * @param param
-	 * @return
-	 */
+	// 목록
+	List<Map<String, Object>> selectQustList() throws Exception;
+	
+	// 목록 카운트
+	int selectQustListCnt();
+	
+	// 수정 액션
 	int updateQust(Map<String, Object> param);
 
-	/** <pre>
-	 * 1. 개요         : 질문 수정 액션
-	 * </pre>
-	 * @Method    : deletQust
-	 * @date      : 2020. 03. 23. 17:15
-	 * @author    : 김선규
-	 * @history -------------------------------------------
-	 *          ----변경일---------작성자--------------변경내용 
-	 *          2020. 02. 23         김선규                         최초 작성
-	 *          -------------------------------------------
-	 * </pre>
-	 * @param param
-	 * @return
-	 */
+	// 삭제 액션
 	int deletQust(Map<String, Object> param);
+
+	// 등록 액션
+	int insertQust(Map<String, Object> param);
+
+	// 상세
+	Map<String, Object> selectQustDtl(int no);
+
+	
+
+	
 
 	
 	

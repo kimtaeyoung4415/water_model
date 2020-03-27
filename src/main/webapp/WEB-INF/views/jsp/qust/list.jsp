@@ -37,21 +37,21 @@
 			</thead>
 			<tbody id="qust-list">
 				<c:forEach var="list" items="${list}" varStatus="status">
-					<tr data="${list.no}">
-						<td>${list.no}</td>
-						<td>${list.q_title}</td>
-						<td>${list.q_username}</td>
-						<c:if test="${list.q_updtdate == null}">
-							<td>${list.q_regdate}</td>
+					<tr data="${list.Q_NUM}">
+						<td>${list.Q_NUM}</td>
+						<td>${list.Q_TITLE}</td>
+						<td>${list.Q_NAME}</td>
+						<c:if test="${list.Q_UPDT_DATE == null}">
+							<td>${list.Q_REG_DATE}</td>
 						</c:if>
-						<c:if test="${list.q_updtdate != null}">
-							<td>${list.q_updtdate}</td>
+						<c:if test="${list.Q_UPDT_DATE != null}">
+							<td>${list.Q_UPDT_DATE}</td>
 						</c:if>
-						<td>${list.view_cnt}</td>
-						<c:if test="${list.a_cont == null}">
+						<td>${list.VIEW_CNT}</td>
+						<c:if test="${list.A_CONT == null}">
 							<td>진행중</td>
 						</c:if>
-						<c:if test="${list.a_cont != null}">
+						<c:if test="${list.A_CONT != null}">
 							<td>답변완료</td>
 						</c:if>
 					</tr>

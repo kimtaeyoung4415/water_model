@@ -1,5 +1,6 @@
 package com.water.model.example.service;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +13,10 @@ public class ExampleService implements InterExampleService {
 
 	@Autowired
 	private InterExampleDao exampleDao;
-	
+
 	@Override
-	public Map<String, Object> getUserInfo(Map<String, Object> param) {
-		Map<String,Object> info = exampleDao.getUserInfo(param);
-		return info;
+	public List<Map<String, Object>> getUserList() {
+		return exampleDao.getUserList();
 	}
 
 }

@@ -12,8 +12,8 @@
 			<div class="application_modal">
 				<h3>문의하기</h3>
 				<div class="input_wrapper">
-					<label for="Q_USERNAME">이름</label>
-					<input type="text" id="Q_USERNAME" name="Q_USERNAME" placeholder="홍길동" required="required">
+					<label for="Q_NAME">이름</label>
+					<input type="text" id="Q_NAME" name="Q_NAME" placeholder="홍길동" required="required">
 				</div>
 				<div class="input_wrapper">
 					<label for="Q_MOBILE">연락처</label>
@@ -39,7 +39,7 @@
 		</div>
 		
 		<div class="btn_form">
-			<input type="button" id="btn_qust_question" class="btn" value="문의하기"/>
+			<input type="button" id="btn_qust" class="btn" value="문의하기"/>
 		</div>
 	</div>
 	
