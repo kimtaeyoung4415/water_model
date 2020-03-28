@@ -8,10 +8,7 @@
 			
 		</div>
 		
-		<div class="application_modal">
-		
-			<input type="hidden" id="no" name="no" value="${dtl.no}"/>	
-		
+		<div class="application_modal">		
 			<div>
 				<div class="span_wrapper">
 					<label for="Q_NAME">이름</label>
@@ -44,9 +41,10 @@
 		
 		<c:if test="${dtl.A_CONT == null}">
 			<div class="btn_form_half">
-				<input type="button" id="btn_qust_delete" class="btn pwd_check" value="삭제"/>
-				<input type="button" id="btn_qust_update" class="btn pwd_check" value="수정"/>
+				<input type="button" id="btn_qust_delete" class="btn pwd_check" value="삭제" onClick="initDtlEvent('${dtl.Q_NUM}','del')"/>
+				<input type="button" id="btn_qust_update" class="btn pwd_check" value="수정" onClick="initDtlEvent('${dtl.Q_NUM}','updt')"/>
 			</div>
 		</c:if>	
+		
 	</div>		
 </div>	

@@ -18,7 +18,6 @@ public interface InterQustService {
 	 * </pre>
 	 * @param param
 	 * @return
-	 * @throws Exception 
 	 */
 	List<Map<String, Object>> selectQustList() throws Exception;
 	
@@ -36,7 +35,7 @@ public interface InterQustService {
 	 * @param param
 	 * @return
 	 */
-	int selectQustListCnt();
+	int selectQustListCnt() throws Exception;
 	
 	/** <pre>
 	 * 1. 개요         : 질문 상세 액션
@@ -52,7 +51,23 @@ public interface InterQustService {
 	 * @param param
 	 * @return
 	 */
-	Map<String, Object> selectQustDtl(int no);
+	Map<String, Object> selectQustDtl(Map<String, Object> param) throws Exception;
+	
+	/** <pre>
+	 * 1. 개요         : 비밀번호 검사 액션
+	 * </pre>
+	 * @Method    : selectQustPwdCheck
+	 * @date      : 2020. 03. 27. 16:04
+	 * @author    : 김선규
+	 * @history -------------------------------------------
+	 *          ----변경일---------작성자--------------변경내용 
+	 *          2020. 03. 27         김선규                         최초 작성
+	 *          -------------------------------------------
+	 * </pre>
+	 * @param param
+	 * @return
+	 */
+	int selectQustPwdCheck(Map<String, Object> param) throws Exception;
 	
 	/** <pre>
 	 * 1. 개요         : 질문 수정 액션
@@ -68,7 +83,7 @@ public interface InterQustService {
 	 * @param param
 	 * @return
 	 */
-	int updateQust(Map<String, Object> param);
+	int updateQust(Map<String, Object> param) throws Exception;
 
 	/** <pre>
 	 * 1. 개요         : 질문 삭제 액션
@@ -84,7 +99,7 @@ public interface InterQustService {
 	 * @param param
 	 * @return
 	 */
-	int delteQust(Map<String, Object> param);
+	int delteQust(Map<String, Object> param) throws Exception;
 
 	/** <pre>
 	 * 1. 개요         : 질문 등록 액션
@@ -100,9 +115,23 @@ public interface InterQustService {
 	 * @param param
 	 * @return
 	 */
-	int insertQust(Map<String, Object> param);
+	int insertQust(Map<String, Object> param) throws Exception;
 
-	
+	/** <pre>
+	 * 1. 개요         : 질문 삭제 액션
+	 * </pre>
+	 * @Method    : deleteQust
+	 * @date      : 2020. 03. 27. 17:21
+	 * @author    : 김선규
+	 * @history -------------------------------------------
+	 *          ----변경일---------작성자--------------변경내용 
+	 *          2020. 03. 27         김선규                         최초 작성
+	 *          -------------------------------------------
+	 * </pre>
+	 * @param param
+	 * @return
+	 */
+	int deleteQust(Map<String, Object> param) throws Exception;
 
 	
 

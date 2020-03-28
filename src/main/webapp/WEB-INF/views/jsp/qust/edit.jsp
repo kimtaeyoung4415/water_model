@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<%
-	String ctxPath = request.getContextPath();
-%>
-
 <div class="container" align="center">
 	<div class="sub-container">
 		<div>
@@ -44,8 +39,8 @@
 		</div>
 		<c:if test="${dtl.a_cont == null}">
 			<div class="btn_form_half">
-				<input type="button" id="btn_qust_delete" class="btn pwd_check" value="삭제"/>
-				<input type="button" id="btn_qust_update" class="btn pwd_check" value="수정"/>
+				<input type="button" id="btn_qust_cancel" class="btn" value="취소"/>
+				<input type="button" id="btn_qust_update" class="btn" value="수정"/>
 			</div>
 		</c:if>
 		

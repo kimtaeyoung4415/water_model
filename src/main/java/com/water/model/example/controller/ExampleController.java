@@ -23,10 +23,13 @@ public class ExampleController {
 	@Autowired
 	private InterExampleService exampleService;
 	
-	@RequestMapping(value = "/example.do", method = { RequestMethod.GET })
+	@RequestMapping(value = "/ex.do", method = { RequestMethod.GET })
 	public ModelAndView example(ModelAndView mv) {
 
-		mv.setViewName("example/example.tiles");
+		String now = exampleService.getNow();
+		
+		mv.addObject("now", now);
+		mv.setViewName("example/example");
 		return mv;
 	}
 	

@@ -22,35 +22,48 @@ public class QustService implements InterQustService {
 	
 	// 목록 카운트
 	@Override
-	public int selectQustListCnt() {		
+	public int selectQustListCnt() throws Exception {		
 		return qustDao.selectQustListCnt();
 	}
 	
 	// 상세
 	@Override
-	public Map<String, Object> selectQustDtl(int no) {
-		return qustDao.selectQustDtl(no);
+	public Map<String, Object> selectQustDtl(Map<String, Object> param) throws Exception {
+		return qustDao.selectQustDtl(param);
 	}
 
+	// 비밀번호 검사
+	@Override
+	public int selectQustPwdCheck(Map<String, Object> param) throws Exception {
+		return qustDao.selectQustPwdCheck(param);
+	}
 	
 	// 수정 액션
 	@Override
-	public int updateQust(Map<String, Object> param) {
+	public int updateQust(Map<String, Object> param) throws Exception {
 		int result = qustDao.updateQust(param);
 		return result;
 	}
 
 	// 삭제 액션
 	@Override
-	public int delteQust(Map<String, Object> param) {
+	public int delteQust(Map<String, Object> param) throws Exception {
 		int result = qustDao.deletQust(param);
 		return result;
 	}
 
 	// 등록 액션
 	@Override
-	public int insertQust(Map<String, Object> param) {
+	public int insertQust(Map<String, Object> param) throws Exception {
 		return qustDao.insertQust(param);
 	}
+
+	// 삭제 액션
+	@Override
+	public int deleteQust(Map<String, Object> param) throws Exception {
+		return qustDao.deleteQust(param);
+	}
+
+	
 
 }

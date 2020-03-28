@@ -25,24 +25,10 @@
 				
 		// 상세 (화면이동)
 		$("#qust-list tr").click(function(){							
-			var dtl_data = $(this).attr("data");			
-			javascript:location.href="/brd/qust/dtl.do?no="+dtl_data;		
+			var data_num = $(this).attr("data");			
+			dtlQust(data_num);
 		});
-		
-		// 삭제, 수정
-		$(".pwd_check").click(function(){			
-			var no = $("#no").val();
-			javascript:location.href="/brd/qust/pwdCheck.do?no="+no;				
-		});
-		
-		
-		
-		// 비밀번호 확인
-		$("#btn_pwd_check").click(function(){	
-			var no = $("#no").val();
-			getPwdCheck(no);			
-		});
-		
+						
 		// 등록 (화면이동)
 		$("#btn_qust_ins").click(function(){			
 			javascript:location.href="/brd/qust/ins.do";				
@@ -92,11 +78,11 @@
 		
 		var form_data = $("form[name=qust_ins_form]").serialize();
 		
-		insertqust(form_data);
+		insertQust(form_data);
 	};
 	
 	// 질문등록 이벤트
-	function insertqust(form_data){
+	function insertQust(form_data){
 		
 		$.ajax({
 			url:"/brd/qust/postQustIns.do",
@@ -104,25 +90,73 @@
 			type:'POST',
 			success:function(result){
 				if (result) {
-					alert("true");
+					jAlert("등록되었습니다.", "알림", function() {
+						javascript:location.href="/brd/qust/list.do";
+					});
 				} else {
-					alert("false");
+					jAlert("등록에 실패하였습니다.", "알림", function() {
+						return false;
+					});
 				}
 			},
 			error: function(request, status, error){
                 alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
             }
-		});
-		
+		});		
 	};
 	
-	// 비밀번호 확인
-	function getPwdCheck(no){
+	// 상세화면 이벤트
+	function dtlQust(data_num){		
 		
-		var param = { 
-						"no" : no,
-						"Q_PWD" : $("#pwd_check").val() 
-					};			
+		$.ajax({
+			url:"/brd/qust/dtl.do",
+			data:{"Q_NUM":data_num},
+			type:'POST',
+			success:function(result){
+				$('#content').children().remove();
+				$('#content').html(result);							
+			},
+			error: function(request, status, error){
+                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+            }
+		});		
+	};
+	
+	// 비밀번호 검사
+	function initDtlEvent(Q_NUM, type)	{				
+		
+		$.ajax({
+			url:"/brd/qust/pwdCheck.do",
+			data:{"Q_NUM" : Q_NUM},
+			type:'POST',
+			success:function(result){
+				$('#content').children().remove();
+				$('#content').html(result);
+				
+				// 비밀번호 확인 버튼
+				$("#btn_pwd_check").click(function(){
+					if (type == "del") {
+						var code = "del";
+					} else if(type == "updt") {
+						var code = "updt";
+					}
+					getQustPwdCheck(Q_NUM, type);	
+				});				
+			},
+			error: function(request, status, error){
+                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+            }
+		});	
+	};	
+	
+	// 비밀번호 확인
+	function getQustPwdCheck(Q_NUM, type){		
+		console.log(type)
+		var param = {   
+			"Q_NUM" : Q_NUM,
+			"type" : type,
+			"Q_PWD" : $('#Q_PWD').val()
+		};			
 		
 		$.ajax({
 			url:"/brd/qust/getQustPwdCheck.do",
@@ -130,14 +164,50 @@
 			type:'POST',
 			success:function(result){
 				if (result) {
-					alert("true");
+					if (result.type == "del") {
+						jAlert("삭제되었습니다.", "알림", function() {
+							javascript:location.href="/brd/qust/list.do";		
+						});
+					} else {
+						javascript:location.href="/brd/qust/updt.do";
+					
+						// 비밀번호 확인 버튼
+						$("#btn_pwd_check").click(function(){
+							getQustPwdCheck(Q_NUM, type);	
+						});	
+					}
 				} else {
-					alert("false");
+					jAlert("비밀번호가 일치하지 않습니다.", "알림", function() {
+						return false;
+					});
 				}
 			},
 			error: function(request, status, error){
                 alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
             }
-		});
-		
+		});		
 	};
+	
+	// 수정
+	function updateQust(Q_NUM){
+		
+		var param = {   
+			"Q_NUM" : Q_NUM
+		};
+		
+		$.ajax({
+			url:"/brd/qust/putQustUpdt.do",
+			data:param,
+			type:'POST',
+			success:function(result){
+				$('#content').children().remove();
+				$('#content').html(result);
+			},
+			error: function(request, status, error){
+                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+            }
+		});	
+	}
+	
+
+	

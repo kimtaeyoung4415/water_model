@@ -29,9 +29,11 @@
 	<%-- css --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/extra.css" media="all" type="text/css" />
 	<link rel="stylesheet" href="${ctxPath}/resources/css/model.css" media="all" type="text/css" />
+	<link rel="stylesheet" href="${ctxPath}/resources/css/utils/jquery.alerts.css" media="all" type="text/css" />	<%-- jAlert --%>
 	
-	<%-- script --%>
+	<%-- script --%>	
 	<script type="text/javascript" src="${ctxPath}/resources/utils/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/resources/utils/jquery.alerts.js"></script>			<%-- jAlert --%>		
 	<script type="text/javascript" src="${ctxPath}/resources/js/brd/qust/qust.js"></script>				<%-- QnA 게시판 --%>
 	
 </head>

@@ -45,12 +45,12 @@
 		    VIEW_CNT,       	/* 조회수 */
 		    Q_PWD       		/* 비밀번호 */
 		FROM
-		    WM_BRD_QNA       	/* QNA 게시판 */
+		    WE_BRD_QNA       	/* QNA 게시판 */
 		WHERE
-			NO = #{NO}
+			Q_NUM = #{Q_NUM}
 	</select>
 	
-	<!-- 조회수 증가 -->
+	<!-- 조회수 증가 
 	<update id="updateQustViewCnt" parameterType="Map">
 		UPDATE
 		    WE_BRD_QNA  	/* 질문게시판 */
@@ -59,6 +59,7 @@
 		WHERE
 		    NO = #{NO}
 	</update>
+	-->
 	
 	<!-- 등록 -->
 	<insert id="insertQust" parameterType="Map">
@@ -89,6 +90,19 @@
 			)
 	</insert>
 	
+	<!-- 비밀번호 검사 -->
+	<select id="selectQustPwdCheck" parameterType="Map" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			WE_BRD_QNA
+		WHERE
+			Q_NUM = #{Q_NUM}
+		AND
+			Q_PWD = #{Q_PWD}
+	</select>
+	
+	
 	<!-- 수정 -->
 	<update id="updateQust" parameterType="Map">
 		UPDATE
@@ -98,7 +112,7 @@
 		    Q_CONT = #{Q_CONT},      /* 질문 내용 */
 		    Q_UPDTDATE = SYSDATE     /* 질문 수정일자 */
 		WHERE
-		    NO = #{NO}
+		    Q_NUM = #{Q_NUM}
 		AND
 			Q_PWD = #{Q_PWD} 
 	</update>
@@ -109,7 +123,7 @@
 		FROM
 			WE_BRD_QNA
 		WHERE
-			NO = #{NO}
+			Q_NUM = #{Q_NUM}
 		AND
 			Q_PWD = #{Q_PWD}
 	</delete>

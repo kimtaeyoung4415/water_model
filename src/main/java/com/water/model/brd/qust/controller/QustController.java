@@ -51,16 +51,16 @@ public class QustController {
 	}
 
 	// 상세 화면
-	@RequestMapping(value = "/dtl.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/dtl.do", method = RequestMethod.POST)
 	@ResponseBody
-	public ModelAndView dtl(ModelAndView mv, HttpServletRequest request, @RequestParam int no) {		
+	public ModelAndView dtl(ModelAndView mv, HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {		
 		
 		try {
 			
-			Map<String, Object> dtl = qustService.selectQustDtl(no);	
+			Map<String, Object> dtl = qustService.selectQustDtl(param);	
 									
 			mv.addObject("dtl",dtl);		
-			mv.setViewName("qust/dtl.tiles");			
+			mv.setViewName("qust/dtl");			
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
@@ -70,53 +70,63 @@ public class QustController {
 	
 	// 등록 화면	
 	@RequestMapping(value = "/ins.do", method = RequestMethod.GET)
-	public String ins(HttpServletRequest request) {		
+	public String ins(HttpServletRequest request) throws Exception {		
 		return "qust/ins.tiles";
 	}		
 	
 	// 비밀번호 검사 화면
-	@RequestMapping(value = "/pwdCheck.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/pwdCheck.do", method = RequestMethod.POST)
 	@ResponseBody
-	public ModelAndView pwdCheck(ModelAndView mv, @RequestParam int no) {				
-		mv.addObject("no", no);
-		mv.setViewName("qust/pwdCheck.tiles");
+	public ModelAndView pwdCheck(ModelAndView mv, @RequestParam int Q_NUM) throws Exception {				
+		mv.addObject("Q_NUM", Q_NUM);
+		mv.setViewName("qust/pwdCheck");
 		return mv;
 	}		
 	
 	// 비밀번호 검사 이벤트
 	@RequestMapping(value = "/getQustPwdCheck.do", method = RequestMethod.POST)
 	@ResponseBody
-	public ModelAndView getQustPwdCheck(ModelAndView mv, HttpServletRequest request, @RequestParam Map<String, Object> param) {
-						
-		Map<String, Object> result = new HashMap<String, Object>();			
+	public String getQustPwdCheck(ModelAndView mv, @RequestParam Map<String, Object> param) throws Exception {
+								
+		Map<String, Object> result = new HashMap<String, Object>();
 		
 		try {
 			
-			// �ش� �� ��ȣ�� ��й�ȣ �������� (param)
-			// result = qustService.getPwdCheck(param);						
-			if (!result.isEmpty()) {
-				mv.addObject("result",result);
-				mv.setViewName("Qust/dtl");	
-			} else {
-				String msg = "비밀번호가 일치하지 않습니다.";
-				String loc = "/brd/Qust/pwdCheck.do";
-				
-				mv.addObject("msg", msg);
-				mv.addObject("loc", loc);
-				
-				mv.setViewName("error/msg");
-			}
+			int status = qustService.selectQustPwdCheck(param);
+			String type = (String) param.get("type");
 			
+			if (status == 0) {		
+				// 비밀번호가 일치하지 않을떄
+				result.put("result", false);
+			} else {				
+				// 비밀번호가 일치할때
+				
+				if ("del".equals(type)) {
+					int cnt = qustService.deleteQust(param);
+					
+					if (cnt == 0) {
+						result.put("result", false);
+					} else {
+						result.put("result", true);
+					}
+					result.put("type", type);
+					
+				} else {
+					result.put("result", true);
+					result.put("type", type);
+				}
+				
+			}
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
-		return mv;
+		return result.toString();
 	}
 	
 	// 등록 액션
 	@RequestMapping(value = "/postQustIns.do", method={RequestMethod.POST},produces="text/plain;charset=UTF-8")
 	@ResponseBody
-	public String postQustIns(HttpServletRequest request, @RequestParam Map<String, Object> param) {
+	public String postQustIns(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
@@ -137,7 +147,7 @@ public class QustController {
 	// 수정 이벤트
 	@RequestMapping(value = "/putQustUpdt.do", method={RequestMethod.POST},produces="text/plain;charset=UTF-8")
 	@ResponseBody
-	public Map<String, Object> putQustUpdt(HttpServletRequest request, @RequestParam Map<String, Object> param) {
+	public Map<String, Object> putQustUpdt(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
@@ -158,7 +168,7 @@ public class QustController {
 	// 삭제 이벤트
 	@RequestMapping(value = "/deleteQust.do", method={RequestMethod.POST},produces="text/plain;charset=UTF-8")
 	@ResponseBody
-	public Map<String, Object> deleteQust(HttpServletRequest request, @RequestParam Map<String, Object> param) {
+	public Map<String, Object> deleteQust(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		

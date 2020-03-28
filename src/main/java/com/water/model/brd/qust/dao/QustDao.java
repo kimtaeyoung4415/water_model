@@ -23,57 +23,66 @@ public class QustDao implements InterQustDao {
 	
 	// 목록 카운트
 	@Override
-	public int selectQustListCnt() {
+	public int selectQustListCnt() throws Exception {
 		return sqlSession.selectOne("model.brd.qust.selectQustListCnt");
 	}
 
 	// 상세
 	@Override
-	public Map<String, Object> selectQustDtl(int no) {
+	public Map<String, Object> selectQustDtl(Map<String, Object> param) throws Exception {
 		
-		Map<String, Object> result = sqlSession.selectOne("model.brd.qust.selectQustDtl", no);
-		
-		if (result != null && !result.isEmpty()) {
-			sqlSession.update("model.brd.qust.updateQustViewCnt");
-		}
-		
+		Map<String, Object> result = sqlSession.selectOne("model.brd.qust.selectQustDtl", param);
+//		
+//		if (result != null && !result.isEmpty()) {
+//			sqlSession.update("model.brd.qust.updateQustViewCnt");
+//		}
+//		
 		return result;
+	}
+	
+	// 비밀번호 검사
+	@Override
+	public int selectQustPwdCheck(Map<String, Object> param) {
+		return sqlSession.selectOne("model.brd.qust.selectQustPwdCheck", param);
 	}
 
 	
 	// ���
-	public List<Map<String, Object>> getQustList(Map<String, Object> param) {
+	public List<Map<String, Object>> getQustList(Map<String, Object> param) throws Exception {
 		// return sqlSession.selectList("model.brd.qust.selectQustList", param);
 		return null;
 	}	
 	
 	// ���
-	public int insQust(Map<String, Object> param) {
+	public int insQust(Map<String, Object> param) throws Exception {
 		// return sqlSession.selectList("model.brd.qust.insertQust", param);
 		return 0;
 	}
 	
 	// ����
 	@Override
-	public int updateQust(Map<String, Object> param) {
+	public int updateQust(Map<String, Object> param) throws Exception {
 		// return sqlSession.selectList("model.brd.qust.updateQust", param);
 		return 0;
 	}
 
 	// ����
 	@Override
-	public int deletQust(Map<String, Object> param) {
+	public int deletQust(Map<String, Object> param) throws Exception {
 		// return sqlSession.selectList("model.brd.qust.deleteQust", param);
 		return 0;
 	}
 
 	// 등록 액션
 	@Override
-	public int insertQust(Map<String, Object> param) {		
+	public int insertQust(Map<String, Object> param) throws Exception {		
 		return sqlSession.insert("model.brd.qust.insertQust", param);
 	}
 
+	@Override
+	public int deleteQust(Map<String, Object> param) throws Exception {
+		return sqlSession.delete("model.brd.qust.deleteQust", param);
+	}
 
 
-	
 }

@@ -19,4 +19,10 @@ public class ExampleService implements InterExampleService {
 		return exampleDao.getUserList();
 	}
 
+	// 현재시간
+	@Override
+	public String getNow() {
+		return exampleDao.getNow();
+	}
+
 }

@@ -17,7 +17,7 @@
 				</div>
 				<div class="input_wrapper">
 					<label for="Q_MOBILE">연락처</label>
-					<input type="text" id="Q_MOBILE" name="Q_MOBILE" placeholder="01012345678 '-' 없이 입력" required="required">
+					<input type="text" id="Q_MOBILE" name="Q_MOBILE" placeholder="01012345678 '-' 없이 입력"  maxlength="11" required="required">
 				</div>
 				<div class="input_wrapper">
 					<label for="Q_EMAIL">이메일</label>

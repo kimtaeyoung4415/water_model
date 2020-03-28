@@ -7,8 +7,7 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 				
-	<!-- mysql -->
-	
+	<!-- mysql 임시 서버 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/> 
 		<property name="url" value="jdbc:mysql://127.0.0.1:3306/we_test?serverTimezone=UTC&amp;useSSL=false"/> 
@@ -24,6 +23,33 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"> 
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
+	
+	
+	
+	<!-- 외부서버 연결 console 에 sql debug 찍힘 -->
+	<bean id="dataSource_wi" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	
+	<!-- sql debug 안찍히는 연결 설정
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
+ 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>  
+		<property name="url" value="jdbc:mysql://14.36.51.128:3306/we_db?serverTimezone=UTC&amp;useSSL=false"/> 
+	-->	
+		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
+		<property name="url" value="jdbc:log4jdbc:mysql://14.36.51.128:3306/we_db?serverTimezone=UTC&amp;useSSL=false" />
+		<property name="username" value="waterinfo" />
+		<property name="password" value="wi2003!@#" />
+	</bean>
+	
+	<bean id="sqlSessionFactory_wi" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource_wi" />
+		<property name="mapperLocations" value="/WEB-INF/mapper/*/*.xml"/>
+	</bean>
+
+	<bean id="sqlSession_wi" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory_wi" />
+	</bean>
+		
+		
 		
 	<bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
 		
