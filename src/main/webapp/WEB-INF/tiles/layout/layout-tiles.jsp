@@ -30,6 +30,9 @@
 	<link rel="stylesheet" href="${ctxPath}/resources/css/extra.css" media="all" type="text/css" />
 	<link rel="stylesheet" href="${ctxPath}/resources/css/model.css" media="all" type="text/css" />
 	<link rel="stylesheet" href="${ctxPath}/resources/css/utils/jquery.alerts.css" media="all" type="text/css" />	<%-- jAlert --%>
+	<link rel="stylesheet" href="${ctxPath}/resources/css/magazine.css" media="all" type="text/css" />
+	<link rel="stylesheet" href="${ctxPath}/resources/css/viewdetails.css" media="all" type="text/css" />
+	
 	
 	<%-- script --%>	
 	<script type="text/javascript" src="${ctxPath}/resources/utils/jquery-3.3.1.min.js"></script>

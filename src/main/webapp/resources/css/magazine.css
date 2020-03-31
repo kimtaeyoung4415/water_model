@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/*전체 페이지 사이즈  */
+section.magazine{
+	padding-top: 115px;
+	padding-bottom: 30px;
+}
+.container{
+	width: 970px;
+}
+section.magazine.container{
+	padding-left:75px;
+	padding-right:75px;
+
+}
+.row{
+	margin-right:-15px;
+	margin-left:-15px;
+}
+/*여기 까지  magazine 전체 사이즈  */
+
+/* magazine 전체 제목 사이즈 */
+.title{	
+	text-align:center;
+}
+
+.title h2{
+	margin-top:0;
+	font-size:30px;
+}
+.title hr.black{
+	boarder-width:2px;
+}
+.title hr{
+	width:45px;
+	margin:30px auto;
+}
+.button{
+	text-align: right;
+}
+.in{
+	margin-left:300px;
+	margin-right: 300px;
+}
+
+.button input{
+	width:72px;
+	height: 34px;
+}
+.magazine_list{
+	position: relative;
+	height:1000px;
+	
+	
+}
+table{
+	width:100%;
+	text-align: center;
+}
+.pageing{
+	text-align: center;
+}
+.pagination{
+	display: inline-block;
+}
+.pagination a{
+	color:black;
+	float:left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
+	margin: 0 4px;
+	border: 1px solid #ddd;
+	
+}
+.pagination a:hover:not(.active){
+	background-color: #ddd;
+}

@@ -1,0 +1,76 @@
+body{
+	width:90%;
+	text-align: center;
+	padding:0;
+	margin:0 auto;	
+}
+
+/* 카테고리 목록 */
+.model_kategorie_box{
+	margin: 5% auto 2% auto;
+}
+
+.model_kategorie{
+	width:35%;
+	margin:0 auto 0 auto;
+}
+
+.model_kategorie_box tr th{
+	width:10%;
+	font-size: 13px;
+	font-family: 맑은 고딕;
+}
+
+.model_kategorie_box tr th a{
+	text-decoration: none; /* 밑줄 제거 */
+	color:rgb(192, 192, 192);
+}
+
+.model_kategorie_box tr th a:hover{
+	color: black;
+}
+
+/* 검색창 */
+.model_search_bar{
+	width:65%;
+	margin:0 auto 1% auto; /* 위, 오른쪽, 아래, 왼쪽 */
+	text-align: right;
+}
+
+/* 모델 프로필 */
+.model_profile{
+	margin: 0 auto 0 auto;	/* 위, 오른쪽, 아래, 왼쪽 */
+	text-align: center;
+}
+
+/* 페이지 목록  */
+.model_page_box{
+	width:90%;
+	margin: 2.5% auto 2.5% auto; /* 위, 오른쪽, 아래, 왼쪽 */
+}
+
+.model_page_list{
+	width: 30%;
+	margin: 0 auto 0 auto;	/* 위, 오른쪽, 아래, 왼쪽 */
+}
+
+.model_page_number{
+	text-decoration: none;
+	margin: 0 3%;
+	color: black;
+	font-weight: bold;
+}
+
+.model_next_page{
+	text-decoration: none;
+	margin: 0 3%;
+	color: black;
+}
+
+
+
+
+
+
+
+
