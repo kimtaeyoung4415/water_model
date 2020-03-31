@@ -19,15 +19,14 @@
 					<div class="magazine_list">
 						<table>
 							<tr>
-								<td><a href="#"><img src="http://placehold.it/234x300"></a></td>
-								<td><a href="#"><img src="http://placehold.it/234x300"></a></td>
-								<td><a href="#"><img src="http://placehold.it/234x300"></a></td>
+								<td><a href="http://localhost:8080/media/view_details.do"><img src="http://placehold.it/234x300"></a></td>
+								<td><a href="http://localhost:8080/media/view_details.do"><img src="http://placehold.it/234x300"></a></td>
+								<td><a href="http://localhost:8080/media/view_details.do"><img src="http://placehold.it/234x300"></a></td>
 							</tr>
-							<tr>
-								<td><a href="#"><img src="http://placehold.it/234x300"></a></td>
-								<td><a href="#"><img src="http://placehold.it/234x300"></a></td>
-								<td><a href="#"><img src="http://placehold.it/234x300"></a></td>
-							</tr>
+						</table>
+					</div>
+					<div class="magazine_list2">
+						<table>
 							<tr>
 								<td><a href="#"><img src="http://placehold.it/234x300"></a></td>
 								<td><a href="#"><img src="http://placehold.it/234x300"></a></td>
@@ -35,6 +34,16 @@
 							</tr>
 						</table>
 					</div>
+					<div class="magazine_list3">
+						<table>
+							<tr>
+								<td><a href="http://localhost:8080/media/magazine.do#"><img src="http://placehold.it/234x300"></a></td>
+								<td><a href="#"><img src="http://placehold.it/234x300"></a></td>
+								<td><a href="#"><img src="http://placehold.it/234x300"></a></td>
+							</tr>
+						</table>
+							</div>
+					
 					<nav class="pageing">
 						<div class="pagination">
 							<a href="#">&laquo;</a>

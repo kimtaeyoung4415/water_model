@@ -48,14 +48,20 @@ section.magazine.container{
 }
 .magazine_list{
 	position: relative;
-	height:1000px;
+	margin:30px;
 	
-	
+}
+.magazine_list2{
+	margin:30px;
+}
+.magazine_list3{
+	margin:30px;
 }
 table{
 	width:100%;
 	text-align: center;
 }
+
 .pageing{
 	text-align: center;
 }
