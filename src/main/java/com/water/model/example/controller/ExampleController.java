@@ -33,16 +33,4 @@ public class ExampleController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "/getUserList.do", method = { RequestMethod.GET }, produces = "application/json; charset=UTF-8")
-	@ResponseBody
-	public ModelAndView getUserList(ModelAndView mv, @RequestParam Map<String, Object> param) {
-
-		List<Map<String, Object>> list = exampleService.getUserList();
-		
-		mv.addObject("list",list);
-		mv.setViewName("example/example.tiles");
-		
-		return mv;
-	}
-	
 }
