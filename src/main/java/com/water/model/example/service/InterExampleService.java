@@ -1,8 +1,5 @@
 package com.water.model.example.service;
 
-import java.util.List;
-import java.util.Map;
-
 public interface InterExampleService {
 
 	/**
