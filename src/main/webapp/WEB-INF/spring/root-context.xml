@@ -13,7 +13,7 @@
 	<!-- sql debug 안찍히는 연결 설정
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
  		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>  
-		<property name="url" value="jdbc:mysql://14.36.51.128:3306/we_db?serverTimezone=UTC&amp;useSSL=false"/> 
+		<property name="url" value="jdbc:mysql://26.204.236.187:3306/we_db?serverTimezone=UTC&amp;useSSL=false"/> 
 	-->	
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
 		<property name="url" value="jdbc:log4jdbc:mysql://26.204.236.187:3306/we_db?serverTimezone=UTC&amp;useSSL=false" />

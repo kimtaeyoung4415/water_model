@@ -5,8 +5,6 @@ import java.util.Map;
 
 public interface InterExampleDao {
 
-	List<Map<String, Object>> getUserList();
-
 	// 현재시간
 	String getNow();
 

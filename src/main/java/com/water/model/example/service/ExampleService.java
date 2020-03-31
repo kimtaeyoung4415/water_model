@@ -14,11 +14,6 @@ public class ExampleService implements InterExampleService {
 	@Autowired
 	private InterExampleDao exampleDao;
 
-	@Override
-	public List<Map<String, Object>> getUserList() {
-		return exampleDao.getUserList();
-	}
-
 	// 현재시간
 	@Override
 	public String getNow() {
