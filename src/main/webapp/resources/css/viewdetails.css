@@ -13,3 +13,32 @@ section.view_details{
 	padding:30px;
 	box-shadow: 0 0 30px 0 rgba(0,0,0,0.18);
 }
+.viewdetails_title{
+	width:810px;
+	height: 72px;
+}
+.viewdetails_title h2{
+	margin:0;
+	font-size:17px;
+	line-height: 20px;
+}
+.news{
+	padding:36px 88px;
+}
+.medel_video{
+	width:634px;
+	height: 526px;
+}
+.notice_nav{
+	padding: 0 102px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+.notice_nav a{
+	display: inline-block;
+	font-size: 18px;
+	font-family: 'Klavika Md';
+	background: url("../img/ico.png");
+	
+}
