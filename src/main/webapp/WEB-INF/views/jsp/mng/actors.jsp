@@ -7,7 +7,6 @@
 			<th><a href="">Women</a></th>
 			<th><a href="">Men</a></th>
 			<th><a href="">Development</a></th>
-			<th><a href="">Oberseas</a></th>
 			<th><a href="">Actors</a></th>
 		</tr>
 	</table>

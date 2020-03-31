@@ -5,4 +5,16 @@
 
 <div align="center">
 	<span>footer</span>
+	<div id ="footer" class="container-fluid">
+		<div id = "com_log_footer">
+		</div>
+		
+		<div id="footer_content">
+		
+		</div>
+		
+		<div id="footer_url">
+		
+		</div>
+	</div>
 </div>
