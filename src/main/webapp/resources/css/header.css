@@ -1,8 +1,22 @@
+html,body,#web_container{
+	width:100%;
+	height:100%;
+}
+#header{
+	height:30%;
+}
+#content{
+	height:130%;
+}
 ul li {
 	list-style:none;
 	margin:0; padding:0;
 	}
-.clearfix:after{content:'';display:block; clear:both;}
+.clearfix:after{
+	content:'';
+	display:block; 
+	clear:both;
+	}
 #test_id {	
 	margin-top:20px;
 	background:linear-gradient(white 50px, rgba(255,255,255,0.5) 50px, rgba(255,255,255,0.5) );
@@ -13,6 +27,33 @@ ul li {
 	border : 1px solid black;
 	height: 50px;
 }
-nav {width:960px; margin:0 auto;}
-nav > ul > li {float:left; line-height:50px; margin-right:40px;}
-nav > ul > li ul{ width:100%; display: none; position: absolute;}
+nav {
+	width: 80%;
+	margin:0 auto;
+}
+nav > ul > li {float:left; line-height:50px; margin-right:40px; border: 1px solid black;}
+nav > ul > li ul{ 
+	width:100%;
+	 display: none; 
+	 position: absolute; 
+	 border: 1px solid black;
+	 padding : 0;
+}
+nav:hover > ul > li ul{
+	display : block
+}
+.clearfix li{
+	position: relative;
+}
+#com_logo{
+	float:left;
+	height:100%;
+	width:30%:
+}
+#nav-var{
+	float:left;
+	width:36%;
+	right:-60%;
+	height:100%;
+	position:relative;
+}

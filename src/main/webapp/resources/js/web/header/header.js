@@ -1,5 +1,5 @@
 $(function (){
-	var $menu = $('nav > ul > li'),
+	var $menu = $('nav'),
 		$header = $('#test_id');
 	
 	$menu.mouseover(function(){
