@@ -25,6 +25,7 @@
 // 기능  함수  영역
 //////////////
 		
+		// 목록 이벤트
 		function initListEvent(){
 			
 			// 목록 - tr mouseover,out css 이벤트
@@ -40,7 +41,7 @@
 							
 			// 등록 (화면이동)
 			$("#btn_qust_ins").click(function(){			
-				javascript:location.href="/brd/qust/ins.do";				
+				javascript:location.href="/qust/ins.do";				
 			});
 			
 			// 등록 이벤트
@@ -57,6 +58,8 @@
 		
 		// 등록 세팅
 		function initInsEvent(){
+			
+			// 데이터 확인용
 			var frm = document.qust_ins_form;
 			
 			if (frm.Q_NAME.value.trim() == '') {
@@ -89,6 +92,7 @@
 				return;
 			}
 			
+			// 폼 데이터
 			var form_data = $("form[name=qust_ins_form]").serialize();
 			
 			// 등록
@@ -103,6 +107,7 @@
 				
 				pub.type = $(this).attr('id').substr(9);
 				
+				// 비밀번호 검사
 				initPwdCheckEvent();
 			});
 		};
@@ -123,7 +128,7 @@
 		// 등록
 		function insertQust(form_data){
 			$.ajax({
-				url:"/brd/qust/postQustIns.do",
+				url:"/qust/postQustIns.do",
 				data:form_data,
 				type:'POST',
 				dataType: "json",
@@ -131,7 +136,7 @@
 					console.log(result)
 					if (result) {
 						jAlert("등록되었습니다.", "알림", function() {
-							javascript:location.href="/brd/qust/list.do";
+							javascript:location.href="/qust/list.do";
 						});
 					} else {
 						jAlert("등록에 실패하였습니다.", "알림", function() {
@@ -147,8 +152,9 @@
 		
 		// 상세
 		function dtlQust(data_num){
+			
 			$.ajax({
-				url:"/brd/qust/dtl.do",
+				url:"/qust/dtl.do",
 				data:{"Q_NUM":data_num},
 				type:'POST',
 				success:function(result){
@@ -167,7 +173,7 @@
 		function initPwdCheckEvent(){			
 			
 			$.ajax({
-				url:"/brd/qust/pwdCheck.do",
+				url:"/qust/pwdCheck.do",
 				data:{"Q_NUM" : pub.q_num},
 				type:'POST',
 				success:function(result){
@@ -189,7 +195,7 @@
 			param.Q_PWD = $('#Q_PWD').val();
 			
 			$.ajax({
-				url:"/brd/qust/getQustPwdCheck.do",
+				url:"/qust/getQustPwdCheck.do",
 				data:param,
 				type:'POST',
 				success:function(result){
@@ -217,7 +223,7 @@
 			param.Q_NUM = pub.q_num;
 			
 			$.ajax({
-				url:"/brd/qust/putQustUpdt.do",
+				url:"/qust/putQustUpdt.do",
 				data:param,
 				type:'POST',
 				success:function(result){
@@ -234,14 +240,14 @@
 		function deleteQust(){
 			
 			$.ajax({
-				url:"/brd/qust/deleteQust.do",
+				url:"/qust/deleteQust.do",
 				data:param,
 				type:'POST',
 				success:function(result){
 					console.log(result)
 					if (result) {
 						jAlert("삭제되었습니다.", "알림", function() {
-							javascript:location.href="/brd/qust/list.do";
+							javascript:location.href="/qust/list.do";
 						});
 					} else {
 						jAlert("비밀번호가 일치하지 않습니다.", "알림", function() {

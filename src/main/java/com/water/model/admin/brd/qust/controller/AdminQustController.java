@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value = "/admin/brd/qust")
+@RequestMapping(value = "/admin/qust")
 public class AdminQustController {
 
 	private static final Logger logger = LoggerFactory.getLogger(AdminQustController.class);	
@@ -20,7 +20,7 @@ public class AdminQustController {
 	public ModelAndView list(ModelAndView mv) throws Exception {				
 		
 		try {
-			mv.setViewName("admin/qust/admin.tiles");
+			mv.setViewName("admin/qust/list.tiles");
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
