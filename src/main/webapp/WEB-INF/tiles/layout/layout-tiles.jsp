@@ -35,12 +35,14 @@
 	<link rel="stylesheet" href="${ctxPath}/resources/css/utils/jquery.alerts.css" media="all" type="text/css" />	<%-- jAlert --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/magazine.css" media="all" type="text/css" />
 	<link rel="stylesheet" href="${ctxPath}/resources/css/viewdetails.css" media="all" type="text/css" />
+	<link rel="stylesheet" href="${ctxPath}/resources/css/header.css" media="all" type="text/css" />
 	
 	
 	<%-- script --%>	
 	<script type="text/javascript" src="${ctxPath}/resources/utils/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="${ctxPath}/resources/utils/jquery.alerts.js"></script>			<%-- jAlert --%>		
-	<script type="text/javascript" src="${ctxPath}/resources/js/brd/qust/qust.js"></script>				<%-- QnA 게시판 --%>
+	<script type="text/javascript" src="${ctxPath}/resources/js/web/brd/qust/qust.js"></script>				<%-- QnA 게시판 --%>
+	<script type="text/javascript" src="${ctxPath}/resources/js/web/header/header.js"></script>			<%--HEADER --%>
 	
 	<%-- bootstrap --%>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
