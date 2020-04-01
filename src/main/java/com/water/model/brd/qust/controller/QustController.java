@@ -41,7 +41,7 @@ public class QustController {
 			
 			mv.addObject("list",list);
 			mv.addObject("list_count",count);
-			mv.setViewName("qust/list.tiles");
+			mv.setViewName("web/qust/list.tiles");
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
@@ -52,7 +52,7 @@ public class QustController {
 	// 등록 화면	
 	@RequestMapping(value = "/ins.do", method = RequestMethod.GET)
 	public String ins(HttpServletRequest request) throws Exception {		
-		return "qust/ins.tiles";
+		return "web/qust/ins.tiles";
 	}	
 
 	// 상세 화면
@@ -65,7 +65,7 @@ public class QustController {
 			Map<String, Object> dtl = qustService.selectQustDtl(param);	
 									
 			mv.addObject("dtl",dtl);		
-			mv.setViewName("qust/dtl");			
+			mv.setViewName("web/qust/dtl");			
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
@@ -78,7 +78,7 @@ public class QustController {
 	@ResponseBody
 	public ModelAndView pwdCheck(ModelAndView mv, @RequestParam int Q_NUM) throws Exception {				
 		mv.addObject("Q_NUM", Q_NUM);
-		mv.setViewName("qust/pwdCheck");
+		mv.setViewName("web/qust/pwdCheck");
 		return mv;
 	}		
 	
