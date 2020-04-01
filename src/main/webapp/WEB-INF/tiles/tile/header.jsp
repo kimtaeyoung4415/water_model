@@ -4,35 +4,32 @@
 
 <%-- tiles header form --%>
 
-<div align="center">
-	<span>header</span>
-	<div class=container-fluid id="header">
-		<nav>
-			<div id=com_logo></div>
-			<ul>
-				<li>about</li>
-				<li>management
-					<ul>
-						<li>women</li>
-						<li>men</li>
-						<li>development</li>
-						<li>actors</li>
-					</ul>
-				</li>
-				<li>media
-					<ul>
-						<li>magazine</li>
-					</ul>
-				</li>
-				<li>Q&A
-					<ul>
-						<li>DTL</li>
-						<li>edit</li>
-						<li>ins</li>
-						<li>list</li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
-	</div>
+<div id="test_id" class="container-fluid">
+	<div id=com_logo></div>
+	<nav>
+		<ul id=main_menu>
+			<li><a href="#"></a>about</li>
+			<li>management
+				<ul id=sub_menu>
+					<li><a href="#">women</a></li>
+					<li><a href="#">men</a></li>
+					<li><a href="#">development</a></li>
+					<li><a href="#">actors</a></li>
+				</ul>
+			</li>
+			<li>media
+				<ul id=sub_menu>
+					<li><a href="#">magazine</a></li>
+				</ul>
+			</li>
+			<li>Q&A
+				<ul id=sub_menu>
+					<li><a href="#">DTL</a></li>
+					<li><a href="#">edit</a></li>
+					<li><a href="#">ins</a></li>
+					<li><a href="#">list</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
 </div>

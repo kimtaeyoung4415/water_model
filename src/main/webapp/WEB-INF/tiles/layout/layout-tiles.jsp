@@ -26,9 +26,6 @@
 	<%-- 반응형웹  --%>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	
-	<%-- bootstrap css --%>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	
 	<%-- css --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/extra.css" media="all" type="text/css" />
 	<link rel="stylesheet" href="${ctxPath}/resources/css/model.css" media="all" type="text/css" />
@@ -36,18 +33,13 @@
 	<link rel="stylesheet" href="${ctxPath}/resources/css/magazine.css" media="all" type="text/css" />
 	<link rel="stylesheet" href="${ctxPath}/resources/css/viewdetails.css" media="all" type="text/css" />
 	<link rel="stylesheet" href="${ctxPath}/resources/css/header.css" media="all" type="text/css" />
-	
+	<link rel="stylesheet" href="${ctxPath}/resources/css/footer.css" media="all" type="text/css" />
 	
 	<%-- script --%>	
 	<script type="text/javascript" src="${ctxPath}/resources/utils/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="${ctxPath}/resources/utils/jquery.alerts.js"></script>			<%-- jAlert --%>		
 	<script type="text/javascript" src="${ctxPath}/resources/js/web/brd/qust/qust.js"></script>				<%-- QnA 게시판 --%>
 	<script type="text/javascript" src="${ctxPath}/resources/js/web/header/header.js"></script>			<%--HEADER --%>
-	
-	<%-- bootstrap --%>
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	
 </head>
 
