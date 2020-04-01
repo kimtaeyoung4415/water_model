@@ -20,7 +20,7 @@ public class AdminNtceController {
 	public ModelAndView list(ModelAndView mv) throws Exception {				
 		
 		try {
-			mv.setViewName("admin/qust/list.tiles");
+			mv.setViewName("admin/ntce/list.tiles");
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
