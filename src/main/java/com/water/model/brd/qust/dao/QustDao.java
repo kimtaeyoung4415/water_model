@@ -29,9 +29,9 @@ public class QustDao implements InterQustDao {
 
 	// 상세
 	@Override
-	public Map<String, Object> selectQustDtl(Map<String, Object> param) throws Exception {
+	public Map<String, Object> selectQustDtl(int Q_NUM) throws Exception {
 		
-		Map<String, Object> result = sqlSession.selectOne("model.brd.qust.selectQustDtl", param);
+		Map<String, Object> result = sqlSession.selectOne("model.brd.qust.selectQustDtl", Q_NUM);
 //		
 //		if (result != null && !result.isEmpty()) {
 //			sqlSession.update("model.brd.qust.updateQustViewCnt");

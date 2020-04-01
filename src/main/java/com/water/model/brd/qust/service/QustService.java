@@ -28,8 +28,8 @@ public class QustService implements InterQustService {
 	
 	// 상세
 	@Override
-	public Map<String, Object> selectQustDtl(Map<String, Object> param) throws Exception {
-		return qustDao.selectQustDtl(param);
+	public Map<String, Object> selectQustDtl(int Q_NUM) throws Exception {
+		return qustDao.selectQustDtl(Q_NUM);
 	}
 
 	// 비밀번호 검사

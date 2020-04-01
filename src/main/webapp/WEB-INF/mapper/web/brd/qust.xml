@@ -63,12 +63,13 @@
 	
 	<!-- 등록 -->
 	<insert id="insertQust" parameterType="Map">
+	<!-- 
 		<selectKey resultType="int" keyProperty="MAXNUM" order="BEFORE">
 			SELECT IFNULL(MAX(Q_NUM),0)+1 FROM WE_BRD_QNA
 		</selectKey>
+	 -->
 		INSERT INTO WE_BRD_QNA  /* QnA 게시판 */
 			(
-			     Q_NUM,    		/* 번호 */
 			     Q_NAME,        /* 질문자 이름 */
 			     Q_MOBILE,      /* 연락처 */
 			     Q_EMAIL,       /* 이메일 */
@@ -79,7 +80,6 @@
 			)
 			VALUES
 			(
-			     #{MAXNUM},	    /* 번호 */
 			     #{Q_NAME},     /* 질문자 이름 */
 			     #{Q_MOBILE},   /* 연락처 */
 			     #{Q_EMAIL},    /* 이메일 */

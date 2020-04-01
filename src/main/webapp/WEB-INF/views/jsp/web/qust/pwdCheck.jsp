@@ -10,6 +10,7 @@
 			<div class="input_wrapper">
 				<label for="Q_TITLE">패스워드</label>
 				<input type="password" id="Q_PWD" name="Q_PWD"/>
+				<input type="hidden" id="Q_NUM" name="Q_NUM" value="${dtl.Q_NUM }"/>
 			</div>
 		</div>
 		<div class="btn_form">

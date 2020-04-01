@@ -1,7 +1,5 @@
-(function () { 
+$(function () { 
 	"use strict";
-	
-	$(document).ready(function(){_class()});
 	
 	var _class = function(){
 //////////////
@@ -9,18 +7,17 @@
 //////////////		
 		
 		var pub = {
-			type : null,
-			q_num : null,
-		};
+				type : null,
+				q_num : null,
+			};
 		
 		var param = {};
 		
 //////////////
 // 초기화 함수 영역
 //////////////
-		
-		initListEvent();
-		
+		initListEvent();		
+		initDtlEvent();
 //////////////
 // 기능  함수  영역
 //////////////
@@ -50,9 +47,24 @@
 			});			
 			
 			// 상세 (화면이동)
-			$("#qust-list tr").click(function(){							
-				pub.q_num = $('#Q_NUM').val();	
-				dtlQust(pub.q_num);
+			$("#qust-list tr").click(function(){		
+				var q_num = $('#Q_NUM').val();	
+				javascript:location.href = "/qust/dtl.do?q="+q_num;	
+			});
+			
+		};
+		
+		// 상세
+		function initDtlEvent(){
+			
+			// 수정, 삭제시 비밀번호 검사
+			$('.pwd_check').click(function(){	
+				
+				pub.q_num = $('#Q_NUM').val();			
+				pub.type = $(this).attr('id').substr(9);
+				
+				// 비밀번호 검사
+				initPwdCheckEvent();
 			});
 		};
 		
@@ -97,20 +109,7 @@
 			
 			// 등록
 			insertQust(form_data);
-		};
-		
-		// 상세
-		function initDtlEvent(){
-			
-			// 수정, 삭제시 비밀번호 검사
-			$('.pwd_check').click(function(){		
-				
-				pub.type = $(this).attr('id').substr(9);
-				
-				// 비밀번호 검사
-				initPwdCheckEvent();
-			});
-		};
+		};			
 		
 		// 수정, 삭제 시 비밀번호 검사
 		function qustTypeCheckEvent(){
@@ -119,6 +118,13 @@
 			$('#btn_pwd_check').click(function(){
 				getQustPwdCheck();
 			});
+		};
+		
+		// 수정
+		function initQustUpdate() {
+			javascript:location.href = "/qust/edit.do?q="+pub.q_num;
+		
+			
 		};
 		
 //////////////
@@ -150,27 +156,8 @@
 			});		
 		};
 		
-		// 상세
-		function dtlQust(data_num){
-			
-			$.ajax({
-				url:"/qust/dtl.do",
-				data:{"Q_NUM":data_num},
-				type:'POST',
-				success:function(result){
-					$('#content').children().remove();
-					$('#content').html(result);	
-					
-					initDtlEvent();
-				},
-				error: function(request, status, error){
-	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
-	            }
-			});	
-		};
-		
 		// 비밀번호 검사
-		function initPwdCheckEvent(){			
+		function initPwdCheckEvent(){	
 			
 			$.ajax({
 				url:"/qust/pwdCheck.do",
@@ -191,6 +178,8 @@
 		// 비밀번호 확인
 		function getQustPwdCheck(){	
 			
+			console.log(pub)
+			
 			param.Q_NUM = pub.q_num;
 			param.Q_PWD = $('#Q_PWD').val();
 			
@@ -203,7 +192,7 @@
 						if (pub.type == "delete") {
 							deleteQust();
 						} else {
-							updateQust();
+							initQustUpdate();
 						}
 					} else {
 						jAlert("비밀번호가 일치하지 않습니다.", "알림", function() {
@@ -263,4 +252,6 @@
 		
 	}; // end of _class
 	
-})();
+	// 함수 사용 선언 부분
+	_class(); 
+});

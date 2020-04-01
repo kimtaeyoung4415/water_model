@@ -51,7 +51,7 @@ public interface InterQustService {
 	 * @param param
 	 * @return
 	 */
-	Map<String, Object> selectQustDtl(Map<String, Object> param) throws Exception;
+	Map<String, Object> selectQustDtl(int Q_NUM) throws Exception;
 	
 	/** <pre>
 	 * 1. 개요         : 비밀번호 검사 액션
@@ -116,6 +116,8 @@ public interface InterQustService {
 	 * @return
 	 */
 	int deleteQust(Map<String, Object> param) throws Exception;
+
+	
 
 	
 

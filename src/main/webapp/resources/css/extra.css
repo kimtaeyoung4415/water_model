@@ -35,3 +35,8 @@ a { text-decoration: none; }
 .span_wrapper { text-align: left; display: block; padding: 15px 13px; font-weight: 600; font-size: 17px; }
 .span_wrapper label { display: inline-block; width:80px; }
 .span_wrapper textarea { width:97%; resize:none; border:1px black solid; padding:10px;}
+#dtl_tit { padding: 0px 20px 0px 20px; font-size: 20px; }
+#dtl_tit h5 { float: left; margin: 8px; }
+#dtl_tit h6  { margin: 8px; float: right; display: inline-block; }
+#dtl_cont { border-top: 1px black dashed; border-bottom: 1px black dashed; }
+#dtl_list { margin-top: 25px; }

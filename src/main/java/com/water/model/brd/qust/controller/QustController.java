@@ -54,25 +54,21 @@ public class QustController {
 	public String ins(HttpServletRequest request) throws Exception {		
 		return "web/qust/ins.tiles";
 	}	
-
-	// 상세 화면
-	@RequestMapping(value = "/dtl.do", method = RequestMethod.POST)
-	@ResponseBody
-	public ModelAndView dtl(ModelAndView mv, HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {		
+	
+	// 등록 화면	
+	@RequestMapping(value = "/dtl.do", method = RequestMethod.GET)
+	public ModelAndView dtl(ModelAndView mv, @RequestParam int q) throws Exception {	
 		
-		try {
-			
-			Map<String, Object> dtl = qustService.selectQustDtl(param);	
-									
-			mv.addObject("dtl",dtl);		
-			mv.setViewName("web/qust/dtl");			
-			
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}		
+		int Q_NUM = q;
+		
+		Map<String, Object> dtl = qustService.selectQustDtl(Q_NUM);	
+		
+		mv.addObject("dtl",dtl);		
+		mv.setViewName("web/qust/dtl.tiles");
+		
 		return mv;
 	}	
-	
+
 	// 비밀번호 검사 화면
 	@RequestMapping(value = "/pwdCheck.do", method = RequestMethod.POST)
 	@ResponseBody
@@ -126,9 +122,9 @@ public class QustController {
 	}
 	
 	// 수정 이벤트
-	@RequestMapping(value = "/putQustUpdt.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
+	@RequestMapping(value = "/edit.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
 	@ResponseBody
-	public Map<String, Object> putQustUpdt(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public ModelAndView putQustUpdt(ModelAndView mv, HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
@@ -143,7 +139,7 @@ public class QustController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return result;
+		return mv;
 	}
 		
 	// 삭제 이벤트

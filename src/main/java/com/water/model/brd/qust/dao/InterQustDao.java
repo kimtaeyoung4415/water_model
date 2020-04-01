@@ -18,7 +18,7 @@ public interface InterQustDao {
 	int insertQust(Map<String, Object> param) throws Exception;
 
 	// 상세
-	Map<String, Object> selectQustDtl(Map<String, Object> param) throws Exception;
+	Map<String, Object> selectQustDtl(int Q_NUM) throws Exception;
 
 	// 비밀번호 검사
 	int selectQustPwdCheck(Map<String, Object> param) throws Exception;

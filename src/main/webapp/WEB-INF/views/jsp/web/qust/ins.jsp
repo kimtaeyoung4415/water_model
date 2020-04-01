@@ -25,7 +25,7 @@
 				</div>
 				<div class="input_wrapper">
 					<label for="Q_TITLE">제목</label>
-					<input type="text" id="Q_TITLE" name="Q_TITLE" placeholder="문의 제목" required="required">
+					<input type="text" id="Q_TITLE" name="Q_TITLE" placeholder="문의 제목" maxlength="50" required="required">
 				</div>
 				<div class="input_wrapper">
 					<label for="Q_CONT">문의내용</label>
