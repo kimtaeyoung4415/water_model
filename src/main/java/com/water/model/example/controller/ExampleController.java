@@ -24,7 +24,7 @@ public class ExampleController {
 		String now = exampleService.getNow();
 		
 		mv.addObject("now", now);
-		mv.setViewName("example/example");
+		mv.setViewName("web/example/example");
 		return mv;
 	}
 	

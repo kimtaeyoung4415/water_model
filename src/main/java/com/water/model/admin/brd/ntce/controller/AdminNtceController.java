@@ -1,4 +1,4 @@
-package com.water.model.admin.brd.qust.controller;
+package com.water.model.admin.brd.ntce.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value = "/admin/qust")
-public class AdminQustController {
+@RequestMapping(value = "/admin/ntce")
+public class AdminNtceController {
 
-	private static final Logger logger = LoggerFactory.getLogger(AdminQustController.class);	
+	private static final Logger logger = LoggerFactory.getLogger(AdminNtceController.class);	
 	
 	// 목록 화면
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
@@ -20,7 +20,7 @@ public class AdminQustController {
 	public ModelAndView list(ModelAndView mv) throws Exception {				
 		
 		try {
-			mv.setViewName("admin/qust/list.tiles");
+			mv.setViewName("admin/ntce/list.tiles");
 			
 		} catch (Throwable e) {
 			e.printStackTrace();

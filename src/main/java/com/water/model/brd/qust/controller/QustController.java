@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.water.model.brd.qust.service.InterQustService;
 
 @Controller
-@RequestMapping(value = "/brd/qust")
+@RequestMapping(value = "/qust")
 public class QustController {
 
 	private static final Logger logger = LoggerFactory.getLogger(QustController.class);
