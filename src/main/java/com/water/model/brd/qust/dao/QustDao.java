@@ -66,13 +66,6 @@ public class QustDao implements InterQustDao {
 		return 0;
 	}
 
-	// ����
-	@Override
-	public int deletQust(Map<String, Object> param) throws Exception {
-		// return sqlSession.selectList("model.brd.qust.deleteQust", param);
-		return 0;
-	}
-
 	// 등록 액션
 	@Override
 	public int insertQust(Map<String, Object> param) throws Exception {		

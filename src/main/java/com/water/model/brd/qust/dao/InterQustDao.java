@@ -14,9 +14,6 @@ public interface InterQustDao {
 	// 수정 액션
 	int updateQust(Map<String, Object> param) throws Exception;
 
-	// 삭제 액션
-	int deletQust(Map<String, Object> param) throws Exception;
-
 	// 등록 액션
 	int insertQust(Map<String, Object> param) throws Exception;
 

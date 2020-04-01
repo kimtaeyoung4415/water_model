@@ -45,13 +45,6 @@ public class QustService implements InterQustService {
 		return result;
 	}
 
-	// 삭제 액션
-	@Override
-	public int delteQust(Map<String, Object> param) throws Exception {
-		int result = qustDao.deletQust(param);
-		return result;
-	}
-
 	// 등록 액션
 	@Override
 	public int insertQust(Map<String, Object> param) throws Exception {

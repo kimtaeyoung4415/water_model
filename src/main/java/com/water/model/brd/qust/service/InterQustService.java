@@ -86,22 +86,6 @@ public interface InterQustService {
 	int updateQust(Map<String, Object> param) throws Exception;
 
 	/** <pre>
-	 * 1. 개요         : 질문 삭제 액션
-	 * </pre>
-	 * @Method    : delteQust
-	 * @date      : 2020. 03. 23. 17:18
-	 * @author    : 김선규
-	 * @history -------------------------------------------
-	 *          ----변경일---------작성자--------------변경내용 
-	 *          2020. 03. 23         김선규                         최초 작성
-	 *          -------------------------------------------
-	 * </pre>
-	 * @param param
-	 * @return
-	 */
-	int delteQust(Map<String, Object> param) throws Exception;
-
-	/** <pre>
 	 * 1. 개요         : 질문 등록 액션
 	 * </pre>
 	 * @Method    : insertQust

@@ -1,6 +1,5 @@
 package com.water.model.brd.qust.controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,6 +48,12 @@ public class QustController {
 		}
 		return mv;
 	}
+	
+	// 등록 화면	
+	@RequestMapping(value = "/ins.do", method = RequestMethod.GET)
+	public String ins(HttpServletRequest request) throws Exception {		
+		return "qust/ins.tiles";
+	}	
 
 	// 상세 화면
 	@RequestMapping(value = "/dtl.do", method = RequestMethod.POST)
@@ -66,13 +71,7 @@ public class QustController {
 			e.printStackTrace();
 		}		
 		return mv;
-	}
-	
-	// 등록 화면	
-	@RequestMapping(value = "/ins.do", method = RequestMethod.GET)
-	public String ins(HttpServletRequest request) throws Exception {		
-		return "qust/ins.tiles";
-	}		
+	}	
 	
 	// 비밀번호 검사 화면
 	@RequestMapping(value = "/pwdCheck.do", method = RequestMethod.POST)
@@ -86,66 +85,48 @@ public class QustController {
 	// 비밀번호 검사 이벤트
 	@RequestMapping(value = "/getQustPwdCheck.do", method = RequestMethod.POST)
 	@ResponseBody
-	public String getQustPwdCheck(ModelAndView mv, @RequestParam Map<String, Object> param) throws Exception {
+	public Map<String, Object> getQustPwdCheck(ModelAndView mv, @RequestParam Map<String, Object> param) throws Exception {
 								
 		Map<String, Object> result = new HashMap<String, Object>();
 		
 		try {
 			
 			int status = qustService.selectQustPwdCheck(param);
-			String type = (String) param.get("type");
-			
-			if (status == 0) {		
-				// 비밀번호가 일치하지 않을떄
+
+			if (status == 0) {
 				result.put("result", false);
-			} else {				
-				// 비밀번호가 일치할때
-				
-				if ("del".equals(type)) {
-					int cnt = qustService.deleteQust(param);
-					
-					if (cnt == 0) {
-						result.put("result", false);
-					} else {
-						result.put("result", true);
-					}
-					result.put("type", type);
-					
-				} else {
-					result.put("result", true);
-					result.put("type", type);
-				}
-				
+			} else {
+				result.put("result", true);
 			}
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
-		return result.toString();
+		return result;
 	}
 	
 	// 등록 액션
-	@RequestMapping(value = "/postQustIns.do", method={RequestMethod.POST},produces="text/plain;charset=UTF-8")
+	@RequestMapping(value = "/postQustIns.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
 	@ResponseBody
-	public String postQustIns(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public Map<String, Object> postQustIns(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
 		try {
 			int cnt = qustService.insertQust(param);
 			
-			if (cnt == 1) {
-				result.put("RESULT", true);
-			} else {
+			if (cnt == 0) {
 				result.put("RESULT", false);
+			} else {
+				result.put("RESULT", true);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return result.toString();
+		return result;
 	}
 	
 	// 수정 이벤트
-	@RequestMapping(value = "/putQustUpdt.do", method={RequestMethod.POST},produces="text/plain;charset=UTF-8")
+	@RequestMapping(value = "/putQustUpdt.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
 	@ResponseBody
 	public Map<String, Object> putQustUpdt(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		
@@ -155,9 +136,9 @@ public class QustController {
 			int cnt = qustService.updateQust(param);
 			
 			if (cnt == 0) {
-				result.put("RESULT", true);
-			} else {
 				result.put("RESULT", false);
+			} else {
+				result.put("RESULT", true);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -166,19 +147,19 @@ public class QustController {
 	}
 		
 	// 삭제 이벤트
-	@RequestMapping(value = "/deleteQust.do", method={RequestMethod.POST},produces="text/plain;charset=UTF-8")
+	@RequestMapping(value = "/deleteQust.do", method={RequestMethod.POST,RequestMethod.GET},produces="application/json;charset=UTF-8")
 	@ResponseBody
 	public Map<String, Object> deleteQust(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
 		try {
-			int cnt = qustService.delteQust(param);
+			int cnt = qustService.deleteQust(param);
 			
 			if (cnt == 0) {
-				result.put("RESULT", true);
-			} else {
 				result.put("RESULT", false);
+			} else {
+				result.put("RESULT", true);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -186,49 +167,4 @@ public class QustController {
 		return result;
 	}
 	
-	// 임의 데이터
-	public List<Map<String, Object>> dummyData(){
-		
-		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-		Map<String, Object> result = new HashMap<String, Object>();
-		
-		for (int i = 0; i < 10; i++) {
-			result = new HashMap<String, Object>();
-			
-			result.put("no", i);
-			result.put("q_username", "홍길동");			
-			result.put("q_mobile", "010-3"+i+"98-7"+i+"5"+i+"");
-			result.put("q_email", "example"+i+"@water.info");
-			result.put("q_title", i+"번째 테스트 입니다.");
-			result.put("q_cont", i+"번째 테스트 입니다. ABCDEFGHIJKLMNOPQRSTUVWXYZ 가나다라마바사아자차카타파하.");
-			result.put("q_regdate", "2020-03-0"+(i+1));
-			result.put("view_cnt", 45+i);
-			result.put("q_pwd", "1231");
-			
-			if (i == 4) {
-				result.put("q_updtdate", "2020-04-0"+(i+1));
-				result.put("a_username", "관리자");
-				result.put("a_cont", i+"번째 답변 테스트 입니다.");
-				result.put("a_updtdate", "2020-04-0"+(i+1));
-			}
-			
-			if (i == 7) {
-				result.put("q_updtdate", "2020-05-0"+(i+1));
-				result.put("a_username", "관리자");
-				result.put("a_cont", i+"번째 답변 테스트 입니다.");
-				result.put("a_updtdate", "2020-04-0"+(i+1));
-			}
-			
-			if (i == 8) {
-				result.put("q_updtdate", "2020-06-0"+(i+1));
-				result.put("a_username", "관리자");
-				result.put("a_cont", i+"번째 답변 테스트 입니다.");
-				result.put("a_updtdate", "2020-04-0"+(i+1));
-			}
-			
-			list.add(result);
-		}	
-		
-		return list;
-	}
 }

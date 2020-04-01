@@ -2,10 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%
-	String ctxPath = request.getContextPath();
-%>
-
 <div class="container" align="center">		
 	<div class="qust-container">
 		<div class="qust-title">
@@ -37,7 +33,7 @@
 			</thead>
 			<tbody id="qust-list">
 				<c:forEach var="list" items="${list}" varStatus="status">
-					<tr data="${list.Q_NUM}">
+					<tr>
 						<td>${list.Q_NUM}</td>
 						<td>${list.Q_TITLE}</td>
 						<td>${list.Q_NAME}</td>
@@ -53,8 +49,9 @@
 						</c:if>
 						<c:if test="${list.A_CONT != null}">
 							<td>답변완료</td>
-						</c:if>
+						</c:if>						
 					</tr>
+					<input type="hidden" id="Q_NUM" name="Q_NUM" value="${list.Q_NUM}"/>					
 				</c:forEach>					
 			</tbody>
 		</table>

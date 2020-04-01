@@ -41,8 +41,8 @@
 		
 		<c:if test="${dtl.A_CONT == null}">
 			<div class="btn_form_half">
-				<input type="button" id="btn_qust_delete" class="btn pwd_check" value="삭제" onClick="initDtlEvent('${dtl.Q_NUM}','del')"/>
-				<input type="button" id="btn_qust_update" class="btn pwd_check" value="수정" onClick="initDtlEvent('${dtl.Q_NUM}','updt')"/>
+				<input type="button" id="btn_qust_delete" class="btn pwd_check" value="삭제" />
+				<input type="button" id="btn_qust_update" class="btn pwd_check" value="수정" />
 			</div>
 		</c:if>	
 		

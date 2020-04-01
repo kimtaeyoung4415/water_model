@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="btn_form">
-			<input type="button" id="btn_pwd_check" class="btn" value="확인" onClick="getQustPwdCheck('${Q_NUM}')"/>
+			<input type="button" id="btn_pwd_check" class="btn" value="확인" />
 		</div>
 		
 	</div>		
