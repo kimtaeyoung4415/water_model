@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<style type="text/css">
+
+</style>
 
 <div class="model_kategorie_box">
 	<table class="model_kategorie">
@@ -20,25 +23,25 @@
 <div>
 	<table class="model_profile">
 		<tr>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
 		</tr>
 		<tr>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
 		</tr>
 		<tr>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
-			<td><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
+			<td class="profile_list"><a href=""><img src="http://placehold.it/218x218"></a></td>
 		</tr>
 	</table>
 </div>
