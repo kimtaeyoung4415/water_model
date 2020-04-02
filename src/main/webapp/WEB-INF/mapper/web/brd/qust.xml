@@ -50,24 +50,19 @@
 			Q_NUM = #{Q_NUM}
 	</select>
 	
-	<!-- 조회수 증가 
-	<update id="updateQustViewCnt" parameterType="Map">
+	<!-- 조회수 증가 -->
+	<update id="updateQustViewCnt" parameterType="int">
 		UPDATE
-		    WE_BRD_QNA  	/* 질문게시판 */
+		    WE_BRD_QNA WBQ  	/* 질문게시판 */
 		SET
-		    VIEW_CNT = /* ++ */
+		    VIEW_CNT = WBQ.VIEW_CNT + 1
 		WHERE
-		    NO = #{NO}
+		    Q_NUM = #{Q_NUM}
 	</update>
-	-->
+	
 	
 	<!-- 등록 -->
 	<insert id="insertQust" parameterType="Map">
-	<!-- 
-		<selectKey resultType="int" keyProperty="MAXNUM" order="BEFORE">
-			SELECT IFNULL(MAX(Q_NUM),0)+1 FROM WE_BRD_QNA
-		</selectKey>
-	 -->
 		INSERT INTO WE_BRD_QNA  /* QnA 게시판 */
 			(
 			     Q_NAME,        /* 질문자 이름 */
@@ -106,15 +101,17 @@
 	<!-- 수정 -->
 	<update id="updateQust" parameterType="Map">
 		UPDATE
-		    WE_BRD_QNA  			 /* 질문게시판 */
+		    WE_BRD_QNA  /* QNA 게시판 */
 		SET
-		    Q_TITLE = #{Q_TITLE},    /* 질문 제목 */
-		    Q_CONT = #{Q_CONT},      /* 질문 내용 */
-		    Q_UPDTDATE = SYSDATE     /* 질문 수정일자 */
+		    Q_NAME 	 = #{Q_NAME},      /* 질문자 이름 */
+		    Q_MOBILE = #{Q_MOBILE},    /* 연락처 */
+		    Q_EMAIL  = #{Q_EMAIL},     /* 이메일 */
+		    Q_TITLE  = #{Q_TITLE},     /* 질문 제목 */
+		    Q_CONT   = #{Q_CONT},      /* 질문 내용 */
+		    Q_UPDT_DATE = NOW(),       /* 질문 수정일자 */
+		    Q_PWD    = #{Q_PWD}        /* 비밀번호 */
 		WHERE
 		    Q_NUM = #{Q_NUM}
-		AND
-			Q_PWD = #{Q_PWD} 
 	</update>
 	
 	<!-- 삭제 -->
