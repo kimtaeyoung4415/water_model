@@ -16,6 +16,7 @@ ul li {
 	content:'';
 	display:block; 
 	clear:both;
+	font-size: 25px;
 	}
 #test_id {	
 	margin-top:20px;
@@ -32,7 +33,14 @@ nav {
 	margin:0 auto;
 	border: 1px solid black;
 }
-nav > ul > li {float:left; line-height:50px; margin-right:40px; border: 1px solid black;}
+nav > ul > li {
+	float:left; 
+	line-height:50px; 
+	margin-right:40px; 
+	border: 1px solid black;
+	font-size:25px;
+	left:80px;
+}
 nav > ul > li ul{ 
 	width:100%;
 	 display: none; 
@@ -41,7 +49,8 @@ nav > ul > li ul{
 	 padding : 0;
 }
 nav:hover > ul > li ul{
-	display : block
+	display : block;
+	font-size:15px;
 }
 .clearfix li{
 	position: relative;
@@ -56,8 +65,8 @@ nav:hover > ul > li ul{
 }
 #nav-var{
 	float:left;
-	width:36%;
-	right:-50%;
+	width:60%;
+	right:-30%;
 	height:100%;
 	position:relative;
 }
