@@ -1,0 +1,27 @@
+@charset "UTF-8";
+.re_table{
+	text-align: center;
+	border-top: 3px solid black;
+	border-bottom:2px solid black;
+	nargin-bottom: 15px;
+	width:
+}
+.pageing{
+	text-align: center;
+}
+.pagination{
+	display: inline-block;
+}
+.pagination a{
+	color:black;
+	float:left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
+	margin: 0 4px;
+	border: 1px solid #ddd;
+	
+}
+.pagination a:hover:not(.active){
+	background-color: #ddd;
+}
