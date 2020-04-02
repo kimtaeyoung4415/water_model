@@ -37,8 +37,9 @@ public class QustService implements InterQustService {
 		
 		if (cnt != 0) {
 			dtl = qustDao.selectQustDtl(Q_NUM);
+		} else {
+			dtl = null;
 		}
-		
 		return dtl;
 	};
 
@@ -51,8 +52,7 @@ public class QustService implements InterQustService {
 	// 수정 액션
 	@Override
 	public int updateQust(Map<String, Object> param) throws Exception {
-		return qustDao.updateQust(param);
-		 
+		return qustDao.updateQust(param);		 
 	};
 
 	// 등록 액션

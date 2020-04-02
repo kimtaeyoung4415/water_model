@@ -1,23 +1,42 @@
 $(function () { 
 	"use strict";
 	
+	/*
+		QnA 게시판 스크립트 형식
+		
+		공통 변수 영역	: _class 함수 내에서 사용되어지는 함수에서 공통적으로 사용할 수 있는 변수 사용 영역
+		ex) pub.type = $('#type').val(); >> 한번의 설정으로 계속 사용가능 (session 과 비슷한 기능)
+		
+		초기화 함수 영역	: 페이지 로드후 script가 로딩되었을때 실행되어져야하는 함수 사용 영역
+		
+		기능 함수 영역	: 각 화면에 대한 버튼 이벤트 등이나 데이터 검사 같은 기능을 정의해둔 영역
+		
+		페이지 호출 영역	: 비동기 방식으로 화면 이동이 이루어져야 하는 부분을 정의해둔 페이지 호출 영역
+	
+		데이터 호출 영역	: ajax를 이용한 데이터 호출 영역
+	
+	*/
+	
 	var _class = function(){
+		
 //////////////
 // 공통  변수  영역
 //////////////		
 		
 		var pub = {
-				type : null,
-				q_num : null,
-			};
+			type : null,
+			q_num : null,
+		};
 		
 		var param = {};
 		
 //////////////
 // 초기화 함수 영역
 //////////////
+		
 		initListEvent();		
 		initDtlEvent();
+		
 //////////////
 // 기능  함수  영역
 //////////////
@@ -74,42 +93,39 @@ $(function () {
 			var frm = document.qust_ins_form;
 			
 			if (frm.Q_NAME.value.trim() == '') {
-				alert("이름을 입력해주세요.");
-				return;
+				jAlert("이름을 입력해주세요.", "알림");
+				return false;
 			}
 			
 			if (frm.Q_MOBILE.value.trim() == '') {
-				alert("연락처를 입력해주세요.");
-				return;
+				jAlert("연락처를 입력해주세요.", "알림");
+				return false;
 			}
 			
 			if (frm.Q_EMAIL.value.trim() == '') {
-				alert("이메일을 입력해주세요.");
-				return;
+				jAlert("이메일을 입력해주세요.", "알림");
+				return false;
 			}
 			
 			if (frm.Q_TITLE.value.trim() == '') {
-				alert("제목을 입력해주세요.");
-				return;
+				jAlert("제목을 입력해주세요.", "알림");
+				return false;
 			}
 			
 			if (frm.Q_CONT.value.trim() == '') {
-				alert("문의내용을 입력해주세요.");
-				return;
+				jAlert("문의내용을 입력해주세요.", "알림");
+				return false;
 			}
 			
 			if (frm.Q_PWD.value.trim() == '') {
-				alert("비밀번호를 입력해주세요.");
-				return;
+				jAlert("비밀번호를 입력해주세요.", "알림");
+				return false;
 			}
 			
-			// 폼 데이터
-			var form_data = $("form[name=qust_ins_form]").serialize();
-			
-			// 등록
+			var form_data = $("form[name=qust_ins_form]").serialize();			
 			insertQust(form_data);
 		};	
-		
+
 		// 수정, 삭제 시 비밀번호 검사
 		function qustTypeCheckEvent(){
 			
@@ -129,6 +145,39 @@ $(function () {
 			
 			// 수정
 			$("#btn_qust_update").click(function(){
+				
+				var frm = document.qust_updt_form;
+				
+				if (frm.Q_NAME.value.trim() == '') {
+					jAlert("이름을 입력해주세요.", "알림");
+					return false;
+				}
+				
+				if (frm.Q_MOBILE.value.trim() == '') {
+					jAlert("연락처를 입력해주세요.", "알림");
+					return false;
+				}
+				
+				if (frm.Q_EMAIL.value.trim() == '') {
+					jAlert("이메일을 입력해주세요.", "알림");
+					return false;
+				}
+				
+				if (frm.Q_TITLE.value.trim() == '') {
+					jAlert("제목을 입력해주세요.", "알림");
+					return false;
+				}
+				
+				if (frm.Q_CONT.value.trim() == '') {
+					jAlert("문의내용을 입력해주세요.", "알림");
+					return false;
+				}
+				
+				if (frm.Q_PWD.value.trim() == '') {
+					jAlert("비밀번호를 입력해주세요.", "알림");
+					return false;
+				}
+				
 				var form_data = $("form[name=qust_updt_form]").serialize();
 				putQustUpdt(form_data);
 			});

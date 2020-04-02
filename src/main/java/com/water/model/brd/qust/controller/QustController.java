@@ -55,7 +55,7 @@ public class QustController {
 		return "web/qust/ins.tiles";
 	}	
 	
-	// 등록 화면	
+	// 상세 화면	
 	@RequestMapping(value = "/dtl.do", method = RequestMethod.GET)
 	public ModelAndView dtl(ModelAndView mv, @RequestParam int q) throws Exception {	
 		
