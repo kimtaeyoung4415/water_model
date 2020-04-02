@@ -4,14 +4,14 @@
 <%-- tiles footer form --%>
 
 
-		footer
-		<div id = "com_log_footer">
+		<div id = "com-log-footer">
+			<div id="footer-img"></div>
 		</div>
 		
-		<div id="footer_content">
+		<div id="footer-content">
 		
 		</div>
 		
-		<div id="footer_url">
+		<div id="footer-url">
 		
 		</div>

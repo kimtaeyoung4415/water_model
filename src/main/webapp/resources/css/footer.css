@@ -9,3 +9,32 @@
 	left : 0;
 	background-color: #e7e8ec;
 }
+
+#com-log-footer{
+	border: 1px solid black;
+    width: 30%;
+    float: left;
+    height: 100%;
+}
+
+#footer-content{
+	border: 1px solid black;
+    width: 50%;
+    float: left;
+    height: 100%;
+}
+
+#footer-url{
+	border: 1px solid black;
+    width: 19%;
+    float: left;
+    height: 100%;
+}
+#footer-img{
+	border: 1px solid black;
+    position: relative;
+    top: 30%;
+    left: 60%;
+    width: 25%;
+    height: 50%;
+}
