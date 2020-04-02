@@ -15,13 +15,13 @@ public class MagazineController {
 	
 	@RequestMapping(value="/magazine.do", method=RequestMethod.GET)
 	public ModelAndView news(ModelAndView mv) {
-		mv.setViewName("media/magazine.tiles");
+		mv.setViewName("web/media/magazine.tiles");
 		return mv;
 	}
 	
 	@RequestMapping(value="/view_details.do", method=RequestMethod.GET)
 	public ModelAndView viewdetais(ModelAndView mv) {
-		mv.setViewName("media/view_details.tiles");
+		mv.setViewName("web/media/view_details.tiles");
 		return mv;
 	}
 }
