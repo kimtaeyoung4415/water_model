@@ -48,7 +48,7 @@ $(function () {
 			
 			// 상세 (화면이동)
 			$("#qust-list tr").click(function(){		
-				var q_num = $(this).attr('id').val();
+				var q_num = $(this).attr('Q_NUM');
 				javascript:location.href = "/qust/dtl.do?q="+q_num;	
 			});
 		};
@@ -108,7 +108,7 @@ $(function () {
 			
 			// 등록
 			insertQust(form_data);
-		};			
+		};	
 		
 		// 수정, 삭제 시 비밀번호 검사
 		function qustTypeCheckEvent(){
@@ -150,6 +150,7 @@ $(function () {
 					$('#content').children().remove();
 					$('#content').html(result);
 					
+					// 수정, 삭제 시 비밀번호 검사
 					qustTypeCheckEvent();			
 				},
 				error: function(request, status, error){
@@ -190,7 +191,7 @@ $(function () {
 				type:'POST',
 				dataType: "json",
 				success:function(result){
-					if (result) {
+					if (result.SUCCESS) {
 						jAlert("등록되었습니다.", "알림", function() {
 							javascript:location.href="/qust/list.do";
 						});
@@ -218,7 +219,7 @@ $(function () {
 				data:param,
 				type:'POST',
 				success:function(result){
-					if (result) {
+					if (result.SUCCESS) {
 						if (pub.type == "delete") {
 							deleteQust();
 						} else {
@@ -241,10 +242,10 @@ $(function () {
 			
 			$.ajax({
 				url:"/qust/putQustUpdt.do",
-				data:{"Q_NUM":pub.q_num},
+				data:form_data,
 				type:'POST',
 				success:function(result){
-					if (result) {
+					if (result.SUCCESS) {
 						jAlert("수정하였습니다.", "알림", function() {
 							javascript:location.href="/qust/dtl.do?q="+pub.q_num;
 						});
@@ -274,6 +275,9 @@ $(function () {
 						});
 					} else {
 						jAlert("비밀번호가 일치하지 않습니다.", "알림", function() {
+							$('#Q_PWD').val("");
+							$('#Q_PWD').focus();
+							
 							return false;
 						});
 					}

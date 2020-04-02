@@ -11,6 +11,9 @@ public interface InterQustDao {
 	// 목록 카운트
 	int selectQustListCnt() throws Exception;
 	
+	// 조회수 증가
+	int updateQustViewCnt(int Q_NUM) throws Exception;
+	
 	// 수정 액션
 	int updateQust(Map<String, Object> param) throws Exception;
 
@@ -26,5 +29,4 @@ public interface InterQustDao {
 	// 삭제 액션
 	int deleteQust(Map<String, Object> param) throws Exception;
 
-	
 }

@@ -11,7 +11,9 @@
 		<div align="right">
 			<span>전체 : <strong id="list-cnt">${list_count}</strong> 개</span>
 		</div>	
+		<%
 		
+		%>
 		<table class="qust-table">
 			<colgroup>
 				<col width="8%">
@@ -34,7 +36,7 @@
 			</thead>
 			<tbody id="qust-list">
 				<c:forEach var="list" items="${list}" varStatus="status">
-					<tr>
+					<tr Q_NUM="${list.Q_NUM}">
 						<td>${list.Q_NUM}</td>
 						<td>${list.Q_TITLE}</td>
 						<td>${list.Q_NAME}</td>
@@ -50,12 +52,8 @@
 						</c:if>
 						<c:if test="${list.A_CONT != null}">
 							<td>답변완료</td>
-						</c:if>
-						<td>	
-							<input type="hidden" id="Q_NUM_${list.Q_NUM}" name="Q_NUM_${list.Q_NUM}" value="${list.Q_NUM}"/>
-						</td>						
+						</c:if>					
 					</tr>
-					
 				</c:forEach>					
 			</tbody>
 		</table>
