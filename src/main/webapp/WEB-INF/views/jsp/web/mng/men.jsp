@@ -4,10 +4,10 @@
 <div class="model_kategorie_box">
 	<table class="model_kategorie">
 		<tr>
-			<th><a href="">Women</a></th>
-			<th><a href="">Men</a></th>
-			<th><a href="">Development</a></th>
-			<th><a href="">Actors</a></th>
+			<th><a href="../women/list.do">Women</a></th>
+			<th><a href="../men/list.do">Men</a></th>
+			<th><a href="../devel/list.do">Development</a></th>
+			<th><a href="../actors/list.do">Actors</a></th>
 		</tr>
 	</table>
 </div>
