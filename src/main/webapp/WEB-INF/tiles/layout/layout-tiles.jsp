@@ -32,14 +32,17 @@
 	<link rel="stylesheet" href="${ctxPath}/resources/css/utils/jquery.alerts.css" media="all" type="text/css" />	<%-- jAlert --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/magazine.css" media="all" type="text/css" />
 	<link rel="stylesheet" href="${ctxPath}/resources/css/viewdetails.css" media="all" type="text/css" />
-	<link rel="stylesheet" href="${ctxPath}/resources/css/header.css" media="all" type="text/css" />
-	<link rel="stylesheet" href="${ctxPath}/resources/css/footer.css" media="all" type="text/css" />
+	<link rel="stylesheet" href="${ctxPath}/resources/css/header.css" media="all" type="text/css" />	<%--header --%>
+	<link rel="stylesheet" href="${ctxPath}/resources/css/footer.css" media="all" type="text/css" />	<%--footer --%>
+	<link rel="stylesheet" href="${ctxPath}/resources/css/pabout.css" media="all" type="text/css" />	<%--about --%>
+	<link href="https://fonts.googleapis.com/css?family=Sunflower:300,500,700&display=swap&subset=korean" rel="stylesheet"> <%--글꼴 --%>
 	
 	<%-- script --%>	
 	<script type="text/javascript" src="${ctxPath}/resources/utils/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="${ctxPath}/resources/utils/jquery.alerts.js"></script>			<%-- jAlert --%>		
 	<script type="text/javascript" src="${ctxPath}/resources/js/web/brd/qust/qust.js"></script>				<%-- QnA 게시판 --%>
 	<script type="text/javascript" src="${ctxPath}/resources/js/web/header/header.js"></script>			<%--HEADER --%>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e8e7bfba2d35b071dc22784476bb6130"></script> <%--카카오 지도 --%>
 	
 </head>
 

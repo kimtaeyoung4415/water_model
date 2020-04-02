@@ -9,26 +9,26 @@
 	<div id="nav-var">
 		<nav>
 			<ul class="clearfix">
-				<li><a href="#"></a>about</li>
+				<li><a href="/about/company.do">about</a></li>
 				<li>management
 					<ul>
-						<li><a href="#">women</a></li>
-						<li><a href="#">men</a></li>
-						<li><a href="#">development</a></li>
-						<li><a href="#">actors</a></li>
+						<li><a href="/mng/women/list.do">women</a></li>
+						<li><a href="/mng/men/list.do">men</a></li>
+						<li><a href="/mng/devel/list.do">development</a></li>
+						<li><a href="/mng/actors/list.do">actors</a></li>
 					</ul>
 				</li>
 				<li>media
 					<ul id=sub_menu>
-						<li><a href="#">magazine</a></li>
+						<li><a href="/media/magazine.do">magazine</a></li>
 					</ul>
 				</li>
 				<li>Q&A
 					<ul>
-						<li><a href="#">DTL</a></li>
-						<li><a href="#">edit</a></li>
-						<li><a href="#">ins</a></li>
-						<li><a href="#">list</a></li>
+						<li><a href="/qust/dtl.do">DTL</a></li>
+						<li><a href="/qust/edit.do">edit</a></li>
+						<li><a href="/qust/ins.do">ins</a></li>
+						<li><a href="/qust/list.do">list</a></li>
 					</ul>
 				</li>
 			</ul>

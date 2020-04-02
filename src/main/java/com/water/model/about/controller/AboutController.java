@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value = "about")
+@RequestMapping(value = "/about")
 public class AboutController {
 
 	
 	@RequestMapping(value = "/company.do", method = { RequestMethod.GET })
 	public ModelAndView about(ModelAndView mv) {
 
-		mv.setViewName("about/company.tiles");
+		mv.setViewName("web/about/company.tiles");
 		return mv;
 	}
 }

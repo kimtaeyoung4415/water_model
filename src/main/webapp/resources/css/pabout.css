@@ -1,50 +1,54 @@
-	section{
-		position : relative;
-		height : 400px;
-	}
-	div{
-		display : block;
-	}
-	#about_company{
-		    background: #303030
-	}
-	#about_map{
-		background: #ededed;
-	}
-	#about_ceo > div, #about_ceo > div > div, #about_ceo > div >div > div {
-		height:100%;
-	}
-	.img-side{
-		position : absolute;
-		height : 100%;
-		overflow : hidden;
-		width: 25%;
-	}
-	#text-box{
-		width: 75%;
-    	position: absolute;
-    	left: 24.5%;
-    	height: 50%;
-    	text-align: center;
-    	top: 20%;
-    	color: white;
-	}
-	#photo{
-		padding-right: 20px;
-   		float: left;
-    	width: 25%;
-    	margin-top: 0;
-    	height:100%
-	}
-	#content{
-		height:100%;
-		float: left;
-   		width: 74%;
-	}
-	#map-content{
-		position: relative;
-		width:600px;
-		height:72%;
-		top: 160px;
-		float:left
-	}
+#about_company, #about_ceo, #about_map{
+		height:400px;
+		width:100%;
+		float:left;
+		border : 1px solid black;
+}
+#about_company > div, #about_ceo > div, #about_map > div{
+	border : 1px solid black;
+}
+#about_logo_box{
+	width: 20%;
+    height: 50%;
+    float: left;
+    position: relative;
+    top: 25%;
+    left: 19%;
+}
+#ceo_photo{
+	width: 30%;
+    height: 100%;
+    float: right;
+    position: relative;
+    right: 10%;
+}
+#map_box{
+	height: 63%;
+    width: 27%;
+    position: relative;
+    float:left;
+    top: 19%;
+    left: 10%;
+}
+#ac_content{
+	height: 70%;
+    width: 60%;
+    float: right;
+    position: relative;
+    top: 15%;
+}
+#ceo_profile{
+    height: 70%;
+    width: 50%;
+    float: left;
+    position: relative;
+    top: 15%;
+    left: 8%;
+}
+#map_content{
+	height: 80%;
+    width: 62%;
+    float: right;
+    position: relative;
+    top: 10%;
+}
