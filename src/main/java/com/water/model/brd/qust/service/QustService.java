@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.water.model.brd.qust.dao.InterQustDao;
 
-@Service("BrdQustService")
+@Service("QustService")
 public class QustService implements InterQustService {
 
 	@Autowired
