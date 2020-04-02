@@ -6,7 +6,7 @@ html,body,#web_container{
 	height:30%;
 }
 #content{
-	height:130%;
+	min-height:100%;
 }
 ul li {
 	list-style:none;
