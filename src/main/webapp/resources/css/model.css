@@ -39,10 +39,16 @@ body{
 
 /* 모델 프로필 */
 .model_profile{
+	width: 80%;
 	margin: 0 auto 0 auto;	/* 위, 오른쪽, 아래, 왼쪽 */
 	text-align: center;
 }
-
+/* 모델 프로필 사진 세팅																			 */
+.model_profile li {
+	width: 17%;
+	margin: 1px 1px 1px 1px;
+	display: inline-block;
+}
 /* 페이지 목록  */
 .model_page_box{
 	width:90%;

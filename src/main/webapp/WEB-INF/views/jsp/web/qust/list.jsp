@@ -20,6 +20,7 @@
 				<col width="10%">
 				<col width="10%">
 				<col width="10%">
+				<col>
 			</colgroup>
 			<thead>
 				<tr>
@@ -49,9 +50,12 @@
 						</c:if>
 						<c:if test="${list.A_CONT != null}">
 							<td>답변완료</td>
-						</c:if>						
+						</c:if>
+						<td>	
+							<input type="hidden" id="Q_NUM_${list.Q_NUM}" name="Q_NUM_${list.Q_NUM}" value="${list.Q_NUM}"/>
+						</td>						
 					</tr>
-					<input type="hidden" id="Q_NUM" name="Q_NUM" value="${list.Q_NUM}"/>					
+					
 				</c:forEach>					
 			</tbody>
 		</table>
