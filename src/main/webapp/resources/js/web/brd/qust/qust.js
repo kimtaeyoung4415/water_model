@@ -48,10 +48,9 @@ $(function () {
 			
 			// 상세 (화면이동)
 			$("#qust-list tr").click(function(){		
-				var q_num = $('#Q_NUM').val();	
+				var q_num = $(this).attr('id').val();
 				javascript:location.href = "/qust/dtl.do?q="+q_num;	
 			});
-			
 		};
 		
 		// 상세
@@ -121,41 +120,25 @@ $(function () {
 		};
 		
 		// 수정
-		function initQustUpdate() {
-			javascript:location.href = "/qust/edit.do?q="+pub.q_num;
-		
+		function initUpdateQust(){
 			
-		};
+			// 취소
+			$("#btn_qust_cancel").click(function(){
+				alert("cancel");
+			});
+			
+			// 수정
+			$("#btn_qust_update").click(function(){
+				var form_data = $("form[name=qust_updt_form]").serialize();
+				putQustUpdt(form_data);
+			});
+			
+		}
 		
 //////////////
-// 데이터 호출 영역
-//////////////
-		
-		// 등록
-		function insertQust(form_data){
-			$.ajax({
-				url:"/qust/postQustIns.do",
-				data:form_data,
-				type:'POST',
-				dataType: "json",
-				success:function(result){
-					console.log(result)
-					if (result) {
-						jAlert("등록되었습니다.", "알림", function() {
-							javascript:location.href="/qust/list.do";
-						});
-					} else {
-						jAlert("등록에 실패하였습니다.", "알림", function() {
-							return false;
-						});
-					}
-				},
-				error: function(request, status, error){
-	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
-	            }
-			});		
-		};
-		
+// 페이지 호출 영역
+//////////////		
+
 		// 비밀번호 검사
 		function initPwdCheckEvent(){	
 			
@@ -175,10 +158,57 @@ $(function () {
 			});	
 		};
 		
+		// 수정
+		function updateQust(){
+			
+			$.ajax({
+				url:"/qust/edit.do",
+				data:{"Q_NUM":pub.q_num},
+				type:'POST',
+				success:function(result){
+					$('#content').children().remove();
+					$('#content').html(result);
+					
+					// 수정
+					initUpdateQust();
+				},
+				error: function(request, status, error){
+	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	            }
+			});	
+		};
+		
+//////////////
+// 데이터 호출 영역
+//////////////		
+		
+		// 등록
+		function insertQust(form_data){
+			$.ajax({
+				url:"/qust/postQustIns.do",
+				data:form_data,
+				type:'POST',
+				dataType: "json",
+				success:function(result){
+					if (result) {
+						jAlert("등록되었습니다.", "알림", function() {
+							javascript:location.href="/qust/list.do";
+						});
+					} else {
+						jAlert("등록에 실패하였습니다.", "알림", function() {
+							return false;
+						});
+					}
+				},
+				error: function(request, status, error){
+	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	            }
+			});		
+		};
+		
+		
 		// 비밀번호 확인
 		function getQustPwdCheck(){	
-			
-			console.log(pub)
 			
 			param.Q_NUM = pub.q_num;
 			param.Q_PWD = $('#Q_PWD').val();
@@ -192,7 +222,7 @@ $(function () {
 						if (pub.type == "delete") {
 							deleteQust();
 						} else {
-							initQustUpdate();
+							updateQust();
 						}
 					} else {
 						jAlert("비밀번호가 일치하지 않습니다.", "알림", function() {
@@ -207,17 +237,22 @@ $(function () {
 		};
 		
 		// 수정
-		function updateQust(){
-			
-			param.Q_NUM = pub.q_num;
+		function putQustUpdt(form_data){
 			
 			$.ajax({
 				url:"/qust/putQustUpdt.do",
-				data:param,
+				data:{"Q_NUM":pub.q_num},
 				type:'POST',
 				success:function(result){
-					$('#content').children().remove();
-					$('#content').html(result);
+					if (result) {
+						jAlert("수정하였습니다.", "알림", function() {
+							javascript:location.href="/qust/dtl.do?q="+pub.q_num;
+						});
+					} else {
+						jAlert("수정에 실패하였습니다.", "알림", function() {
+							return false;
+						});
+					}
 				},
 				error: function(request, status, error){
 	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
@@ -233,8 +268,7 @@ $(function () {
 				data:param,
 				type:'POST',
 				success:function(result){
-					console.log(result)
-					if (result) {
+					if (result.SUCCESS) {
 						jAlert("삭제되었습니다.", "알림", function() {
 							javascript:location.href="/qust/list.do";
 						});

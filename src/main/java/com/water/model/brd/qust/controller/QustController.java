@@ -78,6 +78,24 @@ public class QustController {
 		return mv;
 	}		
 	
+	// 수정
+	@RequestMapping(value = "/edit.do", method={RequestMethod.POST, RequestMethod.GET},produces="application/json;charset=UTF-8")
+	@ResponseBody
+	public ModelAndView edit(ModelAndView mv, @RequestParam int Q_NUM) throws Exception {		
+		
+		try {			
+			
+			Map<String, Object> dtl = qustService.selectQustDtl(Q_NUM);	
+			
+			mv.addObject("dtl",dtl);		
+			mv.setViewName("web/qust/edit");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
+	}
+	
 	// 비밀번호 검사 이벤트
 	@RequestMapping(value = "/getQustPwdCheck.do", method = RequestMethod.POST)
 	@ResponseBody
@@ -90,9 +108,9 @@ public class QustController {
 			int status = qustService.selectQustPwdCheck(param);
 
 			if (status == 0) {
-				result.put("result", false);
+				result.put("SUCCESS", false);
 			} else {
-				result.put("result", true);
+				result.put("SUCCESS", true);
 			}
 		} catch (Throwable e) {
 			e.printStackTrace();
@@ -111,9 +129,9 @@ public class QustController {
 			int cnt = qustService.insertQust(param);
 			
 			if (cnt == 0) {
-				result.put("RESULT", false);
+				result.put("SUCCESS", false);
 			} else {
-				result.put("RESULT", true);
+				result.put("SUCCESS", true);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -121,26 +139,30 @@ public class QustController {
 		return result;
 	}
 	
-	// 수정 이벤트
-	@RequestMapping(value = "/edit.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
+	// 등록 액션
+	@RequestMapping(value = "/putQustUpdt.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
 	@ResponseBody
-	public ModelAndView putQustUpdt(ModelAndView mv, HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public Map<String, Object> putQustUpdt(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
 		try {
+			
 			int cnt = qustService.updateQust(param);
 			
 			if (cnt == 0) {
-				result.put("RESULT", false);
+				result.put("SUCCESS", false);
 			} else {
-				result.put("RESULT", true);
+				result.put("SUCCESS", true);
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return mv;
+		return result;
 	}
+	
+	
 		
 	// 삭제 이벤트
 	@RequestMapping(value = "/deleteQust.do", method={RequestMethod.POST,RequestMethod.GET},produces="application/json;charset=UTF-8")
@@ -153,9 +175,9 @@ public class QustController {
 			int cnt = qustService.deleteQust(param);
 			
 			if (cnt == 0) {
-				result.put("RESULT", false);
+				result.put("SUCCESS", false);
 			} else {
-				result.put("RESULT", true);
+				result.put("SUCCESS", true);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -42,5 +42,4 @@
 			<input type="button" id="btn_qust" class="btn" value="문의하기"/>
 		</div>
 	</div>
-	
 </form>
