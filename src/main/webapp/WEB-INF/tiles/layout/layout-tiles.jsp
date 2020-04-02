@@ -28,9 +28,9 @@
 	
 	<%-- css --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/extra.css" media="all" type="text/css" />
-	<link rel="stylesheet" href="${ctxPath}/resources/css/model.css" media="all" type="text/css" />
+	<link rel="stylesheet" href="${ctxPath}/resources/css/model.css" media="all" type="text/css" />		<%--model --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/utils/jquery.alerts.css" media="all" type="text/css" />	<%-- jAlert --%>
-	<link rel="stylesheet" href="${ctxPath}/resources/css/magazine.css" media="all" type="text/css" />
+	<link rel="stylesheet" href="${ctxPath}/resources/css/magazine.css" media="all" type="text/css" />		<%--magazine --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/viewdetails.css" media="all" type="text/css" />
 	<link rel="stylesheet" href="${ctxPath}/resources/css/header.css" media="all" type="text/css" />	<%--header --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/footer.css" media="all" type="text/css" />	<%--footer --%>
