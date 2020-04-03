@@ -1,4 +1,4 @@
-package com.water.model.media.magazine.comtroller;
+package com.water.model.media.magazine.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

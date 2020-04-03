@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.water.model.media.magazine.comtroller.MagazineController;
+import com.water.model.media.magazine.controller.MagazineController;
 
 @Controller
 @RequestMapping("/recruitment")
