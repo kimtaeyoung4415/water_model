@@ -16,7 +16,7 @@ public class RecruitmentController {
 	private static final Logger logger = LoggerFactory.getLogger(MagazineController.class);
 	
 	@RequestMapping(value="/model_rt.do", method=RequestMethod.GET)
-	public ModelAndView recruitment(ModelAndView mv) {
+	public ModelAndView news(ModelAndView mv) {
 		mv.setViewName("web/recruitment/model_rt.tiles");
 		return mv;
 	}
