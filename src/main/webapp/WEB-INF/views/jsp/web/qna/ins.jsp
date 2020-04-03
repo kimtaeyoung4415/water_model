@@ -6,7 +6,7 @@
 	String ctxPath = request.getContextPath();
 %>
 
-<form name="qust_ins_form">
+<form name="w_qna_ins_form">
 	<div class="container" align="center">
 		<div class="sub-container">
 			<div class="application_modal">
@@ -39,7 +39,7 @@
 		</div>
 		
 		<div class="btn_form">
-			<input type="button" id="btn_qust" class="btn" value="문의하기"/>
+			<input type="button" id="btn_w_qna" class="btn" value="문의하기"/>
 		</div>
 	</div>
 </form>

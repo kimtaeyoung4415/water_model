@@ -45,30 +45,30 @@ $(function () {
 		function initListEvent(){
 			
 			// 목록 - tr mouseover,out css 이벤트
-			$("#qust-list tr").bind("mouseover", function(e){
+			$("#w-qna-list tr").bind("mouseover", function(e){
 				var $target = $(e.currentTarget); // 현제 마우스오버 된 타겟
 				$target.addClass("mouseOutOverEvent");
 			});
 			
-			$("#qust-list tr").bind("mouseout", function(e){
+			$("#w-qna-list tr").bind("mouseout", function(e){
 				var $target = $(e.currentTarget);
 				$target.removeClass("mouseOutOverEvent");
 			})			
 							
 			// 등록 (화면이동)
-			$("#btn_qust_ins").click(function(){			
-				javascript:location.href="/qust/ins.do";				
+			$("#btn_w_qna_ins").click(function(){			
+				javascript:location.href="/qna/ins.do";				
 			});
 			
 			// 등록 이벤트
-			$("#btn_qust").click(function(){		
+			$("#btn_w_qna").click(function(){		
 				initInsEvent();
 			});			
 			
 			// 상세 (화면이동)
-			$("#qust-list tr").click(function(){		
+			$("#w-qna-list tr").click(function(){		
 				var q_num = $(this).attr('Q_NUM');
-				javascript:location.href = "/qust/dtl.do?q="+q_num;	
+				javascript:location.href = "/qna/dtl.do?q="+q_num;	
 			});
 		};
 		
@@ -79,7 +79,7 @@ $(function () {
 			$('.pwd_check').click(function(){	
 				
 				pub.q_num = $('#Q_NUM').val();			
-				pub.type = $(this).attr('id').substr(9);
+				pub.type = $(this).attr('id').substr(10);
 				
 				// 비밀번호 검사
 				initPwdCheckEvent();
@@ -90,7 +90,7 @@ $(function () {
 		function initInsEvent(){
 			
 			// 데이터 확인용
-			var frm = document.qust_ins_form;
+			var frm = document.w_qna_ins_form;
 			
 			if (frm.Q_NAME.value.trim() == '') {
 				jAlert("이름을 입력해주세요.", "알림");
@@ -122,31 +122,31 @@ $(function () {
 				return false;
 			}
 			
-			var form_data = $("form[name=qust_ins_form]").serialize();			
-			insertQust(form_data);
+			var form_data = $("form[name=w_qna_ins_form]").serialize();			
+			insertQna(form_data);
 		};	
 
 		// 수정, 삭제 시 비밀번호 검사
-		function qustTypeCheckEvent(){
+		function qnaTypeCheckEvent(){
 			
 			// 비밀번호 확인
 			$('#btn_pwd_check').click(function(){
-				getQustPwdCheck();
+				getQnaPwdCheck();
 			});
 		};
 		
 		// 수정
-		function initUpdateQust(){
+		function initUpdateQna(){
 			
 			// 취소
-			$("#btn_qust_cancel").click(function(){
+			$("#btn_w_qna_cancel").click(function(){
 				alert("cancel");
 			});
 			
 			// 수정
-			$("#btn_qust_update").click(function(){
+			$("#btn_w_qna_update").click(function(){
 				
-				var frm = document.qust_updt_form;
+				var frm = document.w_qna_updt_form;
 				
 				if (frm.Q_NAME.value.trim() == '') {
 					jAlert("이름을 입력해주세요.", "알림");
@@ -178,8 +178,8 @@ $(function () {
 					return false;
 				}
 				
-				var form_data = $("form[name=qust_updt_form]").serialize();
-				putQustUpdt(form_data);
+				var form_data = $("form[name=w_qna_updt_form]").serialize();
+				putQnaUpdt(form_data);
 			});
 			
 		}
@@ -192,7 +192,7 @@ $(function () {
 		function initPwdCheckEvent(){	
 			
 			$.ajax({
-				url:"/qust/pwdCheck.do",
+				url:"/qna/pwdCheck.do",
 				data:{"Q_NUM" : pub.q_num},
 				type:'POST',
 				success:function(result){
@@ -200,7 +200,7 @@ $(function () {
 					$('#content').html(result);
 					
 					// 수정, 삭제 시 비밀번호 검사
-					qustTypeCheckEvent();			
+					qnaTypeCheckEvent();			
 				},
 				error: function(request, status, error){
 	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
@@ -209,10 +209,10 @@ $(function () {
 		};
 		
 		// 수정
-		function updateQust(){
+		function updateQna(){
 			
 			$.ajax({
-				url:"/qust/edit.do",
+				url:"/qna/edit.do",
 				data:{"Q_NUM":pub.q_num},
 				type:'POST',
 				success:function(result){
@@ -220,7 +220,7 @@ $(function () {
 					$('#content').html(result);
 					
 					// 수정
-					initUpdateQust();
+					initUpdateQna();
 				},
 				error: function(request, status, error){
 	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
@@ -233,16 +233,16 @@ $(function () {
 //////////////		
 		
 		// 등록
-		function insertQust(form_data){
+		function insertQna(form_data){
 			$.ajax({
-				url:"/qust/postQustIns.do",
+				url:"/qna/postQnaIns.do",
 				data:form_data,
 				type:'POST',
 				dataType: "json",
 				success:function(result){
 					if (result.SUCCESS) {
 						jAlert("등록되었습니다.", "알림", function() {
-							javascript:location.href="/qust/list.do";
+							javascript:location.href="/qna/list.do";
 						});
 					} else {
 						jAlert("등록에 실패하였습니다.", "알림", function() {
@@ -258,21 +258,21 @@ $(function () {
 		
 		
 		// 비밀번호 확인
-		function getQustPwdCheck(){	
+		function getQnaPwdCheck(){	
 			
 			param.Q_NUM = pub.q_num;
 			param.Q_PWD = $('#Q_PWD').val();
 			
 			$.ajax({
-				url:"/qust/getQustPwdCheck.do",
+				url:"/qna/getQnaPwdCheck.do",
 				data:param,
 				type:'POST',
 				success:function(result){
 					if (result.SUCCESS) {
 						if (pub.type == "delete") {
-							deleteQust();
+							deleteQna();
 						} else {
-							updateQust();
+							updateQna();
 						}
 					} else {
 						jAlert("비밀번호가 일치하지 않습니다.", "알림", function() {
@@ -287,16 +287,16 @@ $(function () {
 		};
 		
 		// 수정
-		function putQustUpdt(form_data){
+		function putQnaUpdt(form_data){
 			
 			$.ajax({
-				url:"/qust/putQustUpdt.do",
+				url:"/qna/putQnaUpdt.do",
 				data:form_data,
 				type:'POST',
 				success:function(result){
 					if (result.SUCCESS) {
 						jAlert("수정하였습니다.", "알림", function() {
-							javascript:location.href="/qust/dtl.do?q="+pub.q_num;
+							javascript:location.href="/qna/dtl.do?q="+pub.q_num;
 						});
 					} else {
 						jAlert("수정에 실패하였습니다.", "알림", function() {
@@ -311,16 +311,16 @@ $(function () {
 		};
 		
 		// 삭제
-		function deleteQust(){
+		function deleteQna(){
 			
 			$.ajax({
-				url:"/qust/deleteQust.do",
+				url:"/qna/deleteQna.do",
 				data:param,
 				type:'POST',
 				success:function(result){
 					if (result.SUCCESS) {
 						jAlert("삭제되었습니다.", "알림", function() {
-							javascript:location.href="/qust/list.do";
+							javascript:location.href="/qna/list.do";
 						});
 					} else {
 						jAlert("비밀번호가 일치하지 않습니다.", "알림", function() {

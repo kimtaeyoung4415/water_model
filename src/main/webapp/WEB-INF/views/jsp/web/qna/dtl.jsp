@@ -39,15 +39,15 @@
 			</c:if>
 			<input type="hidden" id="Q_NUM" name="Q_NUM" value="${dtl.Q_NUM }" />
 			<div id="dtl_list">
-				<a href="/qust/list.do">LIST</a>
+				<a href="/qna/list.do">LIST</a>
 			</div>
 
 		</div>
 
 		<c:if test="${dtl.A_CONT == null}">
 			<div class="btn_form_half">
-				<input type="button" id="btn_qust_delete" class="btn pwd_check" value="삭제" /> 
-				<input type="button" id="btn_qust_update" class="btn pwd_check" value="수정" />
+				<input type="button" id="btn_w_qna_delete" class="btn pwd_check" value="삭제" /> 
+				<input type="button" id="btn_w_qna_update" class="btn pwd_check" value="수정" />
 			</div>
 		</c:if>
 

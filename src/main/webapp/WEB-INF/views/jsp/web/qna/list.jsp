@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="container" align="center">		
-	<div class="qust-container">
-		<div class="qust-title">
+	<div class="w-qna-container">
+		<div class="w-qna-title">
 			<span>Q & A</span>
 			<hr>
 		</div>
@@ -14,7 +14,7 @@
 		<%
 		
 		%>
-		<table class="qust-table">
+		<table class="w-qna-table">
 			<colgroup>
 				<col width="8%">
 				<col width="40%">
@@ -34,7 +34,7 @@
 					<th>진행상황</th>
 				</tr>	
 			</thead>
-			<tbody id="qust-list">
+			<tbody id="w-qna-list">
 				<c:forEach var="list" items="${list}" varStatus="status">
 					<tr Q_NUM="${list.Q_NUM}">
 						<td>${list.Q_NUM}</td>
@@ -58,7 +58,7 @@
 			</tbody>
 		</table>
 		<div align="right">
-			<input type="button" class="btn" id="btn_qust_ins" value="등록"/>
+			<input type="button" class="btn" id="btn_w_qna_ins" value="등록"/>
 		</div>
 		<div id="list-paging">
 		</div>
