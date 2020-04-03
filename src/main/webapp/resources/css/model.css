@@ -52,6 +52,86 @@ body{
 	margin: 5px;
 	display: inline-block;
 }
+/* 프로필 상세보기 */
+.profile_thumb {
+	margin: 0 auto;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.prev {
+	font-size: 24px;
+    line-height: 24px;
+    font-family: 'RixGo L';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -19px;
+    color: #000;
+    left: 50px;
+}
+.next {
+	font-size: 24px;
+    line-height: 24px;
+    font-family: 'RixGo L';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -19px;
+    color: #000;
+    right: 50px;
+}
+.profile_info {
+	width: 50%;
+	margin: auto auto auto auto;
+}
+.profile_info h5 {
+	font-size: 15px;
+    letter-spacing: 0;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.profile_info ul {
+	list-style: none;
+    padding: 0;
+    overflow: hidden;
+}
+.profile_info ul li {
+	float: left;
+    width: 25%;
+    font-size: 15px;
+    text-align: center;
+}
+.photo_button_next {
+	right: 50px;
+	font-family: 'RixGo L';
+    font-weight: 400;
+    font-size: 38px;
+    position: absolute;
+    top: 50%;
+    margin-top: 250px;
+    width: 40px;
+    height: 50px;
+    line-height: 50px;
+    z-index: 10;
+    text-align: center;
+}
+.photo_button_prev {
+	left: 50px;
+	font-family: 'RixGo L';
+    font-weight: 400;
+    font-size: 38px;
+    position: absolute;
+    top: 50%;
+    margin-top: 250px;
+    width: 40px;
+    height: 50px;
+    line-height: 50px;
+    z-index: 10;
+    text-align: center;
+}
 /* 페이지 목록  */
 .model_page_box{
 	width:90%;
