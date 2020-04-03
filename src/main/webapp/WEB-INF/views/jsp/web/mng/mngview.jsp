@@ -14,7 +14,7 @@
 	<div class="profile_nav">
 		<a href="" class="prev"><</a>
 		<div class="profile_thumb">
-			<img width="120" height="120" src="http://placehold.it/120x120" />
+			<img width="120" height="120" src="${ctxPath}/resources/img/mng/프로필49.PNG" />
 		</div>
 		<a href="" class="next">></a>
 		<div class="profile_info">	
@@ -28,7 +28,7 @@
 		</div>
 		<div class="show_photo">
 		<div class="photo_button_prev" role="button"><</div>
-			<img src="http://placehold.it/350x580">
+			<img src="${ctxPath}/resources/img/mng/프로필50.PNG">
 		<div class="photo_button_next" role="button">></div>
 		</div>
 	</div>

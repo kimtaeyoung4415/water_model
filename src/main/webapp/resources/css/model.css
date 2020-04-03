@@ -52,6 +52,11 @@ body{
 	margin: 5px;
 	display: inline-block;
 }
+.model_profile li img {
+	width: 218px;
+	height: 218px;
+	overflow: hidden
+}
 /* 프로필 상세보기 */
 .profile_thumb {
 	margin: 0 auto;
@@ -131,6 +136,11 @@ body{
     line-height: 50px;
     z-index: 10;
     text-align: center;
+}
+.show_photo img {
+	width: 350px;
+	height: 580px;
+	overflow: hidden;
 }
 /* 페이지 목록  */
 .model_page_box{
