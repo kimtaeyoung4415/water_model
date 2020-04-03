@@ -4,7 +4,7 @@
 <section class="view_details">
 	<div class="container">
 		<div class="row">
-			<div class="viewdetails_list">
+			<div class="viewdetails_view">
 				<div class="viewdetails_title">
 					<h2>VIEW_DETAILS</h2>
 				</div>
@@ -14,8 +14,7 @@
 					</iframe>
 				</div>
 				<div class="notice_nav">
-					<a href="http://localhost:8080/media/magazine.do#">LIST</a>
-					<a class="" href="" rel="prev"></a>
+					<a href="http://localhost:8080/media/magazine.do">LIST</a>
 				</div>
 			</div>
 		</div>

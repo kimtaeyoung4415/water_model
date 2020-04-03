@@ -19,6 +19,7 @@ section.magazine.container{
 /*여기 까지  magazine 전체 사이즈  */
 
 /* magazine 전체 제목 사이즈 */
+/*제목  */
 .title{	
 	text-align:center;
 }
@@ -27,6 +28,7 @@ section.magazine.container{
 	margin-top:0;
 	font-size:30px;
 }
+/*제목 줄  */
 .title hr.black{
 	boarder-width:2px;
 }
@@ -34,40 +36,48 @@ section.magazine.container{
 	width:45px;
 	margin:30px auto;
 }
+/*버튼 전체 사이즈  */
 .button{
 	text-align: right;
 }
+/*버튼 박스 사이즈  */
 .in{
 	margin-left:300px;
 	margin-right: 300px;
 }
-
+/* 버튼 사이즈 */
 .button input{
 	width:72px;
 	height: 34px;
 }
+/*리스트 사이즈  */
 .magazine_list{
 	position: relative;
 	margin:30px;
 	
 }
+/*리스트 사이즈  */
 .magazine_list2{
 	margin:30px;
 }
+/*리스트 사이즈  */
 .magazine_list3{
 	margin:30px;
 }
+/*리스트 테이블   */
 table{
 	width:100%;
 	text-align: center;
 }
-
+/*페이징 처리 센터  */
 .pageing{
 	text-align: center;
 }
+/*전체 페이징 박스 사이즈  */
 .pagination{
 	display: inline-block;
 }
+/*페이징 박스 사이즈  */
 .pagination a{
 	color:black;
 	float:left;
@@ -78,6 +88,7 @@ table{
 	border: 1px solid #ddd;
 	
 }
+/*커서 올릴떄 색 변환  */
 .pagination a:hover:not(.active){
 	background-color: #ddd;
 }

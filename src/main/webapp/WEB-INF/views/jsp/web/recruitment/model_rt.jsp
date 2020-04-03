@@ -13,6 +13,7 @@
 					<strong class=""> </strong>
 				</span>
 			</div>
+			<form action="">
 			<table class="re_table">
 				<tr>
 					<th>번호</th>
@@ -31,8 +32,9 @@
 			</table>
 			
 			<div align="right">
-				<input type="button" class="btn" value="등록">
+				<input type="submit" class="btn" value="등록">
 			</div>
+			</form>
 			<nav class="pageing">
 						<div class="pagination">
 							<a href="#">&laquo;</a>

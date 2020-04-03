@@ -1,44 +1,52 @@
 @charset "UTF-8";
+/*section 전체 사이즈  */
 section.view_details{
 	padding: 115px 0 30px;
 }
+/*container 사이즈  */
 .container{
 	padding-right:15px;
 	padding-left: 15px;
 	margin: auto;
 	margin: auto;
 }
-.viewdetails_list{
+/*view 전체 사이즈  */
+.viewdetails_view{
 	margin: 0 50px;
 	padding:30px;
 	box-shadow: 0 0 30px 0 rgba(0,0,0,0.18);
 }
+/*view 박스 제목 사이즈  */
 .viewdetails_title{
 	width:810px;
 	height: 72px;
 }
+/*제목 사이즈  */
 .viewdetails_title h2{
 	margin:0;
 	font-size:17px;
 	line-height: 20px;
 }
+/*mews 사이즈  */
 .news{
 	padding:36px 88px;
 }
+/*비디어 사이즈  */
 .medel_video{
 	width:634px;
 	height: 526px;
 }
+/*nav 전페 사이즈  */
 .notice_nav{
 	padding: 0 102px;
 	position: relative;
 	overflow: hidden;
 	text-align: center;
 }
+/*링크 사이즈  */
 .notice_nav a{
 	display: inline-block;
 	font-size: 18px;
 	font-family: 'Klavika Md';
-	background: url("../img/ico.png");
 	
 }
