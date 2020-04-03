@@ -29,16 +29,13 @@
 			</thead>
 			<tbody id="ntce-list">
 				<c:forEach var="list" items="${list}" varStatus="status">
-					<tr N_DATA="${list.N_NUM}">
+					<tr N_NUM="${list.N_NUM}">
 						<td>${list.N_REG_DATE}</td>
 						<td>${list.N_TITLE}</td>				
 					</tr>				
 				</c:forEach>					
 			</tbody>
 		</table>
-		<div align="right">
-			<input type="button" class="btn" id="btn_ntce_ins" value="등록"/>
-		</div>
 		<div id="list-paging">
 		</div>
 	</div>

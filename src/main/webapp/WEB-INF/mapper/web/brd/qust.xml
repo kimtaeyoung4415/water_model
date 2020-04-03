@@ -9,7 +9,6 @@
 			 Q_NUM,    		/* 번호 */
 		     Q_NAME,        /* 질문자 이름 */
 		     Q_TITLE,       /* 질문 제목 */
-		     Q_CONT,        /* 질문 내용 */
 		     DATE_FORMAT(Q_REG_DATE,  '%Y-%m-%d') AS Q_REG_DATE,	/* 질문 등록일자 */
 		     DATE_FORMAT(Q_UPDT_DATE, '%Y-%m-%d') AS Q_UPDT_DATE,	/* 질문 수정일자 */
 		     A_CONT,		/* 답변 */
@@ -21,7 +20,7 @@
 	</select>
 	
 	<!-- 전체 카운트 조회 -->
-	<select id="selectQustListCnt" parameterType="Map" resultType="int">
+	<select id="selectQustListCnt" resultType="int">
 		SELECT 
 			COUNT(*)
 		FROM
@@ -59,8 +58,7 @@
 		WHERE
 		    Q_NUM = #{Q_NUM}
 	</update>
-	
-	
+		
 	<!-- 등록 -->
 	<insert id="insertQust" parameterType="Map">
 		INSERT INTO WE_BRD_QNA  /* QnA 게시판 */
@@ -95,8 +93,7 @@
 			Q_NUM = #{Q_NUM}
 		AND
 			Q_PWD = #{Q_PWD}
-	</select>
-	
+	</select>	
 	
 	<!-- 수정 -->
 	<update id="updateQust" parameterType="Map">

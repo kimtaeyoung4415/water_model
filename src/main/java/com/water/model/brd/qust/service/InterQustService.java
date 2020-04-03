@@ -8,7 +8,7 @@ public interface InterQustService {
 	/** <pre>
 	 * 1. 개요         : 질문 목록 액션
 	 * </pre>
-	 * @Method    : getQustList
+	 * @Method    : selectQustList
 	 * @date      : 2020. 03. 27. 10:57
 	 * @author    : 김선규
 	 * @history -------------------------------------------
@@ -24,7 +24,7 @@ public interface InterQustService {
 	/** <pre>
 	 * 1. 개요         : 질문 목록 카운트 액션
 	 * </pre>
-	 * @Method    : getQustListCnt
+	 * @Method    : selectQustListCnt
 	 * @date      : 2020. 03. 27. 10:57
 	 * @author    : 김선규
 	 * @history -------------------------------------------

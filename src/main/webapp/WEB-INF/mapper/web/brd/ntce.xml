@@ -3,4 +3,52 @@
 
 <mapper namespace="model.brd.ntce">
 
+	<!-- 전체 조회 -->
+	<select id="selectNtceList" parameterType="Map" resultType="Map">
+		SELECT
+			N_NUM,    		/* 번호 */
+			N_TITLE,       	/* 질문 제목 */
+			DATE_FORMAT(N_REG_DATE,  '%Y-%m-%d') AS N_REG_DATE,		/* 공지 등록일자 */
+			DATE_FORMAT(N_UPDT_DATE,  '%Y-%m-%d') AS N_UPDT_DATE,	/* 공지 수정일자 */
+			VIEW_CNT	    /* 조회수 */
+		FROM
+			WE_BRD_NTCE
+		ORDER BY 
+			N_NUM DESC
+	</select>
+	
+	<!-- 전체 카운트 조회 -->
+	<select id="selectNtceListCnt" resultType="int">
+		SELECT 
+			COUNT(*)
+		FROM
+			WE_BRD_NTCE
+	</select>	
+	
+	<!-- 상세 조회 -->
+	<select id="selectNtceDtl" parameterType="Map" resultType="Map">
+		SELECT
+			N_NUM,    		/* 번호 */
+			N_TITLE,       	/* 질문 제목 */
+			N_CONT,       	/* 질문 내용 */
+			N_REG_NAME,      /* 질문 등록자 */
+			DATE_FORMAT(N_REG_DATE,  '%Y-%m-%d') AS N_REG_DATE,		/* 공지 등록일자 */
+			DATE_FORMAT(N_UPDT_DATE,  '%Y-%m-%d') AS N_UPDT_DATE,	/* 공지 수정일자 */
+			VIEW_CNT	    /* 조회수 */
+		FROM
+			WE_BRD_NTCE
+		WHERE
+			N_NUM = #{N_NUM}
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="updateNtceViewCnt" parameterType="int">
+		UPDATE
+		    WE_BRD_NTCE WBN  	/* 공지게시판 */
+		SET
+		    VIEW_CNT = WBN.VIEW_CNT + 1
+		WHERE
+		    N_NUM = #{N_NUM}
+	</update>
+
 </mapper>

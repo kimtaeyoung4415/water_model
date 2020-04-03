@@ -33,6 +33,7 @@ public class QustService implements InterQustService {
 		
 		Map<String, Object> dtl = new HashMap<String, Object>();
 		
+		// 조회수 증가
 		int cnt = qustDao.updateQustViewCnt(Q_NUM);
 		
 		if (cnt != 0) {
