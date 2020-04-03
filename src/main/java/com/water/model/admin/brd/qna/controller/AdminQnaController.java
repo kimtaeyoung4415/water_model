@@ -51,9 +51,9 @@ public class AdminQnaController {
 	
 	// 상세 화면	
 	@RequestMapping(value = "/dtl.do", method = RequestMethod.GET)
-	public ModelAndView dtl(ModelAndView mv, @RequestParam int n) throws Exception {	
+	public ModelAndView dtl(ModelAndView mv, @RequestParam int q) throws Exception {	
 		
-		int N_NUM = n;
+		int N_NUM = q;
 		
 		Map<String, Object> dtl = adminQnaService.selectQnaDtl(N_NUM);	
 		

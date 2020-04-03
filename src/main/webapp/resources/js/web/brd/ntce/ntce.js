@@ -54,8 +54,6 @@ $(function () {
 			// 상세 (화면이동)
 			$("#ntce-list tr").click(function(){		
 				var n_num = $(this).attr('N_NUM');
-				
-				console.log(n_num)
 				javascript:location.href = "/ntce/dtl.do?n="+n_num;	
 			});
 				

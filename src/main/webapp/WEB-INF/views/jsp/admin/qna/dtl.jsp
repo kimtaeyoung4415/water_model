@@ -53,8 +53,8 @@
 	
 			<c:if test="${dtl.A_CONT == null}">
 				<div class="btn_form_half">
-					<input type="button" id="btn_w_qna_delete" class="btn pwd_check" value="삭제" /> 
-					<input type="button" id="btn_w_qna_update" class="btn pwd_check" value="등록" />
+					<input type="button" id="btn_a_qna_delete" class="btn" value="삭제" /> 
+					<input type="button" id="btn_a_qna_update" class="btn" value="등록" />
 				</div>
 			</c:if>
 			

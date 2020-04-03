@@ -65,7 +65,7 @@
 		    WE_BRD_QNA  /* QNA 게시판 */
 		SET
 		    A_NAME 	 = #{A_NAME},      /* 답변자 이름 */
-		    A_CONT   = #{Q_CONT},      /* 답변 내용 */
+		    A_CONT   = #{A_CONT},      /* 답변 내용 */
 		    A_REG_DATE = NOW()	       /* 답변 수정일자 */
 		WHERE
 		    Q_NUM = #{Q_NUM}

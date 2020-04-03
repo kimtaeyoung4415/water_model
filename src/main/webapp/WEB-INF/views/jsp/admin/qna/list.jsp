@@ -33,7 +33,7 @@
 			</thead>
 			<tbody id="a-qna-list">
 				<c:forEach var="list" items="${list}" varStatus="status">
-					<tr>
+					<tr Q_NUM="${list.Q_NUM}">
 						<td>${list.Q_NUM}</td>
 						<td>${list.Q_TITLE}</td>
 						<td>${list.Q_NAME}</td>
