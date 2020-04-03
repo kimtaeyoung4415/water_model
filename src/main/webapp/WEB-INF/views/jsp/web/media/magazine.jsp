@@ -24,7 +24,7 @@
 				    <div class="content">
 				      <div class="header">정윤지</div>
 				      <div class="meta">
-				        <a>model</a>
+				        <a>Actor</a>
 				      </div>
 				      <div class="description">
 				        Matthew is an interior designer living in New York.
@@ -45,9 +45,9 @@
 				      <img src="../resources/img/프로필21.PNG">
 				    </div>
 				    <div class="content">
-				      <div class="header">Molly</div>
+				      <div class="header">정윤지</div>
 				      <div class="meta">
-				        <span class="date">Coworker</span>
+				        <span class="date">Actor</span>
 				      </div>
 				      <div class="description">
 				        Molly is a personal assistant living in Paris.
@@ -68,9 +68,9 @@
 				      <img src="../resources/img/프로필23.PNG">
 				    </div>
 				    <div class="content">
-				      <div class="header">Elyse</div>
+				      <div class="header">정윤지</div>
 				      <div class="meta">
-				        <a>Coworker</a>
+				        <a>Actor</a>
 				      </div>
 				      <div class="description">
 				        Elyse is a copywriter working in New York.
@@ -91,9 +91,9 @@
 				      <img src="../resources/img/프로필24.PNG">
 				    </div>
 				    <div class="content">
-				      <div class="header">Matt Giampietro</div>
+				      <div class="header">정윤지</div>
 				      <div class="meta">
-				        <a>Friends</a>
+				        <a>Actor</a>
 				      </div>
 				      <div class="description">
 				        Matthew is an interior designer living in New York.
