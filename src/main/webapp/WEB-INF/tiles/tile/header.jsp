@@ -25,10 +25,10 @@
 				</li>
 				<li>Q&A
 					<ul>
-						<li><a href="/qust/dtl.do">DTL</a></li>
-						<li><a href="/qust/edit.do">edit</a></li>
-						<li><a href="/qust/ins.do">ins</a></li>
-						<li><a href="/qust/list.do">list</a></li>
+						<li><a href="/qna/dtl.do">DTL</a></li>
+						<li><a href="/qna/edit.do">edit</a></li>
+						<li><a href="/qna/ins.do">ins</a></li>
+						<li><a href="/qna/list.do">list</a></li>
 					</ul>
 				</li>
 			</ul>

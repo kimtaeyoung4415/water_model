@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<form name="qust_updt_form">
+<form name="w_qna_updt_form">
 	<div class="container" align="center">
 		<div class="sub-container">
 			<div class="application_modal">
@@ -36,8 +36,8 @@
 		</div>
 		
 		<div class="btn_form_half">
-			<input type="button" id="btn_qust_cancel" class="btn" value="취소" /> 
-			<input type="button" id="btn_qust_update" class="btn" value="수정" />
+			<input type="button" id="btn_w_qna_cancel" class="btn" value="취소" /> 
+			<input type="button" id="btn_w_qna_update" class="btn" value="수정" />
 		</div>
 	</div>
 </form>

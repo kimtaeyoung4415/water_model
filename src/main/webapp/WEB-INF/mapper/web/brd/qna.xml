@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="model.brd.qust">
+<mapper namespace="model.brd.qna">
 
 	<!-- 전체 조회 -->
-	<select id="selectQustList" parameterType="Map" resultType="Map">
+	<select id="selectQnaList" parameterType="Map" resultType="Map">
 		SELECT 
 			 Q_NUM,    		/* 번호 */
 		     Q_NAME,        /* 질문자 이름 */
@@ -20,7 +20,7 @@
 	</select>
 	
 	<!-- 전체 카운트 조회 -->
-	<select id="selectQustListCnt" resultType="int">
+	<select id="selectQnaListCnt" resultType="int">
 		SELECT 
 			COUNT(*)
 		FROM
@@ -28,7 +28,7 @@
 	</select>	
 	
 	<!-- 상세 조회 -->
-	<select id="selectQustDtl" parameterType="Map" resultType="Map">
+	<select id="selectQnaDtl" parameterType="Map" resultType="Map">
 		SELECT
 		    Q_NUM,     	 		/* 번호 */
 		    Q_NAME,     		/* 질문자 이름 */
@@ -50,7 +50,7 @@
 	</select>
 	
 	<!-- 조회수 증가 -->
-	<update id="updateQustViewCnt" parameterType="int">
+	<update id="updateQnaViewCnt" parameterType="int">
 		UPDATE
 		    WE_BRD_QNA WBQ  	/* 질문게시판 */
 		SET
@@ -60,7 +60,7 @@
 	</update>
 		
 	<!-- 등록 -->
-	<insert id="insertQust" parameterType="Map">
+	<insert id="insertQna" parameterType="Map">
 		INSERT INTO WE_BRD_QNA  /* QnA 게시판 */
 			(
 			     Q_NAME,        /* 질문자 이름 */
@@ -84,7 +84,7 @@
 	</insert>
 	
 	<!-- 비밀번호 검사 -->
-	<select id="selectQustPwdCheck" parameterType="Map" resultType="int">
+	<select id="selectQnaPwdCheck" parameterType="Map" resultType="int">
 		SELECT
 			COUNT(*)
 		FROM
@@ -96,7 +96,7 @@
 	</select>	
 	
 	<!-- 수정 -->
-	<update id="updateQust" parameterType="Map">
+	<update id="updateQna" parameterType="Map">
 		UPDATE
 		    WE_BRD_QNA  /* QNA 게시판 */
 		SET
@@ -112,7 +112,7 @@
 	</update>
 	
 	<!-- 삭제 -->
-	<delete id="deleteQust" parameterType="Map">
+	<delete id="deleteQna" parameterType="Map">
 		DELETE
 		FROM
 			WE_BRD_QNA

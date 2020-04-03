@@ -1,14 +1,14 @@
-package com.water.model.brd.qust.service;
+package com.water.model.brd.qna.service;
 
 import java.util.List;
 import java.util.Map;
 
-public interface InterQustService {
+public interface InterQnaService {
 
 	/** <pre>
 	 * 1. 개요         : 질문 목록 액션
 	 * </pre>
-	 * @Method    : selectQustList
+	 * @Method    : selectQnaList
 	 * @date      : 2020. 03. 27. 10:57
 	 * @author    : 김선규
 	 * @history -------------------------------------------
@@ -19,12 +19,12 @@ public interface InterQustService {
 	 * @param param
 	 * @return
 	 */
-	List<Map<String, Object>> selectQustList() throws Exception;
+	List<Map<String, Object>> selectQnaList() throws Exception;
 	
 	/** <pre>
 	 * 1. 개요         : 질문 목록 카운트 액션
 	 * </pre>
-	 * @Method    : selectQustListCnt
+	 * @Method    : selectQnaListCnt
 	 * @date      : 2020. 03. 27. 10:57
 	 * @author    : 김선규
 	 * @history -------------------------------------------
@@ -35,12 +35,12 @@ public interface InterQustService {
 	 * @param param
 	 * @return
 	 */
-	int selectQustListCnt() throws Exception;
+	int selectQnaListCnt() throws Exception;
 	
 	/** <pre>
 	 * 1. 개요         : 질문 상세 액션
 	 * </pre>
-	 * @Method    : selectQustDtl
+	 * @Method    : selectQnaDtl
 	 * @date      : 2020. 03. 27. 11:57
 	 * @author    : 김선규
 	 * @history -------------------------------------------
@@ -51,12 +51,12 @@ public interface InterQustService {
 	 * @param param
 	 * @return
 	 */
-	Map<String, Object> selectQustDtl(int Q_NUM) throws Exception;
+	Map<String, Object> selectQnaDtl(int Q_NUM) throws Exception;
 	
 	/** <pre>
 	 * 1. 개요         : 비밀번호 검사 액션
 	 * </pre>
-	 * @Method    : selectQustPwdCheck
+	 * @Method    : selectQnaPwdCheck
 	 * @date      : 2020. 03. 27. 16:04
 	 * @author    : 김선규
 	 * @history -------------------------------------------
@@ -67,12 +67,12 @@ public interface InterQustService {
 	 * @param param
 	 * @return
 	 */
-	int selectQustPwdCheck(Map<String, Object> param) throws Exception;
+	int selectQnaPwdCheck(Map<String, Object> param) throws Exception;
 	
 	/** <pre>
 	 * 1. 개요         : 질문 수정 액션
 	 * </pre>
-	 * @Method    : updateQust
+	 * @Method    : updateQna
 	 * @date      : 2020. 03. 23. 17:17
 	 * @author    : 김선규
 	 * @history -------------------------------------------
@@ -83,12 +83,12 @@ public interface InterQustService {
 	 * @param param
 	 * @return
 	 */
-	int updateQust(Map<String, Object> param) throws Exception;
+	int updateQna(Map<String, Object> param) throws Exception;
 
 	/** <pre>
 	 * 1. 개요         : 질문 등록 액션
 	 * </pre>
-	 * @Method    : insertQust
+	 * @Method    : insertQna
 	 * @date      : 2020. 03. 27. 10:21
 	 * @author    : 김선규
 	 * @history -------------------------------------------
@@ -99,12 +99,12 @@ public interface InterQustService {
 	 * @param param
 	 * @return
 	 */
-	int insertQust(Map<String, Object> param) throws Exception;
+	int insertQna(Map<String, Object> param) throws Exception;
 
 	/** <pre>
 	 * 1. 개요         : 질문 삭제 액션
 	 * </pre>
-	 * @Method    : deleteQust
+	 * @Method    : deleteQna
 	 * @date      : 2020. 03. 27. 17:21
 	 * @author    : 김선규
 	 * @history -------------------------------------------
@@ -115,7 +115,7 @@ public interface InterQustService {
 	 * @param param
 	 * @return
 	 */
-	int deleteQust(Map<String, Object> param) throws Exception;
+	int deleteQna(Map<String, Object> param) throws Exception;
 
 	
 

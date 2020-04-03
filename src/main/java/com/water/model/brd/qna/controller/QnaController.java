@@ -1,4 +1,4 @@
-package com.water.model.brd.qust.controller;
+package com.water.model.brd.qna.controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,16 +16,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.water.model.brd.qust.service.InterQustService;
+import com.water.model.brd.qna.service.InterQnaService;
 
 @Controller
-@RequestMapping(value = "/qust")
-public class QustController {
+@RequestMapping(value = "/qna")
+public class QnaController {
 
-	private static final Logger logger = LoggerFactory.getLogger(QustController.class);
+	private static final Logger logger = LoggerFactory.getLogger(QnaController.class);
 	
 	@Autowired
-	private InterQustService qustService;
+	private InterQnaService qnaService;
 	
 	// 목록 화면
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
@@ -34,14 +34,14 @@ public class QustController {
 		
 		try {
 			// 목록
-			List<Map<String, Object>> list = qustService.selectQustList();		
+			List<Map<String, Object>> list = qnaService.selectQnaList();		
 			
 			// 목록 카운트
-			int count = qustService.selectQustListCnt();
+			int count = qnaService.selectQnaListCnt();
 			
 			mv.addObject("list",list);
 			mv.addObject("list_count",count);
-			mv.setViewName("web/qust/list.tiles");
+			mv.setViewName("web/qna/list.tiles");
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
@@ -52,7 +52,7 @@ public class QustController {
 	// 등록 화면	
 	@RequestMapping(value = "/ins.do", method = RequestMethod.GET)
 	public String ins(HttpServletRequest request) throws Exception {		
-		return "web/qust/ins.tiles";
+		return "web/qna/ins.tiles";
 	}	
 	
 	// 상세 화면	
@@ -61,10 +61,10 @@ public class QustController {
 		
 		int Q_NUM = q;
 		
-		Map<String, Object> dtl = qustService.selectQustDtl(Q_NUM);	
+		Map<String, Object> dtl = qnaService.selectQnaDtl(Q_NUM);	
 		
 		mv.addObject("dtl",dtl);		
-		mv.setViewName("web/qust/dtl.tiles");
+		mv.setViewName("web/qna/dtl.tiles");
 		
 		return mv;
 	}	
@@ -74,7 +74,7 @@ public class QustController {
 	@ResponseBody
 	public ModelAndView pwdCheck(ModelAndView mv, @RequestParam int Q_NUM) throws Exception {				
 		mv.addObject("Q_NUM", Q_NUM);
-		mv.setViewName("web/qust/pwdCheck");
+		mv.setViewName("web/qna/pwdCheck");
 		return mv;
 	}		
 	
@@ -85,10 +85,10 @@ public class QustController {
 		
 		try {			
 			
-			Map<String, Object> dtl = qustService.selectQustDtl(Q_NUM);	
+			Map<String, Object> dtl = qnaService.selectQnaDtl(Q_NUM);	
 			
 			mv.addObject("dtl",dtl);		
-			mv.setViewName("web/qust/edit");
+			mv.setViewName("web/qna/edit");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -97,15 +97,15 @@ public class QustController {
 	}
 	
 	// 비밀번호 검사 이벤트
-	@RequestMapping(value = "/getQustPwdCheck.do", method = RequestMethod.POST)
+	@RequestMapping(value = "/getQnaPwdCheck.do", method = RequestMethod.POST)
 	@ResponseBody
-	public Map<String, Object> getQustPwdCheck(ModelAndView mv, @RequestParam Map<String, Object> param) throws Exception {
+	public Map<String, Object> getQnaPwdCheck(ModelAndView mv, @RequestParam Map<String, Object> param) throws Exception {
 								
 		Map<String, Object> result = new HashMap<String, Object>();
 		
 		try {
 			
-			int status = qustService.selectQustPwdCheck(param);
+			int status = qnaService.selectQnaPwdCheck(param);
 
 			if (status == 0) {
 				result.put("SUCCESS", false);
@@ -119,14 +119,14 @@ public class QustController {
 	}
 	
 	// 등록 액션
-	@RequestMapping(value = "/postQustIns.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
+	@RequestMapping(value = "/postQnaIns.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
 	@ResponseBody
-	public Map<String, Object> postQustIns(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public Map<String, Object> postQnaIns(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
 		try {
-			int cnt = qustService.insertQust(param);
+			int cnt = qnaService.insertQna(param);
 			
 			if (cnt == 0) {
 				result.put("SUCCESS", false);
@@ -139,16 +139,16 @@ public class QustController {
 		return result;
 	}
 	
-	// 등록 액션
-	@RequestMapping(value = "/putQustUpdt.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
+	// 수정 액션
+	@RequestMapping(value = "/putQnaUpdt.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
 	@ResponseBody
-	public Map<String, Object> putQustUpdt(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public Map<String, Object> putQnaUpdt(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
 		try {
 			
-			int cnt = qustService.updateQust(param);
+			int cnt = qnaService.updateQna(param);
 			
 			if (cnt == 0) {
 				result.put("SUCCESS", false);
@@ -161,18 +161,16 @@ public class QustController {
 		}
 		return result;
 	}
-	
-	
 		
 	// 삭제 이벤트
-	@RequestMapping(value = "/deleteQust.do", method={RequestMethod.POST,RequestMethod.GET},produces="application/json;charset=UTF-8")
+	@RequestMapping(value = "/deleteQna.do", method={RequestMethod.POST,RequestMethod.GET},produces="application/json;charset=UTF-8")
 	@ResponseBody
-	public Map<String, Object> deleteQust(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public Map<String, Object> deleteQna(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
 		try {
-			int cnt = qustService.deleteQust(param);
+			int cnt = qnaService.deleteQna(param);
 			
 			if (cnt == 0) {
 				result.put("SUCCESS", false);
