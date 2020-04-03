@@ -18,23 +18,23 @@
 	</form>
 </div>
 <div>
-		<ul class="model_profile">
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-		</ul>
+	<ul class="model_profile">
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+	</ul>
 </div>
 <div class="model_page_box">
 	<div class="model_page_list">

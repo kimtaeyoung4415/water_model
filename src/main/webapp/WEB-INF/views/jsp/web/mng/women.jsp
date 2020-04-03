@@ -19,22 +19,22 @@
 </div>
 <div>
 	<ul class="model_profile">
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-			<li><a href=""><img src="http://placehold.it/218x218"></a></li>
-		</ul>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필49.PNG"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+	</ul>
 </div>
 <div class="model_page_box">
 	<div class="model_page_list">

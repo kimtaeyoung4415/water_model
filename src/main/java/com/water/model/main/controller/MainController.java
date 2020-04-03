@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value="/main")
+//@RequestMapping(value="/main")
 public class MainController {
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
-	@RequestMapping(value="/main.do", method=RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView news(ModelAndView mv) {
 		mv.setViewName("web/main/main.tiles");
 		return mv;

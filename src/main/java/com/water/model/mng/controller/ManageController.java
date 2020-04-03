@@ -31,4 +31,9 @@ public class ManageController {
 	public String actors() {
 		return "web/mng/actors.tiles";
 	}
+	
+	@RequestMapping(value = "/view.do", method = RequestMethod.GET)
+	public String view() {
+		return "web/mng/mngview.tiles";
+	}
 }
