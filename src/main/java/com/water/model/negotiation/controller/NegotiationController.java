@@ -9,16 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.water.model.brd.qust.controller.QustController;
-import com.water.model.negotiation.service.InterNegotiationService;
 
 @Controller
 @RequestMapping(value="/negotiation")
 public class NegotiationController {
-	private static final Logger logger = LoggerFactory.getLogger(QustController.class);
 	
-	@Autowired
-	private InterNegotiationService negotiationService;
 	
 	@RequestMapping(value = "/detail.do", method = RequestMethod.GET)
 	public String detail(HttpServletRequest request) throws Exception{
