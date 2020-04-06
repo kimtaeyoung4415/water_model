@@ -19,7 +19,7 @@
 			<div class="ui link cards">
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필25.PNG">
+				      <img src="../resources/img/magazine/프로필25.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">정윤지</div>
@@ -42,7 +42,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필21.PNG">
+				      <img src="../resources/img/magazine/프로필21.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">정윤지</div>
@@ -65,7 +65,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필23.PNG">
+				      <img src="../resources/img/magazine/프로필23.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">정윤지</div>
@@ -88,7 +88,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필24.PNG">
+				      <img src="../resources/img/magazine/프로필24.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">정윤지</div>
@@ -111,7 +111,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필11.PNG">
+				      <img src="../resources/img/magazine/프로필11.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Molly</div>
@@ -134,7 +134,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필12.PNG">
+				      <img src="../resources/img/magazine/프로필12.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Elyse</div>
@@ -157,7 +157,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필13.PNG">
+				      <img src="../resources/img/magazine/프로필13.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Matt Giampietro</div>
@@ -180,7 +180,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필22.PNG">
+				      <img src="../resources/img/magazine/프로필22.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Molly</div>
@@ -203,7 +203,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필14.PNG">
+				      <img src="../resources/img/magazine/프로필14.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Elyse</div>
@@ -226,7 +226,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필6.PNG">
+				      <img src="../resources/img/magazine/프로필6.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Matt Giampietro</div>
@@ -249,7 +249,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필7.PNG">
+				      <img src="../resources/img/magazine/프로필7.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Molly</div>
@@ -272,7 +272,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필8.PNG">
+				      <img src="../resources/img/magazine/프로필8.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Elyse</div>
