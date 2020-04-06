@@ -6,7 +6,7 @@ import java.util.Map;
 public interface InterNtceService {
 
 	/** <pre>
-	 * 1. 개요         : 공지 목록 액션
+	 * 1. 개요         : 공지 목록
 	 * </pre>
 	 * @Method    : selectNtceList
 	 * @date      : 2020. 04. 03. 09:30

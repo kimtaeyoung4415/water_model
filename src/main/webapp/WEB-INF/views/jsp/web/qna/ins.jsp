@@ -2,10 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%
-	String ctxPath = request.getContextPath();
-%>
-
 <form name="w_nego_ins_form">
 	<div class="container" align="center">
 		<div class="sub-container">
