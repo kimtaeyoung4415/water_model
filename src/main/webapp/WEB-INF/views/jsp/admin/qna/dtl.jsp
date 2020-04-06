@@ -31,22 +31,24 @@
 				</div>
 	
 				
-					<div>
-						<div class="span_wrapper">
-							<label for="A_CONT">답변</label>
-							
-							<c:if test="${dtl.A_CONT != null }">
-								<textarea id="A_CONT" name="A_CONT" rows="10" readonly="readonly" disabled>${dtl.A_CONT}</textarea>
-							</c:if>
-							<c:if test="${dtl.A_CONT == null }">
-								<textarea id="A_CONT" name="A_CONT" rows="10"></textarea>
-							</c:if>
-						</div>
+				<div>
+					<div class="span_wrapper">
+						<span>답변</span>
 					</div>
+					<div class="span_wrapper">
+						
+						<c:if test="${dtl.A_CONT != null }">
+							<textarea id="A_CONT" name="A_CONT" rows="10" readonly="readonly" disabled>${dtl.A_CONT}</textarea>
+						</c:if>
+						<c:if test="${dtl.A_CONT == null }">
+							<textarea id="A_CONT" name="A_CONT" class="n-txt" rows="10"></textarea>
+						</c:if>
+					</div>
+				</div>
 				
 				<input type="hidden" id="Q_NUM" name="Q_NUM" value="${dtl.Q_NUM }" />
 				<div id="dtl_list">
-					<a href="/qna/list.do">LIST</a>
+					<a href="/admin/qna/list.do">LIST</a>
 				</div>
 	
 			</div>
@@ -57,6 +59,13 @@
 					<input type="button" id="btn_a_qna_update" class="btn" value="등록" />
 				</div>
 			</c:if>
+			<c:if test="${dtl.A_CONT != null}">
+				<div class="btn_form">
+					<input type="button" id="btn_a_qna_delete" class="btn" value="삭제" />
+				</div>
+			</c:if>
+			
+			
 			
 		</div>
 	</div>

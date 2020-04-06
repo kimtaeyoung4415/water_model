@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="container" align="center">		
-	<div class="ntce-container">
-		<div class="ntce-title">
+	<div class="w-ntce-container">
+		<div class="w-ntce-title">
 			<span>NOTICE</span>
 			<hr>
 		</div>
@@ -12,7 +12,7 @@
 			<span>전체 : <strong id="list-cnt">${list_count}</strong> 개</span>
 		</div>	
 		
-		<table class="ntce-table">
+		<table class="w-ntce-table">
 			<colgroup>
 				<col width="8%">
 				<col width="40%">
@@ -27,7 +27,7 @@
 					<th>공지</th>
 				</tr>	
 			</thead>
-			<tbody id="ntce-list">
+			<tbody id="w-ntce-list">
 				<c:forEach var="list" items="${list}" varStatus="status">
 					<tr N_NUM="${list.N_NUM}">
 						<td>${list.N_REG_DATE}</td>

@@ -19,7 +19,7 @@ public interface InterAdminQnaService {
 	 * @param param
 	 * @return
 	 */
-	List<Map<String, Object>> selectQnaList() throws Exception;
+	List<Map<String, Object>> selectAdminQnaList() throws Exception;
 
 	/** <pre>
 	 * 1. 개요         : 질문 목록 카운트
@@ -35,7 +35,7 @@ public interface InterAdminQnaService {
 	 * @param param
 	 * @return
 	 */
-	int selectQnaListCnt() throws Exception;
+	int selectAdminQnaListCnt() throws Exception;
 
 	/** <pre>
 	 * 1. 개요         : 질문 상세
@@ -51,7 +51,7 @@ public interface InterAdminQnaService {
 	 * @param param
 	 * @return
 	 */
-	Map<String, Object> selectQnaDtl(int N_NUM) throws Exception;
+	Map<String, Object> selectAdminQnaDtl(int N_NUM) throws Exception;
 
 	/** <pre>
 	 * 1. 개요         : 질문 답변 등록
@@ -67,6 +67,22 @@ public interface InterAdminQnaService {
 	 * @param param
 	 * @return
 	 */
-	int updateQna(Map<String, Object> param) throws Exception;
+	int updateAdminQna(Map<String, Object> param) throws Exception;
+
+	/** <pre>
+	 * 1. 개요         : 질문 삭제 등록
+	 * </pre>
+	 * @Method    : deleteQna
+	 * @date      : 2020. 04. 03. 13:30
+	 * @author    : 김선규
+	 * @history -------------------------------------------
+	 *          ----변경일---------작성자--------------변경내용 
+	 *          2020. 04. 03         김선규                         최초 작성
+	 *          -------------------------------------------
+	 * </pre>
+	 * @param param
+	 * @return
+	 */
+	int deleteAdminQna(Map<String, Object> param) throws Exception;
 
 }

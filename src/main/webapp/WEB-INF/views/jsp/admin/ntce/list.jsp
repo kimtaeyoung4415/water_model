@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="container" align="center">		
-	<div class="ntce-container">
-		<div class="ntce-title">
+	<div class="a-ntce-container">
+		<div class="a-ntce-title">
 			<span>NOTICE</span>
 			<hr>
 		</div>
@@ -12,7 +12,7 @@
 			<span>전체 : <strong id="list-cnt">${list_count}</strong> 개</span>
 		</div>	
 		
-		<table class="ntce-table">
+		<table class="a-ntce-table">
 			<colgroup>
 				<col width="8%">
 				<col width="40%">
@@ -27,12 +27,23 @@
 					<th>공지</th>
 				</tr>	
 			</thead>
-			<tbody id="ntce-list">
+			<tbody id="a-ntce-list">
 				<c:forEach var="list" items="${list}" varStatus="status">
-					<tr N_NUM="${list.N_NUM}">
-						<td>${list.N_REG_DATE}</td>
-						<td>${list.N_TITLE}</td>				
-					</tr>				
+					<c:if test="${list.IMP_YN == 'Y' }">
+						<tr N_NUM="${list.N_NUM}" style="border: 1px solid red;">
+							<td>${list.N_REG_DATE}</td>
+							<td>${list.N_TITLE}</td>				
+						</tr>
+					</c:if>		
+				</c:forEach>	
+				
+				<c:forEach var="list" items="${list}" varStatus="status">
+					<c:if test="${list.IMP_YN == 'N' }">
+						<tr N_NUM="${list.N_NUM}">
+							<td>${list.N_REG_DATE}</td>
+							<td>${list.N_TITLE}</td>				
+						</tr>
+					</c:if>					
 				</c:forEach>					
 			</tbody>
 		</table>

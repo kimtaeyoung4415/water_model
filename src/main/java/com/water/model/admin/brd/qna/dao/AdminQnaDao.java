@@ -16,31 +16,37 @@ public class AdminQnaDao implements InterAdminQnaDao {
 	
 	// 목록
 	@Override
-	public List<Map<String, Object>> selectQnaList() throws Exception {
-		return sqlSession.selectList("model.admin.brd.qna.selectQnaList");
+	public List<Map<String, Object>> selectAdminQnaList() throws Exception {
+		return sqlSession.selectList("admin.brd.qna.selectAdminQnaList");
 	};
 	
 	// 목록 카운트
 	@Override
-	public int selectQnaListCnt() throws Exception {
-		return sqlSession.selectOne("model.admin.brd.qna.selectQnaListCnt");
+	public int selectAdminQnaListCnt() throws Exception {
+		return sqlSession.selectOne("admin.brd.qna.selectAdminQnaListCnt");
 	}
 
 	// 상세
 	@Override
-	public Map<String, Object> selectQnaDtl(int N_NUM) throws Exception {
-		return sqlSession.selectOne("model.admin.brd.qna.selectQnaDtl", N_NUM);
+	public Map<String, Object> selectAdminQnaDtl(int N_NUM) throws Exception {
+		return sqlSession.selectOne("admin.brd.qna.selectAdminQnaDtl", N_NUM);
 	};
 
 	// 조회수 증가
 	@Override
-	public int updateQnaViewCnt(int N_NUM) throws Exception {
-		return sqlSession.update("model.admin.brd.qna.updateQnaViewCnt", N_NUM);		
+	public int updateAdminQnaViewCnt(int N_NUM) throws Exception {
+		return sqlSession.update("admin.brd.qna.updateAdminQnaViewCnt", N_NUM);		
 	}
 
 	// 답변 등록
 	@Override
-	public int updateQna(Map<String, Object> param) throws Exception {
-		return sqlSession.update("model.admin.brd.qna.updateQna", param);
+	public int updateAdminQna(Map<String, Object> param) throws Exception {
+		return sqlSession.update("admin.brd.qna.updateAdminQna", param);
+	}
+
+	// 삭제
+	@Override
+	public int deleteAdminQna(Map<String, Object> param) throws Exception {
+		return sqlSession.update("admin.brd.qna.deleteAdminQna", param);
 	};
 }

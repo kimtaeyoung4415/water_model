@@ -34,10 +34,10 @@ public class AdminQnaController {
 		
 		try {
 			// 목록
-			List<Map<String, Object>> list = adminQnaService.selectQnaList();		
+			List<Map<String, Object>> list = adminQnaService.selectAdminQnaList();		
 			
 			// 목록 카운트
-			int count = adminQnaService.selectQnaListCnt();
+			int count = adminQnaService.selectAdminQnaListCnt();
 			
 			mv.addObject("list",list);
 			mv.addObject("list_count",count);
@@ -55,7 +55,7 @@ public class AdminQnaController {
 		
 		int N_NUM = q;
 		
-		Map<String, Object> dtl = adminQnaService.selectQnaDtl(N_NUM);	
+		Map<String, Object> dtl = adminQnaService.selectAdminQnaDtl(N_NUM);	
 		
 		mv.addObject("dtl",dtl);		
 		mv.setViewName("admin/qna/dtl.tiles");
@@ -64,15 +64,15 @@ public class AdminQnaController {
 	}	
 	
 	// 수정 액션
-	@RequestMapping(value = "/putQnaUpdt.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
+	@RequestMapping(value = "/putAdminQnaUpdt.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
 	@ResponseBody
-	public Map<String, Object> putQnaUpdt(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public Map<String, Object> putAdminQnaUpdt(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
 		try {
 			
-			int cnt = adminQnaService.updateQna(param);
+			int cnt = adminQnaService.updateAdminQna(param);
 			
 			if (cnt == 0) {
 				result.put("SUCCESS", false);
@@ -80,6 +80,27 @@ public class AdminQnaController {
 				result.put("SUCCESS", true);
 			}
 			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	// 삭제 이벤트
+	@RequestMapping(value = "/deleteAdminQna.do", method={RequestMethod.POST,RequestMethod.GET},produces="application/json;charset=UTF-8")
+	@ResponseBody
+	public Map<String, Object> deleteAdminQna(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+		
+		Map<String, Object> result = new HashMap<String, Object>();
+		
+		try {
+			int cnt = adminQnaService.deleteAdminQna(param);
+			
+			if (cnt == 0) {
+				result.put("SUCCESS", false);
+			} else {
+				result.put("SUCCESS", true);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

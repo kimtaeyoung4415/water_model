@@ -23,7 +23,6 @@ $(function () {
 	
 	*/
 	
-
 	
 	var _class = function(){
 		
@@ -32,8 +31,8 @@ $(function () {
 //////////////					
 			
 		var pub = {
-			q_num : null,
-			name : "ADMIN",
+			Q_NUM : null,
+			name : "워터 엔터테인먼트",
 		};
 					
 		var param = {};
@@ -70,23 +69,32 @@ $(function () {
 			
 			// 등록
 			$("#btn_a_qna_update").click(function(){
-				if ($('#A_CONT').val() == null) {
+				if ($('#A_CONT').val() == "") {
 					jAlert("답변을 입력해 주세요.","알림",function(){
 						return;
 					});
 				};		
 
-				pub.q_num = $(this).attr('id').substr(10);
-				var A_CONT = $('#A_CONT').val();
-				
+				pub.q_num = $('#Q_NUM').val();
+				var A_CONT = $('#A_CONT').val();				
 				
 				// 답변등록
-				putQnaUpdt(A_CONT);
+				putAdminQnaUpdt(A_CONT);
+			});
+			
+			// 삭제
+			$('#btn_a_qna_delete').click(function(){
+				jConfirm("정말로 삭제하시겠습니까 ?","알림", function(r){
+					if (r) { 
+						// r == true > 확인 false 취소					
+						param.Q_NUM = $('#Q_NUM').val();
+						deleteAdminQna();
+					}
+				});
 			});
 						
 		};
 		
-	
 		
 //////////////
 // 페이지 호출 영역
@@ -99,9 +107,7 @@ $(function () {
 //////////////		
 	
 		// 답변 등록
-		function putQnaUpdt(A_CONT){
-			
-			console.log(pub)
+		function putAdminQnaUpdt(A_CONT){
 			
 			param = {
 				"Q_NUM"  : pub.q_num, 
@@ -110,16 +116,16 @@ $(function () {
 			};
 			
 			$.ajax({
-				url:"/admin/qna/putQnaUpdt.do",
+				url:"/admin/qna/putAdminQnaUpdt.do",
 				data:param,
 				type:'POST',
 				success:function(result){
 					if (result.SUCCESS) {
-						jAlert("수정하였습니다.", "알림", function() {
+						jAlert("등록하였습니다.", "알림", function() {
 							javascript:location.href="/admin/qna/dtl.do?q="+pub.q_num;
 						});
 					} else {
-						jAlert("수정에 실패하였습니다.", "알림", function() {
+						jAlert("등록에 실패하였습니다.", "알림", function() {
 							return false;
 						});
 					}
@@ -129,6 +135,31 @@ $(function () {
 	            }
 			});	
 		};
+		
+		// 삭제
+		function deleteAdminQna(){
+			
+			$.ajax({
+				url:"/admin/qna/deleteAdminQna.do",
+				data:param,
+				type:'POST',
+				success:function(result){
+					if (result.SUCCESS) {
+						jAlert("삭제되었습니다.", "알림", function() {
+							javascript:location.href="/admin/qna/list.do";
+						});
+					} else {
+						jAlert("삭제에 실패하였습니다.", "알림", function() {
+							return false;
+						});
+					}
+				},
+				error: function(request, status, error){
+	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	            }
+			});	
+		};
+		
 		
 	}; // end of _class
 	

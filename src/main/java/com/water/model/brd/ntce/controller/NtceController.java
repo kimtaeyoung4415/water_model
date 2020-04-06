@@ -43,8 +43,8 @@ public class NtceController {
 			} catch (Throwable e) {
 				e.printStackTrace();
 			}
-			return mv;
-		}
+		return mv;
+	}
 	
 	// 상세 화면	
 	@RequestMapping(value = "/dtl.do", method = RequestMethod.GET)

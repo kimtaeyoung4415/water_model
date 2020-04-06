@@ -41,18 +41,18 @@ $(function () {
 		
 		function initListEvent(){
 			// 목록 - tr mouseover,out css 이벤트
-			$("#ntce-list tr").bind("mouseover", function(e){
+			$("#w-ntce-list tr").bind("mouseover", function(e){
 				var $target = $(e.currentTarget); // 현제 마우스오버 된 타겟
 				$target.addClass("mouseOutOverEvent");
 			});
 			
-			$("#ntce-list tr").bind("mouseout", function(e){
+			$("#w-ntce-list tr").bind("mouseout", function(e){
 				var $target = $(e.currentTarget);
 				$target.removeClass("mouseOutOverEvent");
 			})			
 			
 			// 상세 (화면이동)
-			$("#ntce-list tr").click(function(){		
+			$("#w-ntce-list tr").click(function(){		
 				var n_num = $(this).attr('N_NUM');
 				javascript:location.href = "/ntce/dtl.do?n="+n_num;	
 			});

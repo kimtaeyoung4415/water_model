@@ -1,10 +1,20 @@
 package com.water.model.admin.brd.ntce.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.water.model.admin.brd.ntce.service.InterAdminNtceService;
 
@@ -17,5 +27,67 @@ public class AdminNtceController {
 	@Autowired
 	private InterAdminNtceService adminNtceService;
 	
+	// 목록 화면
+	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
+	@ResponseBody
+	public ModelAndView list(ModelAndView mv) throws Exception {				
+		
+		try {
+			// 목록
+			List<Map<String, Object>> list = adminNtceService.selectAdminNtceList();		
+			
+			// 목록 카운트
+			int count = adminNtceService.selectAdminNtceListCnt();
+			
+			mv.addObject("list",list);
+			mv.addObject("list_count",count);
+			mv.setViewName("admin/ntce/list.tiles");
+				
+			} catch (Throwable e) {
+				e.printStackTrace();
+			}
+		return mv;
+	}
 	
+	// 등록 화면	
+	@RequestMapping(value = "/ins.do", method = RequestMethod.GET)
+	public String ins(HttpServletRequest request) throws Exception {		
+		return "admin/ntce/ins.tiles";
+	}	
+	
+	// 상세 화면	
+	@RequestMapping(value = "/dtl.do", method = RequestMethod.GET)
+	public ModelAndView dtl(ModelAndView mv, @RequestParam int n) throws Exception {	
+		
+		int N_NUM = n;
+		
+		Map<String, Object> dtl = adminNtceService.selectAdminNtceDtl(N_NUM);	
+		
+		mv.addObject("dtl",dtl);		
+		mv.setViewName("admin/ntce/dtl.tiles");
+		
+		return mv;
+	}	
+
+	// 등록 액션
+	@RequestMapping(value = "/postAdminNtceIns.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
+	@ResponseBody
+	public Map<String, Object> postAdminNtceIns(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+		
+		Map<String, Object> result = new HashMap<String, Object>();
+		
+		try {
+			int cnt = adminNtceService.insertAdminNtce(param);
+			
+			if (cnt == 0) {
+				result.put("SUCCESS", false);
+			} else {
+				result.put("SUCCESS", true);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 }

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="web.brd.ntce">
+<mapper namespace="admin.brd.ntce">
 
 	<!-- 전체 조회 -->
-	<select id="selectNtceList" parameterType="Map" resultType="Map">
+	<select id="selectAdminNtceList" parameterType="Map" resultType="Map">
 		SELECT
 			N_NUM,    		/* 번호 */
 			N_TITLE,       	/* 질문 제목 */
 			DATE_FORMAT(N_REG_DATE,  '%Y-%m-%d') AS N_REG_DATE,		/* 공지 등록일자 */
 			DATE_FORMAT(N_UPDT_DATE,  '%Y-%m-%d') AS N_UPDT_DATE,	/* 공지 수정일자 */
-			VIEW_CNT	    /* 조회수 */
+			VIEW_CNT,	    /* 조회수 */
+			IMP_YN			/* 중요 여부 */
 		FROM
 			WE_BRD_NTCE
 		ORDER BY 
@@ -18,7 +19,7 @@
 	</select>
 	
 	<!-- 전체 카운트 조회 -->
-	<select id="selectNtceListCnt" resultType="int">
+	<select id="selectAdminNtceListCnt" resultType="int">
 		SELECT 
 			COUNT(*)
 		FROM
@@ -26,15 +27,16 @@
 	</select>	
 	
 	<!-- 상세 조회 -->
-	<select id="selectNtceDtl" parameterType="Map" resultType="Map">
+	<select id="selectAdminNtceDtl" parameterType="Map" resultType="Map">
 		SELECT
 			N_NUM,    		/* 번호 */
 			N_TITLE,       	/* 질문 제목 */
 			N_CONT,       	/* 질문 내용 */
-			N_REG_NAME,      /* 질문 등록자 */
+			N_REG_NAME,     /* 질문 등록자 */
 			DATE_FORMAT(N_REG_DATE,  '%Y-%m-%d') AS N_REG_DATE,		/* 공지 등록일자 */
 			DATE_FORMAT(N_UPDT_DATE,  '%Y-%m-%d') AS N_UPDT_DATE,	/* 공지 수정일자 */
-			VIEW_CNT	    /* 조회수 */
+			VIEW_CNT,	    /* 조회수 */
+			IMP_YN			/* 중요 여부 */
 		FROM
 			WE_BRD_NTCE
 		WHERE
@@ -42,7 +44,7 @@
 	</select>
 	
 	<!-- 조회수 증가 -->
-	<update id="updateNtceViewCnt" parameterType="int">
+	<update id="updateAdminNtceViewCnt" parameterType="int">
 		UPDATE
 		    WE_BRD_NTCE WBN  	/* 공지게시판 */
 		SET
@@ -50,5 +52,25 @@
 		WHERE
 		    N_NUM = #{N_NUM}
 	</update>
+	
+	<!-- 등록 -->
+	<insert id="insertAdminNtce" parameterType="Map">
+		INSERT INTO WE_BRD_NTCE /* 게시판 게시판 */
+		(
+		     N_TITLE,       	/* 공지 제목 */
+		     N_CONT,        	/* 공지내용 */
+		     N_REG_NAME,        /* 공지 작성자 */
+		     N_REG_DATE,        /* 작성일 */
+		     IMP_YN				/* 중요 여부 */
+		)
+		VALUES
+		(
+		     #{N_TITLE},      	/* 공지 제목 */
+		     #{N_CONT},      	/* 공지내용 */
+		     #{N_REG_NAME},     /* 공지 작성자 */
+		     NOW(),     		/* 작성일 */
+		     #{IMP_YN}			/* 중요 여부 */
+		)
+	</insert>
 
 </mapper>

@@ -6,18 +6,21 @@ import java.util.Map;
 public interface InterAdminQnaDao {
 
 	// 목록
-	List<Map<String, Object>> selectQnaList() throws Exception;
+	List<Map<String, Object>> selectAdminQnaList() throws Exception;
 	
 	// 목록 카운트
-	int selectQnaListCnt() throws Exception;
+	int selectAdminQnaListCnt() throws Exception;
 	
 	// 상세
-	Map<String, Object> selectQnaDtl(int N_NUM) throws Exception;
+	Map<String, Object> selectAdminQnaDtl(int N_NUM) throws Exception;
 
 	// 조회수 증가
-	int updateQnaViewCnt(int N_NUM) throws Exception;
+	int updateAdminQnaViewCnt(int N_NUM) throws Exception;
 
 	// 답변 등록
-	int updateQna(Map<String, Object> param) throws Exception;
+	int updateAdminQna(Map<String, Object> param) throws Exception;
+
+	// 삭제
+	int deleteAdminQna(Map<String, Object> param) throws Exception;
 
 }

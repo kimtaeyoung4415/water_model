@@ -25,18 +25,21 @@
 					<span id="Q_NAME">${dtl.Q_NAME}</span>
 				</div>
 				<div class="span_wrapper">					
-					<textarea id="Q_CONT"  style="border: none; background: whitesmoke;" rows="10" readonly="readonly" disabled>${dtl.Q_CONT}</textarea>
+					<textarea id="Q_CONT" rows="10" readonly="readonly" disabled>${dtl.Q_CONT}</textarea>
 				</div>
 			</div>
 
 			<c:if test="${dtl.A_CONT != null }">
 				<div>
 					<div class="span_wrapper">
-						<label for="A_CONT">답변</label>
-						<textarea id="A_CONT" name="A_CONT" rows="10" readonly="readonly">${dtl.A_CONT}</textarea>
+						<span id="Q_NAME">${dtl.A_NAME }</span>
+					</div>
+					<div class="span_wrapper">						
+						<textarea id="A_CONT" name="A_CONT" rows="10" readonly="readonly" disabled>${dtl.A_CONT}</textarea>
 					</div>
 				</div>
 			</c:if>
+			
 			<input type="hidden" id="Q_NUM" name="Q_NUM" value="${dtl.Q_NUM }" />
 			<div id="dtl_list">
 				<a href="/qna/list.do">LIST</a>

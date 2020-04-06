@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="model.admin.brd.qna">
+<mapper namespace="admin.brd.qna">
 
 	<!-- 전체 조회 -->
-	<select id="selectQnaList" parameterType="Map" resultType="Map">
+	<select id="selectAdminQnaList" parameterType="Map" resultType="Map">
 		SELECT 
 			 Q_NUM,    		/* 번호 */
 		     Q_NAME,        /* 질문자 이름 */
@@ -20,7 +20,7 @@
 	</select>
 	
 	<!-- 전체 카운트 조회 -->
-	<select id="selectQnaListCnt" resultType="int">
+	<select id="selectAdminQnaListCnt" resultType="int">
 		SELECT 
 			COUNT(*)
 		FROM
@@ -28,7 +28,7 @@
 	</select>
 	
 	<!-- 상세 조회 -->
-	<select id="selectQnaDtl" parameterType="Map" resultType="Map">
+	<select id="selectAdminQnaDtl" parameterType="Map" resultType="Map">
 		SELECT
 		    Q_NUM,     	 		/* 번호 */
 		    Q_NAME,     		/* 질문자 이름 */
@@ -50,7 +50,7 @@
 	</select>	
 	
 	<!-- 조회수 증가 -->
-	<update id="updateQnaViewCnt" parameterType="int">
+	<update id="updateAdminQnaViewCnt" parameterType="int">
 		UPDATE
 		    WE_BRD_QNA WBQ  	/* 질문게시판 */
 		SET
@@ -60,7 +60,7 @@
 	</update>
 	
 	<!-- 수정 -->
-	<update id="updateQna" parameterType="Map">
+	<update id="updateAdminQna" parameterType="Map">
 		UPDATE
 		    WE_BRD_QNA  /* QNA 게시판 */
 		SET
@@ -70,5 +70,14 @@
 		WHERE
 		    Q_NUM = #{Q_NUM}
 	</update>
+	
+	<!-- 삭제 -->
+	<delete id="deleteAdminQna" parameterType="Map">
+		DELETE
+		FROM
+			WE_BRD_QNA
+		WHERE
+			Q_NUM = #{Q_NUM}
+	</delete>
 	
 </mapper>
