@@ -4,7 +4,6 @@ body{
 	padding:0;
 	margin:0 auto;	
 }
-
 /* 카테고리 목록 */
 .model_kategorie_box{
 	margin: 5% auto 2% auto;
@@ -108,39 +107,6 @@ body{
     width: 25%;
     font-size: 15px;
     text-align: center;
-}
-.photo_button_next {
-	right: 50px;
-	font-family: 'RixGo L';
-    font-weight: 400;
-    font-size: 38px;
-    position: absolute;
-    top: 50%;
-    margin-top: 250px;
-    width: 40px;
-    height: 50px;
-    line-height: 50px;
-    z-index: 10;
-    text-align: center;
-}
-.photo_button_prev {
-	left: 50px;
-	font-family: 'RixGo L';
-    font-weight: 400;
-    font-size: 38px;
-    position: absolute;
-    top: 50%;
-    margin-top: 250px;
-    width: 40px;
-    height: 50px;
-    line-height: 50px;
-    z-index: 10;
-    text-align: center;
-}
-.show_photo img {
-	width: 350px;
-	height: 580px;
-	overflow: hidden;
 }
 /* 페이지 목록  */
 .model_page_box{
