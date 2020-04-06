@@ -1,0 +1,2 @@
+<%-- favicon.ico --%>
+	<link rel="shortcut icon" href="${ctxPath}/resources/img/favicon.ico" type="image/x-icon">
