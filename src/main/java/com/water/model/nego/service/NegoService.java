@@ -1,4 +1,4 @@
-package com.water.model.negotiation.service;
+package com.water.model.nego.service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,13 +7,13 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.water.model.negotiation.dao.InterNegotiationDao;
+import com.water.model.nego.dao.InterNegoDao;
 
 @Service("NegotiationService")
-public class NegotiationService implements InterNegotiationService{
+public class NegoService implements InterNegoService{
 	
 	@Autowired
-	private InterNegotiationDao negotiationDao;
+	private InterNegoDao negotiationDao;
 	
 	// 목록
 		@Override

@@ -29,7 +29,7 @@
 				</div>
 				<div class="input_wrapper">
 					<label for="Q_PWD">비밀번호</label>
-					<input type="password" id="Q_PWD" name="Q_PWD" placeholder="비밀번호" required="required"">
+					<input type="password" id="Q_PWD" name="Q_PWD" placeholder="비밀번호" required="required">
 				</div>
 				<input type="hidden" id="Q_NUM" name="Q_NUM" value="${dtl.Q_NUM }">
 			</div>

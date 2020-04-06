@@ -60,6 +60,10 @@ $(function () {
 				javascript:location.href="/qna/ins.do";				
 			});
 			
+			$("#btn_w_nego_ins").click(function(){			
+				javascript:location.href="/nego/ins.do";				
+			});
+			
 			// 등록 이벤트
 			$("#btn_w_qna").click(function(){		
 				initInsEvent();
@@ -69,6 +73,11 @@ $(function () {
 			$("#w-qna-list tr").click(function(){		
 				var q_num = $(this).attr('Q_NUM');
 				javascript:location.href = "/qna/dtl.do?q="+q_num;	
+			});
+			
+			$("#w-nego-list tr").click(function(){		
+				var q_num = $(this).attr('C_NUM');
+				javascript:location.href = "/nego/dtl.do?c="+c_num;	
 			});
 		};
 		

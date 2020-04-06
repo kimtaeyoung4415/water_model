@@ -5,30 +5,30 @@
 <%-- tiles header form --%>
 
 <div id="test_id" class="container-fluid">
-	<div id=com_logo></div>
+	<div id=com_logo onclick="location.href='/'"></div>
 	<div id="nav-var">
 		<nav>
 			<ul class="clearfix">
-				<li><a href="/about/company.do">about</a></li>
-				<li>management
+				<li id="w-about">ABOUT</li>
+				<li>MANAGEMENTS
 					<ul>
-						<li><a href="/mng/women/list.do">women</a></li>
-						<li><a href="/mng/men/list.do">men</a></li>
-						<li><a href="/mng/devel/list.do">development</a></li>
-						<li><a href="/mng/actors/list.do">actors</a></li>
+						<li id="w-mng-women">WOMEN</li>
+						<li id="w-mng-men">MEN</li>
+						<li id="w-mng-development">DEVELOPMENTS</li>
+						<li id="w-mng-actors">ACTORS</li>
 					</ul>
 				</li>
-				<li>media
+				<li>MEDIA
 					<ul id=sub_menu>
-						<li><a href="/media/magazine.do">magazine</a></li>
+						<li id="w-media-magazine">MAGAZINE</li>
 					</ul>
 				</li>
 				<li>Q&A
 					<ul>
-						<li><a href="/qna/dtl.do">DTL</a></li>
-						<li><a href="/qna/edit.do">edit</a></li>
-						<li><a href="/qna/ins.do">ins</a></li>
-						<li><a href="/qna/list.do">list</a></li>
+						<li id="w-brd-qna">Q & A</li>
+						<li id="w-brd-notice">NOTICE</li>
+						<li id="w-nego">NEGOTIATION</li>
+						<li id="w-rec">RECRUITMENT</li>
 					</ul>
 				</li>
 			</ul>

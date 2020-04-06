@@ -1,9 +1,9 @@
-package com.water.model.negotiation.dao;
+package com.water.model.nego.dao;
 
 import java.util.List;
 import java.util.Map;
 
-public interface InterNegotiationDao {
+public interface InterNegoDao {
 	// 목록
 		List<Map<String, Object>> selectNegotiationList() throws Exception;
 		

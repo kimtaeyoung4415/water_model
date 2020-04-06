@@ -18,6 +18,8 @@ ul li {
 	clear:both;
 	font-size: 25px;
 	}
+	
+
 #test_id {	
 	margin-top:20px;
 	background:linear-gradient(white 50px, rgba(255,255,255,0.5) 50px, rgba(255,255,255,0.5) );
@@ -32,6 +34,7 @@ nav {
 	width: 80%;
 	margin:0 auto;
 	border: 1px solid black;
+	cursor: pointer;
 }
 nav > ul > li {
 	float:left; 

@@ -1,9 +1,9 @@
-package com.water.model.negotiation.service;
+package com.water.model.nego.service;
 
 import java.util.List;
 import java.util.Map;
 
-public interface InterNegotiationService {
+public interface InterNegoService {
 
 	List<Map<String, Object>> selectNegotiationList() throws Exception;
 	
