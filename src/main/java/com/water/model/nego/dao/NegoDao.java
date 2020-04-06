@@ -1,4 +1,4 @@
-package com.water.model.negotiation.dao;
+package com.water.model.nego.dao;
 
 import java.util.List;
 import java.util.Map;
@@ -9,7 +9,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class NegotiationDao implements InterNegotiationDao{
+public class NegoDao implements InterNegoDao{
 	
 	
 	@Resource(name = "sqlSession")

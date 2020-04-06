@@ -19,12 +19,12 @@
 			<div class="ui link cards">
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필25.PNG">
+				      <img src="../resources/img/magazine/프로필25.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">정윤지</div>
 				      <div class="meta">
-				        <a>model</a>
+				        <a>Actor</a>
 				      </div>
 				      <div class="description">
 				        Matthew is an interior designer living in New York.
@@ -42,7 +42,76 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필21.PNG">
+				      <img src="../resources/img/magazine/프로필21.PNG">
+				    </div>
+				    <div class="content">
+				      <div class="header">정윤지</div>
+				      <div class="meta">
+				        <span class="date">Actor</span>
+				      </div>
+				      <div class="description">
+				        Molly is a personal assistant living in Paris.
+				      </div>
+				    </div>
+				    <div class="extra content">
+				      <span class="right floated">
+				        Joined in 2011
+				      </span>
+				      <span>
+				        <i class="user icon"></i>
+				        35 Friends
+				      </span>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="image">
+				      <img src="../resources/img/magazine/프로필23.PNG">
+				    </div>
+				    <div class="content">
+				      <div class="header">정윤지</div>
+				      <div class="meta">
+				        <a>Actor</a>
+				      </div>
+				      <div class="description">
+				        Elyse is a copywriter working in New York.
+				      </div>
+				    </div>
+				    <div class="extra content">
+				      <span class="right floated">
+				        Joined in 2014
+				      </span>
+				      <span>
+				        <i class="user icon"></i>
+				        151 Friends
+				      </span>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="image">
+				      <img src="../resources/img/magazine/프로필24.PNG">
+				    </div>
+				    <div class="content">
+				      <div class="header">정윤지</div>
+				      <div class="meta">
+				        <a>Actor</a>
+				      </div>
+				      <div class="description">
+				        Matthew is an interior designer living in New York.
+				      </div>
+				    </div>
+				    <div class="extra content">
+				      <span class="right floated">
+				        Joined in 2013
+				      </span>
+				      <span>
+				        <i class="user icon"></i>
+				        75 Friends
+				      </span>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="image">
+				      <img src="../resources/img/magazine/프로필11.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Molly</div>
@@ -65,7 +134,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필23.PNG">
+				      <img src="../resources/img/magazine/프로필12.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Elyse</div>
@@ -88,7 +157,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필24.PNG">
+				      <img src="../resources/img/magazine/프로필13.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Matt Giampietro</div>
@@ -111,7 +180,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필11.PNG">
+				      <img src="../resources/img/magazine/프로필22.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Molly</div>
@@ -134,7 +203,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필12.PNG">
+				      <img src="../resources/img/magazine/프로필14.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Elyse</div>
@@ -157,7 +226,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필13.PNG">
+				      <img src="../resources/img/magazine/프로필6.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Matt Giampietro</div>
@@ -180,7 +249,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필22.PNG">
+				      <img src="../resources/img/magazine/프로필7.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Molly</div>
@@ -203,76 +272,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/프로필14.PNG">
-				    </div>
-				    <div class="content">
-				      <div class="header">Elyse</div>
-				      <div class="meta">
-				        <a>Coworker</a>
-				      </div>
-				      <div class="description">
-				        Elyse is a copywriter working in New York.
-				      </div>
-				    </div>
-				    <div class="extra content">
-				      <span class="right floated">
-				        Joined in 2014
-				      </span>
-				      <span>
-				        <i class="user icon"></i>
-				        151 Friends
-				      </span>
-				    </div>
-				  </div>
-				  <div class="card">
-				    <div class="image">
-				      <img src="../resources/img/프로필6.PNG">
-				    </div>
-				    <div class="content">
-				      <div class="header">Matt Giampietro</div>
-				      <div class="meta">
-				        <a>Friends</a>
-				      </div>
-				      <div class="description">
-				        Matthew is an interior designer living in New York.
-				      </div>
-				    </div>
-				    <div class="extra content">
-				      <span class="right floated">
-				        Joined in 2013
-				      </span>
-				      <span>
-				        <i class="user icon"></i>
-				        75 Friends
-				      </span>
-				    </div>
-				  </div>
-				  <div class="card">
-				    <div class="image">
-				      <img src="../resources/img/프로필7.PNG">
-				    </div>
-				    <div class="content">
-				      <div class="header">Molly</div>
-				      <div class="meta">
-				        <span class="date">Coworker</span>
-				      </div>
-				      <div class="description">
-				        Molly is a personal assistant living in Paris.
-				      </div>
-				    </div>
-				    <div class="extra content">
-				      <span class="right floated">
-				        Joined in 2011
-				      </span>
-				      <span>
-				        <i class="user icon"></i>
-				        35 Friends
-				      </span>
-				    </div>
-				  </div>
-				  <div class="card">
-				    <div class="image">
-				      <img src="../resources/img/프로필8.PNG">
+				      <img src="../resources/img/magazine/프로필8.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">Elyse</div>
