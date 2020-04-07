@@ -10,15 +10,11 @@
     
 	<!-- tiles form 1 -->
 	<definition name="layout-tiles" template="/WEB-INF/tiles/layout/layout-tiles.jsp"> 
-		<put-attribute name="header" value="/WEB-INF/tiles/tile/header.jsp" />
+		<put-attribute name="header" value="/WEB-INF/tiles/tile/web/header.jsp" />
 		<put-attribute name="content" value="" />
-		<put-attribute name="footer" value="/WEB-INF/tiles/tile/footer.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/tile/web/footer.jsp" />
 	</definition>
-	
-	<!-- 
-		jsp 경로는 /WEB-INF/views 에 그냥 생성하면 됨
-		파일 depth는 최대  /WEB-INF/views/jsp/{1}/{2} 까지만 하는것을 추천함
-	-->
+
 	<definition name="*.tiles" extends="layout-tiles">
 		<put-attribute name="content" value="/WEB-INF/views/jsp/{1}.jsp"/>
 	</definition>
@@ -29,6 +25,24 @@
 		<put-attribute name="content" value="/WEB-INF/views/jsp/{1}/{2}/{3}.jsp"/>
 	</definition>
 	<!-- tiles form 1 --> 
+	
+	<!-- tiles form 2 -->
+	<definition name="layout-tiles-admin" template="/WEB-INF/tiles/layout/layout-tiles-admin.jsp"> 
+		<put-attribute name="header" value="/WEB-INF/tiles/tile/admin/header.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/tile/admin/footer.jsp" />
+	</definition>
+	
+	<definition name="*.tiles-a" extends="layout-tiles-admin">
+		<put-attribute name="content" value="/WEB-INF/views/jsp/{1}.jsp"/>
+	</definition>
+	<definition name="*/*.tiles-a" extends="layout-tiles-admin">
+		<put-attribute name="content" value="/WEB-INF/views/jsp/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="*/*/*.tiles-a" extends="layout-tiles-admin">
+		<put-attribute name="content" value="/WEB-INF/views/jsp/{1}/{2}/{3}.jsp"/>
+	</definition>
+	<!-- tiles form 2 --> 
     
 	
 	

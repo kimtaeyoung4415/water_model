@@ -32,7 +32,9 @@
 					<c:if test="${list.IMP_YN == 'Y' }">
 						<tr N_NUM="${list.N_NUM}" class="ty_Y">
 							<td>중요</td>
-							<td  style="text-align: left">${list.N_TITLE}</td>
+							<td  style="text-align: left">${list.N_TITLE}
+							<img src="/resources/img/new.png" id="img">
+							</td>
 							<td>${list.N_REG_DATE}</td>
 							<td>${list.VIEW_CNT}</td>
 						</tr>

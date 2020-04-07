@@ -48,4 +48,16 @@ a { text-decoration: none; }
 
 /* 중요 공지글 */
 .ty_Y { font-weight: bold; color: #fd0000; background: gainsboro; }
+
+/* checkbox */
+.chk {display:block; position:relative; margin-bottom:12px; padding-left:25px; font-size:15px; cursor:pointer; user-select:none;-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none;}
+.chk input {position:absolute; opacity:0; cursor:pointer;}
+.chkmark {position:absolute; top:0; left:0px; width:20px; height:20px; background-color:#fff; border:1px solid #ddd;}
+.chk:hover input ~ .chkmark {background-color:#ccc;}
+.chk input:checked ~ .chkmark {background-color:#333333;}
+.chkmark:after {display:none; position:absolute; content:"";}
+.chk input:checked ~ .chkmark:after {display:block;}
+.chk .chkmark:after {top:2px; left:7px; width:5px; height:10px; border:solid white; border-width:0 3px 3px 0; transform:rotate(45deg);-webkit-transform:rotate(45deg); -ms-transform:rotate(45deg);}
+.chk-area { margin-left:30px; }
+.chk-area label { text-align: left; }
     
