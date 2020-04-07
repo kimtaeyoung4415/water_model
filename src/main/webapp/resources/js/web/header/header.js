@@ -16,6 +16,11 @@ $(function (){
 		javascript:location.href="/about/company.do";				
 	})
 	
+	//관리자 회사 소개
+	$("#a-about").click(function(){			
+		javascript:location.href="/about/company.do";				
+	})
+	
 	//모델 매니지 먼트
 	$("#w-mng-women").click(function(){			
 		javascript:location.href="/mng/women/list.do";				
@@ -30,8 +35,27 @@ $(function (){
 		javascript:location.href="/mng/actors/list.do";				
 	})
 	
+	//관리자 모델 매니지먼트
+	$("#a-mng-women").click(function(){			
+		javascript:location.href="/mng/women/list.do";				
+	})
+	$("#a-mng-men").click(function(){			
+		javascript:location.href="/mng/men/list.do";				
+	})
+	$("#a-mng-development").click(function(){			
+		javascript:location.href="/mng/devel/list.do";				
+	})
+	$("#a-mng-actors").click(function(){			
+		javascript:location.href="/mng/actors/list.do";				
+	})
+	
 	//미디어
 	$("#w-media-magazine").click(function(){			
+		javascript:location.href="/media/magazine.do";				
+	})
+	
+	//관리자 미디어
+	$("#a-media-magazine").click(function(){			
 		javascript:location.href="/media/magazine.do";				
 	})
 	
@@ -47,5 +71,19 @@ $(function (){
 	})	
 	$("#w-rec").click(function(){			
 		javascript:location.href="/recruitment/model_rt.do";				
+	})
+	
+	//관리자 qna
+	$("#a-brd-qna").click(function(){			
+		javascript:location.href="/admin/qna/list.do";				
+	})	
+	$("#a-brd-notice").click(function(){			
+		javascript:location.href="/admin/ntce/list.do";				
+	})	
+	$("#a-nego").click(function(){			
+		javascript:location.href="/admin/nego/list.do";				
+	})	
+	$("#a-rec").click(function(){			
+		javascript:location.href="/admin/recruitment/model_rt.do";				
 	})
 })
