@@ -7,9 +7,11 @@
 		<div class="sub-container">
 			<div class="application_modal">
 				<h3>공지 작성</h3>
-				<div class="input_wrapper">
-					<label for="IMP_YN">중요여부</label>
-					<input type="checkbox" id="IMP_YN" name="IMP_YN"/>
+				<div class="chk-area">					
+					<label for="IMP_YN" class="chk">중요 여부
+						<input type="checkbox" id="IMP_YN" name="IMP_YN"/>
+						<span class="chkmark"></span>
+					</label>
 				</div>
 				<div class="input_wrapper">
 					<label for="N_TITLE">제목</label>
