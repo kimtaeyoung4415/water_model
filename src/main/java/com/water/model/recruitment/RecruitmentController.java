@@ -19,5 +19,12 @@ public class RecruitmentController {
 		mv.setViewName("web/recruitment/model_rt.tiles");
 		return mv;
 	}
+	
+	@RequestMapping(value="/rsn.do",method= RequestMethod.GET)
+	public ModelAndView registration(ModelAndView mv) {
+		mv.setViewName("web/recruitment/rsn.tiles");
+		return mv;
+		
+		}
 
 }
