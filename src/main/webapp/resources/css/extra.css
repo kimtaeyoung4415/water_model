@@ -61,3 +61,5 @@ a { text-decoration: none; }
 .chk-area { margin-left:30px; }
 .chk-area label { text-align: left; }
     
+/* brd_new */
+.brd_new { height: 15px; vertical-align: middle; padding : 0px; }    

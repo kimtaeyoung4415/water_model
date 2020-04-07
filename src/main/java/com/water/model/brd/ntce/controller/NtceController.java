@@ -1,5 +1,7 @@
 package com.water.model.brd.ntce.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -30,6 +32,11 @@ public class NtceController {
 	public ModelAndView list(ModelAndView mv) throws Exception {				
 		
 		try {
+			
+			SimpleDateFormat dateformat = new SimpleDateFormat ("yyyy-MM-dd");
+			Date time = new Date();
+			String now = dateformat.format(time);
+			
 			// 목록
 			List<Map<String, Object>> list = ntceService.selectNtceList();		
 			
@@ -38,6 +45,7 @@ public class NtceController {
 			
 			mv.addObject("list",list);
 			mv.addObject("list_count",count);
+			mv.addObject("now",now);
 			mv.setViewName("web/ntce/list.tiles");
 				
 			} catch (Throwable e) {
