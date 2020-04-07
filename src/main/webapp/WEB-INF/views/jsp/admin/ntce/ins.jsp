@@ -28,7 +28,7 @@
 				</div>
 			</div>
 		</div>
-		
+		 
 		<div class="btn_form">
 			<input type="button" id="btn_ntce_ins" class="btn" value="등록"/>
 		</div>
