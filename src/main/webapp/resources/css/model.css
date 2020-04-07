@@ -13,7 +13,6 @@ body{
 	width:35%;
 	margin:0 auto 0 auto;
 }
-
 .model_kategorie_box tr th{
 	width:10%;
 	font-size: 13px;
@@ -47,7 +46,8 @@ body{
 }
 /* 모델 프로필 사진 세팅																			 */
 .model_profile li {
-	width: 17%;
+	width: 215px;
+	height: 222px;
 	margin: 5px;
 	display: inline-block;
 }

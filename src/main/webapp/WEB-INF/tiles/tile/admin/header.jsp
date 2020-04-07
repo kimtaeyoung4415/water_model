@@ -9,26 +9,26 @@
 	<div id="nav-var">
 		<nav>
 			<ul class="clearfix">
-				<li id="w-about">ABOUT</li>
+				<li id="a-about">ABOUT</li>
 				<li>MANAGEMENTS
 					<ul>
-						<li id="w-mng-women">WOMEN</li>
-						<li id="w-mng-men">MEN</li>
-						<li id="w-mng-development">DEVELOPMENTS</li>
-						<li id="w-mng-actors">ACTORS</li>
+						<li id="a-mng-women">WOMEN</li>
+						<li id="a-mng-men">MEN</li>
+						<li id="a-mng-development">DEVELOPMENTS</li>
+						<li id="a-mng-actors">ACTORS</li>
 					</ul>
 				</li>
 				<li>MEDIA
 					<ul id=sub_menu>
-						<li id="w-media-magazine">MAGAZINE</li>
+						<li id="a-media-magazine">MAGAZINE</li>
 					</ul>
 				</li>
 				<li>Q&A
 					<ul>
-						<li id="w-brd-qna">Q & A</li>
-						<li id="w-brd-notice">NOTICE</li>
-						<li id="w-nego">NEGOTIATION</li>
-						<li id="w-rec">RECRUITMENT</li>
+						<li id="a-brd-qna">Q & A</li>
+						<li id="a-brd-notice">NOTICE</li>
+						<li id="a-nego">NEGOTIATION</li>
+						<li id="a-rec">RECRUITMENT</li>
 					</ul>
 				</li>
 			</ul>
