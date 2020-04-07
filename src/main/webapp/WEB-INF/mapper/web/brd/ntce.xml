@@ -6,16 +6,18 @@
 	<!-- 전체 조회 -->
 	<select id="selectNtceList" parameterType="Map" resultType="Map">
 		SELECT
-			N_NUM,    		/* 번호 */
-			N_TITLE,       	/* 질문 제목 */
-			DATE_FORMAT(N_REG_DATE,  '%Y-%m-%d') AS N_REG_DATE,		/* 공지 등록일자 */
-			DATE_FORMAT(N_UPDT_DATE,  '%Y-%m-%d') AS N_UPDT_DATE,	/* 공지 수정일자 */
-			VIEW_CNT,	    /* 조회수 */
-			IMP_YN			/* 중요 여부 */
+			N_NUM,    			/* 번호 */
+			N_TITLE,     		/* 질문 제목 */
+			DATE_FORMAT(N_REG_DATE,  '%Y-%m-%d') AS N_REG_DATE,			/* 공지 등록 일자 */
+			DATE_FORMAT(N_UPDT_DATE, '%Y-%m-%d') AS N_UPDT_DATE,		/* 공지 수정 일자 */
+			DATE_FORMAT(N_REG_DATE,  '%H:%i') 	 AS N_REG_TIME,			/* 공지 등록 시간 */
+			DATE_FORMAT(N_UPDT_DATE, '%H:%i') 	 AS N_UPDT_TIME,		/* 공지 수정 시간 */
+			VIEW_CNT,	   		/* 조회수 */ 
+			IMP_YN					/* 중요 여부 */
 		FROM
 			WE_BRD_NTCE
 		ORDER BY 
-			N_NUM DESC
+			N_NUM DESC	
 	</select>
 	
 	<!-- 전체 카운트 조회 -->
