@@ -15,7 +15,7 @@
 			</div>
 			<br>
 			<div class="ui link cards">
-				  <div class="card">
+				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
 				    <div class="image jyg">
 				      <img src="${ctxPath}/resources/img/magazine/프로필25.PNG">
 				    </div>
@@ -38,7 +38,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card">
+				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필21.PNG">
 				    </div>
@@ -62,7 +62,7 @@
 				    </div>
 				  </div>
 				  
-				  <div class="card">
+				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필23.PNG">
 				    </div>
@@ -85,7 +85,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card">
+				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필24.PNG">
 				    </div>
@@ -108,7 +108,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card">
+				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필11.PNG">
 				    </div>
@@ -131,7 +131,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card">
+				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필12.PNG">
 				    </div>
@@ -154,7 +154,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card">
+				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필13.PNG">
 				    </div>
@@ -177,7 +177,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card">
+				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필22.PNG">
 				    </div>
@@ -200,7 +200,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card">
+				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필14.PNG">
 				    </div>
@@ -223,7 +223,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card">
+				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필6.PNG">
 				    </div>
@@ -246,7 +246,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card">
+				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필7.PNG">
 				    </div>
@@ -269,7 +269,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card">
+				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필8.PNG" height = "100%"/>
 				    </div>
@@ -292,6 +292,7 @@
 				      </span>
 				    </div>
 				  </div>
+				  
 			</div>
 			<br>		
 			<br>
@@ -311,8 +312,7 @@
 			</nav>
 			<br>
 			<div class="button">
-				<button id="" name="dds" class="btn">추가</button>
-				<button id="" name="dds" class="btn">삭제</button>
+				<input type="button"  class="btn" id="" value="추가" >
 				</div>
 		</div>
 	</div>

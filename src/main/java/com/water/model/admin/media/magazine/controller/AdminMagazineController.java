@@ -22,6 +22,7 @@ private static final Logger logger = LoggerFactory.getLogger(AdminMagazineContro
 	@RequestMapping(value="/dtl.do", method=RequestMethod.GET)
 	public ModelAndView dtl(ModelAndView mv) {
 		mv.setViewName("admin/media/dtl.tiles-a");
+		
 		return mv;
 	}
 	@RequestMapping(value="/edit.do", method=RequestMethod.GET)

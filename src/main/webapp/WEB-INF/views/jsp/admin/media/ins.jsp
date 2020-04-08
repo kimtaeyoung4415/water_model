@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <section class="view_details">
 	<div class="container">
 		<div class="row">
@@ -17,11 +16,10 @@
 					</iframe>
 				</div>
 					<div class="button">
-						<input type="button" class="btn" id="" value="수정">
-						<input type="button" class="btn" id="" value="삭제">
+						<input type="button" class="btn" value="저장">
 					</div>
 				<div class="notice_nav">
-					<a href="http://localhost:8181/admin/media/list.do">LIST</a>
+					<a href="http://localhost:8181/admin/media/ins.do">LIST</a>
 				</div>
 			</div>
 		</div>
