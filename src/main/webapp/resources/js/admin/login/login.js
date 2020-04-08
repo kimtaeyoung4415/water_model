@@ -73,7 +73,6 @@ $(function () {
 				dataType: "json",
 				success:function(result){
 					if (result.SUCCESS) {
-						alert("얏호");
 						javascript:location.href="/admin/main.do";
 					} else {
 						if (result.ERR_CD == "ERR_ID") {
