@@ -11,6 +11,11 @@ public class AdminMngController {
 	
 	@RequestMapping(value="/list.do")
 	public String list(HttpServletRequest request) throws Exception {
-		return "/admin/mng/list.tiles-a";
+		return "admin/mng/list.tiles-a";
+	}
+	
+	@RequestMapping(value="/dtl.do")
+	public String dtl(HttpServletRequest request) throws Exception{
+		return "admin/mng/dtl.tiles-a";
 	}
 }

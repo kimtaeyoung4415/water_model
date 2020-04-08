@@ -3,10 +3,10 @@
     <div class="model_kategorie_box">
 <table class="model_kategorie">
 	<tr>
-		<th><a href="/mng/women/list.do">Women</a></th>
-		<th><a href="/mng/men/list.do">Men</a></th>
-		<th><a href="/mng/devel/list.do">Development</a></th>
-		<th><a href="/mng/actors/list.do">Actors</a></th>
+		<th><a href="list.do">Women</a></th>
+		<th><a href="list.do">Men</a></th>
+		<th><a href="list.do">Development</a></th>
+		<th><a href="list.do">Actors</a></th>
 	</tr>
 </table>
 </div>
