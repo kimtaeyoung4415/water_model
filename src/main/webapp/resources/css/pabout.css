@@ -46,6 +46,7 @@
     float: left;
     position: relative;
     top: 15%;
+    text-align: right;
 }
 #about_map{
 	background-color:black;

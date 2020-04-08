@@ -11,7 +11,6 @@
 	<div id="nav-var">
 		<nav>
 			<ul class="clearfix">
-				<li id="a-about">ABOUT</li>
 				<li>MANAGEMENTS
 					<ul>
 						<li id="a-mng-women">WOMEN</li>
