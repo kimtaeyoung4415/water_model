@@ -14,9 +14,16 @@ public class AdminLoginDao implements InterAdminLoginDao {
 	@Resource(name = "sqlSession")
 	private SqlSessionTemplate sqlSession;
 	
+	// 로그인
 	@Override
 	public int selectAdminLogin(Map<String, Object> param) throws Exception {
 		 return sqlSession.selectOne("admin.login.selectAdminLogin", param);
+	}
+
+	// 아이디 체크
+	@Override
+	public String selectAdminIdCheck(Map<String, Object> param) {
+		return sqlSession.selectOne("admin.login.selectAdminIdCheck", param);
 	}
 
 }

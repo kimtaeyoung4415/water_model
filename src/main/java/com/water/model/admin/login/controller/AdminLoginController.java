@@ -30,7 +30,7 @@ public class AdminLoginController {
 	}	
 
 	// 로그인 액션
-	@RequestMapping(value = "/getAdminLogin.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/getAdminLogin.do", method = RequestMethod.POST)
 	@ResponseBody
 	public Map<String, Object> getAdminLogin(@RequestParam Map<String, Object> param) throws Exception {				
 		
@@ -39,14 +39,25 @@ public class AdminLoginController {
 		try {
 	
 			// 존재하는 아이디인지 체크
-			int cnt = adminLoginService.selectAdminLogin(param);
+			String result_id = adminLoginService.selectAdminIdCheck(param);
 			
-			if (cnt == 0) {
+			String AD_ID = param.get("AD_ID").toString();
+			
+			if (AD_ID.equals(result_id)) {
+				result.put("ERR_CD", "ERR_ID");
 				result.put("SUCCESS", false);
 			} else {
-				result.put("SUCCESS", true);
+				
+				// 로그인
+				int cnt = adminLoginService.selectAdminLogin(param);
+				
+				if (cnt == 0) {
+					result.put("ERR_CD", "ERR_PWD");
+					result.put("SUCCESS", false);
+				} else {
+					result.put("SUCCESS", true);
+				}				
 			}
-			
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}

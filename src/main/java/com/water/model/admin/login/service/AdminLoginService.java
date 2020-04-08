@@ -17,4 +17,10 @@ public class AdminLoginService implements InterAdminLoginService {
 		return adminLoginDao.selectAdminLogin(param);
 	}
 
+	// 아이디 체크
+	@Override
+	public String selectAdminIdCheck(Map<String, Object> param) {
+		return adminLoginDao.selectAdminIdCheck(param);
+	}
+
 }
