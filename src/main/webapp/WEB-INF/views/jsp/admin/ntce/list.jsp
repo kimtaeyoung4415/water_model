@@ -32,8 +32,25 @@
 					<c:if test="${list.IMP_YN == 'Y' }">
 						<tr N_NUM="${list.N_NUM}" class="ty_Y">
 							<td>중요</td>
-							<td  style="text-align: left">${list.N_TITLE}</td>
-							<td>${list.N_REG_DATE}</td>
+							<td  style="text-align: left">${list.N_TITLE}
+								<c:if test="${list.N_REG_DATE == now }">
+									<img src="/resources/img/new.png" id="img" class="brd_new">
+									<c:if test="${list.N_UPDT_DATE == null }">
+										<td>${list.N_REG_TIME}</td>
+									</c:if>
+									<c:if test="${list.N_UPDT_DATE != null }">
+										<td>${list.N_UPDT_TIME}</td>
+									</c:if>
+								</c:if>
+								<c:if test="${list.N_REG_DATE != now }">
+									<c:if test="${list.N_UPDT_DATE == null }">
+										<td>${list.N_REG_DATE}</td>
+									</c:if>
+									<c:if test="${list.N_UPDT_DATE != null }">
+										<td>${list.N_UPDT_DATE}</td>
+									</c:if>
+								</c:if>
+							</td>
 							<td>${list.VIEW_CNT}</td>
 						</tr>
 					</c:if>		
@@ -42,9 +59,26 @@
 				<c:forEach var="list" items="${list}" varStatus="status">
 					<c:if test="${list.IMP_YN == 'N' }">
 						<tr N_NUM="${list.N_NUM}">
-							<td>공지</td>
-							<td style="text-align: left">${list.N_TITLE}</td>
-							<td>${list.N_REG_DATE}</td>
+							<td>중요</td>
+							<td class="td_title">${list.N_TITLE}
+								<c:if test="${list.N_REG_DATE == now }">
+									<img src="/resources/img/new.png" id="img" class="brd_new">
+									<c:if test="${list.N_UPDT_DATE == null }">
+										<td>${list.N_REG_TIME}</td>
+									</c:if>
+									<c:if test="${list.N_UPDT_DATE != null }">
+										<td>${list.N_UPDT_TIME}</td>
+									</c:if>
+								</c:if>
+								<c:if test="${list.N_REG_DATE != now }">
+									<c:if test="${list.N_UPDT_DATE == null }">
+										<td>${list.N_REG_DATE}</td>
+									</c:if>
+									<c:if test="${list.N_UPDT_DATE != null }">
+										<td>${list.N_UPDT_DATE}</td>
+									</c:if>
+								</c:if>
+							</td>
 							<td>${list.VIEW_CNT}</td>
 						</tr>
 					</c:if>					

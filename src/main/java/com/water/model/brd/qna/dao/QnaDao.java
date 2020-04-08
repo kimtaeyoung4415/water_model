@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class QnaDao implements InterQnaDao {
 
-
 	@Resource(name = "sqlSession")
 	private SqlSessionTemplate sqlSession;
 	

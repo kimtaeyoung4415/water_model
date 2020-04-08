@@ -27,7 +27,7 @@
 					<th>조회</th>
 				</tr>	
 			</thead>
-			<tbody id="a-ntce-list">
+			<tbody id="w-ntce-list">
 				<c:forEach var="list" items="${list}" varStatus="status">
 					<c:if test="${list.IMP_YN == 'Y' }">
 						<tr N_NUM="${list.N_NUM}" class="ty_Y">
@@ -60,7 +60,7 @@
 					<c:if test="${list.IMP_YN == 'N' }">
 						<tr N_NUM="${list.N_NUM}">
 							<td>공지</td>
-							<td  style="text-align: left">${list.N_TITLE}
+							<td class="td_title">${list.N_TITLE}
 								<c:if test="${list.N_REG_DATE == now }">
 									<img src="/resources/img/new.png" id="img" class="brd_new">
 									<c:if test="${list.N_UPDT_DATE == null }">

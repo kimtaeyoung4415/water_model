@@ -51,9 +51,15 @@
 		<put-attribute name="content" value="" />
 	</definition>
 	
-	<definition name="*.notiles" extends="layout-notiles">
-		<put-attribute name="content" value="/WEB-INF/views/notiles/{1}.jsp"/>
+	<definition name="*.tiles-n" extends="layout-notiles">
+		<put-attribute name="content" value="/WEB-INF/views/jsp/{1}.jsp"/>
 	</definition>
+	<definition name="*/*.tiles-n" extends="layout-notiles">
+		<put-attribute name="content" value="/WEB-INF/views/jsp/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="*/*/*.tiles-n" extends="layout-notiles">
+		<put-attribute name="content" value="/WEB-INF/views/jsp/{1}/{2}/{3}.jsp"/>
+	</definition>	
 	<!-- non tiles form -->
 	
 </tiles-definitions>       

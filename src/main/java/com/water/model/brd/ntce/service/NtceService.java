@@ -33,9 +33,6 @@ public class NtceService implements InterNtceService {
 		
 		Map<String, Object> dtl = new HashMap<String, Object>();
 		
-		dtl = ntceDao.selectNtceDtl(N_NUM);
-		
-		/*
 		// 조회수 증가
 		int cnt = ntceDao.updateNtceViewCnt(N_NUM);
 		
@@ -44,8 +41,7 @@ public class NtceService implements InterNtceService {
 		} else {
 			dtl = null;
 		}
-		*/
-		
+				
 		return dtl;
 	}
 		

@@ -18,7 +18,7 @@
 					<input type="text" id="N_TITLE" name="N_TITLE" placeholder="홍길동" required="required">
 				</div>
 				<div class="input_wrapper">
-					<label for="N_CONT">문의내용</label>
+					<label for="N_CONT">공지</label>
 					<textarea id="N_CONT" name="N_CONT" rows="10" placeholder="문의 내용" required="required"></textarea>
 				</div>
 				<div class="filebox preview-image">

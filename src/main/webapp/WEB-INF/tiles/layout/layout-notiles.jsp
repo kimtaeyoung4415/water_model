@@ -13,7 +13,7 @@
 	
 	<%-- script --%>
 	<script type="text/javascript" src="${ctxPath}/resources/utils/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="${ctxPath}/resources/js/brd/qust/qust.js"></script>				<%-- qust.js --%>
+	<script type="text/javascript" src="${ctxPath}/resources/js/admin/login/login.js"></script>				<%-- qust.js --%>
 	
 </head>      
 <tiles:insertAttribute name="content" />

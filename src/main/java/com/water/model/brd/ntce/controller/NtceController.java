@@ -1,7 +1,5 @@
 package com.water.model.brd.ntce.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -16,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.water.model.brd.ntce.service.InterNtceService;
+import com.water.model.util.GetDate;
 
 @Controller
 @RequestMapping(value = "/ntce")
@@ -26,6 +25,9 @@ public class NtceController {
 	@Autowired
 	private InterNtceService ntceService;
 	
+	@Autowired
+	private GetDate getDate;
+	
 	// 목록 화면
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
 	@ResponseBody
@@ -33,9 +35,8 @@ public class NtceController {
 		
 		try {
 			
-			SimpleDateFormat dateformat = new SimpleDateFormat ("yyyy-MM-dd");
-			Date time = new Date();
-			String now = dateformat.format(time);
+			// 현재 시간
+			String now = getDate.getCurrentTime();
 			
 			// 목록
 			List<Map<String, Object>> list = ntceService.selectNtceList();		
@@ -62,7 +63,11 @@ public class NtceController {
 		
 		Map<String, Object> dtl = ntceService.selectNtceDtl(N_NUM);	
 		
-		mv.addObject("dtl",dtl);		
+		// 현재 시간
+		String now = getDate.getCurrentTime();
+		
+		mv.addObject("dtl",dtl);
+		mv.addObject("now",now);
 		mv.setViewName("web/ntce/dtl.tiles");
 		
 		return mv;

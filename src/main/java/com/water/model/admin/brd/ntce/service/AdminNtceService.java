@@ -1,5 +1,6 @@
 package com.water.model.admin.brd.ntce.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,13 +30,36 @@ public class AdminNtceService implements InterAdminNtceService {
 	// 상세
 	@Override
 	public Map<String, Object> selectAdminNtceDtl(int N_NUM) throws Exception {
-		return adminNtceDao.selectAdminNtceDtl(N_NUM);
+		Map<String, Object> dtl = new HashMap<String, Object>();
+		
+		// 조회수 증가
+		int cnt = adminNtceDao.updateAdminNtceViewCnt(N_NUM);
+		
+		if (cnt != 0) {
+			dtl = adminNtceDao.selectAdminNtceDtl(N_NUM);
+		} else {
+			dtl = null;
+		}
+		
+		return dtl;
 	}
 
 	// 등록
 	@Override
-	public int insertAdminNtce(Map<String, Object> param) {
+	public int insertAdminNtce(Map<String, Object> param) throws Exception {
 		return adminNtceDao.insertAdminNtce(param);
 	}
+
+	// 수정
+	@Override
+	public int updateAdminNtce(Map<String, Object> param) throws Exception {
+		return adminNtceDao.updateAdminNtce(param);
+	}
 		
+	// 삭제
+	@Override
+	public int deleteAdminNtce(Map<String, Object> param) throws Exception {
+		return adminNtceDao.deleteAdminNtce(param);
+	}
+	
 }

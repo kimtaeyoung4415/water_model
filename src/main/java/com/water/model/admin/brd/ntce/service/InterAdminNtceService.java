@@ -67,6 +67,38 @@ public interface InterAdminNtceService {
 	 * @param param
 	 * @return
 	 */
-	int insertAdminNtce(Map<String, Object> param);
+	int insertAdminNtce(Map<String, Object> param) throws Exception;
+
+	/** <pre>
+	 * 1. 개요         : 관리자 공지 수정
+	 * </pre>
+	 * @Method    : updateAdminNtce
+	 * @date      : 2020. 04. 07. 18:10
+	 * @author    : 김선규
+	 * @history -------------------------------------------
+	 *          ----변경일---------작성자--------------변경내용 
+	 *          2020. 04. 07         김선규                         최초 작성
+	 *          -------------------------------------------
+	 * </pre>
+	 * @param param
+	 * @return
+	 */
+	int updateAdminNtce(Map<String, Object> param) throws Exception;
+	
+	/** <pre>
+	 * 1. 개요         : 관리자 공지 삭제
+	 * </pre>
+	 * @Method    : deleteAdminNtce
+	 * @date      : 2020. 04. 07. 18:10
+	 * @author    : 김선규
+	 * @history -------------------------------------------
+	 *          ----변경일---------작성자--------------변경내용 
+	 *          2020. 04. 07         김선규                         최초 작성
+	 *          -------------------------------------------
+	 * </pre>
+	 * @param param
+	 * @return
+	 */
+	int deleteAdminNtce(Map<String, Object> param) throws Exception;
 
 }

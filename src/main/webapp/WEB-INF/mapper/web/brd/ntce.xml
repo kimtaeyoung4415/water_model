@@ -13,7 +13,7 @@
 			DATE_FORMAT(N_REG_DATE,  '%H:%i') 	 AS N_REG_TIME,			/* 공지 등록 시간 */
 			DATE_FORMAT(N_UPDT_DATE, '%H:%i') 	 AS N_UPDT_TIME,		/* 공지 수정 시간 */
 			VIEW_CNT,	   		/* 조회수 */ 
-			IMP_YN					/* 중요 여부 */
+			IMP_YN				/* 중요 여부 */
 		FROM
 			WE_BRD_NTCE
 		ORDER BY 
@@ -35,8 +35,10 @@
 			N_TITLE,       	/* 질문 제목 */
 			N_CONT,       	/* 질문 내용 */
 			N_REG_NAME,      /* 질문 등록자 */
-			DATE_FORMAT(N_REG_DATE,  '%Y-%m-%d') AS N_REG_DATE,		/* 공지 등록일자 */
-			DATE_FORMAT(N_UPDT_DATE,  '%Y-%m-%d') AS N_UPDT_DATE,	/* 공지 수정일자 */
+			DATE_FORMAT(N_REG_DATE,  '%Y-%m-%d') AS N_REG_DATE,		/* 공지 등록 일자 */
+			DATE_FORMAT(N_UPDT_DATE, '%Y-%m-%d') AS N_UPDT_DATE,	/* 공지 수정 일자 */
+			DATE_FORMAT(N_REG_DATE,  '%H:%i') AS N_REG_TIME,		/* 공지 등록 시간 */
+			DATE_FORMAT(N_UPDT_DATE, '%H:%i') AS N_UPDT_TIME,		/* 공지 수정 시간 */
 			VIEW_CNT,	    /* 조회수 */
 			IMP_YN			/* 중요 여부 */
 		FROM

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.water.model.brd.qna.service.InterQnaService;
+import com.water.model.util.GetDate;
 
 @Controller
 @RequestMapping(value = "/qna")
@@ -27,12 +28,19 @@ public class QnaController {
 	@Autowired
 	private InterQnaService qnaService;
 	
+	@Autowired
+	private GetDate getDate;
+	
 	// 목록 화면
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
 	@ResponseBody
 	public ModelAndView list(ModelAndView mv) throws Exception {				
 		
 		try {
+			
+			// 현재 시간
+			String now = getDate.getCurrentTime();
+			
 			// 목록
 			List<Map<String, Object>> list = qnaService.selectQnaList();		
 			
@@ -41,6 +49,7 @@ public class QnaController {
 			
 			mv.addObject("list",list);
 			mv.addObject("list_count",count);
+			mv.addObject("now",now);
 			mv.setViewName("web/qna/list.tiles");
 			
 		} catch (Throwable e) {
@@ -63,7 +72,11 @@ public class QnaController {
 		
 		Map<String, Object> dtl = qnaService.selectQnaDtl(Q_NUM);	
 		
+		// 현재 시간
+		String now = getDate.getCurrentTime();
+		
 		mv.addObject("dtl",dtl);		
+		mv.addObject("now",now);
 		mv.setViewName("web/qna/dtl.tiles");
 		
 		return mv;

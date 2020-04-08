@@ -11,6 +11,8 @@
 		     Q_TITLE,       /* 질문 제목 */
 		     DATE_FORMAT(Q_REG_DATE,  '%Y-%m-%d') AS Q_REG_DATE,	/* 질문 등록일자 */
 		     DATE_FORMAT(Q_UPDT_DATE, '%Y-%m-%d') AS Q_UPDT_DATE,	/* 질문 수정일자 */
+		     DATE_FORMAT(Q_REG_DATE,  '%H:%i') AS Q_REG_TIME,		/* 질문 등록시간 */
+		     DATE_FORMAT(Q_UPDT_DATE, '%H:%i') AS Q_UPDT_TIME,		/* 질문 수정시간 */
 		     A_CONT,		/* 답변 */
 		     VIEW_CNT	    /* 조회수 */
 		FROM
@@ -36,8 +38,10 @@
 		    Q_EMAIL,        	/* 이메일 */
 		    Q_TITLE,        	/* 질문 제목 */
 		    Q_CONT,     		/* 질문 내용 */
-		     DATE_FORMAT(Q_REG_DATE,  '%Y-%m-%d') AS Q_REG_DATE,	/* 질문 등록일자 */
-		     DATE_FORMAT(Q_UPDT_DATE, '%Y-%m-%d') AS Q_UPDT_DATE,	/* 질문 수정일자 */
+		    DATE_FORMAT(Q_REG_DATE,  '%Y-%m-%d') AS Q_REG_DATE,		/* 질문 등록일자 */
+		    DATE_FORMAT(Q_UPDT_DATE, '%Y-%m-%d') AS Q_UPDT_DATE,	/* 질문 수정일자 */
+			DATE_FORMAT(Q_REG_DATE,  '%H:%i') AS Q_REG_TIME,		/* 질문 등록시간 */
+			DATE_FORMAT(Q_UPDT_DATE, '%H:%i') AS Q_UPDT_TIME,		/* 질문 수정시간 */
 		    A_NAME,     		/* 답변자 */
 		    A_CONT,     		/* 답변 내용 */
 		    DATE_FORMAT(A_REG_DATE, '%Y-%m-%d') AS A_REG_DATE,		/* 답변 등록일자 */

@@ -7,11 +7,21 @@
 		<div id="dtl_tit">
 			<h5>${dtl.N_TITLE}</h5>
 			<h6>
-				<c:if test="${dtl.N_UPDT_DATE == null}">
-					${dtl.N_REG_DATE}
+				<c:if test="${dtl.N_REG_DATE == now }">
+					<c:if test="${dtl.N_UPDT_DATE == null}">
+						${dtl.N_REG_TIME}
+					</c:if>
+					<c:if test="${dtl.N_UPDT_DATE != null}">
+						${dtl.N_UPDT_TIME}
+					</c:if>
 				</c:if>
-				<c:if test="${dtl.N_UPDT_DATE != null}">
-					${dtl.N_UPDT_DATE}
+				<c:if test="${dtl.N_REG_DATE != now }">
+					<c:if test="${dtl.N_UPDT_DATE == null}">
+						${dtl.N_REG_DATE}
+					</c:if>
+					<c:if test="${dtl.N_UPDT_DATE != null}">
+						${dtl.N_UPDT_DATE}
+					</c:if>
 				</c:if>
 			</h6>
 		</div>
@@ -25,7 +35,7 @@
 					<span id="N_NAME">${dtl.N_NAME}</span>
 				</div>
 				<div class="span_wrapper">					
-					<textarea id="N_CONT"  style="border: none; background: whitesmoke;" rows="10" readonly="readonly" disabled>${dtl.N_CONT}</textarea>
+					<textarea id="N_CONT" rows="10" readonly="readonly" disabled>${dtl.N_CONT}</textarea>
 				</div>
 			</div>
 			
@@ -33,6 +43,11 @@
 			<div id="dtl_list">
 				<a href="/admin/ntce/list.do">LIST</a>
 			</div>
+		</div>
+		
+		<div class="btn_form_half">
+			<input type="button" id="btn_a_ntce_delete" class="btn" value="삭제" /> 
+			<input type="button" id="btn_a_ntce_update" class="btn" value="수정" />
 		</div>
 
 	</div>

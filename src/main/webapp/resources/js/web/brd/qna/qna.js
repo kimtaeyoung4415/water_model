@@ -2,7 +2,7 @@ $(function () {
 	"use strict";
 	
 	/*
-		게시판 스크립트 형식
+		
 		
 		공통 변수 영역	: _class 함수 내에서 사용되어지는 함수에서 공통적으로 사용할 수 있는 변수 사용 영역
 		ex) pub.type = $('#type').val(); >> 한번의 설정으로 계속 사용가능 (session 과 비슷한 기능)
@@ -25,7 +25,7 @@ $(function () {
 		
 		var pub = {
 			type : null,
-			Q_NUM : null,
+			q_num : null,
 		};
 		
 		var param = {};
@@ -255,8 +255,7 @@ $(function () {
 	            }
 			});		
 		};
-		
-		
+				
 		// 비밀번호 확인
 		function getQnaPwdCheck(){	
 			

@@ -35,7 +35,7 @@ public class NtceDao implements InterNtceDao {
 	// 조회수 증가
 	@Override
 	public int updateNtceViewCnt(int N_NUM) throws Exception {
-		return sqlSession.selectOne("web.brd.ntce.updateNtceViewCnt", N_NUM);
+		return sqlSession.update("web.brd.ntce.updateNtceViewCnt", N_NUM);
 	}
 	
 	

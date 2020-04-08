@@ -2,7 +2,7 @@ $(function () {
 	"use strict";
 	
 	/*
-		게시판 스크립트 형식
+		
 		
 		공통 변수 영역	: _class 함수 내에서 사용되어지는 함수에서 공통적으로 사용할 수 있는 변수 사용 영역
 		ex) pub.type = $('#type').val(); >> 한번의 설정으로 계속 사용가능 (session 과 비슷한 기능)
@@ -24,7 +24,8 @@ $(function () {
 //////////////		
 		
 		// public 변수
-		var pub = {				
+		var pub = {		
+			N_NUM : null,
 			N_REG_NAME : "워터 엔터테인먼트",
 		};
 		
@@ -69,6 +70,18 @@ $(function () {
 			$("#btn_ntce_ins").click(function(){		
 				initInsEvent();
 			});
+			
+			// 삭제
+			$("#btn_a_ntce_delete").click(function(){
+				param.N_NUM = $('#N_NUM').val();
+				deleteAdminNtce();
+			});
+			
+			// 수정
+			$("#btn_a_ntce_update").click(function(){
+				param.N_NUM = $('#N_NUM').val();
+				updateAdminNtce();
+			});
 				
 		};
 		
@@ -100,6 +113,9 @@ $(function () {
 			
 			// 첨부파일 등록 코드 작성 필요
 			
+			
+			
+			
 			insertAdminNtce(param);
 		};	
 		
@@ -126,7 +142,25 @@ $(function () {
 // 페이지 호출 영역
 //////////////		
 
-		
+		// 수정
+		function updateAdminNtce(){
+			
+			$.ajax({
+				url:"/admin/ntce/edit.do",
+				data:{"N_NUM":pub.N_NUM},
+				type:'POST',
+				success:function(result){
+					$('#content').children().remove();
+					$('#content').html(result);
+					
+					// 수정 
+					putAdminNtceUpdt();
+				},
+				error: function(request, status, error){
+	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	            }
+			});	
+		};
 		
 //////////////
 // 데이터 호출 영역
@@ -157,6 +191,53 @@ $(function () {
 			});		
 		};
 		
+		// 수정
+		function putAdminNtceUpdt(form_data){
+			
+			$.ajax({
+				url:"/admin/ntce/putAdminNtceUpdt.do",
+				data:form_data,
+				type:'POST',
+				success:function(result){
+					if (result.SUCCESS) {
+						jAlert("수정하였습니다.", "알림", function() {
+							javascript:location.href="/admin/ntce/dtl.do?q="+pub.q_num;
+						});
+					} else {
+						jAlert("수정에 실패하였습니다.", "알림", function() {
+							return false;
+						});
+					}
+				},
+				error: function(request, status, error){
+	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	            }
+			});	
+		};
+		
+		// 삭제
+		function deleteAdminNtce(){			
+			
+			$.ajax({
+				url:"/admin/ntce/deleteAdminNtce.do",
+				data:param,
+				type:'POST',
+				success:function(result){
+					if (result.SUCCESS) {
+						jAlert("삭제되었습니다.", "알림", function() {
+							javascript:location.href="/admin/ntce/list.do";
+						});
+					} else {
+						jAlert("삭제에 실패하였습니다.", "알림", function() {
+							return false;
+						});
+					}
+				},
+				error: function(request, status, error){
+	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	            }
+			});	
+		};
 		
 	}; // end of class
 	
