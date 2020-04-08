@@ -3,13 +3,22 @@
 
 <mapper namespace="admin.login">
 
-	<select id="selectAdminLogin" parameterType="Map" resultType="Map">
+	<select id="selectAdminIdCheck" parameterType="Map" resultType="String">
+		SELECT
+			AD_ID
+		FROM
+			WE_ADMIN
+		WHERE
+			AD_ID = #{AD_ID}	
+	</select>
+	
+	<select id="selectAdminLogin" parameterType="Map" resultType="int">
 		SELECT
 			COUNT(*)
 		FROM
 			WE_ADMIN
 		WHERE
-			AD_ID = #{AD_ID}
+			AD_ID  = #{AD_ID}
 		AND
 			AD_PWD = #{AD_PWD}		
 	</select>
