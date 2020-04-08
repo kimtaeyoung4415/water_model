@@ -63,12 +63,23 @@ public class NtceController {
 		
 		Map<String, Object> dtl = ntceService.selectNtceDtl(N_NUM);	
 		
-		// 현재 시간
-		String now = getDate.getCurrentTime();
+		if (dtl == null) {
+			String msg = "존재하지 않은 게시물입니다.";
+			String loc = "javascript:history.back()";
+			
+			mv.addObject("msg", msg);
+			mv.addObject("loc", loc);
+			
+			mv.setViewName("msg/error");
+		} else {
 		
-		mv.addObject("dtl",dtl);
-		mv.addObject("now",now);
-		mv.setViewName("web/ntce/dtl.tiles");
+			// 현재 시간
+			String now = getDate.getCurrentTime();
+			
+			mv.addObject("dtl",dtl);
+			mv.addObject("now",now);
+			mv.setViewName("web/ntce/dtl.tiles");
+		}
 		
 		return mv;
 	}	

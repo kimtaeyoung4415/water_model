@@ -36,22 +36,24 @@
 					<tr Q_NUM="${list.Q_NUM}">
 						<td>${list.Q_NUM}</td>
 						<td class="td_title">${list.Q_TITLE}
-							<c:if test="${list.Q_REG_DATE == now }">
-								<img src="/resources/img/new.png" id="img" class="brd_new">
-								<c:if test="${list.Q_UPDT_DATE == null }">
+							<c:if test="${list.Q_UPDT_DATE == null}">
+								<c:if test="${list.Q_REG_DATE == now}">
+									<img src="/resources/img/new.png" id="img" class="brd_new">
 									<td>${list.Q_REG_TIME}</td>
 								</c:if>
-								<c:if test="${list.Q_UPDT_DATE != null }">
+								<c:if test="${list.Q_REG_DATE != now}">
+									<td>${list.Q_REG_DATE}</td>
+								</c:if>	
+							</c:if>
+							
+							<c:if test="${list.Q_UPDT_DATE != null}">
+								<c:if test="${list.Q_UPDT_DATE == now}">
+									<img src="/resources/img/update.png" id="img" class="brd_new">
 									<td>${list.Q_UPDT_TIME}</td>
 								</c:if>
-							</c:if>
-							<c:if test="${list.Q_REG_DATE != now }">
-								<c:if test="${list.Q_UPDT_DATE == null }">
-									<td>${list.Q_REG_DATE}</td>
-								</c:if>
-								<c:if test="${list.Q_UPDT_DATE != null }">
+								<c:if test="${list.Q_UPDT_DATE != now}">
 									<td>${list.Q_UPDT_DATE}</td>
-								</c:if>
+								</c:if>									
 							</c:if>		
 						</td>
 						<td>${list.Q_NAME}</td>				

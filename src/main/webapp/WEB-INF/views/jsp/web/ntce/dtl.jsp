@@ -7,22 +7,23 @@
 		<div id="dtl_tit">
 			<h5>${dtl.N_TITLE}</h5>
 			<h6>
-				<c:if test="${dtl.N_REG_DATE == now }">
-					<c:if test="${dtl.N_UPDT_DATE == null}">
+				<c:if test="${dtl.N_UPDT_DATE == null}">
+					<c:if test="${dtl.N_REG_DATE == now}">
 						${dtl.N_REG_TIME}
 					</c:if>
-					<c:if test="${dtl.N_UPDT_DATE != null}">
+					<c:if test="${dtl.N_REG_DATE != now}">
+						${dtl.N_REG_DATE}
+					</c:if>	
+				</c:if>
+				
+				<c:if test="${dtl.N_UPDT_DATE != null}">
+					<c:if test="${dtl.N_UPDT_DATE == now}">
 						${dtl.N_UPDT_TIME}
 					</c:if>
-				</c:if>
-				<c:if test="${dtl.N_REG_DATE != now }">
-					<c:if test="${dtl.N_UPDT_DATE == null}">
-						${dtl.N_REG_DATE}
-					</c:if>
-					<c:if test="${dtl.N_UPDT_DATE != null}">
+					<c:if test="${dtl.N_UPDT_DATE != now}">
 						${dtl.N_UPDT_DATE}
-					</c:if>
-				</c:if>
+					</c:if>									
+				</c:if>	
 			</h6>
 		</div>
 		

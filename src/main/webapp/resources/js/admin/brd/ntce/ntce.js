@@ -77,10 +77,25 @@ $(function () {
 				deleteAdminNtce();
 			});
 			
-			// 수정
+			// 수정 화면
 			$("#btn_a_ntce_update").click(function(){
-				param.N_NUM = $('#N_NUM').val();
+				pub.N_NUM = $('#N_NUM').val();
 				updateAdminNtce();
+			});
+			
+		};
+		
+		// 수정 이벤트
+		function initUpdtEvent()	{
+			
+			// 수정 이벤트
+			$("#btn_update").click(function(){
+				initNtceUpdtEvent();
+			});
+
+			// 취소
+			$('#btn_cancel').click(function(){
+				javascript:location.href="/admin/ntce/dtl.do?n="+pub.N_NUM;	
 			});
 				
 		};
@@ -119,6 +134,43 @@ $(function () {
 			insertAdminNtce(param);
 		};	
 		
+		// 수정 세팅
+		function initNtceUpdtEvent(){
+			
+			// 데이터 확인용
+			var frm = document.a_ntce_updt_form;
+			
+			if (frm.N_TITLE.value.trim() == '') {
+				jAlert("제목을 입력해주세요.", "알림");
+					return false;
+			}
+			
+			if (frm.N_CONT.value.trim() == '') {
+				jAlert("내용을 입력해주세요.", "알림");
+					return false;
+			}
+						
+			// DATA
+			var imp_yn = $("input[name=IMP_YN]:checked").val();
+			
+			console.log(imp_yn)
+			
+			param.N_NUM   = pub.N_NUM;
+			param.N_TITLE = frm.N_TITLE.value.trim();
+			param.N_CONT  = frm.N_CONT.value.trim();
+			param.N_REG_NAME = pub.N_REG_NAME;
+			param.IMP_YN  = (imp_yn == "Y") ? "Y" : "N";
+			
+			
+			
+			// 첨부파일 등록 코드 작성 필요
+			
+			
+			
+			
+			putAdminNtceUpdt();
+		};
+		
 		// file input event
 		function fileInputEvent() {
 			var fileTarget = $('.filebox .upload-hidden');
@@ -154,7 +206,7 @@ $(function () {
 					$('#content').html(result);
 					
 					// 수정 
-					putAdminNtceUpdt();
+					initUpdtEvent();
 				},
 				error: function(request, status, error){
 	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
@@ -167,7 +219,7 @@ $(function () {
 //////////////		
 		
 		// 등록
-		function insertAdminNtce(param){
+		function insertAdminNtce(){
 			
 			$.ajax({
 				url:"/admin/ntce/postAdminNtceIns.do",
@@ -192,16 +244,16 @@ $(function () {
 		};
 		
 		// 수정
-		function putAdminNtceUpdt(form_data){
-			
+		function putAdminNtceUpdt(){
+			console.log(param)
 			$.ajax({
 				url:"/admin/ntce/putAdminNtceUpdt.do",
-				data:form_data,
+				data:param,
 				type:'POST',
 				success:function(result){
 					if (result.SUCCESS) {
 						jAlert("수정하였습니다.", "알림", function() {
-							javascript:location.href="/admin/ntce/dtl.do?q="+pub.q_num;
+							javascript:location.href="/admin/ntce/dtl.do?n="+pub.N_NUM;
 						});
 					} else {
 						jAlert("수정에 실패하였습니다.", "알림", function() {
