@@ -122,8 +122,19 @@ public class AdminNtceController {
 			
 			Map<String, Object> dtl = adminNtceService.selectAdminNtceDtl(N_NUM);	
 			
-			mv.addObject("dtl",dtl);		
-			mv.setViewName("admin/ntce/edit");
+			if (dtl == null) {
+				String msg = "존재하지 않은 게시물입니다.";
+				String loc = "javascript:history.back()";
+				
+				mv.addObject("msg", msg);
+				mv.addObject("loc", loc);
+				
+				mv.setViewName("msg/error");
+			} else {
+			
+				mv.addObject("dtl",dtl);		
+				mv.setViewName("admin/ntce/edit");
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
