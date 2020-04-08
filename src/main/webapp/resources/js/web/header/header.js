@@ -70,7 +70,7 @@ $(function (){
 		javascript:location.href="/nego/list.do";				
 	})	
 	$("#w-rec").click(function(){			
-		javascript:location.href="/rit/listdo.";				
+		javascript:location.href="/rit/list.do";				
 	})
 	
 	//관리자 qna

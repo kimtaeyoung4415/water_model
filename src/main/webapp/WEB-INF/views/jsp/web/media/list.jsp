@@ -19,12 +19,12 @@
 			<div class="ui link cards">
 				  <div class="card">
 				    <div class="image">
-				     <img src="../resources/img/magazine/프로필25.PNG">
+				      <img src="../resources/img/magazine/프로필25.PNG">
 				    </div>
 				    <div class="content">
 				      <div class="header">정윤지</div>
 				      <div class="meta">
-				      	<span class="date">Actor</span>
+				        <a>Actor</a>
 				      </div>
 				      <div class="description">
 				        Matthew is an interior designer living in New York.
@@ -63,6 +63,7 @@
 				      </span>
 				    </div>
 				  </div>
+				  
 				  <div class="card">
 				    <div class="image">
 				      <img src="../resources/img/magazine/프로필23.PNG">
@@ -308,7 +309,13 @@
 							<a href="#">5</a>
 							<a href="#">&raquo;</a>
 				</div>
+				
 			</nav>
+			<br>
+			<div class="button">
+				<button id="" name="dds" class="btn">추가</button>
+				<button id="" name="dds" class="btn">삭제</button>
+				</div>
 		</div>
 	</div>
 </section>

@@ -9,20 +9,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping("/recruitment")
+@RequestMapping("/rit")
 public class RecruitmentController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(RecruitmentController.class);
 	
-	@RequestMapping(value="/model_rt.do", method=RequestMethod.GET)
+	@RequestMapping(value="/list.do", method=RequestMethod.GET)
 	public ModelAndView news(ModelAndView mv) {
-		mv.setViewName("web/recruitment/model_rt.tiles");
+		mv.setViewName("web/rit/list.tiles");
 		return mv;
 	}
 	
-	@RequestMapping(value="/rsn.do",method= RequestMethod.GET)
+	@RequestMapping(value="/dtl.do",method= RequestMethod.GET)
 	public ModelAndView registration(ModelAndView mv) {
-		mv.setViewName("web/recruitment/rsn.tiles");
+		mv.setViewName("web/rit/dtl.tiles");
 		return mv;
 		
 		}

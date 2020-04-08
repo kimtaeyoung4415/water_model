@@ -14,10 +14,9 @@
 				</div>
 			</div>
 			<br>
-			
 			<div class="ui link cards">
 				  <div class="card">
-				    <div class="image">
+				    <div class="image jyg">
 				      <img src="../resources/img/magazine/프로필25.PNG">
 				    </div>
 				    <div class="content">
@@ -39,9 +38,7 @@
 				      </span>
 				    </div>
 				  </div>
-				 
 				  <div class="card">
-				  	<a href="">
 				    <div class="image">
 				      <img src="../resources/img/magazine/프로필21.PNG">
 				    </div>
@@ -63,7 +60,6 @@
 				        35 Friends
 				      </span>
 				    </div>
-				    </a>
 				  </div>
 				  
 				  <div class="card">
@@ -275,7 +271,7 @@
 				  </div>
 				  <div class="card">
 				    <div class="image">
-				      <img src="../resources/img/magazine/프로필8.PNG">
+				      <img src="../resources/img/magazine/프로필8.PNG" height = "100%"/>
 				    </div>
 				    <div class="content">
 				      <div class="header">Elyse</div>
