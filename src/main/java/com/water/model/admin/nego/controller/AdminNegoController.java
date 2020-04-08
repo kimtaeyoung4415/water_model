@@ -7,24 +7,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value="/admin")
+@RequestMapping(value="/admin/nego")
 public class AdminNegoController {
 	
 	//목록 페이지 이동
-	@RequestMapping(value="/nego/list.do", method=RequestMethod.GET)
+	@RequestMapping(value="/list.do", method=RequestMethod.GET)
 	public String list(HttpServletRequest request) throws Exception{
-		return "admin/nego/list.tiles";
+		return "admin/nego/list.tiles-a";
 	}
 	
 	//등록 페이지 이동
-	@RequestMapping(value="/nego/ins.do", method=RequestMethod.GET)
+	@RequestMapping(value="/ins.do", method=RequestMethod.GET)
 	public String ins(HttpServletRequest request) throws Exception{
-		return "admin/nego/ins.tiles";
+		return "admin/nego/ins.tiles-a";
 	}
 	
 	//상세보기 페이지 이동
-	@RequestMapping(value="/nego/dtl.do", method=RequestMethod.GET)
+	@RequestMapping(value="/dtl.do", method=RequestMethod.GET)
 	public String dtl(HttpServletRequest request) throws Exception{
-		return "admin/nego/dtl.tiles";
+		return "admin/nego/dtl.tiles-a";
 	}
 }
