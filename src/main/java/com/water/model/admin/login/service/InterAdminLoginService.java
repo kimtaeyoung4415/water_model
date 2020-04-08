@@ -18,7 +18,7 @@ public interface InterAdminLoginService {
 	 * @param param
 	 * @return
 	 */
-	String selectAdminIdCheck(Map<String, Object> param);
+	String selectAdminIdCheck(Map<String, Object> param) throws Exception;
 	
 	/** <pre>
 	 * 1. 개요         : 로그인 액션

@@ -74,10 +74,10 @@ $(function () {
 				success:function(result){
 					if (result.SUCCESS) {
 						alert("얏호");
-						//javascript:location.href="/admin/main.do";
+						javascript:location.href="/admin/main.do";
 					} else {
 						if (result.ERR_CD == "ERR_ID") {
-							jAlert("아이디가 존재하 않습니다.", "알림", function() {
+							jAlert("아이디가 존재하지 않습니다.", "알림", function() {
 								return false;
 							});
 						} else if(result.ERR_CD == "ERR_PWD") {

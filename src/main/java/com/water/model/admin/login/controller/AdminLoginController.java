@@ -43,7 +43,7 @@ public class AdminLoginController {
 			
 			String AD_ID = param.get("AD_ID").toString();
 			
-			if (AD_ID.equals(result_id)) {
+			if (!AD_ID.equals(result_id)) {
 				result.put("ERR_CD", "ERR_ID");
 				result.put("SUCCESS", false);
 			} else {
