@@ -33,7 +33,7 @@ $(function () {
 // 기능  함수  영역
 //////////////
 		function initImgEvent(){
-			$('#PROFILE').on('change',function(){
+			$('#PROFILE').on("change",function(){
 				imgFileSelect(this);
 			});
 		};
@@ -56,6 +56,8 @@ $(function () {
 				reader.readAsDataURL(f);
 			});
 		};
+		
+		var sel_files=[];
 		$(document).ready(function(){
 			$("#PHOTO").on("change",handleImgsFilesSelect);
 		});
@@ -69,11 +71,12 @@ $(function () {
 					alert("확장자는 이미지 확장자만 가능합니다.");
 					return;
 				}
+				sel_liles.push(f);
 
 				var reader=new FileReader();
 				reader.onload=function(e){
 					var img_html ="<img src=\""+e.target.result+"\"/>";
-					$(".imgfile2")
+					$(".imgfile").append(img_html);
 				}
 				reader.readAsDataURL(f);
 			});

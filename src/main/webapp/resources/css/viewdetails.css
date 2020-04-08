@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*section 전체 사이즈  */
 section.view_details{
-	padding: 115px 0 30px;
+	padding: 115px 0 15px;
 }
 /*container 사이즈  */
 .container{

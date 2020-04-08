@@ -13,15 +13,15 @@ public class MagazineController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MagazineController.class);
 	
-	@RequestMapping(value="/magazine.do", method=RequestMethod.GET)
+	@RequestMapping(value="/list.do", method=RequestMethod.GET)
 	public ModelAndView news(ModelAndView mv) {
-		mv.setViewName("web/media/magazine.tiles");
+		mv.setViewName("web/media/list.tiles");
 		return mv;
 	}
 	
-	@RequestMapping(value="/view_details.do", method=RequestMethod.GET)
+	@RequestMapping(value="/dtl.do", method=RequestMethod.GET)
 	public ModelAndView viewdetais(ModelAndView mv) {
-		mv.setViewName("web/media/view_details.tiles");
+		mv.setViewName("web/media/dtl.tiles");
 		return mv;
 	}
 }

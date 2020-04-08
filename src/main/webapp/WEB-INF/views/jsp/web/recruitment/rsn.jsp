@@ -3,9 +3,9 @@
 <section class="container">
 	<div class="nav">
 	<ul>
-		<li><a href="#">NOTICE</a></li>
+		<li><a href="http://localhost:8181/ntce/list.do">NOTICE</a></li>
 		<li>.</li>
-		<li><a href="#">QA</a></li>
+		<li><a href="http://localhost:8181/qna/list.do">QA</a></li>
 		<li>.</li>
 		<li><a href="#">MODEL REG</a></li>
 	</ul>
@@ -90,9 +90,9 @@
 				</div>
 				<div class="input_wrapper">				
 					<label for="PHOTO">사진</label>
-					<input type="file" id="PHOTO" name="PHOTO">
-					<div class="imgfile2">
-				 		<img id="LoadImg2">
+					<input type="file" id="PHOTO" name="PHOTO" multiple/>
+					<div class="imgfile">
+						<img id="LoadImg">
 					</div>
 				</div>
 			</div>
