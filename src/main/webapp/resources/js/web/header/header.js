@@ -37,26 +37,26 @@ $(function (){
 	
 	//관리자 모델 매니지먼트
 	$("#a-mng-women").click(function(){			
-		javascript:location.href="/mng/women/list.do";				
+		javascript:location.href="/admin/mng/list.do";				
 	})
 	$("#a-mng-men").click(function(){			
-		javascript:location.href="/mng/men/list.do";				
+		javascript:location.href="/admin/mng/list.do";				
 	})
 	$("#a-mng-development").click(function(){			
-		javascript:location.href="/mng/devel/list.do";				
+		javascript:location.href="/admin/mng/list.do";				
 	})
 	$("#a-mng-actors").click(function(){			
-		javascript:location.href="/mng/actors/list.do";				
+		javascript:location.href="/admin/mng/list.do";				
 	})
 	
 	//미디어
 	$("#w-media-magazine").click(function(){			
-		javascript:location.href="/media/magazine.do";				
+		javascript:location.href="/media/list.do";				
 	})
 	
 	//관리자 미디어
 	$("#a-media-magazine").click(function(){			
-		javascript:location.href="/media/magazine.do";				
+		javascript:location.href="/admin/media/list.do";				
 	})
 	
 	//qna
@@ -70,7 +70,7 @@ $(function (){
 		javascript:location.href="/nego/list.do";				
 	})	
 	$("#w-rec").click(function(){			
-		javascript:location.href="/recruitment/model_rt.do";				
+		javascript:location.href="/rit/listdo.";				
 	})
 	
 	//관리자 qna
@@ -84,6 +84,6 @@ $(function (){
 		javascript:location.href="/admin/nego/list.do";				
 	})	
 	$("#a-rec").click(function(){			
-		javascript:location.href="/admin/recruitment/model_rt.do";				
+		javascript:location.href="/admin/rit/list.do";				
 	})
 })
