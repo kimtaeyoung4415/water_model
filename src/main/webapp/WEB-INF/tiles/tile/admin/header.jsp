@@ -5,7 +5,9 @@
 <%-- tiles header form --%>
 
 <div id="test_id" class="container-fluid">
-	<div id=com_logo onclick="location.href='/'"></div>
+	<div id=com_logo onclick="location.href='/'">
+		<img src="${ctxPath}/resources/img/favicon.ico" style=" width: 100%;height: 100%;"/>
+	</div>
 	<div id="nav-var">
 		<nav>
 			<ul class="clearfix">

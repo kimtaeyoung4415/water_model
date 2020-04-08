@@ -13,7 +13,7 @@
 					<strong class=""> </strong>
 				</span>
 			</div>
-			<form action="">
+			<form action="rsn.do">
 			<table class="re_table">
 				<tr>
 					<th>번호</th>
