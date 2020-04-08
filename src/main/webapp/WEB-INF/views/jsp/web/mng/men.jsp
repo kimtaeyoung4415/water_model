@@ -19,21 +19,21 @@
 </div>
 <div>
 	<ul class="model_profile">
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
-		<li><a href="../view.do"><img src="http://placehold.it/218x218"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필49.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필50.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필32.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필37.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필39.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필40.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필43.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필47.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필48.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필43.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필39.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필40.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필49.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필37.PNG"></a></li>
+		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필50.PNG"></a></li>
 	</ul>
 </div>
 <div class="model_page_box">

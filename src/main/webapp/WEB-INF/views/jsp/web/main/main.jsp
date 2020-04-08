@@ -8,10 +8,10 @@
 <br>
  <div class="slide">
     <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li><img alt="" src="../resources/img/magazine/프로필46.PNG"></li>
+      <li><img alt="" src="../resources/img/magazine/프로필3.PNG"></li>
+      <li><img alt="" src="../resources/img/magazine/프로필33.PNG"></li>
+      <li><img alt="" src="../resources/img/magazine/프로필4.PNG"></li>
     </ul>
   </div>
 </section>
@@ -19,14 +19,14 @@
 <br>
 <section>
 	<div class="container">
-		<h2 lang="en">MAGAZINE</h2>
+		<h2 lang="en">MEDIA</h2>
 	<div>	
 	<br>
 	<br>
 	<div class="ui link cards">
 		  <div class="card">
 		    <div class="image">
-		      <img src="http://placehold.it/234x300">
+		      <img src="../resources/img/magazine/프로필25.PNG">
 		    </div>
 		    <div class="content">
 		      <div class="header">Matt Giampietro</div>
@@ -49,7 +49,7 @@
 		  </div>
 		  <div class="card">
 		    <div class="image">
-		      <img src="http://placehold.it/234x300">
+		      <img src="../resources/img/magazine/프로필25.PNG">
 		    </div>
 		    <div class="content">
 		      <div class="header">Molly</div>
@@ -72,8 +72,8 @@
 		  </div>
 		  <div class="card">
 		    <div class="image">
-		      <img src="http://placehold.it/234x300">
-		    </div>
+		      <img src="../resources/img/magazine/프로필25.PNG">
+		    </div></a>
 		    <div class="content">
 		      <div class="header">Elyse</div>
 		      <div class="meta">
@@ -101,72 +101,25 @@
 <br>
 <section>
 	<div class="container">
-		<h2 lang="en">SOCIAL MEDIA</h2>
+		<h2 lang="en">NEW MANAGEMENTS</h2>
 	<div>
 	<br>
-	<div class="ui link cards">
-		<div>
-			<a href="https://google.com">
-				<img class="ui medium image" src="http://placehold.it/234x300">
-			</a>
-		</div>
-		<br>
-		<br>
-		<div>
-			<a href="https://google.com">
-				<img class="ui medium image" src="http://placehold.it/234x300">
-			</a>
-		</div>
-		<br>
-		<br>
-		<div>
-			<a href="https://google.com">
-				<img class="ui medium image" src="http://placehold.it/234x300">
-			</a>
-		</div>
-		<br>
-		<br>
-		<div>
-			<a href="https://google.com">
-				<img class="ui medium image" src="http://placehold.it/234x300">
-			</a>
-		</div>
-		<br>
-		<br>
-		<div>
-			<a href="https://google.com">
-				<img class="ui medium image" src="http://placehold.it/234x300">
-			</a>
-		</div>
-		<br>
-		<br>
-		<div>
-			<a href="https://google.com">
-				<img class="ui medium image" src="http://placehold.it/234x300">
-			</a>
-		</div>
-		<div>
-			<a href="https://google.com">
-				<img class="ui medium image" src="http://placehold.it/234x300">
-			</a>
-		</div>
-		<br>
-		<br>
-		<div>
-			<a href="https://google.com">
-				<img class="ui medium image" src="http://placehold.it/234x300">
-			</a>
-		</div>
-		<br>
-		<br>
-		<div>
-			<a href="https://google.com">
-				<img class="ui medium image" src="http://placehold.it/234x300">
-			</a>
-		</div>
-		<br>
-		<br>
-	</div>
+<div>
+	<ul class="model_profile">
+		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필49.PNG"></a></li>
+		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필50.PNG"></a></li>
+		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필32.PNG"></a></li>
+		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필37.PNG"></a></li>
+		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필39.PNG"></a></li>
+		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필40.PNG"></a></li>
+		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필43.PNG"></a></li>
+		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필47.PNG"></a></li>
+		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필48.PNG"></a></li>
+		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필43.PNG"></a></li>
+		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필39.PNG"></a></li>
+		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필40.PNG"></a></li>
+	</ul>
+</div>
 </section>
 <br>
 <br>
