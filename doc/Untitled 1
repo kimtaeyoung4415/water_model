@@ -4,5 +4,8 @@
 	<link rel="stylesheet" href="${ctxPath}/resources/css/mngview.css" media="all" type="text/css" />	<%--mng --%>
 <%-- 김태영 mng js 추가요망 --%>
 	<script type="text/javascript" src="${ctxPath}/resources/js/web/mng/mng.js"></script>	<%-- mng 케러셀 --%>
+<%-- 김태영 mng js 추가요망 --%>
+	<script type="text/javascript" src="${ctxPath}/resources/css//main.css"></script>	<%-- main --%>
+
 	
 		

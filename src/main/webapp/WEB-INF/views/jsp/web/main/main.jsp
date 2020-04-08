@@ -20,7 +20,7 @@
 <section>
 	<div class="container">
 		<h2 lang="en">MEDIA</h2>
-	<div>	
+	</div>	
 	<br>
 	<br>
 	<div class="ui link cards">
@@ -73,7 +73,7 @@
 		  <div class="card">
 		    <div class="image">
 		      <img src="../resources/img/magazine/프로필25.PNG">
-		    </div></a>
+		    </div>
 		    <div class="content">
 		      <div class="header">Elyse</div>
 		      <div class="meta">
@@ -94,31 +94,72 @@
 		    </div>
 		  </div>
 		</div>
-		</div>
 </section>
 <br>
 <br>
 <br>
 <section>
+
 	<div class="container">
 		<h2 lang="en">NEW MANAGEMENTS</h2>
-	<div>
+	</div>
 	<br>
-<div>
-	<ul class="model_profile">
-		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필49.PNG"></a></li>
-		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필50.PNG"></a></li>
-		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필32.PNG"></a></li>
-		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필37.PNG"></a></li>
-		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필39.PNG"></a></li>
-		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필40.PNG"></a></li>
-		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필43.PNG"></a></li>
-		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필47.PNG"></a></li>
-		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필48.PNG"></a></li>
-		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필43.PNG"></a></li>
-		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필39.PNG"></a></li>
-		<li><a href=""><img src="${ctxPath}/resources/img/mng/프로필40.PNG"></a></li>
-	</ul>
+	<br>
+<div class="container_box">
+	<div class="container_fade">
+	  <img src="${ctxPath}/resources/img/mng/프로필37.PNG" class="image" style="width:100%">
+	  <div class="middle">
+	    <div class="text">가나다라마바사아자</div>
+	  </div>
+	</div>
+	<div class="container_fade">
+	  <img src="${ctxPath}/resources/img/mng/프로필37.PNG" class="image" style="width:100%">
+	  <div class="middle">
+	    <div class="text">가나다라마바사아자</div>
+	  </div>
+	</div>
+	<div class="container_fade">
+	  <img src="${ctxPath}/resources/img/mng/프로필37.PNG" class="image" style="width:100%">
+	  <div class="middle">
+	    <div class="text">가나다라마바사아자</div>
+	  </div>
+	</div>
+	<div class="container_fade">
+	  <img src="${ctxPath}/resources/img/mng/프로필37.PNG" class="image" style="width:100%">
+	  <div class="middle">
+	    <div class="text">가나다라마바사아자</div>
+	  </div>
+	</div>
+	<div class="container_fade">
+	  <img src="${ctxPath}/resources/img/mng/프로필37.PNG" class="image" style="width:100%">
+	  <div class="middle">
+	    <div class="text">가나다라마바사아자</div>
+	  </div>
+	</div>
+	<div class="container_fade">
+	  <img src="${ctxPath}/resources/img/mng/프로필37.PNG" class="image" style="width:100%">
+	  <div class="middle">
+	    <div class="text">가나다라마바사아자</div>
+	  </div>
+	</div>
+	<div class="container_fade">
+	  <img src="${ctxPath}/resources/img/mng/프로필37.PNG" class="image" style="width:100%">
+	  <div class="middle">
+	    <div class="text">가나다라마바사아자</div>
+	  </div>
+	</div>
+	<div class="container_fade">
+	  <img src="${ctxPath}/resources/img/mng/프로필37.PNG" class="image" style="width:100%">
+	  <div class="middle">
+	    <div class="text">가나다라마바사아자</div>
+	  </div>
+	</div>
+	<div class="container_fade">
+	  <img src="${ctxPath}/resources/img/mng/프로필37.PNG" class="image" style="width:100%">
+	  <div class="middle">
+	    <div class="text">가나다라마바사아자</div>
+	  </div>
+	</div>
 </div>
 </section>
 <br>

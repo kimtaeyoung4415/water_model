@@ -12,10 +12,12 @@
 </div>
 <div class="profile_view">
 	<div class="profile_nav">
+		<a href="" class="prev"><</a>
 		<div class="profile_thumb">
 			<img width="120" height="120" src="${ctxPath}/resources/img/mng/프로필49.PNG" />
 		</div>
-		<div class="profile_info">	
+		<a href="" class="next">></a>
+		<div class="profile_info">
 			<h5>NAME | 이름</h5>
 			<ul>
 				<li><span>Height</span></li>
@@ -34,7 +36,6 @@
 			<a href="" class="next">></a>
         </ul>
         <div id="carousel_section">
-        
         </div>
     </div>
 	</div>
