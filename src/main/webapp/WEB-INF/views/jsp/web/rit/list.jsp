@@ -3,6 +3,15 @@
 <section class="a_recruitment_board">
 	<div class="container">
 		<div class="row">
+			<div class="nav">
+				<ul>
+					<li><a href="/ntce/list.do">NOTICE</a></li>
+					<li>.</li>
+					<li><a href="/qna/list.do">QA</a></li>
+					<li>.</li>
+					<li><a href="/rit/list.do">MODEL REG</a></li>
+				</ul>
+			</div>
 			<div class="title">
 				<h2>MODEL REGIST</h2>
 				<hr>
