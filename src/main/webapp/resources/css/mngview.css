@@ -2,11 +2,9 @@
 /* body{ */
 /*     margin: 0px; */
 /* } */
-#carousel_section{
-	margin-top: 10px;
-	margin-bottom: 10px;
-    width: 100%;
-    height: 580px;
+.mng_carousel_section{
+	position:relative;
+	top:100px;
 }
 #carousel_section > ul{
     margin: 0px;
