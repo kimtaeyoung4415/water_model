@@ -23,7 +23,7 @@
 	</div>	
 	<br>
 	<br>
-	<div class="ui link cards">
+	<div class="ui link cards" id="main_card_list">
 		  <div class="card">
 		    <div class="image">
 		      <img src="../resources/img/magazine/프로필25.PNG">

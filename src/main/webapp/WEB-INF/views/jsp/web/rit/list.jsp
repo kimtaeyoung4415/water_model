@@ -3,6 +3,15 @@
 <section class="a_recruitment_board">
 	<div class="container">
 		<div class="row">
+			<div class="nav">
+				<ul>
+					<li><a href="/ntce/list.do">NOTICE</a></li>
+					<li>.</li>
+					<li><a href="/qna/list.do">QA</a></li>
+					<li>.</li>
+					<li><a href="/rit/list.do">MODEL REG</a></li>
+				</ul>
+			</div>
 			<div class="title">
 				<h2>MODEL REGIST</h2>
 				<hr>
@@ -14,25 +23,49 @@
 				</span>
 			</div>
 			<form action="dtl.do">
-			<table class="re_table">
-				<tr>
-					<th>번호</th>
-					<th>신청자</th>
-					<th>작성일</th>
-					<th>진행상황</th>
-					<th>조회수</th>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>			
+			<table class="ret">
+				<thead id="t_head">
+					<tr>
+						<th>번호</th>
+						<th>신청자</th>
+						<th>작성일</th>
+						<th>진행상황</th>
+						<th>조회수</th>
+					</tr>
+				</thead>
+				<tbody id="t_body">
+					<tr>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+					</tr>		
+					<tr>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+					</tr>		<tr>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+					</tr>		<tr>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+					</tr>		
+				</tbody>
 			</table>
-			
+			<br>
 			<div align="right">
-				<input type="submit" class="btn" value="등록">
+				<label for="r_button"></label>
+				<input type="submit" class="btn" id="r_button" name="r_button" value="등록">
 			</div>
 			</form>
 			<nav class="pageing">

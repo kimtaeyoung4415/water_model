@@ -3,14 +3,14 @@
 <section class="container">
 	<div class="nav">
 	<ul>
-		<li><a href="http://localhost:8181/ntce/list.do">NOTICE</a></li>
+		<li><a href="/ntce/list.do">NOTICE</a></li>
 		<li>.</li>
-		<li><a href="http://localhost:8181/qna/list.do">QA</a></li>
+		<li><a href="/qna/list.do">QA</a></li>
 		<li>.</li>
-		<li><a href="#">MODEL REG</a></li>
+		<li><a href="/rit/list.do">MODEL REG</a></li>
 	</ul>
 	</div>
-	<form name="">
+	<form id="r_button" name="r_button">
 	<div class="container" align="center">
 		<div class="sub-container">
 			<div class="application_modal">

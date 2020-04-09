@@ -1,10 +1,11 @@
 @charset "UTF-8";
-.re_table{
+.ret{
 	text-align: center;
-	border-top: 3px solid black;
-	border-bottom:2px solid black;
-	nargin-bottom: 15px;
-	width:
+	border-style: solid;
+	
+}
+#t_head{
+	border-style:solid;
 }
 .pageing{
 	text-align: center;
@@ -26,6 +27,7 @@
 	background-color: #ddd;
 }
 .nav {
+	
     width: 970px;
     height: 56px;
 }
@@ -37,7 +39,7 @@ ul {
     list-style: none;
 
 }
-ul li {
+.nav ul li {
     float: right;
 }
 .nav ul li a {
