@@ -25,9 +25,9 @@ private static final Logger logger = LoggerFactory.getLogger(AdminMagazineContro
 		
 		return mv;
 	}
-	@RequestMapping(value="/edit.do", method=RequestMethod.GET)
+	@RequestMapping(value="/ins.do", method=RequestMethod.GET)
 	public ModelAndView edit(ModelAndView mv) {
-		mv.setViewName("admin/media/edit.tiles-a");
+		mv.setViewName("admin/media/ins.tiles-a");
 		return mv;
 	}
 }

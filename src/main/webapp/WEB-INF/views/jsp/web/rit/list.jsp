@@ -14,25 +14,49 @@
 				</span>
 			</div>
 			<form action="dtl.do">
-			<table class="re_table">
-				<tr>
-					<th>번호</th>
-					<th>신청자</th>
-					<th>작성일</th>
-					<th>진행상황</th>
-					<th>조회수</th>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>			
+			<table class="ret">
+				<thead id="t_head">
+					<tr>
+						<th>번호</th>
+						<th>신청자</th>
+						<th>작성일</th>
+						<th>진행상황</th>
+						<th>조회수</th>
+					</tr>
+				</thead>
+				<tbody id="t_body">
+					<tr>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+					</tr>		
+					<tr>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+					</tr>		<tr>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+					</tr>		<tr>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+						<td><a href="">게시판</a></td>
+					</tr>		
+				</tbody>
 			</table>
-			
+			<br>
 			<div align="right">
-				<input type="submit" class="btn" value="등록">
+				<label for="r_button"></label>
+				<input type="submit" class="btn" id="r_button" name="r_button" value="등록">
 			</div>
 			</form>
 			<nav class="pageing">
