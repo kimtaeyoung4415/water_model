@@ -39,6 +39,7 @@
 	<link rel="stylesheet" href="${ctxPath}/resources/css/mngview.css" media="all" type="text/css" />	<%--mngview --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/main.css" media="all" type="text/css" />	<%--main --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/jquery.bxslider.css" media="all" type="text/css" />	<%--slider --%>
+	<link rel="stylesheet" href="${ctxPath}/resources/css/recruitment.css" media="all" type="text/css" />	<%--main --%>
 	
 	
 	<link rel="shortcut icon" href="${ctxPath}/resources/img/favicon.ico" type="image/x-icon"><%--icon --%>

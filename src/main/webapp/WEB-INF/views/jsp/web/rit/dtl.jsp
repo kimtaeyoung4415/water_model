@@ -10,7 +10,7 @@
 		<li><a href="#">MODEL REG</a></li>
 	</ul>
 	</div>
-	<form name="">
+	<form id="r_button" name="r_button">
 	<div class="container" align="center">
 		<div class="sub-container">
 			<div class="application_modal">
