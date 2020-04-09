@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.water.model.brd.ntce.service.InterNtceService;
-import com.water.model.util.GetDate;
+import com.water.model.util.CommonUtil;
 
 @Controller
 @RequestMapping(value = "/ntce")
@@ -26,7 +26,7 @@ public class NtceController {
 	private InterNtceService ntceService;
 	
 	@Autowired
-	private GetDate getDate;
+	private CommonUtil commonUtil;
 	
 	// 목록 화면
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
@@ -36,7 +36,7 @@ public class NtceController {
 		try {
 			
 			// 현재 시간
-			String now = getDate.getCurrentTime();
+			String now = commonUtil.getCurrentTime();
 			
 			// 목록
 			List<Map<String, Object>> list = ntceService.selectNtceList();		
@@ -74,7 +74,7 @@ public class NtceController {
 		} else {
 		
 			// 현재 시간
-			String now = getDate.getCurrentTime();
+			String now = commonUtil.getCurrentTime();
 			
 			mv.addObject("dtl",dtl);
 			mv.addObject("now",now);

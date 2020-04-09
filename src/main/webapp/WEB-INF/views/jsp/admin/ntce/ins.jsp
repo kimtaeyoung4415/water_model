@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<form name="a_ntce_ins_form">
+<form name="a_ntce_ins_form" method="post" enctype="multipart/form-data">
 	<div class="container" align="center">
 		<div class="sub-container">
 			<div class="application_modal">

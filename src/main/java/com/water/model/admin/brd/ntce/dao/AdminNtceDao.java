@@ -16,8 +16,8 @@ public class AdminNtceDao implements InterAdminNtceDao {
 
 	// 목록
 	@Override
-	public List<Map<String, Object>> selectAdminNtceList() throws Exception {
-		return sqlSession.selectList("admin.brd.ntce.selectAdminNtceList");
+	public List<Map<String, Object>> selectAdminNtceList(Map<String, Object> param) throws Exception {
+		return sqlSession.selectList("admin.brd.ntce.selectAdminNtceList", param);
 	}
 
 	// 목록 카운트

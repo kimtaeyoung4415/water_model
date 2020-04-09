@@ -11,6 +11,7 @@ public interface InterAdminNtceService {
 	 * @Method    : selectAdminNtceList
 	 * @date      : 2020. 04. 06. 09:45
 	 * @author    : 김선규
+	 * @param param 
 	 * @history -------------------------------------------
 	 *          ----변경일---------작성자--------------변경내용 
 	 *          2020. 04. 06         김선규                         최초 작성
@@ -19,7 +20,7 @@ public interface InterAdminNtceService {
 	 * @param param
 	 * @return
 	 */
-	List<Map<String, Object>> selectAdminNtceList() throws Exception;
+	List<Map<String, Object>> selectAdminNtceList(Map<String, Object> param) throws Exception;
 
 	/** <pre>
 	 * 1. 개요         : 관리자 공지 목록

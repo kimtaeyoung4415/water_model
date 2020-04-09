@@ -20,6 +20,7 @@ public interface InterAdminQnaService {
 	 * @return
 	 */
 	List<Map<String, Object>> selectAdminQnaList() throws Exception;
+		
 
 	/** <pre>
 	 * 1. 개요         : 관리자 질문 목록 카운트
@@ -84,5 +85,6 @@ public interface InterAdminQnaService {
 	 * @return
 	 */
 	int deleteAdminQna(Map<String, Object> param) throws Exception;
+
 
 }

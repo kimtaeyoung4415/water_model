@@ -28,6 +28,7 @@
 				</tr>	
 			</thead>
 			<tbody id="a-ntce-list">
+			
 				<c:forEach var="list" items="${list}" varStatus="status">
 					<c:if test="${list.IMP_YN == 'Y' }">
 						<tr N_NUM="${list.N_NUM}" class="ty_Y">
@@ -97,6 +98,20 @@
 		</div>
 		
 		<div id="list-paging">
+			<nav class="pageing">
+				<div class="pagination">
+					${pagination }
+					<!-- 
+					<a href="#">&laquo;</a>
+					<a href="#">1</a>
+					<a href="#">2</a>
+					<a href="#" class="active">3</a>
+					<a href="#" >4</a>
+					<a href="#">5</a>
+					<a href="#">&raquo;</a>
+					 -->
+				</div>
+			</nav>
 		</div>
 	</div>
 </div>

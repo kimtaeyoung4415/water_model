@@ -52,5 +52,6 @@ public class AdminQnaService implements InterAdminQnaService {
 	@Override
 	public int deleteAdminQna(Map<String, Object> param) throws Exception {
 		return adminQnaDao.deleteAdminQna(param);	
-	};
+	}
+
 }

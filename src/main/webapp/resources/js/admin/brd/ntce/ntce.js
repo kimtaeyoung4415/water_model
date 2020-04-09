@@ -119,6 +119,10 @@ $(function () {
 			// DATA
 			var imp_yn = $("input[name=IMP_YN]:checked").val();
 			
+			var abcd = $('input[name=a_ntce_ins_form]').serialize();
+			
+			console.log(abcd)
+			
 			param.N_TITLE = frm.N_TITLE.value.trim();
 			param.N_CONT = frm.N_CONT.value.trim();
 			param.N_REG_NAME = pub.N_REG_NAME;
@@ -190,6 +194,7 @@ $(function () {
 			});
 		}
 		
+
 //////////////
 // 페이지 호출 영역
 //////////////		

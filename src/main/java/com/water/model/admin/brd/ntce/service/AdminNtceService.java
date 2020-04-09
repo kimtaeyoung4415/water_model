@@ -17,8 +17,8 @@ public class AdminNtceService implements InterAdminNtceService {
 
 	// 목록
 	@Override
-	public List<Map<String, Object>> selectAdminNtceList() throws Exception {
-		return adminNtceDao.selectAdminNtceList();
+	public List<Map<String, Object>> selectAdminNtceList(Map<String, Object> param) throws Exception {
+		return adminNtceDao.selectAdminNtceList(param);
 	}
 
 	// 목록 카운트

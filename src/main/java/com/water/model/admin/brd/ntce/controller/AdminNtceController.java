@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.water.model.admin.brd.ntce.service.InterAdminNtceService;
-import com.water.model.util.GetDate;
+import com.water.model.util.CommonUtil;
 
 @Controller
 @RequestMapping(value = "/admin/ntce")
@@ -29,21 +29,71 @@ public class AdminNtceController {
 	private InterAdminNtceService adminNtceService;
 	
 	@Autowired
-	private GetDate getDate;
+	private CommonUtil commonUtil;
 	
 	// 목록 화면
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
 	@ResponseBody
-	public ModelAndView list(ModelAndView mv) throws Exception {				
+	public ModelAndView list(ModelAndView mv,HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {				
 		
 		try {
 			
+			// ==========================================================
+			
+			
+			int totalCount = 0; // 총게시물 건수 
+			int perPage = 10; // 한 페이지당 보여줄 게시물 수 
+			int perBar = 5; // 페이지에 보여줄 블락 수 
+			int showPage = 0; // 초기페에이지는 0로 설정함 
+			int totalPage = 0; // 총 페이지 수(웹브라우저상에 보여줄 총 페이지 갯수, 페이지바)
+			
+			// 선택한 페이지 
+			String crrPage = (String) param.get("crrPage");
+			
+			// 전체 게시물 건수
+			totalCount = adminNtceService.selectAdminNtceListCnt();
+			
+			// 전체 페이지 수 
+			totalPage = (int) Math.ceil( (double)totalCount/perPage );
+			
+			// 첫 로드 또는 선택하지 않은경우 
+			if (crrPage == null) { 
+				showPage = 0; 
+			} else { 
+				try {
+					showPage = Integer.parseInt(crrPage);
+			
+					if (showPage < 1 || showPage > totalPage) { 
+						showPage = 0; 
+					} 
+				} catch (Exception e) { 
+					showPage = 0; 
+				} 
+			}
+			
+			param.put("showPage", showPage); 
+			param.put("perPage" , perPage);
+			
+			// 가져올 게시글 범위 구하기 // 
+			List<Map<String, Object>> list = adminNtceService.selectAdminNtceList(param);
+			
+			
+			// #119. 페이지바 만들기
+			String pagebar = "";
+			String url = "/admin/ntce/list.do";
+			
+			pagebar = "<ul>";
+			pagebar += commonUtil.pagination(url, showPage, perPage, totalPage, perBar);
+			pagebar += "</ul>";
+			
+			mv.addObject("pagination",pagebar);
+			
+			
+			// ==========================================================			
+			
 			// 현재 시간
-			String now = getDate.getCurrentTime();
-			
-			// 목록
-			List<Map<String, Object>> list = adminNtceService.selectAdminNtceList();		
-			
+			String now = commonUtil.getCurrentTime();
+							
 			// 목록 카운트
 			int count = adminNtceService.selectAdminNtceListCnt();
 			
@@ -55,6 +105,7 @@ public class AdminNtceController {
 			} catch (Throwable e) {
 				e.printStackTrace();
 			}
+		
 		return mv;
 	}
 	
@@ -82,7 +133,7 @@ public class AdminNtceController {
 			mv.setViewName("msg/error");
 		} else {
 			// 현재 시간
-			String now = getDate.getCurrentTime();		
+			String now = commonUtil.getCurrentTime();		
 			
 			mv.addObject("dtl",dtl);		
 			mv.addObject("now",now);

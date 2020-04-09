@@ -7,23 +7,23 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
-	<!-- 외부서버 연결 console 에 sql debug 찍힘 
+	<!-- 외부서버 연결 console 에 sql debug 찍힘 -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
 		<property name="url" value="jdbc:log4jdbc:mysql://26.204.236.187:3306/we_db?serverTimezone=UTC&amp;useSSL=false" />
 		<property name="username" value="waterinfo" />
 		<property name="password" value="wi2003!@#" />
 	</bean>
-	-->
+	
 		
-	<!-- sql debug 안찍히는 연결 설정 -->
+	<!-- sql debug 안찍히는 연결 설정 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
  		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>  
 		<property name="url" value="jdbc:mysql://26.204.236.187:3306/we_db?serverTimezone=UTC&amp;useSSL=false"/> 	
 		<property name="username" value="waterinfo" />
 		<property name="password" value="wi2003!@#" />
 	</bean>
-		
+		-->
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
