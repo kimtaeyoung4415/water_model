@@ -25,5 +25,10 @@ private static final Logger logger = LoggerFactory.getLogger(AdminRecruitmentCon
 		mv.setViewName("admin/rit/dtl.tiles-a");
 		return mv;
 	}
+	@RequestMapping(value="/dtl2.do", method=RequestMethod.GET)
+	public ModelAndView dtl2(ModelAndView mv) {
+		mv.setViewName("admin/rit/dtl2.tiles-a");
+		return mv;
+	}
 
 }
