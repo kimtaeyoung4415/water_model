@@ -32,7 +32,7 @@
 					<th>진행상황</th>
 				</tr>	
 			</thead>
-			<tbody id="w-nego-list">
+			<tbody id="a-nego-list">
 				<c:forEach var="list" items="${list}" varStatus="status">
 					<tr C_NUM="${list.C_NUM}">
 						<td>${list.C_NUM}</td>
@@ -51,7 +51,14 @@
 							<td>답변완료</td>
 						</c:if>					
 					</tr>
-				</c:forEach>					
+				</c:forEach>
+				<tr id="admin_nego_page_test" value="1">
+					<td>1</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+				</tr>						
 			</tbody>
 		</table>
 		<div align="right">

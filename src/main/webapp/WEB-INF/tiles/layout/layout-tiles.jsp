@@ -57,6 +57,7 @@
 	<script type="text/javascript" src="${ctxPath}/resources/js/web/main/carousel.js"></script>	<%-- main 케러셀 --%>
 	<script type="text/javascript" src="${ctxPath}/resources/js/web/mng/mng.js"></script>	<%-- mngview 케러셀 --%>
 	<script type="text/javascript" src="${ctxPath}/resources/js/web/mng/jquery.bxslider.js"></script>	<%-- mngview 케러셀 --%>
+	<script type="text/javascript" src="${ctxPath}/resources/js/web/nego/nego.js"></script>	<%-- mngview 케러셀 --%>
 </head>
 
 <body>

@@ -51,7 +51,14 @@
 							<td>답변완료</td>
 						</c:if>					
 					</tr>
-				</c:forEach>					
+				</c:forEach>
+				<tr id="nego_page_test" value="1">
+					<td>1</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+				</tr>					
 			</tbody>
 		</table>
 		<div align="right">

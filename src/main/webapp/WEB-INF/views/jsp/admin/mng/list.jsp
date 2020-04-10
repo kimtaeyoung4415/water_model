@@ -47,4 +47,5 @@
 		<a class="model_page_number" href="">7</a>
 		<a class="model_next_page" href="">다음</a>
 	</div>
+	
 </div>

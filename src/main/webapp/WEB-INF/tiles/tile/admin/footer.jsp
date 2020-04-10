@@ -6,7 +6,7 @@
 
 		<div id = "com-log-footer">
 			<div id="footer-img">
-				<img src="${ctxPath}/resources/img/favicon.ico" style=" width: 100%;height: 100%;"/>
+				<img src="${ctxPath}/resources/img/logo_footer.png" style=" width: 100%;height: 100%;"/>
 			</div>
 		</div>
 		
