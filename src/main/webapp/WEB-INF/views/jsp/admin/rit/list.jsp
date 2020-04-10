@@ -35,11 +35,11 @@
 				</thead>
 				<tbody id="t_body">
 					<tr>
-						<td><a href="">게시판</a></td>
-						<td><a href="">게시판</a></td>
-						<td><a href="">게시판</a></td>
-						<td><a href="">게시판</a></td>
-						<td><a href="">게시판</a></td>
+						<td><a href="">0</a></td>
+						<td><a href="">나요</a></td>
+						<td><a href="">20200-03-14</a></td>
+						<td><a href="">진행주</a></td>
+						<td><a href="">3</a></td>
 					</tr>		
 					<tr>
 						<td><a href="">게시판</a></td>

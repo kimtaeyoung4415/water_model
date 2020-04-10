@@ -14,8 +14,9 @@
 				</div>
 			</div>
 			<br>
+			<form action="/admin/media/ins.do" id="additional" name="additional">
 			<div class="ui link cards">
-				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
+				  <div class="card" ondblclick="/admin/media/dtl.do'">
 				    <div class="image jyg">
 				      <img src="${ctxPath}/resources/img/magazine/프로필25.PNG">
 				    </div>
@@ -38,7 +39,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
+				  <div class="card" ondblclick="/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필21.PNG">
 				    </div>
@@ -62,7 +63,7 @@
 				    </div>
 				  </div>
 				  
-				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
+				  <div class="card" ondblclick="/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필23.PNG">
 				    </div>
@@ -85,7 +86,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
+				  <div class="card" ondblclick="/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필24.PNG">
 				    </div>
@@ -108,7 +109,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
+				  <div class="card" ondblclick="/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필11.PNG">
 				    </div>
@@ -131,7 +132,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
+				  <div class="card" ondblclick="/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필12.PNG">
 				    </div>
@@ -154,7 +155,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
+				  <div class="card" ondblclick="/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필13.PNG">
 				    </div>
@@ -177,7 +178,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
+				  <div class="card" ondblclick="/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필22.PNG">
 				    </div>
@@ -200,7 +201,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
+				  <div class="card" ondblclick="/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필14.PNG">
 				    </div>
@@ -223,7 +224,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
+				  <div class="card" ondblclick="/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필6.PNG">
 				    </div>
@@ -246,7 +247,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
+				  <div class="card" ondblclick="/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필7.PNG">
 				    </div>
@@ -269,7 +270,7 @@
 				      </span>
 				    </div>
 				  </div>
-				  <div class="card" ondblclick="location.href='http://localhost:8181/admin/media/dtl.do'">
+				  <div class="card" ondblclick="/admin/media/dtl.do'">
 				    <div class="image">
 				      <img src="${ctxPath}/resources/img/magazine/프로필8.PNG" height = "100%"/>
 				    </div>
@@ -292,7 +293,6 @@
 				      </span>
 				    </div>
 				  </div>
-				  
 			</div>
 			<br>		
 			<br>
@@ -300,20 +300,21 @@
 			<br>	
 			<nav class="pageing">
 				<div class="pagination">
-							<a href="#">&laquo;</a>
-							<a href="#">1</a>
-							<a href="#">2</a>
-							<a href="#" class="active">3</a>
-							<a href="#">4</a>
-							<a href="#">5</a>
-							<a href="#">&raquo;</a>
+					<a href="#">&laquo;</a>
+					<a href="#">1</a>
+					<a href="#">2</a>
+					<a href="#" class="active">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#">&raquo;</a>
 				</div>
-				
 			</nav>
 			<br>
 			<div class="button">
-				<input type="button"  class="btn" id="" value="추가" >
+			<label for="additional"></label>
+				<input type="submit"  class="btn" id="additional" name="additional" value="추가" >
 				</div>
+			</form>
 		</div>
 	</div>
 </section>

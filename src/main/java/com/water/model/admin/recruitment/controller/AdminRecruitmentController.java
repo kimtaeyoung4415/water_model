@@ -1,4 +1,4 @@
-package com.water.model.recruitment;
+package com.water.model.admin.recruitment.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,23 +8,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 
+
 @Controller
-@RequestMapping("/rit")
-public class RecruitmentController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(RecruitmentController.class);
+@RequestMapping("/admin")
+public class AdminRecruitmentController {
+private static final Logger logger = LoggerFactory.getLogger(AdminRecruitmentController.class);
 	
 	@RequestMapping(value="/list.do", method=RequestMethod.GET)
 	public ModelAndView list(ModelAndView mv) {
-		mv.setViewName("web/rit/list.tiles");
+		mv.setViewName("admin/rit/list.tiles-a");
 		return mv;
 	}
 	
-	@RequestMapping(value="/dtl.do",method= RequestMethod.GET)
+	@RequestMapping(value="/dtl.do", method=RequestMethod.GET)
 	public ModelAndView dtl(ModelAndView mv) {
-		mv.setViewName("web/rit/dtl.tiles");
+		mv.setViewName("admin/rit/dtl.tiles-a");
 		return mv;
-		
-		}
+	}
 
 }

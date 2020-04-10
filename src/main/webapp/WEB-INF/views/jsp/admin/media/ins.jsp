@@ -19,7 +19,7 @@
 						<input type="button" class="btn" value="저장">
 					</div>
 				<div class="notice_nav">
-					<a href="http://localhost:8181/admin/media/ins.do">LIST</a>
+					<a href="/admin/media/list.do">LIST</a>
 				</div>
 			</div>
 		</div>
