@@ -6,7 +6,7 @@ import java.util.Map;
 public interface InterQnaDao {
 
 	// 목록
-	List<Map<String, Object>> selectQnaList() throws Exception;
+	List<Map<String, Object>> selectQnaList(Map<String, Object> param) throws Exception;
 	
 	// 목록 카운트
 	int selectQnaListCnt() throws Exception;

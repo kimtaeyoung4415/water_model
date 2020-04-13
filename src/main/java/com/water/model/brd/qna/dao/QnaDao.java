@@ -16,8 +16,8 @@ public class QnaDao implements InterQnaDao {
 	
 	// 목록
 	@Override
-	public List<Map<String, Object>> selectQnaList() throws Exception {
-		return sqlSession.selectList("web.brd.qna.selectQnaList");
+	public List<Map<String, Object>> selectQnaList(Map<String, Object> param) throws Exception {
+		return sqlSession.selectList("web.brd.qna.selectQnaList", param);
 	};
 	
 	// 목록 카운트

@@ -16,8 +16,8 @@ public class NtceDao implements InterNtceDao {
 
 	// 목록
 	@Override
-	public List<Map<String, Object>> selectNtceList()  throws Exception{		
-		return sqlSession.selectList("web.brd.ntce.selectNtceList");
+	public List<Map<String, Object>> selectNtceList(Map<String, Object> param)  throws Exception{		
+		return sqlSession.selectList("web.brd.ntce.selectNtceList", param);
 	}
 
 	// 목록 카운트

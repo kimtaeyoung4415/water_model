@@ -4,7 +4,13 @@
 
 <meta charset="UTF-8">
 
-<script type="text/javascript">
+<%--
+	
+	Controller 에서 넘겨준 Error 메세지 출력 jsp 
+	
+ --%>
+<script type="text/javascript">	
 	alert("${msg}");
 	location.href="${loc}";
+	// 메세지 출력 이후 location 이동
 </script>

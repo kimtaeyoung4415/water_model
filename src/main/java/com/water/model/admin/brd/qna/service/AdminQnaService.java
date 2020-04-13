@@ -17,8 +17,8 @@ public class AdminQnaService implements InterAdminQnaService {
 
 	// 목록
 	@Override
-	public List<Map<String, Object>> selectAdminQnaList() throws Exception {
-		return adminQnaDao.selectAdminQnaList();
+	public List<Map<String, Object>> selectAdminQnaList(Map<String, Object> param) throws Exception {
+		return adminQnaDao.selectAdminQnaList(param);
 	};
 	
 	// 목록 카운트

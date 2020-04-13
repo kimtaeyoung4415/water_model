@@ -6,7 +6,7 @@ import java.util.Map;
 public interface InterNtceDao {
 
 	// 목록
-	List<Map<String, Object>> selectNtceList() throws Exception;
+	List<Map<String, Object>> selectNtceList(Map<String, Object> param) throws Exception;
 
 	// 목록 카운트
 	int selectNtceListCnt() throws Exception;

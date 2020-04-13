@@ -17,8 +17,8 @@ public class NtceService implements InterNtceService {
 
 	// 목록
 	@Override
-	public List<Map<String, Object>> selectNtceList() throws Exception {		
-		return ntceDao.selectNtceList();
+	public List<Map<String, Object>> selectNtceList(Map<String, Object> param) throws Exception {		
+		return ntceDao.selectNtceList(param);
 	}
 
 	// 목록 카운트

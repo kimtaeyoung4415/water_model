@@ -17,8 +17,8 @@ public class QnaService implements InterQnaService {
 		
 	// 목록
 	@Override
-	public List<Map<String, Object>> selectQnaList() throws Exception {
-		return qnaDao.selectQnaList();
+	public List<Map<String, Object>> selectQnaList(Map<String, Object> param) throws Exception {
+		return qnaDao.selectQnaList(param);
 	};
 	
 	// 목록 카운트

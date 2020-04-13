@@ -3,9 +3,6 @@
 
 <mapper namespace="admin.brd.ntce">
 
-	<sql id="pagination">
-		LIMIT #{showPage},  #{perPage}	
-	</sql>
 
 	<!-- 전체 조회 -->
 	<select id="selectAdminNtceList" parameterType="Map" resultType="Map">
@@ -34,8 +31,9 @@
 			) A 
 			, (SELECT @ROWNUM:=0) B
 		ORDER BY 
+			FIELD(IMP_YN, 'Y') DESC,
 			N_NUM DESC
-		<include refid="pagination" />
+		LIMIT #{showPage},  #{perPage}
 	</select>
 	
 	<!-- 전체 카운트 조회 -->

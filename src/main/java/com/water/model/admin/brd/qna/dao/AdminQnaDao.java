@@ -16,8 +16,8 @@ public class AdminQnaDao implements InterAdminQnaDao {
 	
 	// 목록
 	@Override
-	public List<Map<String, Object>> selectAdminQnaList() throws Exception {
-		return sqlSession.selectList("admin.brd.qna.selectAdminQnaList");
+	public List<Map<String, Object>> selectAdminQnaList(Map<String, Object> param) throws Exception {
+		return sqlSession.selectList("admin.brd.qna.selectAdminQnaList", param);
 	};
 	
 	// 목록 카운트

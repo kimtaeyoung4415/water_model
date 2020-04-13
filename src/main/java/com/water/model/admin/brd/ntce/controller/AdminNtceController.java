@@ -36,69 +36,43 @@ public class AdminNtceController {
 	@ResponseBody
 	public ModelAndView list(ModelAndView mv,HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {				
 		
-		try {
+		try {			
+						
+			// 페이징 처리 ==================================================
+						
+			int perPage = 15;	// 페이지당 보여줄 게시물 수
+			int perBar  = 5;	// 페이징 블럭에 보여질 수     ex) 5 >> | 1 | 2 | 3 | 4 | 5 | 
+			int totalCount = adminNtceService.selectAdminNtceListCnt();	// 총게시물 건수
 			
-			// ==========================================================
-			
-			
-			int totalCount = 0; // 총게시물 건수 
-			int perPage = 10; // 한 페이지당 보여줄 게시물 수 
-			int perBar = 5; // 페이지에 보여줄 블락 수 
-			int showPage = 0; // 초기페에이지는 0로 설정함 
-			int totalPage = 0; // 총 페이지 수(웹브라우저상에 보여줄 총 페이지 갯수, 페이지바)
-			
-			// 선택한 페이지 
-			String crrPage = (String) param.get("crrPage");
-			
-			// 전체 게시물 건수
-			totalCount = adminNtceService.selectAdminNtceListCnt();
-			
-			// 전체 페이지 수 
-			totalPage = (int) Math.ceil( (double)totalCount/perPage );
-			
-			// 첫 로드 또는 선택하지 않은경우 
-			if (crrPage == null) { 
-				showPage = 0; 
-			} else { 
-				try {
-					showPage = Integer.parseInt(crrPage);
-			
-					if (showPage < 1 || showPage > totalPage) { 
-						showPage = 0; 
-					} 
-				} catch (Exception e) { 
-					showPage = 0; 
-				} 
+			// 넘어온 데이터가 없는경우 ex) list.do? ... < GET 방식에 넘어온 데이터가 없는 초기 페이지
+			if (param.get("showPage") == null) {
+				param.put("showPage", 0);
+				param.put("perBar"  , perBar);
+				param.put("perPage" , perPage);
+				param.put("totalCount", totalCount);
+			} else {								
+			// 페이지를 선택한 경우
+				param.put("p_k", "Y"); // 페이지 선택 여부   p_k >>  page_key
+				param.put("showPageNo", (Integer.parseInt((String) param.get("showPage"))) );
+				param.put("showPage"  , (Integer.parseInt((String) param.get("showPage")) - 1 ) * (Integer.parseInt((String) param.get("perPage"))));
+				param.put("perBar" , perBar);
+				param.put("perPage", perPage);
+				param.put("totalCount", totalCount);
 			}
 			
-			param.put("showPage", showPage); 
-			param.put("perPage" , perPage);
-			
-			// 가져올 게시글 범위 구하기 // 
-			List<Map<String, Object>> list = adminNtceService.selectAdminNtceList(param);
-			
-			
-			// #119. 페이지바 만들기
-			String pagebar = "";
-			String url = "/admin/ntce/list.do";
-			
-			pagebar = "<ul>";
-			pagebar += commonUtil.pagination(url, showPage, perPage, totalPage, perBar);
-			pagebar += "</ul>";
-			
-			mv.addObject("pagination",pagebar);
-			
+			// 페이지바 만들기
+			mv.addObject("pagination", commonUtil.pagination(param, request));
 			
 			// ==========================================================			
 			
+			// 목록
+			List<Map<String, Object>> list = adminNtceService.selectAdminNtceList(param);
+			
 			// 현재 시간
 			String now = commonUtil.getCurrentTime();
-							
-			// 목록 카운트
-			int count = adminNtceService.selectAdminNtceListCnt();
 			
 			mv.addObject("list",list);
-			mv.addObject("list_count",count);
+			mv.addObject("list_count",totalCount);
 			mv.addObject("now",now);
 			mv.setViewName("admin/ntce/list.tiles");
 				
@@ -111,7 +85,7 @@ public class AdminNtceController {
 	
 	// 등록 화면	
 	@RequestMapping(value = "/ins.do", method = RequestMethod.GET)
-	public String ins(HttpServletRequest request) throws Exception {		
+	public String ins() throws Exception {		
 		return "admin/ntce/ins.tiles";
 	}	
 	
@@ -124,6 +98,8 @@ public class AdminNtceController {
 		Map<String, Object> dtl = adminNtceService.selectAdminNtceDtl(N_NUM);	
 		
 		if (dtl == null) {
+			
+			// url에서 존재하지 않는 게시물 번호를 입력한경우
 			String msg = "존재하지 않은 게시물입니다.";
 			String loc = "javascript:history.back()";
 			
@@ -146,13 +122,15 @@ public class AdminNtceController {
 	// 등록 액션
 	@RequestMapping(value = "/postAdminNtceIns.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
 	@ResponseBody
-	public Map<String, Object> postAdminNtceIns(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public Map<String, Object> postAdminNtceIns(@RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
 		try {
-			int cnt = adminNtceService.insertAdminNtce(param);
+
+			int cnt = adminNtceService.insertAdminNtce(param);									
 			
+			// 데이터 등록 성공여부
 			if (cnt == 0) {
 				result.put("SUCCESS", false);
 			} else {
@@ -164,7 +142,7 @@ public class AdminNtceController {
 		return result;
 	}
 
-	// 수정
+	// 수정 액션
 	@RequestMapping(value = "/edit.do", method={RequestMethod.POST, RequestMethod.GET},produces="application/json;charset=UTF-8")
 	@ResponseBody
 	public ModelAndView edit(ModelAndView mv, @RequestParam int N_NUM) throws Exception {		
@@ -174,6 +152,8 @@ public class AdminNtceController {
 			Map<String, Object> dtl = adminNtceService.selectAdminNtceDtl(N_NUM);	
 			
 			if (dtl == null) {
+				
+				// url에서 존재하지 않는 게시물 번호를 입력한경우
 				String msg = "존재하지 않은 게시물입니다.";
 				String loc = "javascript:history.back()";
 				

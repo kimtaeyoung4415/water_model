@@ -11,6 +11,7 @@ public interface InterAdminQnaService {
 	 * @Method    : selectAdminQnaList
 	 * @date      : 2020. 04. 03. 13:00
 	 * @author    : 김선규
+	 * @param param 
 	 * @history -------------------------------------------
 	 *          ----변경일---------작성자--------------변경내용 
 	 *          2020. 04. 03         김선규                         최초 작성
@@ -19,7 +20,7 @@ public interface InterAdminQnaService {
 	 * @param param
 	 * @return
 	 */
-	List<Map<String, Object>> selectAdminQnaList() throws Exception;
+	List<Map<String, Object>> selectAdminQnaList(Map<String, Object> param) throws Exception;
 		
 
 	/** <pre>

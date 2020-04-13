@@ -2,8 +2,7 @@ $(function () {
 	"use strict";
 	
 	/*
-		
-		
+
 		공통 변수 영역	: _class 함수 내에서 사용되어지는 함수에서 공통적으로 사용할 수 있는 변수 사용 영역
 		ex) pub.type = $('#type').val(); >> 한번의 설정으로 계속 사용가능 (session 과 비슷한 기능)
 		
@@ -36,14 +35,15 @@ $(function () {
 // 초기화 함수 영역
 //////////////
 	
-		initListEvent();
-		fileInputEvent();
+		initListEvent();		
 		
 //////////////
 // 기능  함수  영역
 //////////////
 		
+		// 목록 이벤트
 		function initListEvent(){
+			
 			// 목록 - tr mouseover,out css 이벤트
 			$("#a-ntce-list tr").bind("mouseover", function(e){
 				var $target = $(e.currentTarget); // 현제 마우스오버 된 타겟
@@ -83,6 +83,7 @@ $(function () {
 				updateAdminNtce();
 			});
 			
+			fileInputEvent();
 		};
 		
 		// 수정 이벤트
@@ -117,25 +118,16 @@ $(function () {
 			}
 						
 			// DATA
-			var imp_yn = $("input[name=IMP_YN]:checked").val();
-			
-			var abcd = $('input[name=a_ntce_ins_form]').serialize();
-			
-			console.log(abcd)
-			
+			var imp_yn = $("input[name=IMP_YN]:checked").val();			
+			var abcd = $('input[name=a_ntce_ins_form]').serialize();		
 			param.N_TITLE = frm.N_TITLE.value.trim();
 			param.N_CONT = frm.N_CONT.value.trim();
 			param.N_REG_NAME = pub.N_REG_NAME;
-			param.IMP_YN = (imp_yn == "on") ? "Y" : "N";
-			
-			
+			param.IMP_YN = (imp_yn == "on") ? "Y" : "N";			
 			
 			// 첨부파일 등록 코드 작성 필요
 			
-			
-			
-			
-			insertAdminNtce(param);
+			insertAdminNtce();
 		};	
 		
 		// 수정 세팅
@@ -146,31 +138,23 @@ $(function () {
 			
 			if (frm.N_TITLE.value.trim() == '') {
 				jAlert("제목을 입력해주세요.", "알림");
-					return false;
+				return false;
 			}
 			
 			if (frm.N_CONT.value.trim() == '') {
 				jAlert("내용을 입력해주세요.", "알림");
-					return false;
+				return false;
 			}
 						
 			// DATA
-			var imp_yn = $("input[name=IMP_YN]:checked").val();
-			
-			console.log(imp_yn)
-			
+			var imp_yn = $("input[name=IMP_YN]:checked").val();					
 			param.N_NUM   = pub.N_NUM;
 			param.N_TITLE = frm.N_TITLE.value.trim();
 			param.N_CONT  = frm.N_CONT.value.trim();
 			param.N_REG_NAME = pub.N_REG_NAME;
-			param.IMP_YN  = (imp_yn == "Y") ? "Y" : "N";
+			param.IMP_YN  = (imp_yn == "Y") ? "Y" : "N";				
 			
-			
-			
-			// 첨부파일 등록 코드 작성 필요
-			
-			
-			
+			// 첨부파일 등록 코드 작성 필요		
 			
 			putAdminNtceUpdt();
 		};
@@ -225,10 +209,10 @@ $(function () {
 		
 		// 등록
 		function insertAdminNtce(){
-			
+	
 			$.ajax({
 				url:"/admin/ntce/postAdminNtceIns.do",
-				data:param,
+				data: param,
 				type:'POST',
 				dataType: "json",
 				success:function(result){
@@ -250,7 +234,7 @@ $(function () {
 		
 		// 수정
 		function putAdminNtceUpdt(){
-			console.log(param)
+
 			$.ajax({
 				url:"/admin/ntce/putAdminNtceUpdt.do",
 				data:param,

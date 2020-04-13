@@ -21,11 +21,15 @@
 					<label for="N_CONT">공지</label>
 					<textarea id="N_CONT" name="N_CONT" rows="10" placeholder="문의 내용" required="required"></textarea>
 				</div>
-				<div class="filebox preview-image">
-					<input class="upload-name" value="파일선택" disabled="disabled"> 
-					<label for="N_FILE">업로드</label> 
-					<input type="file" id="N_FILE" class="upload-hidden"> 
-				</div>
+				
+					<!-- 
+					<div class="filebox preview-image">
+						<input class="upload-name" value="파일선택" disabled="disabled"> 
+						<label for="N_FILE">업로드</label> 
+						<input type="file" id="N_FILE" class="upload-hidden"> 
+					</div>
+					-->
+					
 			</div>
 		</div>
 		 

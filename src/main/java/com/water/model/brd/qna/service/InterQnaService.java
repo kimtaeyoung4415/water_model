@@ -11,6 +11,7 @@ public interface InterQnaService {
 	 * @Method    : selectQnaList
 	 * @date      : 2020. 03. 27. 10:57
 	 * @author    : 김선규
+	 * @param param 
 	 * @history -------------------------------------------
 	 *          ----변경일---------작성자--------------변경내용 
 	 *          2020. 03. 27         김선규                         최초 작성
@@ -19,7 +20,7 @@ public interface InterQnaService {
 	 * @param param
 	 * @return
 	 */
-	List<Map<String, Object>> selectQnaList() throws Exception;
+	List<Map<String, Object>> selectQnaList(Map<String, Object> param) throws Exception;
 	
 	/** <pre>
 	 * 1. 개요         : 질문 목록 카운트

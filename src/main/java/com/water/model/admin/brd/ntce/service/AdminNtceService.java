@@ -35,6 +35,7 @@ public class AdminNtceService implements InterAdminNtceService {
 		// 조회수 증가
 		int cnt = adminNtceDao.updateAdminNtceViewCnt(N_NUM);
 		
+		// 조회수 증가 성공여부에 따라 데이터 조회
 		if (cnt != 0) {
 			dtl = adminNtceDao.selectAdminNtceDtl(N_NUM);
 		} else {

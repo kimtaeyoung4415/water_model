@@ -34,22 +34,46 @@ public class AdminQnaController {
 	// 목록 화면
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
 	@ResponseBody
-	public ModelAndView list(ModelAndView mv) throws Exception {				
+	public ModelAndView list(ModelAndView mv, HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {				
 		
 		try {
+			
+			// 페이징 처리 ==================================================
+			
+			int perPage = 15;	// 페이지당 보여줄 게시물 수
+			int perBar  = 5;	// 페이징 블럭에 보여질 수     ex) 5 >> | 1 | 2 | 3 | 4 | 5 | 
+			int totalCount = adminQnaService.selectAdminQnaListCnt();	// 총게시물 건수
+			
+			// 넘어온 데이터가 없는경우 ex) list.do? ... < GET 방식에 넘어온 데이터가 없는 초기 페이지
+			if (param.get("showPage") == null) {
+				param.put("showPage", 0);
+				param.put("perBar"  , perBar);
+				param.put("perPage" , perPage);
+				param.put("totalCount", totalCount);
+			} else {								
+			// 페이지를 선택한 경우
+				param.put("p_k", "Y"); // 페이지 선택 여부   p_k >>  page_key
+				param.put("showPageNo", (Integer.parseInt((String) param.get("showPage"))) );
+				param.put("showPage"  , (Integer.parseInt((String) param.get("showPage")) - 1 ) * (Integer.parseInt((String) param.get("perPage"))));
+				param.put("perBar" , perBar);
+				param.put("perPage", perPage);
+				param.put("totalCount", totalCount);
+			}
+			
+			// 페이지바 만들기
+			mv.addObject("pagination", commonUtil.pagination(param, request));
+			
+			// ==========================================================	
 			
 			// 현재 시간
 			String now = commonUtil.getCurrentTime();
 			
 			// 목록
-			List<Map<String, Object>> list = adminQnaService.selectAdminQnaList();		
+			List<Map<String, Object>> list = adminQnaService.selectAdminQnaList(param);		
 			
-			// 목록 카운트
-			int count = adminQnaService.selectAdminQnaListCnt();
-			
-			mv.addObject("list",list);
-			mv.addObject("list_count",count);
-			mv.addObject("now",now);
+			mv.addObject("list", list);
+			mv.addObject("list_count", totalCount);
+			mv.addObject("now", now);
 			mv.setViewName("admin/qna/list.tiles");
 			
 		} catch (Throwable e) {
@@ -67,6 +91,8 @@ public class AdminQnaController {
 		Map<String, Object> dtl = adminQnaService.selectAdminQnaDtl(N_NUM);	
 		
 		if (dtl == null) {
+			
+			// url에서 존재하지 않는 게시물 번호를 입력한경우
 			String msg = "존재하지 않은 게시물입니다.";
 			String loc = "javascript:history.back()";
 			
@@ -90,7 +116,7 @@ public class AdminQnaController {
 	// 수정 액션
 	@RequestMapping(value = "/putAdminQnaUpdt.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
 	@ResponseBody
-	public Map<String, Object> putAdminQnaUpdt(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public Map<String, Object> putAdminQnaUpdt(@RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		

@@ -42,7 +42,7 @@
 			
 			<input type="hidden" id="N_NUM" name="N_NUM" value="${dtl.N_NUM }" />
 			<div id="dtl_list">
-				<a href="/admin/ntce/list.do">LIST</a>
+				<a href="javascript:history.back();">LIST</a>
 			</div>
 		</div>
 		

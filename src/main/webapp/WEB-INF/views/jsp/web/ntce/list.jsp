@@ -3,16 +3,27 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="container" align="center">		
-	<div class="w-ntce-container">
-		<div class="w-ntce-title">
+	<div class="brd-container">
+		
+		<div class="nav">
+			<ul>
+				<li><a href="/ntce/list.do">NOTICE</a></li>
+				<li>.</li>
+				<li><a href="/qna/list.do">QA</a></li>
+				<li>.</li>
+				<li><a href="/rit/list.do">MODEL REG</a></li>
+			</ul>
+		</div>
+	
+		<div class="brd-title">
 			<span>NOTICE</span>
 			<hr>
 		</div>
-		<div align="right">
+		<div align="right" class="brd-cnt">
 			<span>전체 : <strong id="list-cnt">${list_count}</strong> 개</span>
 		</div>	
 		
-		<table class="w-ntce-table">
+		<table class="brd-table">
 			<colgroup>
 				<col width="4%">
 				<col width="40%">
@@ -27,7 +38,8 @@
 					<th>조회</th>
 				</tr>	
 			</thead>
-			<tbody id="w-ntce-list">
+			
+			<tbody id="w-ntce-list" class="brd-tbody">
 				<c:forEach var="list" items="${list}" varStatus="status">
 					<c:if test="${list.IMP_YN == 'Y' }">
 						<tr N_NUM="${list.N_NUM}" class="ty_Y">
@@ -89,7 +101,14 @@
 				</c:forEach>					
 			</tbody>
 		</table>
+		
 		<div id="list-paging">
+			<nav class="pageing">
+				<div class="pagination">
+					${pagination }					
+				</div>
+			</nav>
 		</div>
+		
 	</div>
 </div>

@@ -6,19 +6,34 @@
 	<!-- 전체 조회 -->
 	<select id="selectAdminQnaList" parameterType="Map" resultType="Map">
 		SELECT 
-			 Q_NUM,    		/* 번호 */
-		     Q_NAME,        /* 질문자 이름 */
-		     Q_TITLE,       /* 질문 제목 */
-		     DATE_FORMAT(Q_REG_DATE,  '%Y-%m-%d') AS Q_REG_DATE,	/* 질문 등록일자 */
-		     DATE_FORMAT(Q_UPDT_DATE, '%Y-%m-%d') AS Q_UPDT_DATE,	/* 질문 수정일자 */
-		     DATE_FORMAT(Q_REG_DATE,  '%H:%i') AS Q_REG_TIME,		/* 질문 등록시간 */
-		     DATE_FORMAT(Q_UPDT_DATE, '%H:%i') AS Q_UPDT_TIME,		/* 질문 수정시간 */
-		     A_CONT,		/* 답변 */
-		     VIEW_CNT	    /* 조회수 */
+			Q_NUM,    		
+			Q_NAME,        
+			Q_TITLE,       
+			Q_REG_DATE,
+			Q_UPDT_DATE,
+			Q_REG_TIME,
+			Q_UPDT_TIME,
+			A_CONT,		
+			VIEW_CNT	    
 		FROM
-			WE_BRD_QNA
+			(
+			SELECT
+				 Q_NUM,    		/* 번호 */
+			     Q_NAME,        /* 질문자 이름 */
+			     Q_TITLE,       /* 질문 제목 */
+			     DATE_FORMAT(Q_REG_DATE,  '%Y-%m-%d') AS Q_REG_DATE,	/* 질문 등록일자 */
+			     DATE_FORMAT(Q_UPDT_DATE, '%Y-%m-%d') AS Q_UPDT_DATE,	/* 질문 수정일자 */
+			     DATE_FORMAT(Q_REG_DATE,  '%H:%i') AS Q_REG_TIME,		/* 질문 등록시간 */
+			     DATE_FORMAT(Q_UPDT_DATE, '%H:%i') AS Q_UPDT_TIME,		/* 질문 수정시간 */
+			     A_CONT,		/* 답변 */
+			     VIEW_CNT	    /* 조회수 */
+			FROM
+				WE_BRD_QNA
+			) A 
+			, (SELECT @ROWNUM:=0) B
 		ORDER BY 
 			Q_NUM DESC
+		LIMIT #{showPage},  #{perPage}
 	</select>
 	
 	<!-- 전체 카운트 조회 -->

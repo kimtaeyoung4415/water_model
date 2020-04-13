@@ -34,21 +34,45 @@ public class QnaController {
 	// 목록 화면
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
 	@ResponseBody
-	public ModelAndView list(ModelAndView mv) throws Exception {				
+	public ModelAndView list(ModelAndView mv, HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {				
 		
 		try {
+			
+			// 페이징 처리 ==================================================
+			
+			int perPage = 15;	// 페이지당 보여줄 게시물 수
+			int perBar  = 5;	// 페이징 블럭에 보여질 수     ex) 5 >> | 1 | 2 | 3 | 4 | 5 | 
+			int totalCount = qnaService.selectQnaListCnt();	// 총게시물 건수
+			
+			// 넘어온 데이터가 없는경우 ex) list.do? ... < GET 방식에 넘어온 데이터가 없는 초기 페이지
+			if (param.get("showPage") == null) {
+				param.put("showPage", 0);
+				param.put("perBar"  , perBar);
+				param.put("perPage" , perPage);
+				param.put("totalCount", totalCount);
+			} else {								
+			// 페이지를 선택한 경우
+				param.put("p_k", "Y"); // 페이지 선택 여부   p_k >>  page_key
+				param.put("showPageNo", (Integer.parseInt((String) param.get("showPage"))) );
+				param.put("showPage"  , (Integer.parseInt((String) param.get("showPage")) - 1 ) * (Integer.parseInt((String) param.get("perPage"))));
+				param.put("perBar" , perBar);
+				param.put("perPage", perPage);
+				param.put("totalCount", totalCount);
+			}
+			
+			// 페이지바 만들기
+			mv.addObject("pagination", commonUtil.pagination(param, request));
+			
+			// ==========================================================	
 			
 			// 현재 시간
 			String now = commonUtil.getCurrentTime();
 			
 			// 목록
-			List<Map<String, Object>> list = qnaService.selectQnaList();		
-			
-			// 목록 카운트
-			int count = qnaService.selectQnaListCnt();
+			List<Map<String, Object>> list = qnaService.selectQnaList(param);
 			
 			mv.addObject("list",list);
-			mv.addObject("list_count",count);
+			mv.addObject("list_count",totalCount);
 			mv.addObject("now",now);
 			mv.setViewName("web/qna/list.tiles");
 			
@@ -60,7 +84,7 @@ public class QnaController {
 	
 	// 등록 화면	
 	@RequestMapping(value = "/ins.do", method = RequestMethod.GET)
-	public String ins(HttpServletRequest request) throws Exception {		
+	public String ins() throws Exception {		
 		return "web/qna/ins.tiles";
 	}	
 	
@@ -73,6 +97,8 @@ public class QnaController {
 		Map<String, Object> dtl = qnaService.selectQnaDtl(Q_NUM);	
 		
 		if (dtl == null) {
+			
+			// url에서 존재하지 않는 게시물 번호를 입력한경우
 			String msg = "존재하지 않은 게시물입니다.";
 			String loc = "javascript:history.back()";
 			
@@ -156,7 +182,7 @@ public class QnaController {
 	// 등록 액션
 	@RequestMapping(value = "/postQnaIns.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
 	@ResponseBody
-	public Map<String, Object> postQnaIns(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public Map<String, Object> postQnaIns(@RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
@@ -177,7 +203,7 @@ public class QnaController {
 	// 수정 액션
 	@RequestMapping(value = "/putQnaUpdt.do", method={RequestMethod.POST},produces="application/json;charset=UTF-8")
 	@ResponseBody
-	public Map<String, Object> putQnaUpdt(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public Map<String, Object> putQnaUpdt(@RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
@@ -200,7 +226,7 @@ public class QnaController {
 	// 삭제 이벤트
 	@RequestMapping(value = "/deleteQna.do", method={RequestMethod.POST,RequestMethod.GET},produces="application/json;charset=UTF-8")
 	@ResponseBody
-	public Map<String, Object> deleteQna(HttpServletRequest request, @RequestParam Map<String, Object> param) throws Exception {
+	public Map<String, Object> deleteQna(@RequestParam Map<String, Object> param) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		

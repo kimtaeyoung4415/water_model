@@ -3,16 +3,28 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="container" align="center">		
-	<div class="a-qna-container">
-		<div class="qna-title">
+	<div class="brd-container">
+	
+		<div class="nav">
+			<ul>
+				<li><a href="/admin/ntce/list.do">NOTICE</a></li>
+				<li>.</li>
+				<li><a href="/admin/qna/list.do">QA</a></li>
+				<li>.</li>
+				<li><a href="/admin/rit/list.do">MODEL REG</a></li>
+			</ul>
+		</div>
+		
+		<div class="brd-title">
 			<span>Q & A</span>
 			<hr>
 		</div>
-		<div align="right">
+		
+		<div align="right" class="brd-cnt">
 			<span>전체 : <strong id="list-cnt">${list_count}</strong> 개</span>
 		</div>	
 		
-		<table class="a-qna-table">
+		<table class="brd-table">
 			<colgroup>
 				<col width="8%">
 				<col width="40%">
@@ -21,6 +33,7 @@
 				<col width="10%">
 				<col width="10%">
 			</colgroup>
+			
 			<thead>
 				<tr>
 					<th>번호</th>
@@ -31,7 +44,8 @@
 					<th>진행상황</th>
 				</tr>	
 			</thead>
-			<tbody id="a-qna-list">
+			
+			<tbody id="a-qna-list" class="brd-tbody">
 				<c:forEach var="list" items="${list}" varStatus="status">
 					<tr Q_NUM="${list.Q_NUM}">
 						<td>${list.Q_NUM}</td>
@@ -71,6 +85,12 @@
 		</table>
 
 		<div id="list-paging">
+			<nav class="pageing">
+				<div class="pagination">
+					${pagination }					
+				</div>
+			</nav>
 		</div>
+		
 	</div>
 </div>

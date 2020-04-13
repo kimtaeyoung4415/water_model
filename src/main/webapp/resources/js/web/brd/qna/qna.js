@@ -70,6 +70,7 @@ $(function () {
 				var q_num = $(this).attr('Q_NUM');
 				javascript:location.href = "/qna/dtl.do?q="+q_num;	
 			});
+			
 		};
 		
 		// 상세
