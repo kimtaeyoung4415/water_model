@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <form name="w_qna_ins_form">
-	<div class="container" align="center">
+	<div class="container_ins">
 		<div class="sub-container">
 			<div class="application_modal">
 				<h3>문의하기</h3>

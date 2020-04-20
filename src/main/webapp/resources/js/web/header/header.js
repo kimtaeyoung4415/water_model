@@ -1,14 +1,14 @@
 $(function (){
-//헤더 div 크가 변환 이벤트
-	var $menu = $('nav'),
-		$header = $('#test_id');
-	
-	$menu.mouseover(function(){
-		$header.stop().animate({height:'500px'},300);
-	})
-	$menu.mouseout(function(){
-		$header.stop().animate({height:'100px'},300);
-	})
+	// Header nav slider
+	var gnb = $('.gnb').find('li');
+
+	gnb.mouseover(function() {
+		$('.gnb_slider').stop().slideDown()
+	});
+
+	$('header').mouseleave(function() {
+		$('.gnb_slider').stop().slideUp()
+	});
 
 //header page move 이벤트
 	//회사소개

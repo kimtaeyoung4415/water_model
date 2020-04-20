@@ -1,62 +1,135 @@
-#about_company, #about_ceo, #about_map{
-		height:400px;
-		width:100%;
-		float:left;
-		border : 1px solid black;
-		font-size:20px;
+@charset "utf-8";
+
+@font-face {
+	font-family: 'Arita-dotum-Medium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
-#about_company{
-	background-color:black;
+/* 공통 */
+#about_company, #about_ceo, #about_map {
+	height: 400px;
+	width: 100%;
+	float: left;
+	font-size: 20px;
+	font-family: 'Arita-dotum-Medium';
 }
-#about_logo_box{
-	width: 20%;
-    height: 50%;
-    float: left;
-    position: relative;
-    top: 25%;
-    left: 19%;
+
+/* about_company */
+#about_company {
+	position: relative;
+	background-color: #72c1fe;
 }
-#ceo_photo{
+
+
+#about_logo_box {
+	width: auto;
+	height: 160px;
+	float: left;
+	position: absolute;
+	top: 50%;
+	left: 19%;
+	margin-top: -80px;
+}
+
+#about_logo_box img {
+	width: auto;
+	height: 100%;
+}
+
+#ac_content {
+	height: 100%;
+	width: 60%;
+	float: right;
+	position: relative;
+	text-align: left;
+}
+
+#ac_content_box {
+	margin: 65px 0 0 65px;
+	width: 65%;
+	height: auto;
+}
+
+#ac_content_box>span {
+	color: #333;
+	font-size: 18px;
+}
+
+/* about_ceo */
+#about_ceo_box {
+	float: left;
+	margin: 50px 0 0 320px;
+	width: auto;
+	height: 60px;
+}
+
+#about_ceo_box>img {
+	width: auto;
+	height: 100%;
+}
+
+#ceo_profile {
+	height: 70%;
+	width: 27%;
+	float: left;
+	position: relative;
+	top: 15%;
+}
+
+#ceo_profile>span {
+	display: block;
+	text-align: right;
+	font-weight: bold;
+	font-size: 18px;
+	color: #333;
+}
+
+#ceo_photo {
 	width: 30%;
-    height: 100%;
-    float: right;
-    position: relative;
-    right: 10%;
+	height: 100%;
+	float: right;
+	position: relative;
+	right: 10%;
 }
-#map_box{
+
+/* about_map */
+#about_map {
+	background-color: rgba(114,193,254,0.5);;
+}
+
+#map_box {
 	height: 63%;
-    width: 27%;
-    position: relative;
-    float:left;
-    top: 19%;
-    left: 10%;
+	width: 27%;
+	position: relative;
+	float: left;
+	top: 19%;
+	left: 10%;
 }
-#ac_content{
+
+#map_content {
 	height: 100%;
-    width: 60%;
-    float: right;
-    position: relative;
-    text-align:left;
-    color:white;
-    background-color:#303030;
+	width: 62%;
+	float: right;
+	position: relative;
 }
-#ceo_profile{
-    height: 70%;
-    width: 50%;
-    float: left;
-    position: relative;
-    top: 15%;
-    text-align: right;
+
+#map_content>img {
+	margin: 50px 0 0 50px;
+	width: auto;
+	height: 60px;
+	float: left;
 }
-#about_map{
-	background-color:black;
+
+#map_content>span {
+	float: left;
+	margin: 80px 0 0 80px;
+	text-align: left;
+	color: #333;
+	font-size: 18px;
 }
-#map_content{
-	height: 100%;
-    width: 62%;
-    float: right;
-    position: relative;
-	background-color:#303030;
-	text-align:left;
-	color:white;
+#map_content a {
+	font-weight: bold;
 }

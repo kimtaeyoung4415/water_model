@@ -1,141 +1,201 @@
-body{
-	width:90%;
+body {
+	width: 90%;
 	text-align: center;
-	padding:0;
-	margin:0 auto;	
+	padding: 0;
+	margin: 0 auto;
 }
 /* 카테고리 목록 */
-.model_kategorie_box{
-	margin: 5% auto 2% auto;
+.model_kategorie_box {
+	margin: 50px auto;
 }
 
-.model_kategorie{
-	width:35%;
-	margin:0 auto 0 auto;
-}
-.model_kategorie_box tr th{
-	width:10%;
-	font-size: 13px;
-	font-family: 맑은 고딕;
+.model_kategorie {
+	width: 35%;
+	margin: auto;
 }
 
-.model_kategorie_box tr th a{
+.model_kategorie_box tr th {
+	width: 162px;
+	font-size: 12px;
+	text-align: center;
+}
+
+.model_kategorie_box tr th a {
 	text-decoration: none; /* 밑줄 제거 */
-	color:rgb(192, 192, 192);
+	color: #aaa;
+	font-family: Cafe24Ohsquare;
 }
 
-.model_kategorie_box tr th a:hover{
-	color: black;
+.model_kategorie_box tr th a:hover {
+	color: #333;
+}
+
+/* model_title */
+.model_title {
+	width: 100%;
+	height: 37px;
+	font-family: Cafe24Ohsquare;
+	margin: 20px 0 80px 0;
+}
+.model_title>h2 {
+	margin-bottom: 0;
+	height: 70px;
+}
+.model_hr {
+	width: 80px;
+	border-bottom: 1px black solid;
+	margin-bottom: 50px;
+	margin: auto;
 }
 
 /* 검색창 */
-.model_search_bar{
-	width:65%;
-	margin:0 auto 1% auto; /* 위, 오른쪽, 아래, 왼쪽 */
+.model_search_bar {
+	width: 240px;
+	margin: 0 0 20px 1265px; /* 위, 오른쪽, 아래, 왼쪽 */
 	text-align: right;
 }
 
-/* 모델 프로필 */
-.model_profile{
-	width: 80%;
-	margin: 0 auto 0 auto;	/* 위, 오른쪽, 아래, 왼쪽 */
+.model_search_bar input[type=text] {
+	padding-left: 10px;
+	border: none;
+	color: #333;
+	border-bottom: 3px solid #72c1fe;
+	height: 20px;
+}
+
+.model_search_bar input[type=button] {
+	background-color: #72c1fe;
+	border: none;
+	color: #fff;
 	text-align: center;
-	float:left;
-	position:relative;
-	left:8%;
+	width: 35px;
+	height: 20px;
+}
+#search::placeholder {
+	color: #333;
+}
+
+/* 모델 프로필 */
+.model_img {
+	width: 100%;
+	height: 650px;
+}
+
+.model_profile {
+	width: 1064px;
+	margin: 0 0 0 426px; /* 위, 오른쪽, 아래, 왼쪽 */
+	float: left;
+	position: relative;
 }
 /* 모델 프로필 사진 세팅																			 */
 .model_profile li {
-	width: 215px;
-	height: 222px;
+	width: 200px;
+	height: 200px;
 	margin: 5px;
 	display: inline-block;
 }
+
 .model_profile li img {
-	width: 218px;
-	height: 218px;
+	width: 100%;
+	height: 100%;
 	overflow: hidden
 }
+/* --------------------------------------------- */
+
 /* 프로필 상세보기 */
+.profile_view{
+	margin: auto;
+	width: 1000px;
+	height: 1200px;
+}
+.profile_nav {
+	margin-top: 100px;
+}
+
 .profile_thumb {
 	margin: 0 auto;
-    width: 115px;
-    height: 115px;
-    border-radius: 50%;
-    overflow: hidden;
+	width: 115px;
+	height: 115px;
+	border-radius: 50%;
+	overflow: hidden;
 }
+
 .prev {
 	font-size: 24px;
-    line-height: 24px;
-    font-family: 'RixGo L';
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    margin-top: -19px;
-    color: #000;
-    left: 50px;
+	line-height: 24px;
+	font-family: 'RixGo L';
+	display: inline-block;
+	position: absolute;
+	top: 300px;
+	margin-top: -19px;
+	color: #333;
+	left: 400px;
 }
+
 .next {
 	font-size: 24px;
-    line-height: 24px;
-    font-family: 'RixGo L';
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    margin-top: -19px;
-    color: #000;
-    right: 50px;
+	line-height: 24px;
+	font-family: 'RixGo L';
+	display: inline-block;
+	position: absolute;
+	top: 300px;
+	margin-top: -19px;
+	color: #333;
+	right: 400px;
 }
+
 .profile_info {
 	width: 50%;
-	margin: auto auto auto auto;
+	margin: 10px auto auto auto;
 }
+
 .profile_info h5 {
 	font-size: 15px;
-    letter-spacing: 0;
-    margin-top: 0;
-    margin-bottom: 15px;
-    text-align: center;
+	letter-spacing: 0;
+	margin-top: 0;
+	margin-bottom: 30px;
+	text-align: center;
 }
+
 .profile_info ul {
 	list-style: none;
-    padding: 0;
-    overflow: hidden;
+	padding: 0;
+	overflow: hidden;
 }
+
 .profile_info ul li {
 	float: left;
-    width: 25%;
-    font-size: 15px;
-    text-align: center;
+	width: 25%;
+	font-size: 15px;
+	text-align: center;
 }
+
+
 /* 페이지 목록  */
-.model_page_box{
-	width:90%;
-	margin: 2.5% auto 2.5% auto; /* 위, 오른쪽, 아래, 왼쪽 */
+.model_page_box {
+	width: 100%;
+	height: 38px;
+	margin: auto;
+	padding-bottom: 200px;
+	margin: auto;
 }
 
-.model_page_list{
-	width: 30%;
-	margin: 0 auto 0 auto;	/* 위, 오른쪽, 아래, 왼쪽 */
+.model_page_list {
+	width: 290px;
+	margin: auto;
 }
 
-.model_page_number{
+.model_page_list>a {
+	text-align: center;
+	display: inline-block;
+	width: 10px;
+	font-size: 15px;
 	text-decoration: none;
-	margin: 0 3%;
-	color: black;
+	margin: 10px;
+	color: #333;
 	font-weight: bold;
 }
 
-.model_next_page{
-	text-decoration: none;
-	margin: 0 3%;
-	color: black;
+.model_page_list>a:last-child {
+	width: 30px;
 }
-
-
-
-
-
-
-
-

@@ -1,97 +1,114 @@
 @charset "UTF-8";
 /*전체 페이지 사이즈  */
-section.magazine{
-	padding-top: 115px;
-	padding-bottom: 30px;
+section.list_container{
+	height:5600px;
 }
-.container{
-	width: 970px;
+.mgz_row{
+	margin: auto;
+	width: 820px; 
+	height: auto;
 }
-section.magazine.container{
-	padding-left:75px;
-	padding-right:75px;
-
-}
-.row{
-	margin-right:-15px;
-	margin-left:-15px;
-}
-/*여기 까지  magazine 전체 사이즈  */
+/* 여기 까지  magazine 전체 사이즈  */
 
 /* magazine 전체 제목 사이즈 */
-/*제목  */
-.title{	
-	text-align:center;
-}
-
-.title h2{
-	margin-top:0;
-	font-size:30px;
-}
-/*제목 줄  */
-.title hr.black{
-	boarder-width:2px;
-}
-.title hr{
-	width:45px;
-	margin:30px auto;
-}
 /*버튼 전체 사이즈  */
-.button{
-	text-align: right;
+.mgz_btn{
+	margin-left: 650px;
+	width: 300px;
+	height: 56px;
 }
 /*버튼 박스 사이즈  */
-.in{
-	margin-left:300px;
-	margin-right: 300px;
+.mgz_btnBox{
+	display: table;
+	width: auto;
+	margin: auto;
+	list-style: none;
 }
 /* 버튼 사이즈 */
-.button input{
-	width:72px;
-	height: 34px;
-}
-/*리스트 사이즈  */
-.magazine_list{
-	position: relative;
-	margin:30px;
-	
-}
-/*리스트 사이즈  */
-.magazine_list2{
-	margin:30px;
-}
-/*리스트 사이즈  */
-.magazine_list3{
-	margin:30px;
-}
-/*리스트 테이블   */
-table{
-	width:100%;
+.mgz_btn input{
+	float: left;
+	font-size: 15px;
+	margin: 0px 5px;
 	text-align: center;
+	line-height: 28px;
+	border: 2px solid #aaa;
+	font-family: Cafe24Ohsquare;
+	color: #aaa;
+	width: 103px;
+	height: 28px;
+	background-color: #fff;
 }
-/*페이징 처리 센터  */
-.pageing{
+.mgz_btn input:hover {
+	color: #333;
+	border: 2px solid #333;
+}
+
+/*리스트 사이즈  */
+.list_magazine {
+	margin: auto;
+	width: 820px;
+	height: auto;
+}
+.mgz_card{
+	margin: 0 auto 30px auto;
+	padding: 10px;
+	box-shadow: 0 1px 13px 10px #eee;
+	width: 800px;
+	height: 376px;
+}
+
+/* mgz_img */
+.mgz_img {
+	float: left;
+	width: 250px;
+	height: auto;
+}
+.mgz_img img {
+	width: 100%; 
+	height: auto;
+}
+/* ------------------------------------------- */
+
+/* mgz_content */
+.mgz_content {
+	float: left;
+	margin: 0 40px;
+	text-align: left;
+	font-size: 15px;
+	font-family: 'Arita-dotum-Medium';
+}
+.mgz_name {
 	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 20px 0;
 }
-/*전체 페이징 박스 사이즈  */
-.pagination{
-	display: inline-block;
+/* ------------------------------------------- */
+
+/* extra */
+.extra {
+	float: right;
+	padding-top: 360px;
+	text-align: bottom;
 }
-/*페이징 박스 사이즈  */
-.pagination a{
-	color:black;
-	float:left;
-	padding: 8px 16px;
-	text-decoration: none;
-	transition: background-color .3s;
-	margin: 0 4px;
-	border: 1px solid #ddd;
-	
+/* ------------------------------------------- */
+
+/* pageing */
+.list_pageingM {
+	margin-top: -20px;
 }
-/*커서 올릴떄 색 변환  */
-.pagination a:hover:not(.active){
-	background-color: #ddd;
+
+/* 추가/삭제 버튼 */
+.mgz_list_btn{
+	margin-top: -80px;
+	margin-left: 605px;
+	width: 220px;
 }
-.button{
- text-align: right; 	
+.mgz_list_btn>.list_btn {
+	float: left;
+	margin: 0 5px;
+}
+.mgz_list_btn>.list_btn:hover {
+	background-color: #aaa;
+	color: #fff;
 }

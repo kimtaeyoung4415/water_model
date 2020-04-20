@@ -1,67 +1,20 @@
 @charset "UTF-8";
-.ret{
-	text-align: center;
-	border-style: solid;
-	
-}
-#t_head{
-	border-style:solid;
-}
-.pageing{
-	text-align: center;
-}
-.pagination{
-	display: inline-block;
-}
-.pagination a{
-	color:black;
-	float:left;
-	padding: 8px 16px;
-	text-decoration: none;
-	transition: background-color .3s;
-	margin: 0 4px;
-	border: 1px solid #ddd;
-	
-}
-.pagination a:hover:not(.active){
-	background-color: #ddd;
-}
-.nav {
-	
-    width: 970px;
-    height: 56px;
-}
-ul {
-    display: table;
-    width: auto;
-    margin: 0px auto;
-    padding: 0px;
-    list-style: none;
 
+.a_recruitment_board {
+	height: 1000px;
 }
-.nav ul li {
-    float: right;
-}
-.nav ul li a {
-    background-color: black;
-    font-size: 12px;
-    color: white;
-    font-family: "Klavika Md";
-    width: 103px;
-    height: 28px;
-    line-height: 30px;
-    letter-spacing: -0.05em;
-    float: right;
-    margin: 0px 5px;
-}
-select{
-	width:580px;
+
+
+select {
+	width: 580px;
 	height: 48px;
 }
-.imgfile{
-	width:300px;
+
+.imgfile {
+	width: 300px;
 	margin-top: 30px;
 }
-.LoadImg{
+
+.LoadImg {
 	max-width: 100%;
 }

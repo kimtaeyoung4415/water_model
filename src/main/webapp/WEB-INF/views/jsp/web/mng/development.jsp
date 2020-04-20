@@ -11,13 +11,17 @@
 		</tr>
 	</table>
 </div>
+<div class="model_title">
+	<h2>DEVELOPMENT</h2>
+	<hr class="model_hr">
+</div>
 <div class="model_search_bar">
 	<form action="/" method="get" class="search_model" name="model_search_form">
 		<input type="text" id="search" placeholder="search">
 		<input type="button" value="검색" >
 	</form>
 </div>
-<div>
+<div class="model_img">
 	<ul class="model_profile">
 		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필50.PNG"></a></li>
 		<li><a href="../view.do"><img src="${ctxPath}/resources/img/mng/프로필37.PNG"></a></li>
