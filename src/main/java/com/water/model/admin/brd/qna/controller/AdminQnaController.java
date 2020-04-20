@@ -74,7 +74,7 @@ public class AdminQnaController {
 			mv.addObject("list", list);
 			mv.addObject("list_count", totalCount);
 			mv.addObject("now", now);
-			mv.setViewName("admin/qna/list.tiles");
+			mv.setViewName("admin/qna/list.tiles-a");
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
@@ -107,7 +107,7 @@ public class AdminQnaController {
 			
 			mv.addObject("dtl",dtl);		
 			mv.addObject("now",now);
-			mv.setViewName("admin/qna/dtl.tiles");
+			mv.setViewName("admin/qna/dtl.tiles-a");
 		}
 		
 		return mv;

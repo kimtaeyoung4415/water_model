@@ -51,7 +51,7 @@ body {
 /* 검색창 */
 .model_search_bar {
 	width: 240px;
-	margin: 0 0 20px 1265px; /* 위, 오른쪽, 아래, 왼쪽 */
+	margin: 0 0 20px 1083px; /* 위, 오른쪽, 아래, 왼쪽 */
 	text-align: right;
 }
 
@@ -83,7 +83,7 @@ body {
 
 .model_profile {
 	width: 1064px;
-	margin: 0 0 0 426px; /* 위, 오른쪽, 아래, 왼쪽 */
+	margin: 0 0 0 230px; /* 위, 오른쪽, 아래, 왼쪽 */
 	float: left;
 	position: relative;
 }

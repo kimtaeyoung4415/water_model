@@ -12,7 +12,7 @@
 	</h1>
 	<nav class="gnb">
 		<ul>
-			<li>ABOUT</li>
+			<li id="w-about">ABOUT</li>
 			<li>MANAGEMENT</li>
 			<li>MEDIA</li>
 			<li>Q&amp;A</li>

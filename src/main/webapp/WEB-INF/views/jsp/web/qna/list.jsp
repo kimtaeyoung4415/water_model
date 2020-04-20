@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <div class="list_container">
 	<div class="list_nav">
 		<ul>
@@ -16,6 +17,7 @@
 		<h2>Q&amp;A</h2>
 		<hr class="list_hr">
 	</div>
+	
 	<div class="list_length">
 		<span>전체 : <strong>${list_count}</strong> 개
 		</span>
@@ -78,10 +80,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
-
-	<div>
-		<input type="button" class="list_btn" id="btn_w_qna_ins" value="등록" />
-	</div>
 
 	<div class="list_paging">
 		<nav class="list_pageing">

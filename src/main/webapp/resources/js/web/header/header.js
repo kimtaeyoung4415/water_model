@@ -1,13 +1,16 @@
 $(function (){
 	// Header nav slider
 	var gnb = $('.gnb').find('li');
-
+	
 	gnb.mouseover(function() {
 		$('.gnb_slider').stop().slideDown()
+		$('header').css('border','none')
 	});
 
 	$('header').mouseleave(function() {
-		$('.gnb_slider').stop().slideUp()
+		$('.gnb_slider').stop().slideUp(function(){
+			$('header').css('border-bottom','2px solid #72c1fe')
+		});
 	});
 
 //header page move 이벤트

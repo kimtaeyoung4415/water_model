@@ -19,7 +19,7 @@
 			<div class="mgz_cardBox">
 				<div class="mgz_card">
 					<div class="mgz_img">
-						<img src="../resources/img/magazine/프로필25.PNG">
+						<img src="${ctxPath}/resources/img/magazine/프로필25.PNG">
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name">정윤지</div>
@@ -37,7 +37,7 @@
 				</div>
 				<div class="mgz_card">
 					<div class="mgz_img">
-						<img src="../resources/img/magazine/프로필21.PNG">
+						<img src="${ctxPath}/resources/img/magazine/프로필21.PNG">
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name">정윤지</div>
@@ -56,7 +56,7 @@
 
 				<div class="mgz_card">
 					<div class="mgz_img">
-						<img src="../resources/img/magazine/프로필23.PNG">
+						<img src="${ctxPath}/resources/img/magazine/프로필23.PNG">
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name">정윤지</div>
@@ -74,7 +74,7 @@
 				</div>
 				<div class="mgz_card">
 					<div class="mgz_img">
-						<img src="../resources/img/magazine/프로필24.PNG">
+						<img src="${ctxPath}/resources/img/magazine/프로필24.PNG">
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name">정윤지</div>
@@ -92,7 +92,7 @@
 				</div>
 				<div class="mgz_card">
 					<div class="mgz_img">
-						<img src="../resources/img/magazine/프로필11.PNG">
+						<img src="${ctxPath}/resources/img/magazine/프로필11.PNG">
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name">Molly</div>
@@ -110,7 +110,7 @@
 				</div>
 				<div class="mgz_card">
 					<div class="mgz_img">
-						<img src="../resources/img/magazine/프로필12.PNG">
+						<img src="${ctxPath}/resources/img/magazine/프로필12.PNG">
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name">Elyse</div>
@@ -128,7 +128,7 @@
 				</div>
 				<div class="mgz_card">
 					<div class="mgz_img">
-						<img src="../resources/img/magazine/프로필13.PNG">
+						<img src="${ctxPath}/resources/img/magazine/프로필13.PNG">
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name">Matt Giampietro</div>
@@ -146,7 +146,7 @@
 				</div>
 				<div class="mgz_card">
 					<div class="mgz_img">
-						<img src="../resources/img/magazine/프로필22.PNG">
+						<img src="${ctxPath}/resources/img/magazine/프로필22.PNG">
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name">Molly</div>
@@ -164,7 +164,7 @@
 				</div>
 				<div class="mgz_card">
 					<div class="mgz_img">
-						<img src="../resources/img/magazine/프로필14.PNG">
+						<img src="${ctxPath}/resources/img/magazine/프로필14.PNG">
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name">Elyse</div>
@@ -182,7 +182,7 @@
 				</div>
 				<div class="mgz_card">
 					<div class="mgz_img">
-						<img src="../resources/img/magazine/프로필6.PNG">
+						<img src="${ctxPath}/resources/img/magazine/프로필6.PNG">
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name">Matt Giampietro</div>
@@ -200,7 +200,7 @@
 				</div>
 				<div class="mgz_card">
 					<div class="mgz_img">
-						<img src="../resources/img/magazine/프로필7.PNG">
+						<img src="${ctxPath}/resources/img/magazine/프로필7.PNG">
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name">Molly</div>
@@ -218,7 +218,7 @@
 				</div>
 				<div class="mgz_card">
 					<div class="mgz_img">
-						<img src="../resources/img/magazine/프로필8.PNG">
+						<img src="${ctxPath}/resources/img/magazine/프로필8.PNG">
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name">Elyse</div>
@@ -245,10 +245,6 @@
 
 			</nav>
 			<br />
-			<div class="mgz_list_btn">
-				<button id="" name="dds" class="list_btn">추가</button>
-				<button id="" name="dds" class="list_btn">삭제</button>
-			</div>
 		</div>
 	</div>
 </section>

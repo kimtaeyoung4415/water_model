@@ -74,7 +74,7 @@ public class AdminNtceController {
 			mv.addObject("list",list);
 			mv.addObject("list_count",totalCount);
 			mv.addObject("now",now);
-			mv.setViewName("admin/ntce/list.tiles");
+			mv.setViewName("admin/ntce/list.tiles-a");
 				
 			} catch (Throwable e) {
 				e.printStackTrace();
@@ -86,7 +86,7 @@ public class AdminNtceController {
 	// 등록 화면	
 	@RequestMapping(value = "/ins.do", method = RequestMethod.GET)
 	public String ins() throws Exception {		
-		return "admin/ntce/ins.tiles";
+		return "admin/ntce/ins.tiles-a";
 	}	
 	
 	// 상세 화면	
@@ -113,7 +113,7 @@ public class AdminNtceController {
 			
 			mv.addObject("dtl",dtl);		
 			mv.addObject("now",now);
-			mv.setViewName("admin/ntce/dtl.tiles");
+			mv.setViewName("admin/ntce/dtl.tiles-a");
 		}
 		
 		return mv;

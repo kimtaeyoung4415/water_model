@@ -42,7 +42,7 @@
 			
 			<input type="hidden" id="C_NUM" name="C_NUM" value="${dtl.C_NUM }" />
 			<div id="dtl_list">
-				<a href="/admin/nego/list.do">LIST</a>
+				<a href="/nego/list.do">LIST</a>
 			</div>
 
 		</div>

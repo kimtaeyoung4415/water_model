@@ -35,13 +35,13 @@
 	<link rel="stylesheet" href="${ctxPath}/resources/css/header.css" media="all" type="text/css" />	<%--header --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/footer.css" media="all" type="text/css" />	<%--footer --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/pabout.css" media="all" type="text/css" />	<%--about --%>
-	<link rel="stylesheet" href="${ctxPath}/resources/css/semantic.min.css" media="all" type="text/css" />	<%--magazine --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/mngview.css" media="all" type="text/css" />	<%--mngview --%>
 	<link rel="stylesheet" href="${ctxPath}/resources/css/main.css" media="all" type="text/css" />	<%--main --%>
+	<link rel="stylesheet" href="${ctxPath}/resources/css/jquery.bxslider.css" media="all" type="text/css" />	<%--slider --%>
+	<link rel="stylesheet" href="${ctxPath}/resources/css/recruitment.css" media="all" type="text/css" />	<%--main --%>
 	
 	
-	
-	<link rel="shortcut icon" href="${ctxPath}/resources/img/favicon.ico" type="image/x-icon"> <%--icon --%>
+	<link rel="shortcut icon" href="${ctxPath}/resources/img/favicon.ico" type="image/x-icon"><%--icon --%>
 	<link href="https://fonts.googleapis.com/css?family=Sunflower:300,500,700&display=swap&subset=korean" rel="stylesheet"> <%--글꼴 --%>
 	
 	<%-- script --%>	
@@ -51,11 +51,12 @@
 	<script type="text/javascript" src="${ctxPath}/resources/js/web/brd/ntce/ntce.js"></script>			<%-- 공지 게시판 --%>
 	<script type="text/javascript" src="${ctxPath}/resources/js/admin/brd/qna/qna.js"></script>			<%-- QnA 게시판 --%>
 	<script type="text/javascript" src="${ctxPath}/resources/js/admin/brd/ntce/ntce.js"></script>		<%-- 공지 게시판 --%>
-	<script type="text/javascript" src="${ctxPath}/resources/js/web/header/header.js"></script>			<%--HEADER --%>
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e8e7bfba2d35b071dc22784476bb6130"></script> <%--카카오 지도 --%>
-	<script type="text/javascript" src="${ctxPath}/resources/js/web/main/carousel.js"></script>	<%-- main 케러셀 --%>
-	<script type="text/javascript" src="${ctxPath}/resources/js/web/nego/nego.js"></script>	<%-- nego--%>
-	<script type="text/javascript" src="${ctxPath}/resources/js/web/media/media.js"></script>	<%-- media--%>
+	<script type="text/javascript" src="${ctxPath}/resources/js/web/header/header.js"></script>			<%--HEADER --%> 
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e8e7bfba2d35b071dc22784476bb6130"></script>	<%--카카오 지도 --%>
+	<script type="text/javascript" src="${ctxPath}/resources/js/web/main/main.js"></script>	<%-- main 케러셀 --%>
+	<script type="text/javascript" src="${ctxPath}/resources/js/web/mng/mng.js"></script>	<%-- mngview 케러셀 --%>
+	<script type="text/javascript" src="${ctxPath}/resources/js/web/mng/jquery.bxslider.js"></script>	<%-- mngview 케러셀 --%>
+	<script type="text/javascript" src="${ctxPath}/resources/js/web/nego/nego.js"></script>	<%-- mngview 케러셀 --%>
 </head>
 
 <body>

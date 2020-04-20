@@ -33,10 +33,6 @@ $(document).ready(function() {
 	
 	prev.click(function(e) {
 		i--;
-		if (i < 0) {
-			i = 0
-		}
-		
 		if (i == 1) {
 			$('.wrapper').animate({
 				marginLeft : '-1220px'
@@ -46,7 +42,10 @@ $(document).ready(function() {
 			$('.wrapper').animate({
 				marginLeft : '0'
 			}, 1000);
+		} else if (i < 0) {
+			i = 0
 		}
+		
 	});
 	
 	
@@ -54,10 +53,6 @@ $(document).ready(function() {
 	
 	next.click(function(e) {
 		i++;
-		if (2 < i) {
-			i = 2
-		}
-		
 		if (i == 1) {
 			$('.wrapper').animate({
 				marginLeft : '-1220px'
@@ -67,7 +62,10 @@ $(document).ready(function() {
 			$('.wrapper').animate({
 				marginLeft : '-2440px'
 			}, 1000);
+		} else if (2 < i) {
+			i = 2
 		}
+		
 	});
 	
 	

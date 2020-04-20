@@ -55,7 +55,7 @@
 
 #ac_content_box>span {
 	color: #333;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 /* about_ceo */
@@ -73,7 +73,7 @@
 
 #ceo_profile {
 	height: 70%;
-	width: 27%;
+	width: 23%;
 	float: left;
 	position: relative;
 	top: 15%;

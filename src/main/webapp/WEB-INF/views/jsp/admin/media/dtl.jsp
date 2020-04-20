@@ -10,18 +10,14 @@
 				</div>
 				<div class="news">
 					<div class="news_img">
-						<img src="${ctxPath}/resources/img/magazine/프로필25.PNG">
+						<img src="http://placehold.it/634x526">
 					</div>
 					<p>쇼 설명</p>
 					<iframe class="medel_video" src="https://www.youtube.com/embed/P6vbd1P8i14" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 					</iframe>
 				</div>
-					<div class="button">
-						<input type="button" class="btn" id="" value="수정">
-						<input type="button" class="btn" id="" value="삭제">
-					</div>
 				<div class="notice_nav">
-					<a href="http://localhost:8181/admin/media/list.do">LIST</a>
+					<a href="http://localhost:8080/media/magazine.do">LIST</a>
 				</div>
 			</div>
 		</div>
