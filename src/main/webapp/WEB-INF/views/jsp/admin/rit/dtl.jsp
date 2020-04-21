@@ -91,8 +91,8 @@
 				<div class="input_wrapper">				
 					<label for="PHOTO">사진</label>
 					<input type="file" id="PHOTO" name="PHOTO" multiple/>
-					<div class="imgfile">
-						<img id="LoadImg">
+					<div class="imgfiles">
+						
 					</div>
 				</div>
 			</div>

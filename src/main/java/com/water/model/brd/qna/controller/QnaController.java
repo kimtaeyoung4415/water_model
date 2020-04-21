@@ -1,4 +1,4 @@
-package com.water.model.brd.qna.controller;
+ package com.water.model.brd.qna.controller;
 
 import java.util.HashMap;
 import java.util.List;

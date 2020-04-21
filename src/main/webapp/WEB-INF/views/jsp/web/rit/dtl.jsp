@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <section class="container">
-	<div class="nav">
+	<div class="list_nav">
+	<br>
 	<ul>
 		<li><a href="/ntce/list.do">NOTICE</a></li>
 		<li>.</li>
@@ -14,7 +15,7 @@
 	<div class="container" align="center">
 		<div class="sub-container">
 			<div class="application_modal">
-				<h3>채용등록</h3>
+				<h2>채용등록</h2>
 				<div class="input_wrapper">
 					<label for="">구분</label>
 					<select>
@@ -41,9 +42,12 @@
 					<input type="text" id="AREA" name="AREA" placeholder="서울" required="required">
 				</div>
 				<div class="input_wrapper">
-					<label for="GENDER">성별</label>
-					<input type="checkbox" id="MAN" name="MAN" value="남자">남자
-					<input type="checkbox" id="GIRL" name="GIRL" value="여자">여자
+					<label for="GENDER"><span>성별</span>
+					<div class="check-box">
+					<input type="checkbox" id="MAN" name="MAN">남자
+					<input type="checkbox" id="GIRL" name="GIRL">여자
+					</div>
+					</label>
 				</div>
 				<div class="input_wrapper">
 					<label for="KEY">키</label>
@@ -91,8 +95,8 @@
 				<div class="input_wrapper">				
 					<label for="PHOTO">사진</label>
 					<input type="file" id="PHOTO" name="PHOTO" multiple/>
-					<div class="imgfile">
-						<img id="LoadImg">
+					<div class="imgfiles">
+					
 					</div>
 				</div>
 			</div>

@@ -1,39 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <section class="list_container">
-	<div class="mgz_btn">
-		<div class="mgz_btnBox">
-			<input type="button" value="한국어"> <input type="button"
-				value="English">
-		</div>
-	</div>
 	<div class="list_magazine">
 		<div class="mgz_row">
 			<div class="list_title">
 				<h2>MAGAZINE</h2>
 				<hr class="list_hr">
 			</div>
-			<br />
+			<div class="mgz_btn">
+				<div class="mgz_btnBox">
+					<input type="button" value="한국어"> 
+					<input type="button" value="English">
+				</div>
+			</div>
+			<br>
 			<div class="mgz_cardBox">
 				<div class="mgz_card">
+				<c:forEach var="card_list" items="list" begin="index" end="3">
 					<div class="mgz_img">
-						<img src="${ctxPath}/resources/img/magazine/프로필25.PNG">
+						<a href="/media/dtl.do"><img src="${card_list }"></a>
 					</div>
 					<div class="mgz_content">
-						<div class="mgz_name">정윤지</div>
+						<div class="mgz_name"><a href="/media/dtl.do">정윤지</a></div>
 						<div class="meta">
-							<a>Actor</a>
+							<a href="/media/dtl.do">Actor</a>
 						</div>
-						<div class="description">Matthew is an interior designer
-							living in New York.</div>
+						<div class="description">
+							<a href="/media/dtl.do">Matthew is an interior designer
+							living in New York.</a>
+						</div>
 					</div>
 					<div class="extra">
 						<span class="right floated"> Joined in 2013 </span> <span>
 							<i class="user icon"></i> 75 Friends
 						</span>
 					</div>
+				</c:forEach>
 				</div>
 				<div class="mgz_card">
 					<div class="mgz_img">
@@ -128,12 +132,12 @@
 				</div>
 				<div class="mgz_card">
 					<div class="mgz_img">
-						<img src="${ctxPath}/resources/img/magazine/프로필13.PNG">
+						<a href=""><img src="${ctxPath}/resources/img/magazine/프로필13.PNG"></a>
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name">Matt Giampietro</div>
 						<div class="meta">
-							<a>Friends</a>
+							<a href="">Friends</a>
 						</div>
 						<div class="description">Matthew is an interior designer
 							living in New York.</div>

@@ -3,7 +3,7 @@
 <section class="a_recruitment_board">
 	<div class="container">
 		<div class="row">
-			<div class="nav">
+			<div class="List_nav">
 				<ul>
 					<li><a href="/ntce/list.do">NOTICE</a></li>
 					<li>.</li>
@@ -12,19 +12,19 @@
 					<li><a href="/rit/list.do">MODEL REG</a></li>
 				</ul>
 			</div>
-			<div class="title">
+			<div class="list_title">
 				<h2>MODEL REGIST</h2>
-				<hr>
+				<hr class="list_hr">
 			</div>
-			<div align="right">
+			<div class="list_length">
 				<span>
 					전체:
 					<strong class=""> </strong>
 				</span>
 			</div>
 			<form action="dtl.do">
-			<table class="ret">
-				<thead id="t_head">
+			<table class="list_table">
+				<thead class="list_thead">
 					<tr>
 						<th>번호</th>
 						<th>신청자</th>
@@ -33,7 +33,7 @@
 						<th>조회수</th>
 					</tr>
 				</thead>
-				<tbody id="t_body">
+				<tbody id="list_tbody">
 					<tr>
 						<td><a href="">0</a></td>
 						<td><a href="">나요</a></td>
@@ -65,11 +65,11 @@
 			<br>
 			<div align="right">
 				<label for="r_button"></label>
-				<input type="submit" class="btn" id="r_button" name="r_button" value="지원">
+				<input type="submit"  id="r_button" name="r_button" value="지원">
 			</div>
 			</form>
-			<nav class="pageing">
-						<div class="pagination">
+			<nav class="list_pageing">
+						<div class="list_ pagination">
 							<a href="#">&laquo;</a>
 							<a href="#">1</a>
 							<a href="#">2</a>

@@ -19,6 +19,7 @@
 		<span> 전체: <strong class=""> </strong>
 		</span>
 	</div>
+		<form action="dtl.do">
 	<table class="list_table">
 		<thead class="list_thead">
 			<tr>
@@ -62,14 +63,19 @@
 	</table>
 	<br>
 	<div>
-		<label for="r_button"></label> <input type="submit" class="list_btn"
-			id="r_button" name="r_button" value="지원">
+		<label for="r_button"></label> 
+		<input type="submit" class="list_btn" id="r_button" name="r_button" value="지원">
 	</div>
+	</form>
 	<nav class="list_pageing">
 		<div class="list_pagination">
-			<a href="#">&laquo;</a> <a href="#">1</a> <a href="#">2</a> <a
-				href="#" class="active">3</a> <a href="#">4</a> <a href="#">5</a> <a
-				href="#">&raquo;</a>
+			<a href="#">&laquo;</a> 
+			<a href="#">1</a> 
+			<a href="#">2</a> 
+			<a href="#" class="active">3</a> 
+			<a href="#">4</a> 
+			<a href="#">5</a> 
+			<a href="#">&raquo;</a>
 		</div>
 	</nav>
 </div>

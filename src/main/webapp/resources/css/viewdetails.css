@@ -18,14 +18,17 @@ section.view_details{
 }
 /*view 박스 제목 사이즈  */
 .viewdetails_title{
-	width:810px;
+	width:100%;
 	height: 72px;
+	text-align: center;
 }
 /*제목 사이즈  */
-.viewdetails_title h2{
+.viewdetails_title h1{
 	margin:0;
-	font-size:17px;
+	font-size:35px;
 	line-height: 20px;
+	width: 977px;
+    text-align: center;
 }
 /*mews 사이즈  */
 .news{
@@ -33,9 +36,10 @@ section.view_details{
 }
 /*비디어 사이즈  */
 .medel_video{
-	width:634px;
+	width:800px;
 	height: 526px;
 }
+
 /*nav 전페 사이즈  */
 .notice_nav{
 	padding: 0 102px;
@@ -51,6 +55,7 @@ section.view_details{
 	
 }
 .news_img img{
-	width:634px;
+	width:800px;
 	height: 526px;
 }
+
