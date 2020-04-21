@@ -66,6 +66,7 @@ $(function () {
 			var test_num = $("#admin_nego_page_test").children().first().text();
 			javascript:location.href = "/admin/nego/dtl.do?c="+test_num;	
 		});
+		
 //////////////
 // 데이터 호출 영역
 //////////////		
