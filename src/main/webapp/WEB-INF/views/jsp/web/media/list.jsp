@@ -18,9 +18,9 @@
 			<br>
 			<div class="mgz_cardBox">
 				<div class="mgz_card">
-				<c:forEach var="card_list" items="list" begin="index" end="3">
+				<c:forEach var="card_list" items="list" begin="" end="3">
 					<div class="mgz_img">
-						<a href="/media/dtl.do"><img src="${card_list }"></a>
+						<a href="/media/dtl.do"><img src="${ctxPath}/resources/img/magazine/프로필21.PNG"></a>
 					</div>
 					<div class="mgz_content">
 						<div class="mgz_name"><a href="/media/dtl.do">정윤지</a></div>

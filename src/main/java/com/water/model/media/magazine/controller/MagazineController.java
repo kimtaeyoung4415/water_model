@@ -16,6 +16,8 @@ public class MagazineController {
 	@RequestMapping(value="/list.do", method=RequestMethod.GET)
 	public ModelAndView news(ModelAndView mv) {
 		mv.setViewName("web/media/list.tiles");
+		
+		
 		return mv;
 	}
 	
