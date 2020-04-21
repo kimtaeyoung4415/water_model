@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 /*전체 페이지 사이즈  */
 section.list_container{
@@ -111,4 +112,119 @@ section.list_container{
 .mgz_list_btn>.list_btn:hover {
 	background-color: #aaa;
 	color: #fff;
+=======
+@charset "UTF-8";
+/*전체 페이지 사이즈  */
+section.list_container{
+	height:5600px;
+}
+.mgz_row{
+	margin: auto;
+	width: 820px; 
+	height: auto;
+}
+/* 여기 까지  magazine 전체 사이즈  */
+
+/* magazine 전체 제목 사이즈 */
+/*버튼 전체 사이즈  */
+.mgz_btn{
+	margin-left: 561px;
+	width: 300px;
+	height: 56px;
+}
+/*버튼 박스 사이즈  */
+.mgz_btnBox{
+	display: table;
+	width: auto;
+	margin: auto;
+	list-style: none;
+}
+/* 버튼 사이즈 */
+.mgz_btn input{
+	float: left;
+	font-size: 15px;
+	margin: 0px 5px;
+	text-align: center;
+	line-height: 28px;
+	border: 2px solid #aaa;
+	font-family: Cafe24Ohsquare;
+	color: #aaa;
+	width: 103px;
+	height: 28px;
+	background-color: #fff;
+}
+.mgz_btn input:hover {
+	color: #333;
+	border: 2px solid #333;
+}
+
+/*리스트 사이즈  */
+.list_magazine {
+	margin: auto;
+	width: 820px;
+	height: auto;
+}
+.mgz_card{
+	margin: 0 auto 30px auto;
+	padding: 10px;
+	box-shadow: 0 1px 13px 10px #eee;
+	width: 800px;
+	height: 376px;
+}
+
+/* mgz_img */
+.mgz_img {
+	float: left;
+	width: 250px;
+	height: auto;
+}
+.mgz_img img {
+	width: 100%; 
+	height: auto;
+}
+/* ------------------------------------------- */
+
+/* mgz_content */
+.mgz_content {
+	float: left;
+	margin: 0 40px;
+	text-align: left;
+	font-size: 15px;
+	font-family: 'Arita-dotum-Medium';
+}
+.mgz_name {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 20px 0;
+}
+/* ------------------------------------------- */
+
+/* extra */
+.extra {
+	float: right;
+	padding-top: 360px;
+	text-align: bottom;
+}
+/* ------------------------------------------- */
+
+/* pageing */
+.list_pageingM {
+	margin-top: -20px;
+}
+
+/* 추가/삭제 버튼 */
+.mgz_list_btn{
+	margin-top: -80px;
+	margin-left: 605px;
+	width: 220px;
+}
+.mgz_list_btn>.list_btn {
+	float: left;
+	margin: 0 5px;
+}
+.mgz_list_btn>.list_btn:hover {
+	background-color: #aaa;
+	color: #fff;
+>>>>>>> branch 'master' of https://github.com/kimtaeyoung4415/water_model.git
 }

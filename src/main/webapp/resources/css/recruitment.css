@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 
 .a_recruitment_board {
@@ -34,3 +35,41 @@ select {
   	width: 25px;
   	background-color: #eee;
 }
+=======
+@charset "UTF-8";
+
+.a_recruitment_board {
+	height: 1000px;
+}
+
+
+select {
+	width: 580px;
+	height: 48px;
+}
+.container{
+	margin-top: 30px;
+}
+
+.imgfile {
+	width: 300px;
+	margin-top: 30px;
+}
+
+.LoadImg {
+	max-width: 100%;
+}
+.check-box{
+	width:619px;
+	height: 24px;
+	text-align: center;
+	
+}  
+.check-box input{
+	top: 0;
+  	left: 0;
+  	height: 25px;
+  	width: 25px;
+  	background-color: #eee;
+}
+>>>>>>> branch 'master' of https://github.com/kimtaeyoung4415/water_model.git
