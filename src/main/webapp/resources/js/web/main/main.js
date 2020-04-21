@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(document).ready(function() {
 
 	var i = 0;
@@ -108,8 +107,6 @@ $(document).ready(function() {
 		}
 	});
 	
-
-=======
 $(document).ready(function() {
 
 	var i = 0;
@@ -218,7 +215,4 @@ $(document).ready(function() {
 			$(".slideM").eq(2).addClass("activeM").css('display','block');
 		}
 	});
-	
-
->>>>>>> branch 'master' of https://github.com/kimtaeyoung4415/water_model.git
 });
