@@ -41,7 +41,7 @@
 					<input type="text" id="AREA" name="AREA" placeholder="서울" required="required">
 				</div>
 				<div class="input_wrapper">
-					<label for="GENDER">성별</label>
+					<label for="GENDER" >성별</label>
 					<input type="checkbox" id="MAN" name="MAN" value="남자">남자
 					<input type="checkbox" id="GIRL" name="GIRL" value="여자">여자
 				</div>
@@ -99,6 +99,7 @@
 		</div>
 		<div class="btn_form">
 			<input type="button" id="btn_w_qna" class="btn" value="수정하기">
+			<input type="button" id="btn_w_qna" class="btn" value="삭제">
 		</div>
 	</div>
 	<br>

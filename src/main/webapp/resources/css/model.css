@@ -51,7 +51,9 @@ body {
 /* 검색창 */
 .model_search_bar {
 	width: 240px;
-	margin: 0 0 20px 1083px; /* 위, 오른쪽, 아래, 왼쪽 */
+	position: absolute; 
+	left: 50%;
+	margin-left: 309px;
 	text-align: right;
 }
 
@@ -78,12 +80,14 @@ body {
 /* 모델 프로필 */
 .model_img {
 	width: 100%;
-	height: 650px;
+	height: 700px;
 }
 
 .model_profile {
 	width: 1064px;
-	margin: 0 0 0 230px; /* 위, 오른쪽, 아래, 왼쪽 */
+	top: 50px;
+	left:50%;
+	margin-left: -532px; /* 위, 오른쪽, 아래, 왼쪽 */
 	float: left;
 	position: relative;
 }
@@ -177,7 +181,6 @@ body {
 	height: 38px;
 	margin: auto;
 	padding-bottom: 200px;
-	margin: auto;
 }
 
 .model_page_list {

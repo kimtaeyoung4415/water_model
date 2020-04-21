@@ -2,7 +2,6 @@
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
 <div id="about_company">
 	<div id="about_logo_box">
 		<img src="../resources/img/about/about.png"/>
@@ -25,7 +24,6 @@
 		</div>
 	</div>
 </div>
-
 <div id="about_ceo">
 	<div id="about_ceo_box">
 		<img src="../resources/img/about/about_ceo.png"/>

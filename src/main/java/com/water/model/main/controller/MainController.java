@@ -15,5 +15,4 @@ public class MainController {
 		mv.setViewName("web/main/main.tiles");
 		return mv;
 	}
-	
 }
