@@ -1,16 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <section class="container">
-	<div class="list_nav">
-	<br>
-	<ul>
-		<li><a href="/ntce/list.do">NOTICE</a></li>
-		<li>.</li>
-		<li><a href="/qna/list.do">QA</a></li>
-		<li>.</li>
-		<li><a href="/rit/list.do">MODEL REG</a></li>
-	</ul>
-	</div>
 	<form id="r_button" name="r_button" enctype="multipart/form-data" accept="image/*">
 	<div class="container" align="center">
 		<div class="sub-container">
