@@ -5,25 +5,25 @@ import java.util.Map;
 
 public interface InterNegoService {
 
-	List<Map<String, Object>> selectNegotiationList() throws Exception;
+	List<Map<String, Object>> selectNegoList() throws Exception;
 	
 
-	int selectNegotiationListCnt() throws Exception;
+	int selectNegoListCnt() throws Exception;
 	
 
-	Map<String, Object> selectNegotiationDetail(int C_NUM) throws Exception;
+	Map<String, Object> selectNegoDtl(int C_NUM) throws Exception;
 	
 
-	int selectNegotiationPwdCheck(Map<String, Object> param) throws Exception;
+	int selectNegoPwdCheck(Map<String, Object> param) throws Exception;
 	
 
-	int updateNegotiation(Map<String, Object> param) throws Exception;
+	int updateNego(Map<String, Object> param) throws Exception;
 
 
-	int insertNegotiation(Map<String, Object> param) throws Exception;
+	int insertNego(Map<String, Object> param) throws Exception;
 
 
-	int deleteNegotiation(Map<String, Object> param) throws Exception;
+	int deleteNego(Map<String, Object> param) throws Exception;
 
 	
 

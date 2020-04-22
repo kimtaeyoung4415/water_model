@@ -17,50 +17,50 @@ public class NegoDao implements InterNegoDao{
 	
 	// 목록
 	@Override
-	public List<Map<String, Object>> selectNegotiationList() throws Exception {
-		return sqlSession.selectList("model.brd.Negotiation.selectNegotiationList");
+	public List<Map<String, Object>> selectNegoList() throws Exception {
+		return sqlSession.selectList("web.nego.selectNegoList");
 	};
 	
 	// 목록 카운트
 	@Override
-	public int selectNegotiationListCnt() throws Exception {
-		return sqlSession.selectOne("model.brd.Negotiation.selectNegotiationListCnt");
+	public int selectNegoListCnt() throws Exception {
+		return sqlSession.selectOne("web.nego.selectNegoListCnt");
 	};
 	
 	// 조회수 증가
 	@Override
-	public int updateNegotiationViewCnt(int C_NUM) throws Exception {
-		return sqlSession.update("model.brd.Negotiation.updateNegotiationViewCnt", C_NUM);		
+	public int updateNegoViewCnt(int C_NUM) throws Exception {
+		return sqlSession.update("web.nego", C_NUM);		
 	};
 
 	// 상세
 	@Override
-	public Map<String, Object> selectNegotiationDetail(int C_NUM) throws Exception {
-		return sqlSession.selectOne("model.brd.Negotiation.selectNegotiationDtl", C_NUM);
+	public Map<String, Object> selectNegoDtl(int C_NUM) throws Exception {
+		return sqlSession.selectOne("web.nego.selectNegoDtl", C_NUM);
 	};
 	
 	// 비밀번호 검사
 	@Override
-	public int selectNegotiationPwdCheck(Map<String, Object> param) {
-		return sqlSession.selectOne("model.brd.Negotiation.selectNegotiationPwdCheck", param);
+	public int selectNegoPwdCheck(Map<String, Object> param) {
+		return sqlSession.selectOne("web.nego.selectNegoPwdCheck", param);
 	};
 	
 	// 수정
 	@Override
-	public int updateNegotiation(Map<String, Object> param) throws Exception {
-		return sqlSession.update("model.brd.Negotiation.updateNegotiation", param);
+	public int updateNego(Map<String, Object> param) throws Exception {
+		return sqlSession.update("web.nego.updateNego", param);
 	};
 
 	// 등록
 	@Override
-	public int insertNegotiation(Map<String, Object> param) throws Exception {		
-		return sqlSession.insert("model.brd.Negotiation.insertNegotiation", param);
+	public int insertNego(Map<String, Object> param) throws Exception {		
+		return sqlSession.insert("web.nego.insertNego", param);
 	};
 
 	// 삭제
 	@Override
-	public int deleteNegotiation(Map<String, Object> param) throws Exception {
-		return sqlSession.delete("model.brd.Negotiation.deleteNegotiation", param);
+	public int deleteNego(Map<String, Object> param) throws Exception {
+		return sqlSession.delete("web.nego.deleteNego", param);
 	}
 
 	

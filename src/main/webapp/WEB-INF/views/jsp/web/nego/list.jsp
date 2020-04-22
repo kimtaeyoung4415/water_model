@@ -9,6 +9,8 @@
 			<li>.</li>
 			<li><a href="/qna/list.do">Q&amp;A</a></li>
 			<li>.</li>
+			<li><a href="/nego/list.do">NEGOTIATION</a></li>
+			<li>.</li>
 			<li><a href="/rit/list.do">MODEL REG</a></li>
 		</ul>
 	</div>
@@ -41,7 +43,7 @@
 				<th>진행상황</th>
 			</tr>
 		</thead>
-		<tbody class="list_tbody">
+		<tbody class="list_tbody" id="w-nego-list">
 			<c:forEach var="list" items="${list}" varStatus="status">
 				<tr C_NUM="${list.C_NUM}">
 					<td>${list.C_NUM}</td>
@@ -61,13 +63,6 @@
 					</c:if>
 				</tr>
 			</c:forEach>
-			<tr id="nego_page_test" value="1">
-				<td>1</td>
-				<td>test</td>
-				<td>test</td>
-				<td>test</td>
-				<td>test</td>
-			</tr>
 		</tbody>
 	</table>
 	<div class="list_btn_box">

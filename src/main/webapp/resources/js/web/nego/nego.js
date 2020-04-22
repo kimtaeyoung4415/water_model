@@ -34,6 +34,7 @@ $(function () {
 // 초기화 함수 영역
 //////////////
 		negoListEvent();
+		negoDtlEvent();
 		
 //////////////
 // 기능  함수  영역
@@ -54,15 +55,14 @@ $(function () {
 			});
 		};
 		//상세
-		/*function negoDtlEvnet(){
-			$('.pwd_check').click(function(){
+		function negoDtlEvent(){
+			$('.nego_pwd_check').click(function(){
 				
 				pub.q_num = $('#C_NUM').val();
-				pub.type = $(this).attr('id').substr(10);
-				
-				negoPwdCheckEvent();
+				pub.type = $(this).attr('id').substr(11);
+				negoPwdCheck();
 			});
-		};*/
+		};
 		
 		//등록 세팅
 		function negoInsEvent(){
@@ -96,15 +96,70 @@ $(function () {
 			var form_data = $("form[name=w_nego_ins_form]").serialize();
 			insertNego(form_data);
 		}
+
+		// 수정, 삭제 시 비밀번호 검사
+		function negoTypeCheckEvent(){
+			
+			// 비밀번호 확인
+			$('#btn_pwd_check').click(function(){
+				getNegoPwdCheck();
+			});
+		};
+		
+		function negoUpdateNego(){
+			
+			//취소
+			$("#btn_w_nego_cancel").click(function(){
+				alert("cancel");
+			});
+			
+			//수정
+			$("#btn_w_nego_update").click(function(){
+				var frm = document.w_qna_updt_form;
+				
+				if (frm.Q_NAME.value.trim() == '') {
+					jAlert("이름을 입력해주세요.", "알림");
+					return false;
+				}
+				
+				if (frm.Q_MOBILE.value.trim() == '') {
+					jAlert("연락처를 입력해주세요.", "알림");
+					return false;
+				}
+				
+				if (frm.Q_EMAIL.value.trim() == '') {
+					jAlert("이메일을 입력해주세요.", "알림");
+					return false;
+				}
+				
+				if (frm.Q_TITLE.value.trim() == '') {
+					jAlert("제목을 입력해주세요.", "알림");
+					return false;
+				}
+				
+				if (frm.Q_CONT.value.trim() == '') {
+					jAlert("문의내용을 입력해주세요.", "알림");
+					return false;
+				}
+				
+				if (frm.Q_PWD.value.trim() == '') {
+					jAlert("비밀번호를 입력해주세요.", "알림");
+					return false;
+				}
+				
+				var form_data = $("form[name=w_nego_updt_form]").serialize();
+				putnegoUpdt(form_data);
+			});
+		}
 //////////////
 // 페이지 호출 영역
 //////////////
 		//비밀번호 검사
-		/*function negoPwdCheck(){
+		function negoPwdCheck(){
 			$.ajax({
-				url="/nago/pwdCheck.do",
-				data={"C_NUM" : pub.q_num},
-				type="POST",
+				url:"/nego/pwdCheck.do",
+				data:{"C_NUM" : pub.q_num},
+				type:"POST",
 				success:function(result){
 					$('#content').children().remove();
 					$('#content').html(result);
@@ -116,12 +171,28 @@ $(function () {
 					alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
 				}
 			});
-		};*/
+		};
 		
-
+		function updateNego(){
+			$.ajax({
+				url:"/nego/edit.do",
+				data:{"C_NUM":pub.q_num},
+				type:'POST',
+				success:function(result){
+					$('#content').children().remove();
+					$('#content').html(result);
+					
+					initUpdateNego();
+				},
+				error: function(request, status, error){
+	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	            }
+			});
+		};
 //////////////
 // 데이터 호출 영역
 //////////////		
+		//등록액션
 		function insertNego(form_data){
 			$.ajax({
 				url:"/nego/postNegoIns.do",
@@ -146,15 +217,16 @@ $(function () {
 		};
 		
 		//비밀번호 확인
-		/*function getNegoPwdCheck(){
+		function getNegoPwdCheck(){
 			param.C_NUM = pub.q_num;
-			Param.C_PWD = $('#C_NUM').val();
+			param.C_PWD = $('#C_PWD').val();
 			
 			$.ajax({
 				url:"/nego/getNegoPwdCheck.do",
 				data:param,
 				type: "POST",
 				success : function(result){
+					console.log(pub.type);
 					if(result.SUCCESS){
 						if (pub.type == "delete") {
 							deleteNego();
@@ -171,9 +243,56 @@ $(function () {
 	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
 	            }
 			});
-			
-			
-		}*/
+		};
+		
+		//수정
+		function putNegoUpdt(form_data){
+			$.ajax({
+				url:"/nego/putNegoUpdt.do",
+				data:form_data,
+				type:"POST",
+				success:function(result){
+					if (result.SUCCESS) {
+						jAlert("수정하였습니다.", "알림", function() {
+							javascript:location.href="/qna/dtl.do?q="+pub.q_num;
+						});
+					} else {
+						jAlert("수정에 실패하였습니다.", "알림", function() {
+							return false;
+						});
+					}
+				},
+				error: function(request, status, error){
+	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	            }
+			});
+		};
+		
+		//삭제
+		function deleteNego(){
+			$.ajax({
+				url:"/nego/deleteNego.do",
+				data:param,
+				type:'POST',
+				success:function(result){
+					if (result.SUCCESS) {
+						jAlert("삭제되었습니다.", "알림", function() {
+							javascript:location.href="/nego/list.do";
+						});
+					} else {
+						jAlert("비밀번호가 일치하지 않습니다.", "알림", function() {
+							$('#C_PWD').val("");
+							$('#C_PWD').focus();
+							
+							return false;
+						});
+					}
+				},
+				error: function(request, status, error){
+	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	            }
+			});	
+		};
 	}; // end of _class
 	
 	// 함수 사용 선언 부분

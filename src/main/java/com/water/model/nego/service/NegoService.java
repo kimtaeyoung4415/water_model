@@ -17,53 +17,47 @@ public class NegoService implements InterNegoService{
 	
 	// 목록
 		@Override
-		public List<Map<String, Object>> selectNegotiationList() throws Exception {
-			return negotiationDao.selectNegotiationList();
+		public List<Map<String, Object>> selectNegoList() throws Exception {
+			return negotiationDao.selectNegoList();
 		};
 		
 		// 목록 카운트
 		@Override
-		public int selectNegotiationListCnt() throws Exception {		
-			return negotiationDao.selectNegotiationListCnt();
+		public int selectNegoListCnt() throws Exception {		
+			return negotiationDao.selectNegoListCnt();
 		};
 		
 		// 상세
 		@Override
-		public Map<String, Object> selectNegotiationDetail(int C_NUM) throws Exception {
+		public Map<String, Object> selectNegoDtl(int C_NUM) throws Exception {
 			
 			Map<String, Object> dtl = new HashMap<String, Object>();
 			
-			int cnt = negotiationDao.updateNegotiationViewCnt(C_NUM);
-			
-			if (cnt != 0) {
-				dtl = negotiationDao.selectNegotiationDetail(C_NUM);
-			} else {
-				dtl = null;
-			}
+				dtl = negotiationDao.selectNegoDtl(C_NUM);
 			return dtl;
 		};
 
 		// 비밀번호 검사
 		@Override
-		public int selectNegotiationPwdCheck(Map<String, Object> param) throws Exception {
-			return negotiationDao.selectNegotiationPwdCheck(param);
+		public int selectNegoPwdCheck(Map<String, Object> param) throws Exception {
+			return negotiationDao.selectNegoPwdCheck(param);
 		};
 		
 		// 수정 액션
 		@Override
-		public int updateNegotiation(Map<String, Object> param) throws Exception {
-			return negotiationDao.updateNegotiation(param);		 
+		public int updateNego(Map<String, Object> param) throws Exception {
+			return negotiationDao.updateNego(param);		 
 		};
 
 		// 등록 액션
 		@Override
-		public int insertNegotiation(Map<String, Object> param) throws Exception {
-			return negotiationDao.insertNegotiation(param);
+		public int insertNego(Map<String, Object> param) throws Exception {
+			return negotiationDao.insertNego(param);
 		};
 
 		// 삭제 액션
 		@Override
-		public int deleteNegotiation(Map<String, Object> param) throws Exception {
-			return negotiationDao.deleteNegotiation(param);
+		public int deleteNego(Map<String, Object> param) throws Exception {
+			return negotiationDao.deleteNego(param);
 		};
 }

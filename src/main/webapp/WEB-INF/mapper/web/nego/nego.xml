@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="web.nego">
+	<!-- 전체 조회 -->
+	<select id="selectNegoList" parameterType="Map" resultType="Map">
+		SELECT 
+			C_NUM,    		
+			C_NAME,        
+			C_TITLE,       
+			DATE_FORMAT(C_REG_DATE,  '%Y-%m-%d') AS C_REG_DATE,
+			DATE_FORMAT(C_UPDT_DATE, '%Y-%m-%d') AS C_UPDT_DATE,
+			A_CONT	    
+		FROM
+			WE_CG
+	</select>
+	
+	<!-- 전체 카운트 조회 -->
+	<select id="selectNegoListCnt" resultType="int">
+		SELECT 
+			COUNT(*)
+		FROM
+			WE_CG
+	</select>
+	
+	<!-- 상세 조회 -->
+	<select id="selectNegoDtl" parameterType="Map" resultType="Map">
+		SELECT
+		    C_NUM,     	 		/* 번호 */
+		    C_NAME,     		/* 질문자 이름 */
+		    MOBILE,       	/* 연락처 */
+		    EMAIL,        	/* 이메일 */
+		    C_TITLE,        	/* 질문 제목 */
+		    C_CONTENT,     		/* 질문 내용 */
+		    DATE_FORMAT(C_REG_DATE,  '%Y-%m-%d') AS C_REG_DATE,		/* 질문 등록일자 */
+		    DATE_FORMAT(C_UPDT_DATE, '%Y-%m-%d') AS C_UPDT_DATE,	/* 질문 수정일자 */
+		    A_NAME,     		/* 답변자 */
+		    A_CONT,     		/* 답변 내용 */
+		    DATE_FORMAT(A_REG_DATE, '%Y-%m-%d') AS A_REG_DATE,		/* 답변 등록일자 */
+		    C_PWD       		/* 비밀번호 */
+		FROM
+		    WE_CG      	/* QNA 게시판 */
+		WHERE
+			C_NUM = #{C_NUM}
+	</select>
+
+	<!-- 등록 -->
+	<insert id="insertNego" parameterType="Map">
+		INSERT INTO WE_CG  /* CG 게시판 */
+			(
+			     C_NAME,        /* 질문자 이름 */
+			     MOBILE,      /* 연락처 */
+			     EMAIL,       /* 이메일 */
+			     C_TITLE,       /* 질문 제목 */
+			     C_CONTENT,        /* 질문 내용 */
+			     C_REG_DATE,    /* 질문 등록일자 */
+			     C_PWD      	/* 비밀번호 */
+			)
+			VALUES
+			(
+			     #{C_NAME},     /* 질문자 이름 */
+			     #{C_MOBILE},   /* 연락처 */
+			     #{C_EMAIL},    /* 이메일 */
+			     #{C_TITLE},    /* 질문 제목 */
+			     #{C_CONT},     /* 질문 내용 */
+			     NOW(), 		/* 질문 등록일자 */
+			     #{C_PWD}       /* 비밀번호 */
+			)
+	</insert>
+	
+	<!-- 비밀번호 검사 -->
+	<select id="selectNegoPwdCheck" parameterType="Map" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			WE_CG
+		WHERE
+			C_NUM = #{C_NUM}
+		AND
+			C_PWD = #{C_PWD}
+	</select>
+	
+	<!-- 삭제 -->
+	<delete id="deleteNego" parameterType="Map">
+		DELETE
+		FROM
+			WE_CG
+		WHERE
+			C_NUM = #{C_NUM}
+		AND
+			C_PWD = #{C_PWD}
+	</delete>
+</mapper>
