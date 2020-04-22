@@ -36,6 +36,10 @@ $(function () {
 			$('#PROFILE').on("change",function(){
 				imgFileSelect(this);
 			});
+			
+			$('#PHOTO').on("change",function(){
+				handleImgsFileSelect(this);
+			});
 		};
 		
 		function imgFileSelect(e){		
@@ -57,13 +61,11 @@ $(function () {
 			});
 		};
 		
-		var sel_files=[];
-		$(document).ready(function(){
-			$("#PHOTO").on("change",handleImgsFilesSelect);
-		});
-		
 		function handleImgsFileSelect(e){
-			var files= e.target.files;
+			
+			var sel_files=[];
+			
+			var files= e.files;
 			var filesArr =Array.prototype.slice.call(files);
 			
 			filesArr.forEach(function(f){
@@ -71,16 +73,17 @@ $(function () {
 					alert("확장자는 이미지 확장자만 가능합니다.");
 					return;
 				}
-				sel_liles.push(f);
+				sel_files.push(f);
 
 				var reader=new FileReader();
 				reader.onload=function(e){
 					var img_html ="<img src=\""+e.target.result+"\"/>";
-					$(".imgfile").append(img_html);
+					$(".imgfiles").append(img_html);
 				}
 				reader.readAsDataURL(f);
 			});
 		}
+		
 		
 //////////////
 // 페이지 호출 영역
@@ -90,7 +93,8 @@ $(function () {
 //////////////
 // 데이터 호출 영역
 //////////////		
-		
+var PROFILE=document.querySelector("#PROFILE");
+var PHOTO=document.querySelector("#PHOTO");
 		
 	}; // end of _class
 	

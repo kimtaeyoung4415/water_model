@@ -1,17 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <section class="container">
-	<div class="list_nav">
-	<br>
-	<ul>
-		<li><a href="/ntce/list.do">NOTICE</a></li>
-		<li>.</li>
-		<li><a href="/qna/list.do">QA</a></li>
-		<li>.</li>
-		<li><a href="/rit/list.do">MODEL REG</a></li>
-	</ul>
-	</div>
-	<form id="r_button" name="r_button">
+	<form id="r_button" name="r_button" enctype="multipart/form-data" accept="image/*">
 	<div class="container" align="center">
 		<div class="sub-container">
 			<div class="application_modal">
@@ -79,11 +69,11 @@
 				</div>
 				<div class="input_wrapper">
 					<label for="MAGAZINE">메거진</label>
-					<input type="text" id="MAGAZINE" name="MAGAZINE" placeholder="비밀번호" required="required">
+					<input type="text" id="MAGAZINE" name="MAGAZINE" placeholder="메거진" required="required">
 				</div>
 				<div class="input_wrapper">
 					<label for="AN AWARD-WINNING CAREER">수상경력</label>
-					<input type="text" id="AN AWARD-WINNING CAREER" name="AN AWARD-WINNING CAREER" placeholder="비밀번호" required="required">
+					<input type="text" id="AN AWARD-WINNING CAREER" name="AN AWARD-WINNING CAREER" placeholder="수상경력" required="required">
 				</div>
 				<div class="input_wrapper">
 					<label for="PROFILE">프로필</label>

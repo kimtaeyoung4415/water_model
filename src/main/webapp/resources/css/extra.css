@@ -260,6 +260,7 @@ a {
 .input_wrapper {
 	margin-bottom: 18px;
 	overflow: hidden;
+	text-align: center;
 }
 .input_wrapper label {
 	font-family: 'Arita-dotum-Medium';
