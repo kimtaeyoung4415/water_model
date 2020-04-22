@@ -106,6 +106,4 @@ $(document).ready(function() {
 			$(".slideM").eq(2).addClass("activeM").css('display','block');
 		}
 	});
-	
-
 });

@@ -33,46 +33,147 @@ $(function () {
 //////////////
 // 초기화 함수 영역
 //////////////
-		
-		
+		negoListEvent();
 		
 //////////////
 // 기능  함수  영역
 //////////////
+		//목록이벤트
+		function negoListEvent(){
+			//등록 이벤트
+			$("#btn_w_nego").click(function(){		
+				negoInsEvent();
+			});
+			$("#btn_w_nego_ins").click(function(){			
+				javascript:location.href="/nego/ins.do";				
+			});
+			//상세(화면이동)
+			$("#w-nego-list tr").click(function(){		
+				var q_num = $(this).attr('C_NUM');
+				javascript:location.href = "/nego/dtl.do?q="+q_num;	
+			});
+		};
+		//상세
+		/*function negoDtlEvnet(){
+			$('.pwd_check').click(function(){
+				
+				pub.q_num = $('#C_NUM').val();
+				pub.type = $(this).attr('id').substr(10);
+				
+				negoPwdCheckEvent();
+			});
+		};*/
 		
-		
+		//등록 세팅
+		function negoInsEvent(){
+			var frm = document.w_nego_ins_form;
+			
+			if(frm.C_NAME.value.trim() == ''){
+				jAlert("이름을 입력해 주십시오.","알림");
+				return false;
+			}
+			if(frm.C_MOBILE.value.trim() == ''){
+				jAlert("연락처을 입력해 주십시오.","알림");
+				return false;
+			}
+			if(frm.C_EMAIL.value.trim() == ''){
+				jAlert("이메일을 입력해 주십시오.","알림");
+				return false;
+			}
+			if(frm.C_TITLE.value.trim() == ''){
+				jAlert("제목을 입력해 주십시오.","알림");
+				return false;
+			}
+			if(frm.C_CONT.value.trim() == ''){
+				jAlert("문의내용을 입력해 주십시오.","알림");
+				return false;
+			}
+			if(frm.C_PWD.value.trim() == ''){
+				jAlert("비밀번호을 입력해 주십시오.","알림");
+				return false;
+			}
+			
+			var form_data = $("form[name=w_nego_ins_form]").serialize();
+			insertNego(form_data);
+		}
 //////////////
 // 페이지 호출 영역
 //////////////
+		//비밀번호 검사
+		/*function negoPwdCheck(){
+			$.ajax({
+				url="/nago/pwdCheck.do",
+				data={"C_NUM" : pub.q_num},
+				type="POST",
+				success:function(result){
+					$('#content').children().remove();
+					$('#content').html(result);
+					
+					//수정, 삭제 시 비밀번호 검사
+					negoTypeCheckEvent();
+				},
+				error : function(request, status, error){
+					alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+				}
+			});
+		};*/
 		
-//nego 등록화면 이동 버튼
-		$("#btn_w_nego_ins").click(function(){			
-			javascript:location.href="/nego/ins.do";				
-		});
-//nego 상세 화면 이동
-		/*$("#w-nego-list tr").click(function(){		
-			var q_num = $(this).attr('C_NUM');
-			javascript:location.href = "/nego/dtl.do?c="+c_num;	
-		});
-*/		
-		$("#w-nego-list tr").click(function(){		
-			var q_num = $(this).attr('#nego_page_test');
-			var test_num = $("#nego_page_test").children().first().text();
-			javascript:location.href = "/nego/dtl.do?c="+test_num;	
-		});
-		
-		$("#a-nego-list tr").click(function(){		
-			var q_num = $(this).attr('#nego_page_test');
-			var test_num = $("#admin_nego_page_test").children().first().text();
-			javascript:location.href = "/admin/nego/dtl.do?c="+test_num;	
-		});
-		
+
 //////////////
 // 데이터 호출 영역
 //////////////		
+		function insertNego(form_data){
+			$.ajax({
+				url:"/nego/postNegoIns.do",
+				data:form_data,
+				type:'POST',
+				datatype : "json",
+				success: function(result){
+					if (result.SUCCESS){
+						jAlert("등록되었습니다.", "알림", function(){
+							javascript:location.href="/nego/list.do";
+						});
+					}else {
+						jAlert("등록에 실패하였습니다.", "알림", function(){
+							return false;
+						});
+					}
+				},
+				error : function(request, status, error){
+					alert("code: " +request.status + "\n"+"message: " +request.responsText+ "\n"+"error: "+error);
+				}
+			});
+		};
 		
-		
-		
+		//비밀번호 확인
+		/*function getNegoPwdCheck(){
+			param.C_NUM = pub.q_num;
+			Param.C_PWD = $('#C_NUM').val();
+			
+			$.ajax({
+				url:"/nego/getNegoPwdCheck.do",
+				data:param,
+				type: "POST",
+				success : function(result){
+					if(result.SUCCESS){
+						if (pub.type == "delete") {
+							deleteNego();
+						} else{
+							updateNego();
+						}						
+					} else{
+						jAlert("비밀번호가 일치하지 않습니다.", "알림", function() {
+							return false;
+						});
+					}
+				},
+				error: function(request, status, error){
+	                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	            }
+			});
+			
+			
+		}*/
 	}; // end of _class
 	
 	// 함수 사용 선언 부분
