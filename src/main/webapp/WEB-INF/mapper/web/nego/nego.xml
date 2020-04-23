@@ -45,7 +45,7 @@
 
 	<!-- 등록 -->
 	<insert id="insertNego" parameterType="Map">
-		INSERT INTO WE_CG  /* CG 게시판 */
+		INSERT INTO WE_CG  /* 섭외 게시판 */
 			(
 			     C_NAME,        /* 질문자 이름 */
 			     MOBILE,      /* 연락처 */
@@ -89,4 +89,20 @@
 		AND
 			C_PWD = #{C_PWD}
 	</delete>
+	
+	<!-- 수정 -->
+	<update id="updateNego" parameterType="Map">
+		UPDATE
+		    WE_CG  /* 섭외 게시판 */
+		SET
+		    C_NAME 	 = #{C_NAME},      /* 질문자 이름 */
+		    MOBILE = #{MOBILE},    /* 연락처 */
+		    EMAIL  = #{EMAIL},     /* 이메일 */
+		    C_TITLE  = #{C_TITLE},     /* 질문 제목 */
+		    C_CONTENT   = #{C_CONTENT},      /* 질문 내용 */
+		    C_UPDT_DATE = NOW(),       /* 질문 수정일자 */
+		    C_PWD    = #{C_PWD}        /* 비밀번호 */
+		WHERE
+		    C_NUM = #{C_NUM}
+	</update>
 </mapper>

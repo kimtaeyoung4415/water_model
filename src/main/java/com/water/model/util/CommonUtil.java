@@ -38,7 +38,7 @@ public class CommonUtil {
 		int showPage  = 1;	// 초기페에이지는 0로 설정함
 		
 		int totalCount = (int) param.get("totalCount");					// 총 게시물 수
-		int perPage = (int) param.get("perPage");	// 페이지당 보여줄 게시물 
+		int perPage = (int) param.get("perPage");	// 페이지당 보여줄 게시물 갯수
 		int perBar  = (int) param.get("perBar");	// 페이징 블럭에 보여질 수     ex) 5 >> | 1 | 2 | 3 | 4 | 5 |
 						
 		// p_k >> 페이징 선택 여부

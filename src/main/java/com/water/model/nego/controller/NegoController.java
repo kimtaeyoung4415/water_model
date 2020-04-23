@@ -118,11 +118,48 @@ public class NegoController {
 	}
 	
 	//수정 페이지 이동
-	@RequestMapping(value="/edit.do" , method = RequestMethod.GET)
-	public String edit(HttpServletRequest request)throws Exception{
-		return "web/nego/edit.tiles";
+	@RequestMapping(value="/edit.do" , method={RequestMethod.POST, RequestMethod.GET},produces="application/json;charset=UTF-8")
+	@ResponseBody
+	public ModelAndView editNego(ModelAndView mv, @RequestParam int C_NUM)throws Exception{
+		
+		Map<String, Object> dtl = negoService.selectNegoDtl(C_NUM);
+		if (dtl == null) {
+			
+			// url에서 존재하지 않는 게시물 번호를 입력한경우
+			String msg = "존재하지 않은 게시물입니다.";
+			String loc = "javascript:history.back()";
+			
+			mv.addObject("msg", msg);
+			mv.addObject("loc", loc);
+			
+			mv.setViewName("msg/error");
+		} else {
+		
+			mv.addObject("dtl",dtl);		
+			mv.setViewName("web/nego/edit");
+		}
+
+		return mv;
 	}
 	
+	//수정 액션
+	@RequestMapping(value = "/putNegoUpdt.do", method = RequestMethod.POST)
+	@ResponseBody
+	public Map<String,Object> putNegoUpdt(ModelAndView mv, @RequestParam Map<String, Object> param)throws Exception{
+		Map<String, Object> result = new HashMap<String, Object>();
+		System.out.println(param);
+		try {
+			int status = negoService.updateNego(param);
+			if(status == 0 ) {
+				result.put("SUCCESS", false);
+			} else {
+				result.put("SUCCESS", true);
+			}
+		}catch (Throwable e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 	//삭제액션
 	@RequestMapping(value = "/deleteNego.do", method = RequestMethod.POST)
 	@ResponseBody

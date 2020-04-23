@@ -72,11 +72,11 @@ $(function () {
 				jAlert("이름을 입력해 주십시오.","알림");
 				return false;
 			}
-			if(frm.C_MOBILE.value.trim() == ''){
+			if(frm.MOBILE.value.trim() == ''){
 				jAlert("연락처을 입력해 주십시오.","알림");
 				return false;
 			}
-			if(frm.C_EMAIL.value.trim() == ''){
+			if(frm.EMAIL.value.trim() == ''){
 				jAlert("이메일을 입력해 주십시오.","알림");
 				return false;
 			}
@@ -84,7 +84,7 @@ $(function () {
 				jAlert("제목을 입력해 주십시오.","알림");
 				return false;
 			}
-			if(frm.C_CONT.value.trim() == ''){
+			if(frm.C_CONTENT.value.trim() == ''){
 				jAlert("문의내용을 입력해 주십시오.","알림");
 				return false;
 			}
@@ -106,7 +106,8 @@ $(function () {
 			});
 		};
 		
-		function negoUpdateNego(){
+		//수정 이벤트
+		function initUpdateNego(){
 			
 			//취소
 			$("#btn_w_nego_cancel").click(function(){
@@ -115,40 +116,40 @@ $(function () {
 			
 			//수정
 			$("#btn_w_nego_update").click(function(){
-				var frm = document.w_qna_updt_form;
+				var frm = document.w_nego_updt_form;
 				
-				if (frm.Q_NAME.value.trim() == '') {
+				if (frm.C_NAME.value.trim() == '') {
 					jAlert("이름을 입력해주세요.", "알림");
 					return false;
 				}
 				
-				if (frm.Q_MOBILE.value.trim() == '') {
+				if (frm.MOBILE.value.trim() == '') {
 					jAlert("연락처를 입력해주세요.", "알림");
 					return false;
 				}
 				
-				if (frm.Q_EMAIL.value.trim() == '') {
+				if (frm.EMAIL.value.trim() == '') {
 					jAlert("이메일을 입력해주세요.", "알림");
 					return false;
 				}
 				
-				if (frm.Q_TITLE.value.trim() == '') {
+				if (frm.C_TITLE.value.trim() == '') {
 					jAlert("제목을 입력해주세요.", "알림");
 					return false;
 				}
 				
-				if (frm.Q_CONT.value.trim() == '') {
+				if (frm.C_CONT.value.trim() == '') {
 					jAlert("문의내용을 입력해주세요.", "알림");
 					return false;
 				}
 				
-				if (frm.Q_PWD.value.trim() == '') {
+				if (frm.C_PWD.value.trim() == '') {
 					jAlert("비밀번호를 입력해주세요.", "알림");
 					return false;
 				}
 				
 				var form_data = $("form[name=w_nego_updt_form]").serialize();
-				putnegoUpdt(form_data);
+				putNegoUpdt(form_data);
 			});
 		}
 //////////////
@@ -173,6 +174,7 @@ $(function () {
 			});
 		};
 		
+		//수정페이지 호출
 		function updateNego(){
 			$.ajax({
 				url:"/nego/edit.do",
@@ -254,7 +256,7 @@ $(function () {
 				success:function(result){
 					if (result.SUCCESS) {
 						jAlert("수정하였습니다.", "알림", function() {
-							javascript:location.href="/qna/dtl.do?q="+pub.q_num;
+							javascript:location.href="/nego/dtl.do?q="+pub.q_num;
 						});
 					} else {
 						jAlert("수정에 실패하였습니다.", "알림", function() {
