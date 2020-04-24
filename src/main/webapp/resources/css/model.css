@@ -199,8 +199,6 @@ body {
 
 .model_page_list>a:last-child {
 	width: 30px;
-body {
-	width: 90%;
 	text-align: center;
 	padding: 0;
 	margin: 0 auto;
@@ -399,6 +397,3 @@ body {
 	font-weight: bold;
 }
 
-.model_page_list>a:last-child {
-	width: 30px;
-}

@@ -1,121 +1,76 @@
 @charset "UTF-8";
+
 /*section 전체 사이즈  */
 section.view_details{
-	padding: 115px 0 15px;
+	padding: 100px 0;
+	width: 100%; 
+	height: auto;
 }
+
 /*container 사이즈  */
-.container{
-	padding-right:15px;
-	padding-left: 15px;
+.view_container{
 	margin: auto;
-	margin: auto;
-}
-/*view 전체 사이즈  */
-.viewdetails_view{
-	margin: 0 50px;
-	padding:30px;
+	padding: 70px;
+	width: 60%;
+	height: auto;
 	box-shadow: 0 0 30px 0 rgba(0,0,0,0.18);
 }
+
 /*view 박스 제목 사이즈  */
 .viewdetails_title{
 	width:100%;
 	height: 72px;
-	text-align: center;
 }
 /*제목 사이즈  */
 .viewdetails_title h1{
 	margin:0;
 	font-size:35px;
-	line-height: 20px;
+	line-height: 72px;
 	width:100%;
-    text-align: right;
+	height: 100%;
+	text-align: center;
 }
-/*mews 사이즈  */
+/*news 사이즈  */
 .news{
-	padding:36px 88px;
-}
-/*비디어 사이즈  */
-.medel_video{
-	width:800px;
-	height: 526px;
-}
-
-/*nav 전페 사이즈  */
-.notice_nav{
-	padding: 0 102px;
-	position: relative;
-	overflow: hidden;
-	text-align: center;
-}
-/*링크 사이즈  */
-.notice_nav a{
-	display: inline-block;
-	font-size: 18px;
-	font-family: 'Klavika Md';
-	
-}
-.news_img img{
-	width:100%;
-	height: 526px;
-}
-
-@charset "UTF-8";
-/*section 전체 사이즈  */
-section.view_details{
-	padding: 115px 0 15px;
-}
-/*container 사이즈  */
-.container{
-	padding-right:15px;
-	padding-left: 15px;
+	padding: 70px 0;
 	margin: auto;
-	margin: auto;
+	width: 70%;
+	height: auto;
 }
-/*view 전체 사이즈  */
-.viewdetails_view{
-	margin: 0 50px;
-	padding:30px;
-	box-shadow: 0 0 30px 0 rgba(0,0,0,0.18);
+.news_info {
+	width: 100%; 
+	height: auto;
 }
-/*view 박스 제목 사이즈  */
-.viewdetails_title{
-	width:100%;
-	height: 72px;
-	text-align: center;
+.news_img {
+	float: left;
+	width: 45%; 
+	height: auto;
 }
-/*제목 사이즈  */
-.viewdetails_title h1{
-	margin:0;
-	font-size:35px;
-	line-height: 20px;
+.news_img img {
 	width: 100%;
-    text-align: center;
+	height: 100%;
 }
-/*mews 사이즈  */
-.news{
-	padding:36px 88px;
-}
-/*비디어 사이즈  */
-.medel_video{
-	width:100%;
-	height: 526px;
+.news_info>p {
+	float: right;
+	font-family: 'Arita-dotum-Medium';
+	font-size: 1.2rem; 
+	line-height: 24px;
+	width: 45%;
+	height: auto;
 }
 
-/*nav 전페 사이즈  */
+/*비디오 사이즈  */
+.medel_video{
+	margin-top: 100px;
+	width: 100%;
+	height: 400px;
+	background: #666;
+}
+
+/*nav 전체 사이즈  */
 .notice_nav{
 	padding: 0 102px;
 	position: relative;
 	overflow: hidden;
 	text-align: center;
-}
-/*링크 사이즈  */
-.notice_nav a{
-	display: inline-block;
-	font-size: 18px;
-	font-family: 'Klavika Md';
-	
-}
-.news_img img{
-	width:100%;
-	height: 526px;
 }
