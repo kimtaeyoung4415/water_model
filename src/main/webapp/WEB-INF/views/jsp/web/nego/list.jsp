@@ -5,9 +5,9 @@
 <div class="list_container">
 	<div class="list_nav">
 		<ul>
-			<li><a href="/ntce/list.do">NOTICE</a></li>
-			<li>.</li>
 			<li><a href="/qna/list.do">Q&amp;A</a></li>
+			<li>.</li>
+			<li><a href="/ntce/list.do">NOTICE</a></li>
 			<li>.</li>
 			<li><a href="/nego/list.do">NEGOTIATION</a></li>
 			<li>.</li>
