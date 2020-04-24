@@ -70,7 +70,7 @@
 					</div>
 					<div class="extra">
 						<span class="right floated"> Joined in 2014 </span> <span>
-							<i class="user icon"></i> 151 Friends
+							<i class="user icon"></i> 151 Friend
 						</span>
 					</div>
 				</div>
